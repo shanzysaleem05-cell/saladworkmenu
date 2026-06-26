@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Existing Tailwind/shadcn required vars */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142 76% 36%;
+    --radius: 0.5rem;
+
+    /* NEW COLOR SYSTEM */
+    --color-brand-green: #4A7C2F;
+    --color-leaf-green: #6BAF3C;
+    --color-deep-green: #2D5E1E;
+    --color-mint-tint: #8BF5D8;
+    --color-white: #FFFFFF;
+    --color-near-black: #1A1A1A;
+    --color-cream-bg: #F5F3EE;
+    --color-accent-orange: #D85A3B;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    background-color: var(--color-cream-bg);
+    color: var(--color-near-black);
+    @apply font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-near-black);
+    @apply font-bold;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
