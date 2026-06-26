@@ -44,7 +44,7 @@ export default function HomeClient() {
       {/* Hidden Date for SEO */}
       <time 
         dateTime="2026-06-01" 
-        style={{ display: 'none' }}
+        className="hidden"
         itemProp="dateModified"
       >
         2026-06-01

@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/JsonLd"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://saladworksmenu.us"),
-  title: "SaladWorks Menu Prices 2026 — Full Menu, Calories & Nutrition Guide",
+  title: "SaladWorks Menu & Prices 2026 — Calories & Nutrition",
   description: "Explore the complete SaladWorks menu with 2026 prices, calorie counts, and nutrition. Salads from $9.99, wraps from $11.99, and Pick 2 combos from $13.49.",
   keywords: [
     "SaladWorks menu prices",
