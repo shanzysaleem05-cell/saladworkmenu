@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { BlogPost } from "@/data/blogData"
 import { Calendar, Clock } from "lucide-react"
 
@@ -6,10 +7,13 @@ export function BlogCard({ post }: { post: BlogPost }) {
   return (
     <div className="bg-site-white border border-gray-200 rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col h-full group">
       <Link href={`/blog/${post.slug}`} className="relative h-56 overflow-hidden block">
-        <img 
+        <Image 
           src={post.image} 
           alt={post.title} 
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          title={post.title}
+          fill
+          sizes="(max-width: 768px) 100vw, 380px"
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute top-4 left-4 bg-brand-leaf text-site-white text-xs font-bold px-3 py-1 rounded-full">
           {post.category}

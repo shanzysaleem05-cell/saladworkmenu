@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Leaf, Flame } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 interface FoodCardProps {
   name: string;
@@ -31,7 +32,14 @@ export function FoodCard({
       className="bg-site-white border border-gray-200 rounded-[16px] overflow-hidden flex flex-col h-full shadow-sm hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)] transition-all duration-300"
     >
       <div className="relative h-[150px] w-full bg-gray-100">
-        <img src={image} alt={name} title={name} className="absolute inset-0 w-full h-full object-cover" />
+        <Image 
+          src={image} 
+          alt={name} 
+          title={name} 
+          fill 
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          className="object-cover" 
+        />
         
         {/* Top left tags */}
         <div className="absolute top-2 left-2 flex gap-1.5">

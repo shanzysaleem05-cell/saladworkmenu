@@ -2,6 +2,8 @@ import { blogData } from "@/data/blogData"
 import { notFound } from "next/navigation"
 import { Calendar, Clock, ArrowLeft, User } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+
 
 export async function generateStaticParams() {
   return blogData.map((post) => ({
@@ -63,8 +65,16 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
 
       {/* Featured Image */}
       <div className="container mx-auto max-w-5xl px-4 -mt-16 mb-12 relative z-10">
-        <div className="w-full aspect-[21/9] rounded-2xl overflow-hidden shadow-xl bg-gray-100 border-4 border-site-bg">
-          <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+        <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden shadow-xl bg-gray-100 border-4 border-site-bg">
+          <Image 
+            src={post.image} 
+            alt={post.title} 
+            title={post.title}
+            fill 
+            priority
+            sizes="(max-width: 1024px) 100vw, 1200px"
+            className="object-cover" 
+          />
         </div>
       </div>
 
@@ -151,7 +161,7 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
             if (imgMatch) {
               return (
                 <div key={idx} className="my-8 rounded-xl overflow-hidden shadow-md">
-                  <img src={imgMatch[2]} alt={imgMatch[1]} className="w-full h-auto object-cover max-h-[400px]" />
+                  <img src={imgMatch[2]} alt={imgMatch[1]} title={imgMatch[1]} loading="lazy" className="w-full h-auto object-cover max-h-[400px]" />
                 </div>
               );
             }

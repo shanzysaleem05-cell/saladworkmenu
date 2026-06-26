@@ -1,5 +1,6 @@
 import { menuData } from "@/data/menuData"
 import Link from "next/link"
+import Image from "next/image"
 import { ChevronRight, Leaf, Info } from "lucide-react"
 import { FoodCard } from "@/components/FoodCard"
 import { notFound } from "next/navigation"
@@ -50,7 +51,15 @@ export default function MenuDetail({ params }: { params: { item: string } }) {
           {/* Left: Image */}
           <div className="w-full md:w-1/2 shrink-0">
             <div className="relative aspect-square md:aspect-[4/3] rounded-[24px] overflow-hidden shadow-sm border border-gray-100 bg-gray-100">
-              <img src={foundItem.image || fallbackImg} alt={foundItem.name} className="absolute inset-0 w-full h-full object-cover" />
+              <Image 
+                src={foundItem.image || fallbackImg} 
+                alt={foundItem.name} 
+                title={foundItem.name}
+                fill 
+                priority
+                sizes="(max-width: 768px) 100vw, 600px"
+                className="object-cover" 
+              />
             </div>
           </div>
 

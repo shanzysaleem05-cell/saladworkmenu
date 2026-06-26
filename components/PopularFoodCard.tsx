@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Star, Flame } from "lucide-react"
+import Image from "next/image"
 
 interface PopularFoodCardProps {
   name: string;
@@ -26,7 +27,14 @@ export function PopularFoodCard({
       className="bg-site-white rounded-t-[32px] rounded-b-[12px] overflow-hidden flex flex-col h-full shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.12)] transition-shadow duration-300 border border-gray-100"
     >
       <div className="relative h-[220px] w-full bg-gray-100">
-        <img src={image} alt={name} className="absolute inset-0 w-full h-full object-cover rounded-t-[32px]" />
+        <Image 
+          src={image} 
+          alt={name} 
+          title={name}
+          fill 
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover rounded-t-[32px]" 
+        />
         
         {/* Top left tags */}
         <div className="absolute top-4 left-4 flex flex-col gap-2">
