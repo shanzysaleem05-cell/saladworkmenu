@@ -10,3 +10,5 @@ An independent fan guide dedicated to providing up-to-date SaladWorks menu price
 - Nutrition Facts: https://saladworksmenu.us/nutrition - Comprehensive calorie counts, macro breakdowns, and allergen details.
 - Blog: https://saladworksmenu.us/blog - Informative articles about healthy eating, ingredients, and restaurant updates.
 - Store Hours: https://saladworksmenu.us/hours - Daily operating hours (Monday - Friday 7:00 AM - 7:00 PM).
+- Full Database: https://saladworksmenu.us/llms-full.txt - Complete compiled catalog of menu items, prices, calories, and catering packages.
+

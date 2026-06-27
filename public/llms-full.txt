@@ -1,0 +1,101 @@
+# SaladWorks Menu & Prices 2026 — Full Context Guide
+
+This document contains the complete structured information of SaladWorksMenu.us, designed for consumption by LLMs, search engines, and AI agents.
+
+---
+
+## 1. About SaladWorks
+SaladWorks is America's leading fast-casual salad chain, established in 1986. They specialize in fresh, made-to-order salads, wraps, melts, soups, and Pick 2 combos.
+
+---
+
+## 2. Complete Menu and Prices (2026 Estimates)
+
+### Signature Salads
+All salads are freshly prepared and fully customizable.
+- **Classic Garden Salad** — $9.99 (150-250 cal)
+- **Caesar Salad** — $10.49 (200-300 cal)
+- **Cobb Salad** — $13.49 (350-450 cal)
+- **Greek Salad** — $11.99 (220-320 cal)
+- **Power Greens** — $12.49 (240-340 cal)
+- **BBQ Ranch Salad** — $13.99 (380-480 cal)
+- **Build Your Own Salad** — Starts at $9.49 (Depends on choices)
+
+### Wraps & Grilled Wraps
+Wrapped in a selection of fresh tortillas (Flour, Wheat, Spinach).
+- **Chicken Caesar Wrap** — $12.49 (580-680 cal)
+- **Turkey Avocado Wrap** — $11.99 (520-620 cal)
+- **Veggie Hummus Wrap** — $10.99 (450-550 cal)
+- **BLT Wrap** — $10.49 (500-600 cal)
+- **Spicy Chicken Wrap** — $12.99 (600-700 cal)
+
+### Warm Melts
+Toasted hot melts served fresh.
+- **Turkey Melt** — $11.99 (550-650 cal)
+- **Chicken Parmesan Melt** — $12.99 (600-700 cal)
+- **Tuna Melt** — $11.49 (530-630 cal)
+- **Veggie Melt** — $10.99 (480-580 cal)
+
+### Fresh Soups
+Daily selection of warm soups.
+- **Tomato Basil Soup** — Cup: $4.99 (180 cal) / Bowl: $7.99 (320 cal)
+- **Broccoli Cheddar Soup** — Cup: $4.99 (240 cal) / Bowl: $7.99 (410 cal)
+- **Chicken Noodle Soup** — Cup: $4.49 (120 cal) / Bowl: $6.99 (220 cal)
+- **French Onion Soup** — Cup: $5.49 (150 cal) / Bowl: $8.49 (280 cal)
+- **Clam Chowder** — Cup: $5.99 (260 cal) / Bowl: $8.99 (450 cal)
+
+### Pick 2 Combos
+Allows customers to mix and match two half-portions.
+- **Any Salad + Any Soup** — $14.99
+- **Any Wrap + Any Soup** — $15.49
+- **Any Melt + Any Soup** — $15.99
+- **Half Salad + Half Wrap** — $13.99
+- **Kids Pick 2** — $10.49
+
+### Kids Menu
+Perfect portions for kids under 12.
+- **Mini Garden Salad** — $6.99 (100 cal)
+- **Kids Turkey Wrap** — $7.49 (280 cal)
+- **Kids Grilled Cheese Melt** — $6.49 (320 cal)
+- **Kids Soup + Bread** — $5.99 (150 cal)
+
+### Sides & Desserts
+- **Dinner Roll (2)** — $2.99 (160 cal)
+- **Fruit Cup** — $3.99 (80 cal)
+- **Side Salad** — $4.99 (100 cal)
+- **Chocolate Lava Cake** — $6.99 (420 cal)
+- **Cheesecake Slice** — $5.99 (380 cal)
+- **Cookies (3)** — $4.49 (150 cal each)
+
+### Beverages
+- **Fresh Lemonade** — $3.49 (120 cal)
+- **Iced Tea (Sweet/Unsweet)** — $2.99 (0-90 cal)
+- **Sparkling Water** — $2.49 (0 cal)
+- **Tractor Organic Juice** — $4.99 (140 cal)
+- **Coffee** — $2.99 (5 cal)
+- **Soft Drinks** — $2.49 (0-160 cal)
+
+---
+
+## 3. Catering Packages (2026 Prices)
+- **Basic Catering Package (Serves 10)** — $89.99
+  Includes: 2 large signature salads, 10 assorted wraps, 2 choices of soup, and assorted beverages.
+- **Party Catering Package (Serves 25)** — $199.99
+  Includes: 4 large signature salads, 25 assorted wraps and melts, 4 choices of soup, sides, and beverages.
+- **Corporate Catering Package (Serves 50)** — $379.99
+  Includes: 8 large signature salads, 50 assorted wraps and melts, 6 choices of soup, 4 sides, and premium beverages.
+
+---
+
+## 4. Store Hours of Operation
+- **Monday – Friday:** 07:00 AM – 07:00 PM
+- **Saturday:** Closed
+- **Sunday:** Closed
+
+---
+
+## 5. Active Promo Codes (Deals)
+- **FRESH20**: Get 20% off your entire order storewide.
+- **PICK2SDAY**: Get $2 off any Pick 2 Combo meal.
+- **SWPERK0214**: Buy 2 Signature or Premium salads for $20.
+- **10SALADS**: Get $10 off storewide.
