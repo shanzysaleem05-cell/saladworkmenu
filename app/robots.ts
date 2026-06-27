@@ -1,36 +1,69 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
+  const commonDisallow = ['/admin/', '/api/', '/private/']
+  
   return {
     rules: [
       {
-        userAgent: [
-          'Googlebot',
-          'Googlebot-Image',
-          'Googlebot-Video',
-          'Googlebot-News',
-          'Google-Extended',
-          'GPTBot',
-          'ChatGPT-User',
-          'CCBot',
-          'anthropic-ai',
-          'Claude-Web',
-          'PerplexityBot',
-          'YouBot',
-          'Bingbot',
-          'BingPreview',
-          'DuckDuckBot',
-          'Applebot',
-          'facebookexternalhit',
-          'LinkedInBot',
-          'Twitterbot',
-        ],
-        allow: '/',
+        userAgent: '*',
+        allow: ['/', '/sitemap.xml', '/image-sitemap.xml', '/favicon.ico', '/apple-icon.png'],
+        disallow: commonDisallow,
       },
       {
-        userAgent: '*',
+        userAgent: 'Googlebot',
         allow: '/',
-        disallow: ['/api/', '/_next/', '/admin/', '/studio/'],
+        disallow: commonDisallow,
+      },
+      {
+        userAgent: 'Google-Extended',
+        allow: '/',
+        disallow: commonDisallow,
+      },
+      {
+        userAgent: 'GPTBot',
+        allow: '/',
+        disallow: commonDisallow,
+      },
+      {
+        userAgent: 'OAI-SearchBot',
+        allow: '/',
+        disallow: commonDisallow,
+      },
+      {
+        userAgent: 'ClaudeBot',
+        allow: '/',
+        disallow: commonDisallow,
+      },
+      {
+        userAgent: 'anthropic-ai',
+        allow: '/',
+        disallow: commonDisallow,
+      },
+      {
+        userAgent: 'PerplexityBot',
+        allow: '/',
+        disallow: commonDisallow,
+      },
+      {
+        userAgent: 'facebookexternalhit',
+        allow: '/',
+        disallow: commonDisallow,
+      },
+      {
+        userAgent: 'CCBot',
+        allow: '/',
+        disallow: commonDisallow,
+      },
+      {
+        userAgent: 'Bingbot',
+        allow: '/',
+        disallow: commonDisallow,
+      },
+      {
+        userAgent: 'bingbot',
+        allow: '/',
+        disallow: commonDisallow,
       },
     ],
     sitemap: 'https://saladworksmenu.us/sitemap.xml',
