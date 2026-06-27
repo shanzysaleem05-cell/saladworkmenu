@@ -260,7 +260,7 @@ export default function HomeClient() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               { code: "FRESH20", title: "20% Off Your Entire Order", desc: "Use this code at checkout. Valid on all menu items.", badge: "POPULAR" },
-              { code: "PICK2SDAY", title: "$2 Off a Pick 2 Combo", desc: "Mix & match any 2 items from our combo menu.", badge: "" },
+              { code: "PICK2SDAY", title: "$2 Off a Pick 2 Combo", desc: "Mix & match any 2 items from the combo menu.", badge: "" },
               { code: "SWPERK0214", title: "2 Signature Salads for $20", desc: "Must order 2 qualifying Signature or Premium salads.", badge: "HOT DEAL" },
               { code: "10SALADS", title: "$10 Off Storewide", desc: "Valid on any order across the entire menu.", badge: "" },
             ].map((c, i) => (

@@ -10,24 +10,26 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 export const metadata: Metadata = {
   metadataBase: new URL("https://saladworksmenu.us"),
   title: {
-    template: "%s | SaladWorks Menu & Prices",
-    default: "SaladWorks Menu & Prices - Complete 2026 Guide",
+    template: "%s | SaladWorks Menu and Prices",
+    default: "SaladWorks Menu Prices 2026 — Full Menu, Calories and Nutrition Guide",
   },
   description: "Experience the finest salads, wraps, melts and more — crafted fresh every day. View the complete SaladWorks menu, prices, calories, and nutritional info.",
   keywords: ["SaladWorks", "menu", "prices", "salads", "healthy food", "catering", "wraps", "soups"],
-  authors: [{ name: "SaladWorks" }],
+  authors: [{ name: "SaladWorksMenu.us Editorial Team" }],
   openGraph: {
-    title: "SaladWorks Menu & Prices - Complete 2026 Guide",
+    title: "SaladWorks Menu Prices 2026 — Full Menu, Calories and Nutrition Guide",
     description: "Experience the finest salads, wraps, melts and more — crafted fresh every day.",
     url: "https://saladworksmenu.us",
     siteName: "SaladWorks Menu",
     locale: "en_US",
     type: "website",
+    images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SaladWorks Menu & Prices - Complete 2026 Guide",
+    title: "SaladWorks Menu Prices 2026 — Full Menu, Calories and Nutrition Guide",
     description: "Experience the finest salads, wraps, melts and more — crafted fresh every day.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -40,6 +42,9 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  // TODO: Replace with real Google Search Console 
+  // verification code from search.google.com/search-console
+  // Steps: Add property → HTML tag method → copy code → paste here
   verification: {
     google: "PASTE_YOUR_GOOGLE_VERIFICATION_CODE_HERE",
   },

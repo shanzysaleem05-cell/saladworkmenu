@@ -7,7 +7,7 @@ import { menuData } from "@/data/menuData"
 
 export const metadata: Metadata = {
   title: "Full Menu with Prices",
-  description: "Browse the complete SaladWorks menu with prices, calories, and detailed descriptions. Explore our fresh salads, warm melts, signature wraps, and catering options.",
+  description: "Browse the complete SaladWorks menu with prices, calories, and detailed descriptions. Explore SaladWorks fresh salads, warm melts, signature wraps, and catering options.",
   keywords: ["SaladWorks menu prices", "SaladWorks salads", "SaladWorks wraps", "healthy food prices"],
   alternates: {
     canonical: "https://saladworksmenu.us/menu",
@@ -50,15 +50,15 @@ export default function MenuPage() {
     },
     {
       question: "What are the wrap prices?",
-      answer: "Our Wraps and Grilled Wraps generally range from $10.49 to $12.49. They come packed with the same high-quality ingredients as our salads, wrapped in a choice of tortillas."
+      answer: "SaladWorks Wraps and Grilled Wraps generally range from $10.49 to $12.49. They come packed with the same high-quality ingredients as the salads, wrapped in a choice of tortillas."
     },
     {
       question: "How does the Pick 2 Combo work?",
       answer: "The Pick 2 Combo allows you to choose any two half-portions for a discounted price, usually starting around $10.49. You can mix and match a half salad, half melt, or a cup of soup."
     },
     {
-      question: "What soup sizes do you offer?",
-      answer: "We offer our daily freshly prepared soups in two sizes: a Cup (typically around $4.99) and a Bowl (typically around $6.99)."
+      question: "What soup sizes does SaladWorks offer?",
+      answer: "SaladWorks offers daily freshly prepared soups in two sizes: a Cup (typically around $4.99) and a Bowl (typically around $6.99)."
     }
   ]
 

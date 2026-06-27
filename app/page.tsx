@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/JsonLd"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://saladworksmenu.us"),
-  title: "SaladWorks Menu & Prices 2026 — Calories & Nutrition",
+  title: "SaladWorks Menu Prices 2026 — Full Menu, Calories and Nutrition Guide",
   description: "Explore the complete SaladWorks menu with 2026 prices, calorie counts, and nutrition. Salads from $9.99, wraps from $11.99, and Pick 2 combos from $13.49.",
   keywords: [
     "SaladWorks menu prices",
@@ -35,26 +35,19 @@ export const metadata: Metadata = {
     canonical: "https://saladworksmenu.us",
   },
   openGraph: {
-    title: "SaladWorks Menu Prices 2026 — Full Menu, Calories & Nutrition",
+    title: "SaladWorks Menu Prices 2026 — Full Menu, Calories and Nutrition Guide",
     description: "Explore the complete SaladWorks menu with 2026 prices, calorie counts, and nutrition. Salads from $9.99, wraps from $11.99, and Pick 2 combos from $13.49.",
     url: "https://saladworksmenu.us",
     siteName: "SaladWorks Menu & Prices",
-    images: [
-      {
-        url: "https://saladworksmenu.us/og-homepage.png",
-        width: 1200,
-        height: 630,
-        alt: "SaladWorks Menu Prices 2026 — Complete Guide",
-      },
-    ],
+    images: ["/opengraph-image"],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SaladWorks Menu Prices 2026 — Full Menu Guide",
+    title: "SaladWorks Menu Prices 2026 — Full Menu, Calories and Nutrition Guide",
     description: "Complete SaladWorks menu with 2026 prices, calories and nutrition facts.",
-    images: ["https://saladworksmenu.us/og-homepage.png"],
+    images: ["/opengraph-image"],
     creator: "@saladworksmenu",
   },
   verification: {

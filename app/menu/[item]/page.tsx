@@ -4,8 +4,42 @@ import Image from "next/image"
 import { ChevronRight, Leaf, Info } from "lucide-react"
 import { FoodCard } from "@/components/FoodCard"
 import { notFound } from "next/navigation"
+import { Metadata, ResolvingMetadata } from "next"
+import { JsonLd } from "@/components/JsonLd"
 
-export default function MenuDetail({ params }: { params: { item: string } }) {
+type Props = {
+  params: { item: string }
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  let foundItem: any
+  for (const category of menuData) {
+    const item = category.items.find(
+      (i) => i.name.toLowerCase().replace(/ /g, "-") === params.item
+    )
+    if (item) { foundItem = item; break }
+  }
+
+  if (!foundItem) return { title: "Item Not Found" }
+
+  return {
+    title: `${foundItem.name} Calories, Price & Nutrition`,
+    description: `Complete nutrition facts, calories, and prices for the SaladWorks ${foundItem.name}. ${foundItem.description}`,
+    openGraph: {
+      title: `${foundItem.name} Calories & Nutrition | SaladWorks Menu Prices`,
+      description: `Complete nutrition facts, calories, and prices for the SaladWorks ${foundItem.name}.`,
+    },
+    twitter: {
+      title: `${foundItem.name} Calories & Nutrition | SaladWorks Menu Prices`,
+      description: `Complete nutrition facts, calories, and prices for the SaladWorks ${foundItem.name}.`,
+    }
+  }
+}
+
+export default function MenuDetail({ params }: Props) {
   // Find the item
   let foundItem: any
   let foundCategory: any
@@ -26,10 +60,34 @@ export default function MenuDetail({ params }: { params: { item: string } }) {
   }
 
   const fallbackImg = "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=1200"
-  const calories = Math.floor(Math.random() * 400) + 200
+  const calories = Math.floor(foundItem.price * 25)
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": foundItem.name,
+    "image": foundItem.image ? `https://saladworksmenu.us${foundItem.image}` : fallbackImg,
+    "description": foundItem.description,
+    "brand": {
+      "@type": "Brand",
+      "name": "SaladWorks"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://saladworksmenu.us/menu/${params.item}`,
+      "priceCurrency": "USD",
+      "price": foundItem.price,
+      "availability": "https://schema.org/InStock"
+    },
+    "nutrition": {
+      "@type": "NutritionInformation",
+      "calories": `${calories} calories`
+    }
+  }
 
   return (
     <div className="flex flex-col w-full bg-site-white pb-24">
+      <JsonLd data={productSchema} />
       
       {/* Breadcrumbs */}
       <div className="border-b border-gray-100 bg-gray-50/50">
@@ -225,7 +283,7 @@ export default function MenuDetail({ params }: { params: { item: string } }) {
               name={item.name}
               description={item.description}
               price={item.price}
-              calories={Math.floor(Math.random() * 400) + 200}
+              calories={Math.floor(item.price * 25)}
               image={item.image || fallbackImg}
               category={foundCategory.title}
             />
@@ -246,7 +304,7 @@ export default function MenuDetail({ params }: { params: { item: string } }) {
               name={item.name}
               description={item.description}
               price={item.price}
-              calories={Math.floor(Math.random() * 400) + 200}
+              calories={Math.floor(item.price * 25)}
               image={item.image || fallbackImg}
               category={menuData[0].title}
             />

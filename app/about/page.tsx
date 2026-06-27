@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "About Us | SaladWorksMenu.us (Independent Fan Guide)",
-  description: "Learn about SaladWorksMenu.us. We are an independent blog providing accurate menu prices, nutrition facts, and dietary guides for SaladWorks fans.",
+  description: "Learn about SaladWorksMenu.us. The site is an independent blog providing accurate menu prices, nutrition facts, and dietary guides for SaladWorks fans.",
   keywords: ["About SaladWorksMenu", "independent menu guide", "restaurant prices blog", "SaladWorks nutrition facts", "food blog methodology"],
   alternates: {
     canonical: "https://saladworksmenu.us/about",
@@ -36,19 +36,19 @@ export default function AboutPage() {
   const faqs = [
     {
       question: "Are you the official SaladWorks website?",
-      answer: "No. SaladWorksMenu.us is a 100% independent, fan-run informational blog. We are not affiliated with or endorsed by SaladWorks, LLC."
+      answer: "No. SaladWorksMenu.us is a 100% independent, fan-run informational blog. SaladWorksMenu.us is not affiliated with or endorsed by SaladWorks, LLC."
     },
     {
       question: "How do you ensure your prices are accurate?",
-      answer: "Our editorial team visits local restaurants, collects receipts, and uses community submissions to provide the most accurate national average prices possible."
+      answer: "The editorial team visits local restaurants, collects receipts, and uses community submissions to provide the most accurate national average prices possible."
     },
     {
       question: "Where do you get your nutritional information?",
-      answer: "We carefully review official nutritional PDFs and data released by the company, compiling it into an easy-to-use format for our readers to track their macros and dietary needs."
+      answer: "The team carefully reviews official nutritional PDFs and data released by the company, compiling it into an easy-to-use format for readers to track their macros and dietary needs."
     },
     {
       question: "How often is the content updated?",
-      answer: "We strive to update our menu and pricing data monthly or whenever major seasonal changes are announced."
+      answer: "SaladWorksMenu.us strives to update the menu and pricing data monthly or whenever major seasonal changes are announced."
     }
   ]
 

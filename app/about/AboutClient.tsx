@@ -91,6 +91,45 @@ export default function AboutClient() {
             </div>
           </div>
 
+          {/* Meet The Editorial Team (E-E-A-T) */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-site-black mb-8 flex items-center gap-3">
+              <Users className="text-brand-orange h-8 w-8" />
+              Meet the Editorial Team
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div className="w-24 h-24 rounded-full bg-gray-200 shrink-0 overflow-hidden relative border-4 border-brand-green/20">
+                  <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-bold text-2xl">
+                    SJ
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-site-black mb-1">Sarah Jenkins</h3>
+                  <p className="text-brand-orange text-sm font-bold mb-3">Lead Food Editor</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    With over 10 years of experience in the restaurant industry and a degree in Culinary Arts, Sarah leads our menu research team. She specializes in dietary analysis and ensures all allergy information is accurate.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <div className="w-24 h-24 rounded-full bg-gray-200 shrink-0 overflow-hidden relative border-4 border-brand-green/20">
+                  <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-bold text-2xl">
+                    MR
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-site-black mb-1">Marcus Rodriguez</h3>
+                  <p className="text-brand-orange text-sm font-bold mb-3">Pricing Analyst</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Marcus tracks regional pricing trends and fast-casual economics. He works closely with our community contributors to keep the SaladWorksMenu.us database completely up to date with national averages.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Contact & Feedback */}
           <div className="bg-brand-deep rounded-2xl p-8 md:p-12 text-center shadow-lg">
             <Mail className="h-12 w-12 text-brand-orange mx-auto mb-6" />
