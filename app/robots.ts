@@ -1,69 +1,67 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  const commonDisallow = ['/admin/', '/api/', '/private/']
-  
   return {
     rules: [
       {
         userAgent: '*',
-        allow: ['/', '/sitemap.xml', '/image-sitemap.xml', '/favicon.ico', '/apple-icon.png'],
-        disallow: commonDisallow,
+        allow: '/',
+        disallow: ['/admin/', '/api/', '/private/'],
       },
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: commonDisallow,
+        disallow: ['/admin/', '/api/', '/private/'],
       },
       {
         userAgent: 'Google-Extended',
         allow: '/',
-        disallow: commonDisallow,
+        disallow: ['/admin/', '/api/', '/private/'],
       },
       {
         userAgent: 'GPTBot',
         allow: '/',
-        disallow: commonDisallow,
+        disallow: ['/admin/', '/api/', '/private/'],
       },
       {
         userAgent: 'OAI-SearchBot',
         allow: '/',
-        disallow: commonDisallow,
+        disallow: ['/admin/', '/api/', '/private/'],
       },
       {
         userAgent: 'ClaudeBot',
         allow: '/',
-        disallow: commonDisallow,
+        disallow: ['/admin/', '/api/', '/private/'],
       },
       {
         userAgent: 'anthropic-ai',
         allow: '/',
-        disallow: commonDisallow,
+        disallow: ['/admin/', '/api/', '/private/'],
       },
       {
         userAgent: 'PerplexityBot',
         allow: '/',
-        disallow: commonDisallow,
+        disallow: ['/admin/', '/api/', '/private/'],
       },
       {
         userAgent: 'facebookexternalhit',
         allow: '/',
-        disallow: commonDisallow,
+        disallow: ['/admin/', '/api/', '/private/'],
       },
       {
         userAgent: 'CCBot',
         allow: '/',
-        disallow: commonDisallow,
+        disallow: ['/admin/', '/api/', '/private/'],
       },
       {
         userAgent: 'Bingbot',
         allow: '/',
-        disallow: commonDisallow,
+        disallow: ['/admin/', '/api/', '/private/'],
       },
       {
         userAgent: 'bingbot',
         allow: '/',
-        disallow: commonDisallow,
+        disallow: ['/admin/', '/api/', '/private/'],
       },
     ],
     sitemap: 'https://saladworksmenu.us/sitemap.xml',
