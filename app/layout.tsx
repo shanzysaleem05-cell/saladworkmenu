@@ -47,6 +47,9 @@ export const metadata: Metadata = {
   // Steps: Add property → HTML tag method → copy code → paste here
   verification: {
     google: "PASTE_YOUR_GOOGLE_VERIFICATION_CODE_HERE",
+    other: {
+      "msvalidate.01": "A6EAEA509CA4179CD677F37188E42FD1",
+    },
   },
   icons: {
     icon: [
