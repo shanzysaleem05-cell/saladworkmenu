@@ -83,6 +83,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <meta name="msvalidate.01" content="A6EAEA509CA4179CD677F37188E42FD1" />
+      </head>
       <body className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col bg-site-bg text-site-black`}>
         <JsonLd data={orgSchema} />
 
