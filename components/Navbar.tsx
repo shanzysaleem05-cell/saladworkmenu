@@ -21,7 +21,7 @@ export function Navbar() {
     <header className="w-full flex flex-col relative z-50 bg-white shadow-sm">
       {/* Top Section: Title & Subtitle */}
       <div className="py-4 md:py-6 text-center px-4">
-        <Link href="/" className="inline-block">
+        <Link href="/" title="SaladWorks Menu Home" className="inline-block">
           <span className="block text-4xl md:text-[42px] font-black text-brand-orange tracking-tight mb-2 hover:opacity-90 transition-opacity">
             SaladWorks Menu
           </span>
@@ -40,6 +40,7 @@ export function Navbar() {
               <Link 
                 key={link.label} 
                 href={link.href}
+                title={link.label}
                 className="text-white text-[15px] font-medium hover:text-white/80 transition-colors whitespace-nowrap"
               >
                 {link.label}
@@ -69,6 +70,7 @@ export function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
+                title={link.label}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-white px-6 py-3 text-[15px] font-medium hover:bg-white/10 transition-colors border-b border-white/10 last:border-0"
               >

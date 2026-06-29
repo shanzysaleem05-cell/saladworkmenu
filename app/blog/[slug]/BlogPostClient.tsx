@@ -173,9 +173,9 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
 
             // Standard paragraph with link parsing
             const cleanText = trimmed
-              .replace(/\*(.*?)\*/g, '<em>$1</em>')
               .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-              .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="inline-block mt-2 bg-brand-orange text-white font-bold px-6 py-3 rounded-lg shadow-sm hover:bg-[#c44e30] transition-colors no-underline">$1</a>');
+              .replace(/\*(.*?)\*/g, '<em>$1</em>')
+              .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-brand-green font-bold hover:underline transition-colors">$1</a>');
               
             return <p key={idx} className="mb-6 leading-relaxed text-gray-600 text-lg" dangerouslySetInnerHTML={{ __html: cleanText }} />
           })}

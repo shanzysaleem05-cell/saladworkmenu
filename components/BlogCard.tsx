@@ -15,20 +15,22 @@ export function BlogCard({ post }: { post: BlogPost }) {
           sizes="(max-width: 768px) 100vw, 380px"
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute top-4 left-4 bg-brand-leaf text-site-white text-xs font-bold px-3 py-1 rounded-full">
-          {post.category}
-        </div>
       </Link>
       
       <div className="p-6 flex flex-col flex-1">
-        <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
-          <div className="flex items-center gap-1">
-            <Calendar className="h-3 w-3" />
-            <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+        <div className="flex items-center justify-between gap-2 mb-4 flex-wrap">
+          <div className="bg-brand-leaf text-site-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+            {post.category}
           </div>
-          <div className="flex items-center gap-1">
-            <Clock className="h-3 w-3" />
-            <span>{post.readTime}</span>
+          <div className="flex items-center gap-3 text-xs text-gray-500">
+            <div className="flex items-center gap-1">
+              <Calendar className="h-3 w-3" />
+              <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Clock className="h-3 w-3" />
+              <span>{post.readTime}</span>
+            </div>
           </div>
         </div>
         

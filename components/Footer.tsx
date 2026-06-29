@@ -20,6 +20,7 @@ export function Footer() {
             <Link 
               key={idx} 
               href={link.href} 
+              title={link.label}
               className="text-[#4b5563] hover:text-[#D85A3B] text-[14px] font-medium transition-colors duration-200"
             >
               {link.label}

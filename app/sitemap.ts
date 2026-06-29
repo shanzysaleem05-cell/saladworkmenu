@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
+import { blogData } from '@/data/blogData'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://saladworksmenu.us'
@@ -44,12 +45,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }))
 
   const posts = getAllPosts()
-  const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
+  const mdxBlogPages: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: post.date || staticDate,
     changeFrequency: 'monthly',
     priority: 0.7,
   }))
 
-  return [...staticPages, ...menuPages, ...blogPages]
+  const dataBlogPages: MetadataRoute.Sitemap = blogData.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: post.date || staticDate,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }))
+
+  return [...staticPages, ...menuPages, ...mdxBlogPages, ...dataBlogPages]
 }
