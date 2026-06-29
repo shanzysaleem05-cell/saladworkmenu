@@ -133,9 +133,9 @@ export const menuData: MenuCategory[] = [
       { id: "b1", name: "Tractor Fountain Drink", image: "/tractor-fountain-drink.webp", description: "A refreshing Tractor Organic fountain drink made with real, certified organic ingredients. Available in various flavors for a clean and delicious beverage at Saladworks.", price: 3.49 },
       { id: "b2", name: "Tractor Gallon Pouch", image: "/tractor-gallon-pouch.webp", description: "A large Tractor Organic gallon pouch perfect for catering or group orders. Made with real organic ingredients and available in delicious flavors at Saladworks.", price: 14.99 },
       { id: "b3", name: "Bottled Water", image: "/bottled-water.webp", description: "Stay hydrated with a refreshing chilled bottled water. The clean, zero-calorie beverage option for health-conscious Saladworks guests.", price: 2.49 },
-      { id: "b4", name: "Coke (Bottle)", image: "/coke-bottle.webp", description: "An ice-cold bottled Coca-Cola — the classic American beverage pairing for any Saladworks meal. Crisp, refreshing, and always satisfying.", price: 2.99 },
-      { id: "b5", name: "Diet Coke (Bottle)", image: "/diet-coke-bottle.webp", description: "A refreshing bottled Diet Coke — a zero-calorie classic cola option for those watching their intake. A perfect beverage companion to your Saladworks order.", price: 2.99 },
-      { id: "b6", name: "Sprite (Bottle)", image: "/sprite-bottle.webp", description: "A crisp and bubbly bottled Sprite — the clean, lemon-lime soda option available at Saladworks. A refreshing and light beverage choice for any meal.", price: 2.99 },
+      { id: "b4", name: "Coke (Bottle)", image: "/coke-(bottle).webp", description: "An ice-cold bottled Coca-Cola — the classic American beverage pairing for any Saladworks meal. Crisp, refreshing, and always satisfying.", price: 2.99 },
+      { id: "b5", name: "Diet Coke (Bottle)", image: "/diet-coke-(bottle).webp", description: "A refreshing bottled Diet Coke — a zero-calorie classic cola option for those watching their intake. A perfect beverage companion to your Saladworks order.", price: 2.99 },
+      { id: "b6", name: "Sprite (Bottle)", image: "/sprite-(bottle).webp", description: "A crisp and bubbly bottled Sprite — the clean, lemon-lime soda option available at Saladworks. A refreshing and light beverage choice for any meal.", price: 2.99 },
     ]
   },
   {
