@@ -13,9 +13,9 @@ export default function BlogPage() {
       {/* Header */}
       <div className="bg-site-bg py-16 px-4 text-center border-b border-gray-200">
         <div className="container mx-auto max-w-4xl">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-site-black tracking-tight mb-4">The Fresh Press</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-site-black tracking-tight mb-4">SaladWorks Blog 2026</h1>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            News, nutrition tips, behind-the-scenes stories, and more from our kitchen to yours.
+            Expert guides, secret menu hacks & money-saving tips - Updated June 2026
           </p>
         </div>
       </div>
