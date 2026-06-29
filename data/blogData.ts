@@ -125,5 +125,40 @@ Each season, Saladworks introduces special featured items. Current 2026 featured
 Saladworks is America's leading fast-casual salad chain, dedicated to serving fresh, made-to-order salads, wraps, melts, and soups. With a focus on quality ingredients and customizable options, Saladworks has been a favorite destination for healthy eating since 1986.
 
 *Prices listed above are estimates and may vary by location. All nutritional information is subject to change.*`
+  },
+  {
+    slug: "saladworks-nutrition-calculator",
+    title: "Saladworks Nutrition Calculator: Track Your Calories",
+    excerpt: "Use our interactive Saladworks Nutrition Calculator to track calories and macros for your custom salads, wraps, and bowls. A complete guide to building a healthy meal.",
+    date: "2026-06-29",
+    readTime: "5 min read",
+    category: "Nutrition",
+    image: "/Saladworks-Nutrition-Calculator.jpg",
+    content: `# Saladworks Nutrition Calculator
+
+Eating healthy at Saladworks is easy, but tracking exactly how many calories are in your custom creation can be tricky. With so many fresh ingredients, dressings, and proteins to choose from, your calorie count can vary wildly depending on what you add to your bowl.
+
+That's why we've built this **Interactive Saladworks Nutrition Calculator**. It allows you to build your meal step-by-step and instantly see the estimated total calories.
+
+## How to Use the Nutrition Calculator
+
+1. **Select Your Base:** Start by choosing your greens or grains. Options like Spinach or Romaine are incredibly low in calories, while Radiatore Pasta will add more energy to your meal.
+2. **Add Protein:** Choose from grilled chicken, steak, turkey, or tofu. Protein is essential for keeping you full throughout the day.
+3. **Choose Your Toppings:** Go wild with fresh veggies like cucumbers and tomatoes (which add almost no calories). Be mindful of calorie-dense toppings like bacon, cheese, or croutons.
+4. **Pick a Dressing:** This is where calories can sneak up on you! Select your dressing to see how it impacts your total.
+
+Try building your favorite Saladworks order below:
+
+[CALCULATOR_WIDGET]
+
+## Tips for a Low-Calorie Saladworks Meal
+
+If you're using our Saladworks Nutrition Calculator and want to keep your total calories under 400, here are a few expert tips:
+
+- **Dressing on the Side:** Always ask for your dressing on the side. A standard ladle of Caesar or Ranch can add over 200 calories. Instead, lightly dip your fork into the dressing before taking a bite.
+- **Load Up on Veggies:** Ingredients like cherry tomatoes, cucumbers, broccoli, and carrots add tons of volume, crunch, and micronutrients for almost zero calories.
+- **Lean Proteins:** Grilled Chicken and Roasted Turkey are fantastic, high-protein options that won't blow your calorie budget.
+
+*Note: The nutritional values provided by our calculator are estimates based on standard serving sizes. Actual calories may vary depending on the specific location and the person preparing your meal.*`
   }
 ];

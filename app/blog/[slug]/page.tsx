@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const url = `https://saladworksmenu.us/blog/${post.slug}`
-  const imageUrl = `https://saladworksmenu.us/blog/${post.slug}/opengraph-image`
+  const imageUrl = `https://saladworksmenu.us${post.image}`
 
   return {
     title: post.title,

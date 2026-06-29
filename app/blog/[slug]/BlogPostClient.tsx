@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { Calendar, Clock, ArrowLeft, User } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { NutritionCalculator } from "@/components/NutritionCalculator"
 
 
 export async function generateStaticParams() {
@@ -164,6 +165,10 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
                   <img src={imgMatch[2]} alt={imgMatch[1]} title={imgMatch[1]} loading="lazy" className="w-full h-auto object-cover max-h-[400px]" />
                 </div>
               );
+            }
+
+            if (trimmed === '[CALCULATOR_WIDGET]') {
+              return <NutritionCalculator key={idx} />
             }
 
             // Standard paragraph with link parsing
