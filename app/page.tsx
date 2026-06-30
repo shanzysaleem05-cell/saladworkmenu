@@ -63,7 +63,7 @@ export default function Page() {
     "url": "https://saladworksmenu.us",
     "description": "Independent fan guide for SaladWorks menu prices, calories, and nutrition information for 2026.",
     "inLanguage": "en-US",
-    "dateModified": "2026-06-01",
+    "dateModified": "2026-07-01",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {

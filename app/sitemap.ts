@@ -4,7 +4,7 @@ import { blogData } from '@/data/blogData'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://saladworksmenu.us'
-  const staticDate = '2026-06-01'
+  const staticDate = '2026-07-01'
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: `${baseUrl}`, lastModified: staticDate, changeFrequency: 'weekly', priority: 1.0 },

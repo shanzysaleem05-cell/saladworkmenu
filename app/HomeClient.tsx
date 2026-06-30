@@ -43,11 +43,11 @@ export default function HomeClient() {
     <div className="flex flex-col w-full">
       {/* Hidden Date for SEO */}
       <time 
-        dateTime="2026-06-01" 
+        dateTime="2026-07-01" 
         className="hidden"
         itemProp="dateModified"
       >
-        2026-06-01
+        2026-07-01
       </time>
 
       {/* Section 1: Hero */}

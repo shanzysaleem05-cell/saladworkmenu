@@ -29,7 +29,7 @@ export function getAllPosts(): Post[] {
       return {
         slug,
         title: titleMatch ? titleMatch[1] : slug,
-        date: dateMatch ? dateMatch[1] : '2026-06-01',
+        date: dateMatch ? dateMatch[1] : '2026-07-01',
         excerpt: excerptMatch ? excerptMatch[1] : '',
         author: authorMatch ? authorMatch[1] : 'Editorial Team'
       }
