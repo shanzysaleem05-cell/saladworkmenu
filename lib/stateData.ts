@@ -51,6 +51,24 @@ export interface StateLocation {
   phone: string
   postalCode: string
   hours: LocationHours
+  latitude?: number
+  longitude?: number
+}
+
+export interface CityItemPrice {
+  city: string
+  price: number
+  locationCount: number
+}
+
+export interface StateItemStats {
+  code: string
+  slug: string
+  name: string
+  locationCount: number
+  avgPrice: number
+  minPrice: number
+  maxPrice: number
 }
 
 // ---------------------------------------------------------------------------
@@ -79,6 +97,30 @@ const STATE_MAP: Record<string, { slug: string; name: string }> = {
 const SLUG_TO_STATE: Record<string, string> = Object.fromEntries(
   Object.entries(STATE_MAP).map(([code, { slug }]) => [slug, code])
 )
+
+/**
+ * Geographic neighbors, restricted to states present in STATE_MAP.
+ * Used for deterministic cross-state linking (never random — random links
+ * change every build and hurt crawl consistency).
+ */
+const NEIGHBOR_MAP: Record<string, string[]> = {
+  'CA': [],
+  'CT': ['NY'],
+  'DC': ['MD', 'VA'],
+  'DE': ['MD', 'NJ', 'PA'],
+  'FL': [],
+  'IN': [],
+  'KS': [],
+  'MD': ['DC', 'DE', 'PA', 'VA'],
+  'MN': [],
+  'NC': ['TN', 'VA'],
+  'NJ': ['DE', 'NY', 'PA'],
+  'NY': ['CT', 'NJ', 'PA'],
+  'PA': ['DE', 'MD', 'NJ', 'NY'],
+  'TN': ['NC', 'VA'],
+  'TX': [],
+  'VA': ['DC', 'MD', 'NC', 'TN'],
+}
 
 // ---------------------------------------------------------------------------
 // Image mapping (OLO data has no images)
@@ -475,13 +517,23 @@ function aggregateMenus(
 // ---------------------------------------------------------------------------
 
 /**
- * Returns current date minus 2 days in YYYY-MM-DD format.
- * Used to display "prices as of" date on menu pages.
+ * Fallback if index.json is missing or has no generatedAt.
+ */
+const DATA_DATE_FALLBACK = '2026-07-01'
+
+/**
+ * Returns the date the menu/pricing data was last genuinely updated (YYYY-MM-DD),
+ * taken from index.json's generatedAt — written by the scraper each time the data
+ * is actually regenerated. This feeds sitemap <lastmod>, schema dateModified, and
+ * the visible "prices as of" stamps. Never replace this with a rolling/offset
+ * date: consistently-fake lastmod makes Google distrust it for the whole domain.
  */
 export function getDataDate(): string {
-  const d = new Date()
-  d.setDate(d.getDate() - 2)
-  return d.toISOString().split('T')[0]
+  const generatedAt = loadIndex().generatedAt
+  if (generatedAt && /^\d{4}-\d{2}-\d{2}/.test(generatedAt)) {
+    return generatedAt.slice(0, 10)
+  }
+  return DATA_DATE_FALLBACK
 }
 
 /**
@@ -517,21 +569,38 @@ export function isStateSlug(slug: string): boolean {
  * Reads all menu JSONs for locations in the state, averages prices for
  * the same item (matched by chainProductId), and returns structured data.
  */
+const _stateMenuDataCache = new Map<
+  string,
+  { state: StateInfo; categories: StateMenuCategory[] } | null
+>()
+
 export function getStateMenuData(
   stateSlug: string
 ): { state: StateInfo; categories: StateMenuCategory[] } | null {
+  if (_stateMenuDataCache.has(stateSlug)) {
+    return _stateMenuDataCache.get(stateSlug)!
+  }
+
   const stateCode = SLUG_TO_STATE[stateSlug]
-  if (!stateCode) return null
+  if (!stateCode) {
+    _stateMenuDataCache.set(stateSlug, null)
+    return null
+  }
 
   const stateInfo = buildStateInfo(stateCode)
-  if (!stateInfo) return null
+  if (!stateInfo) {
+    _stateMenuDataCache.set(stateSlug, null)
+    return null
+  }
 
   const indexLocs = getIndexLocationsForState(stateCode)
   const oloSlugs = indexLocs.map(l => l.oloSlug!)
 
   const categories = aggregateMenus(oloSlugs)
 
-  return { state: stateInfo, categories }
+  const result = { state: stateInfo, categories }
+  _stateMenuDataCache.set(stateSlug, result)
+  return result
 }
 
 /**
@@ -608,6 +677,8 @@ export function getStateLocations(stateSlug: string): StateLocation[] {
       phone: detail.phone,
       postalCode: detail.postalCode,
       hours: detail.hours,
+      ...(typeof detail.latitude === 'number' ? { latitude: detail.latitude } : {}),
+      ...(typeof detail.longitude === 'number' ? { longitude: detail.longitude } : {}),
     })
   }
 
@@ -626,4 +697,241 @@ export function getAllStateHoursData(): Array<{
     state,
     locations: getStateLocations(state.slug),
   }))
+}
+
+// ---------------------------------------------------------------------------
+// Per-item aggregate data (city prices, cross-state comparison, hours)
+// ---------------------------------------------------------------------------
+
+/** Find an item's price in a single location menu, matched by item slug. */
+function findItemPriceInMenu(menu: MenuDataRaw, itemSlug: string): number | null {
+  for (const cat of menu.categories ?? []) {
+    if (HIDDEN_CATEGORIES.has(cat.name)) continue
+    for (const item of cat.items) {
+      if (item.price !== null && itemSlugify(item.name) === itemSlug) {
+        return item.price
+      }
+    }
+  }
+  return null
+}
+
+/** Per-location prices for an item within a state: [{ city, price }]. */
+function getItemLocationPrices(
+  stateCode: string,
+  itemSlug: string
+): Array<{ city: string; price: number }> {
+  const menus = loadAllMenus()
+  const result: Array<{ city: string; price: number }> = []
+
+  for (const loc of getIndexLocationsForState(stateCode)) {
+    const menu = menus.get(loc.oloSlug!)
+    if (!menu) continue
+    const price = findItemPriceInMenu(menu, itemSlug)
+    if (price !== null) {
+      result.push({ city: loc.city, price })
+    }
+  }
+
+  return result
+}
+
+/**
+ * Returns per-city average prices for an item in a state, cheapest city first.
+ */
+export function getItemCityPrices(
+  stateSlug: string,
+  itemSlug: string
+): CityItemPrice[] {
+  const stateCode = SLUG_TO_STATE[stateSlug]
+  if (!stateCode) return []
+
+  const byCity = new Map<string, number[]>()
+  for (const { city, price } of getItemLocationPrices(stateCode, itemSlug)) {
+    if (!byCity.has(city)) byCity.set(city, [])
+    byCity.get(city)!.push(price)
+  }
+
+  const result: CityItemPrice[] = []
+  for (const [city, prices] of Array.from(byCity)) {
+    result.push({
+      city,
+      price: round2(prices.reduce((a, b) => a + b, 0) / prices.length),
+      locationCount: prices.length,
+    })
+  }
+
+  return result.sort((a, b) => a.price - b.price || a.city.localeCompare(b.city))
+}
+
+const _itemStateComparisonCache = new Map<
+  string,
+  { states: StateItemStats[]; nationalAvg: number }
+>()
+
+/**
+ * Returns per-state price stats for an item across every state that carries it
+ * (sorted cheapest first), plus the national average across all locations.
+ */
+export function getItemStateComparison(
+  itemSlug: string
+): { states: StateItemStats[]; nationalAvg: number } {
+  const cached = _itemStateComparisonCache.get(itemSlug)
+  if (cached) return cached
+
+  const states: StateItemStats[] = []
+  const allPrices: number[] = []
+
+  for (const [code, { slug, name }] of Object.entries(STATE_MAP)) {
+    const locPrices = getItemLocationPrices(code, itemSlug)
+    if (locPrices.length === 0) continue
+
+    const prices = locPrices.map(p => p.price)
+    allPrices.push(...prices)
+
+    states.push({
+      code,
+      slug,
+      name,
+      locationCount: locPrices.length,
+      avgPrice: round2(prices.reduce((a, b) => a + b, 0) / prices.length),
+      minPrice: Math.min(...prices),
+      maxPrice: Math.max(...prices),
+    })
+  }
+
+  states.sort((a, b) => a.avgPrice - b.avgPrice || a.name.localeCompare(b.name))
+
+  const nationalAvg =
+    allPrices.length > 0
+      ? round2(allPrices.reduce((a, b) => a + b, 0) / allPrices.length)
+      : 0
+
+  const result = { states, nationalAvg }
+  _itemStateComparisonCache.set(itemSlug, result)
+  return result
+}
+
+/**
+ * Deterministic set of states to cross-link from an item page: geographic
+ * neighbors carrying the item, then the 3 cheapest states, then the most
+ * expensive state. Never random — the same build always links the same states.
+ */
+export function getComparisonStates(
+  itemSlug: string,
+  currentStateSlug: string
+): StateItemStats[] {
+  const { states } = getItemStateComparison(itemSlug)
+  const others = states.filter(s => s.slug !== currentStateSlug)
+  if (others.length === 0) return []
+
+  const currentCode = SLUG_TO_STATE[currentStateSlug]
+  const neighborCodes = new Set(NEIGHBOR_MAP[currentCode] ?? [])
+
+  const picked: StateItemStats[] = []
+  const pickedSlugs = new Set<string>()
+  const add = (s: StateItemStats) => {
+    if (!pickedSlugs.has(s.slug)) {
+      picked.push(s)
+      pickedSlugs.add(s.slug)
+    }
+  }
+
+  // Neighbors first (already price-sorted from getItemStateComparison)
+  for (const s of others) {
+    if (neighborCodes.has(s.code)) add(s)
+  }
+  // Cheapest 3
+  for (const s of others.slice(0, 3)) add(s)
+  // Most expensive
+  add(others[others.length - 1])
+
+  return picked
+}
+
+/**
+ * Returns slugs of items carried in at least 2 states — the set that gets a
+ * /menu/prices-by-state/[item] comparison page (single-state items would make
+ * thin comparison pages).
+ */
+export function getComparableItemSlugs(): string[] {
+  const stateCount = new Map<string, number>()
+
+  for (const stateSlug of getStateSlugs()) {
+    for (const itemSlug of Array.from(new Set(getStateItemSlugs(stateSlug)))) {
+      stateCount.set(itemSlug, (stateCount.get(itemSlug) ?? 0) + 1)
+    }
+  }
+
+  return Array.from(stateCount.entries())
+    .filter(([, count]) => count >= 2)
+    .map(([slug]) => slug)
+    .sort()
+}
+
+/**
+ * Returns display info for an item from the first state that carries it.
+ */
+export function findItemAcrossStates(
+  itemSlug: string
+): { item: StateMenuItem; category: string } | null {
+  for (const stateSlug of getStateSlugs()) {
+    const data = getStateItemData(stateSlug, itemSlug)
+    if (data) return { item: data.item, category: data.category }
+  }
+  return null
+}
+
+/** Format "19:30" as "7:30 PM". */
+export function formatTime12(t: string): string {
+  const [hStr, mStr] = t.split(':')
+  let h = parseInt(hStr, 10)
+  if (Number.isNaN(h)) return t
+  const suffix = h >= 12 ? 'PM' : 'AM'
+  h = h % 12
+  if (h === 0) h = 12
+  return `${h}:${mStr ?? '00'} ${suffix}`
+}
+
+/**
+ * Returns the most common weekday opening and closing time across a state's
+ * locations (12-hour formatted), or null if no hours data exists.
+ */
+export function getStateHoursSummary(
+  stateSlug: string
+): { open: string; close: string } | null {
+  const locations = getStateLocations(stateSlug)
+  if (locations.length === 0) return null
+
+  const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'] as const
+  const openCounts = new Map<string, number>()
+  const closeCounts = new Map<string, number>()
+
+  for (const loc of locations) {
+    for (const day of weekdays) {
+      const h = loc.hours?.[day]
+      if (h && 'open' in h) {
+        openCounts.set(h.open, (openCounts.get(h.open) ?? 0) + 1)
+        closeCounts.set(h.close, (closeCounts.get(h.close) ?? 0) + 1)
+      }
+    }
+  }
+
+  const mostCommon = (counts: Map<string, number>): string | null => {
+    let best: string | null = null
+    let bestCount = 0
+    for (const [time, count] of Array.from(counts)) {
+      if (count > bestCount || (count === bestCount && best !== null && time < best)) {
+        best = time
+        bestCount = count
+      }
+    }
+    return best
+  }
+
+  const open = mostCommon(openCounts)
+  const close = mostCommon(closeCounts)
+  if (!open || !close) return null
+
+  return { open: formatTime12(open), close: formatTime12(close) }
 }

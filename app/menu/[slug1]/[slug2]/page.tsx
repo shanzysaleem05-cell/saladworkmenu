@@ -1,4 +1,4 @@
-import { isStateSlug, getStateItemData, getStateItemSlugs, getStateSlugs, getDataDate, getStateMenuData } from "@/lib/stateData"
+import { isStateSlug, getStateItemData, getStateItemSlugs, getStateSlugs, getDataDate, getStateMenuData, getItemCityPrices, getItemStateComparison, getComparisonStates, getStateHoursSummary } from "@/lib/stateData"
 import Link from "next/link"
 import Image from "next/image"
 import { MapPin, DollarSign, Flame, Calendar, Store, ChevronRight } from "lucide-react"
@@ -82,8 +82,6 @@ export default function Slug2Page({ params }: Props) {
     const year = new Date().getFullYear()
     const fallbackImg = "/hot-honey-chicken-bowl.webp"
 
-    const isVegetarian = category.toLowerCase().includes("salad") || category.toLowerCase().includes("soup")
-    const isBeverage = category.toLowerCase().includes("beverage")
     const hasPriceRange = item.minPrice !== undefined && item.maxPrice !== undefined && item.minPrice !== item.maxPrice
     const priceRangeText = hasPriceRange ? `$${item.minPrice!.toFixed(2)}–$${item.maxPrice!.toFixed(2)}` : `$${item.price.toFixed(2)}`
     const calDisplay = item.calories ? `${item.calories} Cal` : item.calorieLabel || null
@@ -116,12 +114,34 @@ export default function Slug2Page({ params }: Props) {
     const allPrices = stateMenuData?.categories.flatMap(c => c.items.map(i => i.price)) || []
     const stateAvgPrice = allPrices.length > 0 ? (allPrices.reduce((a, b) => a + b, 0) / allPrices.length).toFixed(2) : null
 
+    // Per-city prices for this item within the state (cheapest first)
+    const cityPrices = getItemCityPrices(slug1, slug2)
+    const cheapestCity = cityPrices.length > 1 ? cityPrices[0] : null
+    const priciestCity = cityPrices.length > 1 ? cityPrices[cityPrices.length - 1] : null
+    const itemLocationCount = cityPrices.reduce((sum, c) => sum + c.locationCount, 0)
+
+    // Cross-state comparison for this item
+    const { states: allStateStats, nationalAvg } = getItemStateComparison(slug2)
+    const comparisonStates = getComparisonStates(slug2, slug1)
+    const nationalDiff = nationalAvg > 0 ? Math.round((item.price - nationalAvg) * 100) / 100 : null
+    const nationalDiffText = nationalDiff === null || Math.abs(nationalDiff) < 0.01
+      ? `matching the national average of $${nationalAvg.toFixed(2)}`
+      : nationalDiff > 0
+        ? `$${nationalDiff.toFixed(2)} above the national average of $${nationalAvg.toFixed(2)}`
+        : `$${Math.abs(nationalDiff).toFixed(2)} below the national average of $${nationalAvg.toFixed(2)}`
+    const cheapestState = allStateStats.length > 1 ? allStateStats[0] : null
+
+    // Typical operating hours across the state's locations
+    const hoursSummary = getStateHoursSummary(slug1)
+    const monthYear = new Date(dataDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })
+
     const faqs = [
       { question: `How much does ${item.name} cost at Saladworks in ${state.name}?`, answer: `As of ${prettyDate}, the ${item.name} is priced at ${priceRangeText} across ${state.locationCount} Saladworks locations in ${state.name}. The average price is $${item.price.toFixed(2)}. Prices may vary slightly by specific location or third-party delivery apps.` },
       { question: `How many calories are in the Saladworks ${item.name}?`, answer: item.calories ? `The ${item.name} contains approximately ${item.calories} calories per serving. Keep in mind that customizing your order with extra dressings, proteins, or premium toppings will change the total calorie count.` : `Exact calorie information for the ${item.name} varies based on customization and portion size. The standard portion is a moderate-calorie option. Please check with your local ${state.name} store for specific nutritional details.` },
       { question: `Where can I order the ${item.name} in ${state.name}?`, answer: `You can order the ${item.name} at any of the ${state.locationCount} Saladworks locations in ${state.name}, including cities like ${state.cities.slice(0, 3).join(', ')}. Available for dine-in, takeout, and delivery through popular apps.` },
       { question: `Is the Saladworks ${item.name} customizable?`, answer: `Yes! Like most items at Saladworks, the ${item.name} can be heavily customized. You can add extra proteins, swap out the base, change dressings, or remove ingredients to match your dietary preferences at no extra charge for most modifications.` },
-      { question: `How does the ${item.name} price in ${state.name} compare to other states?`, answer: `Saladworks menu prices vary by state based on local costs. The ${item.name} in ${state.name} costs ${priceRangeText}. ${stateAvgPrice ? `The overall average menu item price in ${state.name} is $${stateAvgPrice}.` : ''} Prices are pulled directly from real ${state.name} restaurant data, not national estimates.` },
+      { question: `How does the ${item.name} price in ${state.name} compare to other states?`, answer: `The ${item.name} averages $${item.price.toFixed(2)} in ${state.name}, ${nationalDiffText}. ${cheapestState ? `The cheapest state for this item is ${cheapestState.name} at $${cheapestState.avgPrice.toFixed(2)} on average.` : ''} Prices are pulled directly from real restaurant data in each state, not national estimates.` },
+      ...(cheapestCity && priciestCity && cheapestCity.price !== priciestCity.price ? [{ question: `Which city in ${state.name} has the cheapest ${item.name}?`, answer: `${cheapestCity.city} has the lowest average price for the ${item.name} in ${state.name} at $${cheapestCity.price.toFixed(2)}, while ${priciestCity.city} is the most expensive at $${priciestCity.price.toFixed(2)}. Prices are averaged per city from live location menu data as of ${prettyDate}.` }] : []),
       { question: `Does Saladworks offer discounts or coupons for the ${item.name} in ${state.name}?`, answer: `Saladworks occasionally offers promotions and discounts through their loyalty program and local deals. Check our coupons page for the latest discounts available in ${state.name}. Delivery apps may also offer first-time user promos.` },
     ]
 
@@ -236,6 +256,12 @@ export default function Slug2Page({ params }: Props) {
                 Saladworks {item.name} Price in {state.name} ({year})
               </h2>
 
+              <p className="text-gray-700 text-[17px] leading-relaxed mb-6 font-medium">
+                The Saladworks <strong>{item.name}</strong> costs <strong>${item.price.toFixed(2)}</strong> on average in {state.name} as of {monthYear}, available at {itemLocationCount > 0 ? itemLocationCount : state.locationCount} location{(itemLocationCount > 0 ? itemLocationCount : state.locationCount) > 1 ? 's' : ''}{cityPrices.length > 0 ? ` across ${cityPrices.length} cit${cityPrices.length > 1 ? 'ies' : 'y'}` : ''}.
+                {cheapestCity && priciestCity && cheapestCity.price !== priciestCity.price ? ` It is cheapest in ${cheapestCity.city} ($${cheapestCity.price.toFixed(2)}) and most expensive in ${priciestCity.city} ($${priciestCity.price.toFixed(2)}).` : ''}
+                {nationalAvg > 0 ? ` The ${state.name} price is ${nationalDiffText}.` : ''}
+              </p>
+
               <p className="text-gray-600 text-[16px] leading-relaxed mb-6">
                 The prices on this page come directly from the Saladworks ordering system, sourced from <strong>{state.locationCount} restaurant{state.locationCount > 1 ? 's' : ''}</strong> across {state.name}. Unlike most sites that show guessed or outdated prices, every number here was pulled from live menu data.
               </p>
@@ -265,6 +291,44 @@ export default function Slug2Page({ params }: Props) {
                   </>
                 )}
               </div>
+
+              {/* City-by-City Price Table */}
+              {cityPrices.length > 1 && (
+                <div className="mb-8">
+                  <h3 className="text-[20px] font-black text-site-black mb-4">{item.name} Price by City in {state.name}</h3>
+                  <div className="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                    <table className="w-full text-left border-collapse">
+                      <thead>
+                        <tr className="bg-brand-deep">
+                          <th className="py-3 px-5 font-bold text-[12px] text-white uppercase tracking-wider">City</th>
+                          <th className="py-3 px-5 font-bold text-[12px] text-white uppercase tracking-wider text-center">Locations</th>
+                          <th className="py-3 px-5 font-bold text-[12px] text-white uppercase tracking-wider text-right">Price</th>
+                        </tr>
+                      </thead>
+                      <tbody className="bg-white divide-y divide-gray-100">
+                        {cityPrices.map((cp, i) => (
+                          <tr key={cp.city} className="hover:bg-gray-50 transition-colors">
+                            <td className="py-3 px-5 font-semibold text-site-black text-[14px]">
+                              {cp.city}
+                              {i === 0 && <span className="ml-2 text-[11px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">Cheapest</span>}
+                              {i === cityPrices.length - 1 && cp.price > cityPrices[0].price && <span className="ml-2 text-[11px] font-bold text-red-500 bg-red-50 px-2 py-0.5 rounded-full">Highest</span>}
+                            </td>
+                            <td className="py-3 px-5 text-gray-500 text-[14px] text-center">{cp.locationCount}</td>
+                            <td className="py-3 px-5 text-brand-orange font-bold text-right text-[15px]">${cp.price.toFixed(2)}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              {/* Availability & Hours Context */}
+              {hoursSummary && (
+                <p className="text-gray-600 text-[15px] leading-relaxed mb-8 bg-gray-50 border border-gray-200 rounded-xl p-4">
+                  🕐 The {item.name} is available during all operating hours — Saladworks locations in {state.name} typically open <strong>{hoursSummary.open}</strong> and close at <strong>{hoursSummary.close}</strong> on weekdays. See exact hours for every location on our <Link href="/hours" className="text-brand-orange font-bold hover:underline">hours page</Link>.
+                </p>
+              )}
 
               {/* Calorie & Nutrition Section */}
               <div className="bg-white border border-gray-200 rounded-xl p-6 mb-8 shadow-sm">
@@ -326,7 +390,7 @@ export default function Slug2Page({ params }: Props) {
                     <strong>Price & Value in {state.name}:</strong> At an average price of <strong>${item.price.toFixed(2)}</strong>{hasPriceRange ? ` (ranging from $${item.minPrice!.toFixed(2)} to $${item.maxPrice!.toFixed(2)})` : ''}, the {item.name} is {item.price < 8 ? 'one of the more affordable options' : item.price < 14 ? 'a mid-range choice' : 'a premium item'} on the Saladworks menu in {state.name}. {stateAvgPrice ? `For comparison, the average menu item in ${state.name} costs $${stateAvgPrice}.` : ''} Prices were last verified on <strong>{prettyDate}</strong>.
                   </p>
                   <p>
-                    <strong>Nutritional & Dietary Profile:</strong> {item.calories ? `With approximately ${item.calories} calories per serving, this item fits well into a balanced diet.` : `Calorie counts for this item vary by customization and exact serving size.`} {isVegetarian && !isBeverage ? `As a vegetarian-friendly option, it's perfect for plant-based diets.` : `Like most menu items at Saladworks, you can customize the ${item.name} to meet your specific dietary needs, including gluten-free or keto-friendly modifications by swapping out certain ingredients or dressings.`}
+                    <strong>Nutritional & Dietary Profile:</strong> {item.calories ? `With approximately ${item.calories} calories per serving, this item fits well into a balanced diet.` : `Calorie counts for this item vary by customization and exact serving size.`} Like most menu items at Saladworks, you can customize the {item.name} to meet your specific dietary needs, including gluten-free or keto-friendly modifications by swapping out certain ingredients or dressings.
                   </p>
                 </div>
               </div>
@@ -339,6 +403,43 @@ export default function Slug2Page({ params }: Props) {
             </div>
           </div>
         </section>
+
+        {/* Cross-State Price Comparison (deterministic: neighbors + cheapest + most expensive) */}
+        {comparisonStates.length > 0 && (
+          <section className="bg-white border-t border-gray-200 py-14">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <h2 className="text-[26px] font-black text-site-black mb-2">{item.name} Prices in Nearby & Cheapest States</h2>
+              <p className="text-gray-500 text-[15px] mb-8">
+                {cheapestState ? `${cheapestState.name} has the cheapest average price for the ${item.name} at $${cheapestState.avgPrice.toFixed(2)}. ` : ''}
+                Compare real {item.name} prices across states — every figure is aggregated from live location menus.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {comparisonStates.map((cs) => {
+                  const diff = Math.round((cs.avgPrice - item.price) * 100) / 100
+                  return (
+                    <Link key={cs.slug} href={`/menu/${cs.slug}/${item.slug}`} className="group bg-gray-50 border border-gray-200 rounded-xl p-5 hover:border-brand-orange/40 hover:shadow-md transition-all">
+                      <h3 className="font-bold text-site-black text-[15px] mb-1 group-hover:text-brand-orange transition-colors">{item.name} in {cs.name}</h3>
+                      <div className="flex items-baseline gap-2">
+                        <span className="font-black text-brand-orange text-[20px]">${cs.avgPrice.toFixed(2)}</span>
+                        {Math.abs(diff) >= 0.01 && (
+                          <span className={`text-[12px] font-bold ${diff < 0 ? 'text-green-600' : 'text-red-500'}`}>
+                            {diff < 0 ? '−' : '+'}${Math.abs(diff).toFixed(2)} vs {state.code}
+                          </span>
+                        )}
+                      </div>
+                      <span className="text-gray-400 text-[12px]">{cs.locationCount} location{cs.locationCount > 1 ? 's' : ''}</span>
+                    </Link>
+                  )
+                })}
+              </div>
+              <div className="mt-6 text-center">
+                <Link href={`/menu/prices-by-state/${item.slug}`} className="inline-flex items-center gap-1.5 text-brand-orange font-bold text-[15px] hover:underline">
+                  Compare {item.name} prices in all {allStateStats.length} states <ChevronRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Related Items */}
         {relatedItems.length > 0 && (

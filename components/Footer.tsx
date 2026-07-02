@@ -2,6 +2,8 @@ import Link from "next/link"
 
 export function Footer() {
   const links = [
+    { label: "Menu Directory", href: "/directory" },
+    { label: "Prices by State", href: "/menu/prices-by-state" },
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms & Conditions", href: "/terms-and-conditions" },
     { label: "Cookies Policy", href: "/cookies-policy" },
