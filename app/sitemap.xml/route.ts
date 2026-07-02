@@ -7,16 +7,16 @@ export async function GET() {
   const staticDate = getDataDate()
 
   const staticUrls = [
-    { url: `${baseUrl}`, lastModified: staticDate, changefreq: 'weekly', priority: 1.0 },
-    { url: `${baseUrl}/menu`, lastModified: staticDate, changefreq: 'weekly', priority: 0.9 },
-    { url: `${baseUrl}/hours`, lastModified: staticDate, changefreq: 'weekly', priority: 0.9 },
-    { url: `${baseUrl}/catering`, lastModified: staticDate, changefreq: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}`, lastModified: staticDate, changefreq: 'daily', priority: 1.0 },
+    { url: `${baseUrl}/menu`, lastModified: staticDate, changefreq: 'daily', priority: 0.9 },
+    { url: `${baseUrl}/hours`, lastModified: staticDate, changefreq: 'daily', priority: 0.9 },
+    { url: `${baseUrl}/catering`, lastModified: staticDate, changefreq: 'daily', priority: 0.8 },
     { url: `${baseUrl}/blog`, lastModified: staticDate, changefreq: 'daily', priority: 0.8 },
-    { url: `${baseUrl}/nutrition`, lastModified: staticDate, changefreq: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/coupons`, lastModified: staticDate, changefreq: 'weekly', priority: 0.7 },
-    { url: `${baseUrl}/about`, lastModified: staticDate, changefreq: 'monthly', priority: 0.5 },
-    { url: `${baseUrl}/contact`, lastModified: staticDate, changefreq: 'monthly', priority: 0.5 },
-    { url: `${baseUrl}/legal`, lastModified: staticDate, changefreq: 'yearly', priority: 0.3 },
+    { url: `${baseUrl}/nutrition`, lastModified: staticDate, changefreq: 'daily', priority: 0.8 },
+    { url: `${baseUrl}/coupons`, lastModified: staticDate, changefreq: 'daily', priority: 0.8 },
+    { url: `${baseUrl}/about`, lastModified: staticDate, changefreq: 'weekly', priority: 0.7 },
+    { url: `${baseUrl}/contact`, lastModified: staticDate, changefreq: 'weekly', priority: 0.7 },
+    { url: `${baseUrl}/legal`, lastModified: staticDate, changefreq: 'monthly', priority: 0.5 },
   ]
 
   const menuItems = [
@@ -41,23 +41,23 @@ export async function GET() {
   const menuUrls = menuItems.map(item => ({
     url: `${baseUrl}/menu/${item}`,
     lastModified: staticDate,
-    changefreq: 'monthly',
-    priority: 0.6,
+    changefreq: 'daily',
+    priority: 0.8,
   }))
 
   const posts = getAllPosts()
   const mdxBlogUrls = posts.map(post => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.date || staticDate,
-    changefreq: 'monthly',
-    priority: 0.7,
+    lastModified: staticDate,
+    changefreq: 'daily',
+    priority: 0.8,
   }))
 
   const dataBlogUrls = blogData.map(post => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.date || staticDate,
-    changefreq: 'monthly',
-    priority: 0.7,
+    lastModified: staticDate,
+    changefreq: 'daily',
+    priority: 0.8,
   }))
 
   const allUrls = [...staticUrls, ...menuUrls, ...mdxBlogUrls, ...dataBlogUrls]

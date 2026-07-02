@@ -5,7 +5,7 @@ function getRandomizedDate(slug: string): string {
   for (let i = 0; i < slug.length; i++) {
     hash = slug.charCodeAt(i) + ((hash << 5) - hash);
   }
-  const offsetDays = Math.abs(hash) % 5;
+  const offsetDays = (Math.abs(hash) % 2) + 1; // Always 1 or 2 days behind
   const d = new Date();
   d.setDate(d.getDate() - offsetDays);
   return d.toISOString().split('T')[0];
@@ -21,8 +21,8 @@ export async function GET() {
     allUrls.push({
       url: `${baseUrl}/menu/${stateSlug}`,
       lastModified: getRandomizedDate(stateSlug),
-      changefreq: 'weekly',
-      priority: 0.8,
+      changefreq: 'daily',
+      priority: 0.9,
     })
 
     const itemSlugs = getStateItemSlugs(stateSlug)
@@ -30,8 +30,8 @@ export async function GET() {
       allUrls.push({
         url: `${baseUrl}/menu/${stateSlug}/${itemSlug}`,
         lastModified: getRandomizedDate(stateSlug + itemSlug),
-        changefreq: 'monthly',
-        priority: 0.6,
+        changefreq: 'daily',
+        priority: 0.8,
       })
     }
   }
