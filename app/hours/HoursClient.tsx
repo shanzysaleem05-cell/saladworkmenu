@@ -5,8 +5,8 @@ import { MapPin, Clock, Search, Phone, ExternalLink } from "lucide-react"
 import Link from "next/link"
 
 type StoreHours = {
-  open: string;
-  close: string;
+  open?: string;
+  close?: string;
   closed?: boolean;
 }
 
@@ -71,34 +71,6 @@ export function HoursClient({ initialData }: { initialData: StateData[] }) {
       return d
     }
 
-  const [displayLimit, setDisplayLimit] = useState(50)
-
-  // Reset limit on search
-  useEffect(() => {
-    setDisplayLimit(50)
-  }, [searchTerm])
-
-  const checkIsOpen = (dayHours: StoreHours): boolean => {
-    if (!currentTime || dayHours.closed || !dayHours.open || !dayHours.close) return false;
-    
-    const parseTime = (timeStr: string) => {
-      const parts = timeStr.trim().match(/(\d+):(\d+)\s*(AM|PM)/i)
-      if (!parts) return null;
-      let hours = parseInt(parts[1], 10)
-      const minutes = parseInt(parts[2], 10)
-      const modifier = parts[3].toUpperCase()
-      
-      if (hours === 12) {
-        hours = modifier === 'AM' ? 0 : 12;
-      } else if (modifier === 'PM') {
-        hours += 12;
-      }
-      
-      const d = new Date(currentTime)
-      d.setHours(hours, minutes, 0, 0)
-      return d
-    }
-
     try {
       const openTime = parseTime(dayHours.open)
       const closeTime = parseTime(dayHours.close)
@@ -109,6 +81,13 @@ export function HoursClient({ initialData }: { initialData: StateData[] }) {
       return false;
     }
   }
+
+  const [displayLimit, setDisplayLimit] = useState(50)
+
+  // Reset limit on search
+  useEffect(() => {
+    setDisplayLimit(50)
+  }, [searchTerm])
 
   // Filter Data
   const filteredData = useMemo(() => {
@@ -190,7 +169,7 @@ export function HoursClient({ initialData }: { initialData: StateData[] }) {
                   {/* Location Details */}
                   <div className="lg:w-1/3">
                     <div className="flex items-center gap-3 mb-2">
-                      <h3 className="font-bold text-site-black text-lg">{loc.name}</h3>
+                      <h3 className="font-bold text-site-black text-lg">Saladworks {loc.name}</h3>
                       {isOpen ? (
                         <span className="bg-brand-green/10 text-brand-leaf text-[11px] font-black uppercase px-2.5 py-1 rounded-md">Open Now</span>
                       ) : (
