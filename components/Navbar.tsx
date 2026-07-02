@@ -44,7 +44,7 @@ export function Navbar() {
       {/* Top Section: Title & Subtitle */}
       <div className="py-4 md:py-6 text-center px-4">
         <Link href="/" title="SaladWorks Menu Home" className="inline-block">
-          <span className="block text-4xl md:text-[42px] font-black text-brand-orange tracking-tight mb-2 hover:opacity-90 transition-opacity">
+          <span className="block text-[28px] sm:text-4xl md:text-[42px] whitespace-nowrap font-black text-brand-orange tracking-tight mb-2 hover:opacity-90 transition-opacity">
             SaladWorks Menu
           </span>
         </Link>
