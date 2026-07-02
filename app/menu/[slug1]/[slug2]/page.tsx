@@ -277,8 +277,8 @@ export default function Slug2Page({ params }: Props) {
                   {item.name} Calories & Nutrition
                 </h3>
                 {item.calories ? (
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-20 h-20 rounded-full bg-brand-orange/10 flex items-center justify-center">
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 mb-4">
+                    <div className="shrink-0 w-20 h-20 rounded-full bg-brand-orange/10 flex items-center justify-center">
                       <div className="text-center">
                         <span className="text-[22px] font-black text-brand-orange block leading-none">{item.calories}</span>
                         <span className="text-[10px] font-bold text-gray-500 uppercase">Cal</span>

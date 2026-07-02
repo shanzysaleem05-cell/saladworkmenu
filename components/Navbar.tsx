@@ -1,11 +1,33 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      if (typeof window !== "undefined") {
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+          setIsVisible(false) // Hide on scroll down
+        } else {
+          setIsVisible(true) // Show on scroll up
+        }
+        setLastScrollY(window.scrollY)
+      }
+    }
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar)
+      return () => {
+        window.removeEventListener("scroll", controlNavbar)
+      }
+    }
+  }, [lastScrollY])
 
   const links = [
     { href: "/menu", label: "Menu & Prices" },
@@ -18,7 +40,7 @@ export function Navbar() {
   ]
 
   return (
-    <header className="w-full flex flex-col relative z-50 bg-white shadow-sm">
+    <header className={`w-full flex flex-col fixed top-0 left-0 right-0 z-[9999] bg-white shadow-sm transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       {/* Top Section: Title & Subtitle */}
       <div className="py-4 md:py-6 text-center px-4">
         <Link href="/" title="SaladWorks Menu Home" className="inline-block">

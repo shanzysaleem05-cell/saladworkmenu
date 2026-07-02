@@ -2,13 +2,9 @@ import Link from "next/link"
 
 export function Footer() {
   const links = [
-    { label: "Privacy Policy", href: "/legal#privacy" },
-    { label: "Terms & Conditions", href: "/legal#terms" },
-    { label: "Disclaimer", href: "/legal#disclaimer" },
-    { label: "DMCA", href: "/legal#dmca" },
-    { label: "Affiliate Disclosure", href: "/legal#affiliate" },
-    { label: "Cookies Policy", href: "/legal#cookies" },
-    { label: "Accessibility", href: "/legal#accessibility" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms & Conditions", href: "/terms-and-conditions" },
+    { label: "Cookies Policy", href: "/cookies-policy" },
   ]
 
   return (

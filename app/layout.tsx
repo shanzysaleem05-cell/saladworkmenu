@@ -90,7 +90,7 @@ export default function RootLayout({
         <JsonLd data={orgSchema} />
 
         <Navbar />
-        <main className="flex-1">
+        <main className="flex-1 pt-[140px] md:pt-[160px]">
           {children}
         </main>
         <Footer />
