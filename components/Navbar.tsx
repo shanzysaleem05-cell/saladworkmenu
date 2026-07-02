@@ -31,6 +31,7 @@ export function Navbar() {
 
   const links = [
     { href: "/menu", label: "Menu & Prices" },
+    { href: "/hours", label: "Hours & Locations" },
     { href: "/catering", label: "Catering" },
     { href: "/nutrition", label: "Nutrition" },
     { href: "/coupons", label: "Deals & Coupons" },

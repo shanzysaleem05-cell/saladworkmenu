@@ -3,13 +3,12 @@ import { JsonLd } from "@/components/JsonLd"
 import { FaqSection } from "@/components/FaqSection"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
 import { getAllStateHoursData, getDataDate } from "@/lib/stateData"
-import Link from "next/link"
-import { MapPin } from "lucide-react"
+import { HoursClient } from "./HoursClient"
 
 export const metadata: Metadata = {
-  title: "SaladWorks Hours & Locations | See Real Operating Hours",
-  description: "Find real, up-to-date operating hours for every SaladWorks location across 16+ states. Check when your local Saladworks is open for fresh salads, wraps, and more.",
-  keywords: ["SaladWorks hours", "SaladWorks open time", "SaladWorks closing time", "SaladWorks locations", "Saladworks near me", "Is Saladworks open today"],
+  title: "SaladWorks Hours & Locations 2026 | Find Near Me & Open Times",
+  description: "Looking for SaladWorks hours? Find real, up-to-date operating hours, opening times, and closing times for every SaladWorks location. Search to see if it's open now!",
+  keywords: ["SaladWorks hours", "SaladWorks open time", "SaladWorks closing time", "SaladWorks locations", "Saladworks near me", "Is Saladworks open today", "Saladworks map"],
   alternates: {
     canonical: "https://saladworksmenu.us/hours",
   },
@@ -27,38 +26,56 @@ export default function HoursPage() {
   const totalLocations = stateHours.reduce((sum, s) => sum + s.locations.length, 0)
   const totalStates = stateHours.length
 
+  // Generate LocalBusiness Schema for SEO ranking on Google
+  const localBusinessSchemas = stateHours.flatMap(stateGroup => 
+    stateGroup.locations.map(loc => ({
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": `Saladworks - ${loc.name}`,
+      "image": "https://saladworksmenu.us/opengraph-image.jpg",
+      "@id": `https://saladworksmenu.us/hours#${loc.id}`,
+      "url": `https://saladworksmenu.us/menu/${stateGroup.state.slug}`,
+      "telephone": loc.phone || "",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": loc.address,
+        "addressLocality": loc.city,
+        "addressRegion": stateGroup.state.code,
+        "postalCode": loc.postalCode,
+        "addressCountry": "US"
+      },
+      "servesCuisine": "Salads, Wraps, Soups",
+      "priceRange": "$$"
+    }))
+  )
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Saladworks Hours & Locations",
+    "name": "Saladworks Hours & Locations Guide",
     "description": `Operating hours for ${totalLocations} Saladworks locations across ${totalStates} states.`,
-    "dateModified": dataDate
+    "dateModified": dataDate,
+    "mainEntity": localBusinessSchemas
   }
 
   const faqs = [
     {
       question: "What time does SaladWorks usually open and close?",
-      answer: "Most SaladWorks locations open at 10:00 AM or 10:30 AM and close between 8:00 PM and 9:00 PM. However, hours vary significantly by location and day of the week, so check the specific hours for your state below."
+      answer: "Most SaladWorks locations open around 10:00 AM or 10:30 AM and close between 8:00 PM and 9:00 PM. However, mall and airport locations may have wildly different hours. Use our store locator above to find the exact opening time for the Saladworks near you."
     },
     {
       question: "Are Saladworks locations open on Sundays?",
-      answer: "Yes, many SaladWorks locations are open on Sundays, typically with reduced hours like 11:00 AM to 7:00 PM or 8:00 PM. Some locations, especially inside malls or office buildings, may be closed on Sundays."
+      answer: "Yes, a majority of SaladWorks locations are open on Sundays, typically operating with reduced hours such as 11:00 AM to 7:00 PM. Some corporate park or strict mall locations might be closed on Sundays."
+    },
+    {
+      question: "How do I find out if a specific Saladworks is open right now?",
+      answer: "Simply type your city, state, or zip code into our smart search bar above. It will calculate your local time and show a green 'Open Now' or red 'Closed' badge next to each restaurant based on their real daily hours."
     },
     {
       question: "Do SaladWorks hours change on holidays?",
-      answer: "Yes, operating hours may vary on major national holidays like Thanksgiving, Christmas, and New Year's Day. We recommend calling your local SaladWorks ahead of time during holiday periods."
-    },
-    {
-      question: "How many SaladWorks locations are there?",
-      answer: `We are currently tracking real-time menu and hours data for ${totalLocations} SaladWorks locations across ${totalStates} states.`
+      answer: "Yes, operating hours may vary significantly on major national holidays like Thanksgiving, Christmas, and New Year's Day. We highly recommend calling your local SaladWorks ahead of time during holiday periods using the phone numbers provided in our directory."
     }
   ]
-
-  // Helper to format hours display cleanly
-  const formatDayHours = (day: any) => {
-    if (day.closed) return "Closed"
-    return `${day.open} – ${day.close}`
-  }
 
   return (
     <div className="flex flex-col min-h-screen bg-site-bg">
@@ -68,86 +85,39 @@ export default function HoursPage() {
         { label: "Hours & Locations", href: "/hours" }
       ]} />
       
-      <div className="py-20 bg-site-bg">
+      <div className="py-12 md:py-20 bg-site-bg">
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <span className="inline-block bg-brand-orange text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 mb-6 rounded-full">
-              🕐 Store Hours
+              🕐 Find a Restaurant Near You
             </span>
-            <h1 className="text-[36px] md:text-[48px] font-black text-site-black leading-tight tracking-tight mb-4">
-              SaladWorks Hours & Locations
+            <h1 className="text-[32px] md:text-[48px] font-black text-site-black leading-tight tracking-tight mb-6">
+              SaladWorks Hours & Locations ({new Date().getFullYear()})
             </h1>
-            <p className="text-gray-500 text-[18px] leading-relaxed max-w-2xl mx-auto mb-8">
-              Find up-to-date operating hours for {totalLocations} SaladWorks locations across {totalStates} states. Last verified {prettyDate}.
+            <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed max-w-3xl mx-auto mb-8">
+              Wondering <strong>"What time does Saladworks close?"</strong> or trying to find the nearest Saladworks location? 
+              You've come to the right place. Our database tracks the real-time operating schedules for <strong>{totalLocations} restaurants</strong> across {totalStates} states. 
+              Search below to instantly see which stores are open near you today!
             </p>
           </div>
 
-          <div className="flex flex-col gap-12">
-            {stateHours.map((stateData) => (
-              <div key={stateData.state.code} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
-                
-                {/* State Header */}
-                <div className="bg-brand-deep p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div>
-                    <h2 className="text-2xl font-black text-white flex items-center gap-2">
-                      <MapPin className="w-5 h-5 text-brand-orange" />
-                      {stateData.state.name} SaladWorks Locations
-                    </h2>
-                    <p className="text-gray-300 mt-1 text-sm">
-                      {stateData.locations.length} Location{stateData.locations.length > 1 ? 's' : ''} • <Link href={`/menu/${stateData.state.slug}`} className="text-brand-orange hover:underline font-semibold">View {stateData.state.name} Menu Prices →</Link>
-                    </p>
-                  </div>
-                </div>
+          {/* Interactive Client Locator */}
+          <HoursClient initialData={stateHours} />
 
-                {/* Locations List */}
-                <div className="divide-y divide-gray-100">
-                  {stateData.locations.map((loc) => (
-                    <div key={loc.id} className="p-6 md:p-8 hover:bg-gray-50 transition-colors">
-                      <div className="flex flex-col md:flex-row gap-8">
-                        
-                        {/* Location Details */}
-                        <div className="md:w-1/3">
-                          <h3 className="font-bold text-site-black text-lg mb-2">{loc.name}</h3>
-                          <address className="not-italic text-gray-500 text-[15px] leading-relaxed mb-3">
-                            {loc.address}<br />
-                            {loc.city}, {stateData.state.code} {loc.postalCode}
-                          </address>
-                          {loc.phone && (
-                            <a href={`tel:${loc.phone}`} className="inline-flex items-center text-sm font-bold text-brand-green hover:text-brand-deep">
-                              📞 {loc.phone}
-                            </a>
-                          )}
-                        </div>
-
-                        {/* Hours Table */}
-                        <div className="md:w-2/3">
-                          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-6">
-                            {[
-                              { label: 'Monday', hours: formatDayHours(loc.hours.monday) },
-                              { label: 'Tuesday', hours: formatDayHours(loc.hours.tuesday) },
-                              { label: 'Wednesday', hours: formatDayHours(loc.hours.wednesday) },
-                              { label: 'Thursday', hours: formatDayHours(loc.hours.thursday) },
-                              { label: 'Friday', hours: formatDayHours(loc.hours.friday) },
-                              { label: 'Saturday', hours: formatDayHours(loc.hours.saturday) },
-                              { label: 'Sunday', hours: formatDayHours(loc.hours.sunday) },
-                            ].map((day, i) => (
-                              <div key={i} className="flex flex-col">
-                                <span className="text-[12px] font-bold text-gray-400 uppercase tracking-wider mb-1">{day.label}</span>
-                                <span className={`text-[14px] font-semibold ${day.hours === 'Closed' ? 'text-brand-orange' : 'text-site-black'}`}>
-                                  {day.hours}
-                                </span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-              </div>
-            ))}
+          {/* SEO Content Section */}
+          <div className="mt-20 bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-sm">
+            <h2 className="text-2xl md:text-3xl font-black text-site-black mb-6">Why Check SaladWorks Hours Before You Visit?</h2>
+            <div className="prose prose-lg max-w-none text-gray-600">
+              <p>
+                Saladworks is renowned for its fresh, customizable salads, hearty wraps, and comforting soups. However, because Saladworks operates in a wide variety of venues—from standalone drive-thrus to busy mall food courts and university campuses—their <strong>opening and closing times can vary drastically</strong>.
+              </p>
+              <p>
+                For example, a Saladworks located in a business district might close as early as 4:00 PM and remain completely closed on weekends, whereas a suburban shopping mall location will likely stay open until 9:00 PM all seven days of the week. 
+              </p>
+              <p>
+                By using our advanced location finder above, you can confidently search for <strong>"Saladworks near me"</strong>, check the precise weekly schedule without encountering confusing em-dashes or broken formatting, and even tap to call the store directly to confirm their holiday schedules!
+              </p>
+            </div>
           </div>
 
         </div>
