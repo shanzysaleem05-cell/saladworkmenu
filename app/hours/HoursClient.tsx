@@ -71,11 +71,11 @@ export function HoursClient({ initialData }: { initialData: StateData[] }) {
       return d
     }
 
-  const [displayLimit, setDisplayLimit] = useState(10)
+  const [displayLimit, setDisplayLimit] = useState(50)
 
   // Reset limit on search
   useEffect(() => {
-    setDisplayLimit(10)
+    setDisplayLimit(50)
   }, [searchTerm])
 
   const checkIsOpen = (dayHours: StoreHours): boolean => {
@@ -293,7 +293,7 @@ export function HoursClient({ initialData }: { initialData: StateData[] }) {
           
           {totalFound > displayLimit && (
             <button 
-              onClick={() => setDisplayLimit(prev => prev + 20)} 
+              onClick={() => setDisplayLimit(prev => prev + 50)} 
               className="mx-auto block bg-white border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white transition-colors font-bold py-3 px-8 rounded-full shadow-sm"
             >
               Load More Locations ({totalFound - displayLimit} remaining)
