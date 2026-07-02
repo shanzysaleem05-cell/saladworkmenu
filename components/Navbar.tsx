@@ -40,7 +40,7 @@ export function Navbar() {
   ]
 
   return (
-    <header className={`w-full flex flex-col fixed top-0 left-0 right-0 z-[9999] bg-white shadow-sm transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <header className={`w-full flex flex-col sticky top-0 left-0 right-0 z-[9999] bg-white shadow-sm transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       {/* Top Section: Title & Subtitle */}
       <div className="py-4 md:py-6 text-center px-4">
         <Link href="/" title="SaladWorks Menu Home" className="inline-block">
