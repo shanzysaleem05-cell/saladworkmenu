@@ -1,9 +1,10 @@
 import { getAllPosts } from '@/lib/blog'
 import { blogData } from '@/data/blogData'
+import { getDataDate } from '@/lib/stateData'
 
 export async function GET() {
   const baseUrl = 'https://saladworksmenu.us'
-  const staticDate = '2026-07-01'
+  const staticDate = getDataDate()
 
   const staticUrls = [
     { url: `${baseUrl}`, lastModified: staticDate, changefreq: 'weekly', priority: 1.0 },
