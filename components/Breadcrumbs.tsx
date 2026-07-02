@@ -28,7 +28,7 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
             return (
               <li key={index} className="flex items-center gap-2">
                 {isLast ? (
-                  <span className="text-gray-500 font-medium" aria-current="page">
+                  <span className="text-brand-green font-bold" aria-current="page">
                     {item.label}
                   </span>
                 ) : (
