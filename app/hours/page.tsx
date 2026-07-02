@@ -114,36 +114,39 @@ export default function HoursPage() {
             </p>
           </div>
 
-          {/* Interactive Client Locator */}
-          <HoursClient initialData={stateHours} />
-
-          {/* SEO Table: Standard Operating Hours */}
+          {/* SEO Table: Standard Operating Hours (Above Search) */}
           {topTimings.length > 0 && (
-            <div className="mt-16 bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
-              <h2 className="text-2xl md:text-3xl font-black text-site-black mb-6">Standard Saladworks Operating Hours by State</h2>
+            <div className="mb-16 bg-white p-6 md:p-12 rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+              <h2 className="text-2xl md:text-3xl font-black text-site-black mb-4">Standard Saladworks Operating Hours by State</h2>
               <p className="text-gray-600 mb-8 text-lg">
                 While hours can vary by specific location (especially malls and airports), here is a structured summary of the most common daily schedules across different states.
               </p>
-              <div className="overflow-x-auto rounded-xl border border-gray-200">
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="bg-gray-50 border-b border-gray-200">
-                      <th className="py-5 px-6 font-black text-site-black text-[15px] uppercase tracking-wider w-1/3">Typical Hours (Mon - Fri)</th>
-                      <th className="py-5 px-6 font-black text-site-black text-[15px] uppercase tracking-wider">States with these Hours</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {topTimings.map((row, i) => (
-                      <tr key={i} className="border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
-                        <td className="py-4 px-6 font-bold text-brand-orange whitespace-nowrap">{row.timing}</td>
-                        <td className="py-4 px-6 text-gray-600 font-medium leading-relaxed">{row.states}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              
+              <div className="flex flex-col">
+                <div className="hidden md:grid grid-cols-3 bg-gray-50 border border-gray-200 py-4 px-6 rounded-t-xl">
+                  <div className="col-span-1 font-black text-site-black text-[15px] uppercase tracking-wider">Typical Hours (Mon - Fri)</div>
+                  <div className="col-span-2 font-black text-site-black text-[15px] uppercase tracking-wider">States with these Hours</div>
+                </div>
+                <div className="flex flex-col gap-4 md:gap-0 md:border md:border-t-0 md:border-gray-200 md:rounded-b-xl overflow-hidden">
+                  {topTimings.map((row, i) => (
+                    <div key={i} className="flex flex-col md:grid md:grid-cols-3 border border-gray-200 md:border-0 md:border-b md:last:border-b-0 p-5 md:p-0 hover:bg-gray-50/50 transition-colors rounded-xl md:rounded-none bg-white">
+                      <div className="col-span-1 md:py-4 md:px-6">
+                        <span className="md:hidden text-xs text-gray-500 uppercase font-black tracking-wider block mb-1">Typical Hours</span>
+                        <span className="font-bold text-brand-orange text-lg md:text-base">{row.timing}</span>
+                      </div>
+                      <div className="col-span-2 md:py-4 md:px-6 mt-3 md:mt-0">
+                        <span className="md:hidden text-xs text-gray-500 uppercase font-black tracking-wider block mb-1">States</span>
+                        <span className="text-gray-600 font-medium leading-relaxed">{row.states}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           )}
+
+          {/* Interactive Client Locator */}
+          <HoursClient initialData={stateHours} />
 
           {/* SEO Content Section */}
           <div className="mt-10 bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-sm">
