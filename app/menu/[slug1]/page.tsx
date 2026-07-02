@@ -8,6 +8,7 @@ import { notFound } from "next/navigation"
 import { Metadata, ResolvingMetadata } from "next"
 import { JsonLd } from "@/components/JsonLd"
 import { FaqSection } from "@/components/FaqSection"
+import { Breadcrumbs } from "@/components/Breadcrumbs"
 
 
 type Props = {
@@ -150,17 +151,12 @@ function ItemDetailPage({ itemSlug }: { itemSlug: string }) {
     <div className="flex flex-col w-full bg-site-white pb-24">
       <JsonLd data={productSchema} />
       
-      <div className="border-b border-gray-100 bg-gray-50/50">
-        <div className="container mx-auto px-4 py-4 flex items-center text-[12px] font-medium text-gray-500">
-          <Link href="/" className="hover:text-brand-orange transition-colors">Home</Link>
-          <ChevronRight className="w-3 h-3 mx-2" />
-          <Link href="/menu" className="hover:text-brand-orange transition-colors">Menu</Link>
-          <ChevronRight className="w-3 h-3 mx-2" />
-          <Link href={`/menu/${foundCategory.id}`} className="hover:text-brand-orange transition-colors">{foundCategory.title}</Link>
-          <ChevronRight className="w-3 h-3 mx-2" />
-          <span className="text-site-black font-bold">{foundItem.name}</span>
-        </div>
-      </div>
+      <Breadcrumbs items={[
+        { label: "Home", href: "/" },
+        { label: "Menu", href: "/menu" },
+        { label: foundCategory.title, href: `/menu/${foundCategory.id}` },
+        { label: foundItem.name, href: "#" }
+      ]} />
 
       <section className="container mx-auto px-4 py-12 md:py-16">
         <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-start">
@@ -331,16 +327,11 @@ function StateMenuPage({ stateSlug }: { stateSlug: string }) {
     <div className="flex flex-col min-h-screen bg-site-bg">
       <JsonLd data={itemListSchema} />
 
-      {/* SEO Breadcrumb */}
-      <div className="border-b border-gray-100 bg-gray-50/50">
-        <div className="container mx-auto px-4 py-3 flex items-center text-[13px] font-medium text-gray-500 flex-wrap gap-y-1">
-          <Link href="/" className="hover:text-brand-orange transition-colors">Home</Link>
-          <ChevronRight className="w-3 h-3 mx-1.5 text-gray-300" />
-          <Link href="/menu" className="hover:text-brand-orange transition-colors">Menu & Prices</Link>
-          <ChevronRight className="w-3 h-3 mx-1.5 text-gray-300" />
-          <span className="text-site-black font-bold">Saladworks {state.name} Menu Prices</span>
-        </div>
-      </div>
+      <Breadcrumbs items={[
+        { label: "Home", href: "/" },
+        { label: "Menu & Prices", href: "/menu" },
+        { label: `Saladworks ${state.name} Menu Prices`, href: "#" }
+      ]} />
 
       {/* Gradient Hero */}
       <section className="bg-gradient-to-r from-brand-deep via-[#2d1a0a] to-brand-deep pt-14 pb-12 px-4" data-updated={dataDate}>

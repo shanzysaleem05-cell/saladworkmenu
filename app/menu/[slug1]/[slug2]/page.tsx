@@ -6,6 +6,7 @@ import { notFound } from "next/navigation"
 import { Metadata, ResolvingMetadata } from "next"
 import { JsonLd } from "@/components/JsonLd"
 import { FaqSection } from "@/components/FaqSection"
+import { Breadcrumbs } from "@/components/Breadcrumbs"
 
 type Props = {
   params: { slug1: string; slug2: string }
@@ -129,19 +130,13 @@ export default function Slug2Page({ params }: Props) {
         <JsonLd data={productSchema} />
 
         {/* SEO-Optimized Breadcrumb */}
-        <div className="border-b border-gray-100 bg-gray-50/50">
-          <div className="container mx-auto px-4 py-3 flex items-center text-[13px] font-medium text-gray-500 flex-wrap gap-y-1">
-            <Link href="/" className="hover:text-brand-orange transition-colors">Home</Link>
-            <ChevronRight className="w-3 h-3 mx-1.5 text-gray-300" />
-            <Link href="/menu" className="hover:text-brand-orange transition-colors">Menu & Prices</Link>
-            <ChevronRight className="w-3 h-3 mx-1.5 text-gray-300" />
-            <Link href={`/menu/${state.slug}`} className="hover:text-brand-orange transition-colors">Saladworks {state.name} Menu</Link>
-            <ChevronRight className="w-3 h-3 mx-1.5 text-gray-300" />
-            <Link href={`/menu/${state.slug}`} className="hover:text-brand-orange transition-colors">{category}</Link>
-            <ChevronRight className="w-3 h-3 mx-1.5 text-gray-300" />
-            <span className="text-site-black font-bold">{item.name} Price</span>
-          </div>
-        </div>
+        <Breadcrumbs items={[
+          { label: "Home", href: "/" },
+          { label: "Menu & Prices", href: "/menu" },
+          { label: `Saladworks ${state.name} Menu`, href: `/menu/${state.slug}` },
+          { label: category, href: `/menu/${state.slug}` },
+          { label: `${item.name} Price`, href: "#" }
+        ]} />
 
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-brand-deep via-[#2d1a0a] to-brand-deep py-10 md:py-14">

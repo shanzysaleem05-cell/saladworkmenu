@@ -2,6 +2,7 @@ import { SectionHeading } from "@/components/SectionHeading"
 import { ContactForm } from "@/components/ContactForm"
 import { Mail, Info, ExternalLink, MessageCircle } from "lucide-react"
 import Link from "next/link"
+import { Breadcrumbs } from "@/components/Breadcrumbs"
 
 export const metadata = {
   title: "Contact Us | SaladWorks",
@@ -95,10 +96,10 @@ export default function ContactPage() {
             
             {/* Form Side (Right - 60%) */}
             <div className="w-full lg:w-3/5 order-1 lg:order-2">
-              <div className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden">
+              <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 rounded-bl-full -mr-16 -mt-16 pointer-events-none"></div>
-                <h2 className="text-[32px] font-black text-site-black mb-2">Hello, Salad Lover! 👋</h2>
-                <p className="text-gray-500 mb-8 text-[16px]">Drop us a message below and our team will get back to you as soon as possible.</p>
+                <h2 className="text-[28px] sm:text-[32px] font-black text-site-black mb-2">Hello, Salad Lover! 👋</h2>
+                <p className="text-gray-500 mb-8 text-[15px] sm:text-[16px]">Drop us a message below and our team will get back to you as soon as possible.</p>
                 <ContactForm />
               </div>
             </div>
