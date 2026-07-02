@@ -48,7 +48,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-site-black text-[15px] mb-1">Email</h3>
-                  <a href="mailto:contact@saladworksmenu.us" className="text-brand-orange hover:underline font-bold text-lg block">contact@saladworksmenu.us</a>
+                  <a href="mailto:contact@saladworksmenu.us" className="text-brand-orange hover:underline font-bold text-[15px] sm:text-lg block break-all">contact@saladworksmenu.us</a>
                   <p className="text-[12px] text-gray-500 mt-1">We typically respond within 24-48 hours.</p>
                 </div>
               </div>

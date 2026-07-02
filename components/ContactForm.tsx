@@ -27,7 +27,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-site-white border border-gray-200 rounded-xl p-6 md:p-8 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+    <form onSubmit={handleSubmit} className="w-full">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-site-black mb-2">Full Name</label>
