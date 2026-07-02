@@ -1,0 +1,53 @@
+{
+  "id": "94",
+  "clientKey": "E94",
+  "name": "Monon Crossing of Westfield",
+  "address1": "827 IN-32",
+  "address2": "",
+  "city": "Westfield",
+  "county": "",
+  "state": "IN",
+  "postalCode": "46074",
+  "country": "US",
+  "latitude": 40.04233,
+  "longitude": -86.14305,
+  "phone": "+1 317-785-2255",
+  "email": "mononcrossing@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/in/westfield/827-in-32",
+  "localPageId": "827-in-32",
+  "metaTitle": "Salad Shop in Westfield, 46074 | Saladworks - 827-in-32",
+  "metaDescription": "Stop into your local Saladworks location in Westfield, IN. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "sunday": {
+      "open": "10:00",
+      "close": "21:00"
+    }
+  },
+  "oloSlug": "saladworks-27001",
+  "oloVendorId": 177338,
+  "hasMenu": true
+}

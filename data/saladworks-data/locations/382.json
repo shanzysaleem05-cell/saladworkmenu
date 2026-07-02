@@ -1,0 +1,53 @@
+{
+  "id": "382",
+  "clientKey": "E382",
+  "name": "Saladworks + Frutta Bowls Los Patios",
+  "address1": "2015 NE Loop 410",
+  "address2": "Bldg 4",
+  "city": "San Antonio",
+  "county": "",
+  "state": "TX",
+  "postalCode": "78217",
+  "country": "US",
+  "latitude": 29.5187,
+  "longitude": -98.43101,
+  "phone": "+1 210-699-4422",
+  "email": "lospatios@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/tx/san-antonio/2015-ne-loop-410/",
+  "localPageId": "2015-ne-loop-410",
+  "metaTitle": "Salad Shop in San Antonio, 78217 | Saladworks - 2015-ne-loop-410",
+  "metaDescription": "Stop into your local Saladworks location in San Antonio, TX. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "08:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "08:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "08:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "08:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "08:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "08:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "08:00",
+      "close": "20:00"
+    }
+  },
+  "oloSlug": "saladworks-los-patios",
+  "oloVendorId": 250871,
+  "hasMenu": true
+}

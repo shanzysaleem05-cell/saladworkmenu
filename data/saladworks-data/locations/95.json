@@ -1,0 +1,53 @@
+{
+  "id": "95",
+  "clientKey": "E95",
+  "name": "Whitehall",
+  "address1": "2419 MacArthur Road",
+  "address2": "",
+  "city": "Whitehall",
+  "county": "",
+  "state": "PA",
+  "postalCode": "18052",
+  "country": "US",
+  "latitude": 40.65668,
+  "longitude": -75.50693,
+  "phone": "+1 610-434-5400",
+  "email": "Whitehall@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/whitehall/2419-macarthur-road/",
+  "localPageId": "2419-macarthur-road",
+  "metaTitle": "Salad Shop in Whitehall, 18052 | Saladworks - 2419-macarthur-road",
+  "metaDescription": "Stop into your local Saladworks location in Whitehall, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": "saladworks-51064",
+  "oloVendorId": 177356,
+  "hasMenu": true
+}

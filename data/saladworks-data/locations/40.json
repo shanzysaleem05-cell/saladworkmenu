@@ -1,0 +1,53 @@
+{
+  "id": "40",
+  "clientKey": "E40",
+  "name": "Horsham Point Shopping Center",
+  "address1": "314 Horsham Road",
+  "address2": "",
+  "city": "Horsham",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19044",
+  "country": "US",
+  "latitude": 40.18228,
+  "longitude": -75.1331,
+  "phone": "+1 215-773-8229",
+  "email": "Horsham@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/horsham/314-horsham-road/",
+  "localPageId": "314-horsham-road",
+  "metaTitle": "Salad Shop in Horsham, 19044 | Saladworks - 314-horsham-road",
+  "metaDescription": "Stop into your local Saladworks location in Horsham, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-51053",
+  "oloVendorId": 177303,
+  "hasMenu": true
+}

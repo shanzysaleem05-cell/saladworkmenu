@@ -1,0 +1,53 @@
+{
+  "id": "2",
+  "clientKey": "E2",
+  "name": "Atlanta Airport",
+  "address1": "6000 N Terminal Pkwy",
+  "address2": "Concourse C",
+  "city": "Atlanta",
+  "county": "",
+  "state": "GA",
+  "postalCode": "30320",
+  "country": "US",
+  "latitude": 33.64104,
+  "longitude": -84.43265,
+  "phone": "+1 800-897-1910",
+  "email": "atlantaairport@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/ga/atlanta/6000-n-terminal-pkwy/",
+  "localPageId": "6000-n-terminal-pkwy",
+  "metaTitle": "Salad Shop in Atlanta, 30320 | Saladworks - 6000-n-terminal-pkwy",
+  "metaDescription": "Stop into your local Saladworks location in Atlanta, GA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": null,
+  "oloVendorId": null,
+  "hasMenu": false
+}

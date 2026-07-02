@@ -1,0 +1,53 @@
+{
+  "id": "1",
+  "clientKey": "E1",
+  "name": "CedarPointe Corporate Center",
+  "address1": "1403 North Cedar Crest Boulevard",
+  "address2": "120",
+  "city": "Allentown",
+  "county": "",
+  "state": "PA",
+  "postalCode": "18104",
+  "country": "US",
+  "latitude": 40.61198,
+  "longitude": -75.53177,
+  "phone": "+1 610-437-0400",
+  "email": "CedarCrest@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/allentown/1403-north-cedar-crest-boulevard/",
+  "localPageId": "1403-north-cedar-crest-boulevard",
+  "metaTitle": "Salad Shop in Allentown, 18104 | Saladworks - 1403-north-cedar-crest-boulevard",
+  "metaDescription": "Stop into your local Saladworks location in Allentown, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "sunday": {
+      "open": "10:00",
+      "close": "20:00"
+    }
+  },
+  "oloSlug": "saladworks-51057",
+  "oloVendorId": 177262,
+  "hasMenu": true
+}

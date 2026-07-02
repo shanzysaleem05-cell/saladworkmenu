@@ -1,0 +1,53 @@
+{
+  "id": "329",
+  "clientKey": "E329",
+  "name": "Spring Hill",
+  "address1": "5201 Port Royal",
+  "address2": "",
+  "city": "Spring Hill",
+  "county": "",
+  "state": "TN",
+  "postalCode": "37174",
+  "country": "US",
+  "latitude": 35.75294,
+  "longitude": -86.90243,
+  "phone": "+1 931-451-7172",
+  "email": "springhill@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/tn/spring-hill/5201-port-royal/",
+  "localPageId": "5201-port-royal",
+  "metaTitle": "Salad Shop in Spring Hill, 37174 | Saladworks - 5201-port-royal",
+  "metaDescription": "Stop into your local Saladworks location in Spring Hill, TN. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "09:00",
+      "close": "20:00"
+    }
+  },
+  "oloSlug": "saladworks-spring-hill",
+  "oloVendorId": 231362,
+  "hasMenu": true
+}

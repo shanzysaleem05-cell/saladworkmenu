@@ -1,0 +1,46 @@
+{
+  "id": "381",
+  "clientKey": "E381",
+  "name": "Brandywine",
+  "address1": "15802 Crain Hwy",
+  "address2": "",
+  "city": "Brandywine",
+  "county": "",
+  "state": "MD",
+  "postalCode": "20613",
+  "country": "US",
+  "latitude": 38.67412,
+  "longitude": -76.8739,
+  "phone": "+1 240-616-8557",
+  "email": "brandywines@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/md/brandywine/15802-crain-hwy/",
+  "localPageId": "15802-crain-hwy",
+  "metaTitle": "Salad Shop in Brandywine, 20613 | Saladworks - 15802-crain-hwy",
+  "metaDescription": "Stop into your local Saladworks location in Brandywine, MD. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "closed": true
+    },
+    "tuesday": {
+      "closed": true
+    },
+    "wednesday": {
+      "closed": true
+    },
+    "thursday": {
+      "closed": true
+    },
+    "friday": {
+      "closed": true
+    },
+    "saturday": {
+      "closed": true
+    },
+    "sunday": {
+      "closed": true
+    }
+  },
+  "oloSlug": "saladworks-brandywine",
+  "oloVendorId": 230577,
+  "hasMenu": true
+}

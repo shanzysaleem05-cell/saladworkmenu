@@ -1,0 +1,53 @@
+{
+  "id": "821",
+  "clientKey": "100353",
+  "name": "Saladworks + Frutta Bowls Winterville, NC",
+  "address1": "2035 Flowers Dr.",
+  "address2": "Suites 1&2",
+  "city": "Winterville",
+  "county": "US",
+  "state": "NC",
+  "postalCode": "28590",
+  "country": "US",
+  "latitude": 35.54581,
+  "longitude": -77.40313,
+  "phone": "+1 858-225-4110",
+  "email": "",
+  "detailUrl": "https://restaurants.saladworks.com/nc/winterville/2035-flowers-dr/",
+  "localPageId": "2035-flowers-dr",
+  "metaTitle": "Salad Shop in Winterville, 28590 | Saladworks - 2035-flowers-dr",
+  "metaDescription": "Stop into your local Saladworks location in Winterville, NC. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "07:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "07:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "07:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "07:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "07:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "07:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "10:00",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": "saladworks-winterville",
+  "oloVendorId": 294778,
+  "hasMenu": true
+}

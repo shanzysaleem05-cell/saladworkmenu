@@ -1,0 +1,53 @@
+{
+  "id": "52",
+  "clientKey": "E52",
+  "name": "Marlton Crossing Shopping Center",
+  "address1": "241 NJ-73",
+  "address2": "",
+  "city": "Marlton",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08053",
+  "country": "US",
+  "latitude": 39.8871,
+  "longitude": -74.92466,
+  "phone": "+1 856-396-0011",
+  "email": "MarltonCrossing@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/marlton/241-nj-73/",
+  "localPageId": "241-nj-73",
+  "metaTitle": "Salad Shop in Marlton, 08053 | Saladworks - 241-nj-73",
+  "metaDescription": "Stop into your local Saladworks location in Marlton, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-43007",
+  "oloVendorId": 177310,
+  "hasMenu": true
+}

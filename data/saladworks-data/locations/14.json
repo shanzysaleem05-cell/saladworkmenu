@@ -1,0 +1,53 @@
+{
+  "id": "14",
+  "clientKey": "E14",
+  "name": "O'Hare Airport",
+  "address1": "O'Hare Field",
+  "address2": "",
+  "city": "Chicago",
+  "county": "",
+  "state": "IL",
+  "postalCode": "60666",
+  "country": "US",
+  "latitude": 41.98024,
+  "longitude": -87.90898,
+  "phone": "+1 773-686-2711",
+  "email": "ohareairport@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/il/chicago/ohare-airport/",
+  "localPageId": "ohare-airport",
+  "metaTitle": "Salad Shop in Chicago, 60666 | Saladworks - ohare-airport",
+  "metaDescription": "Stop into your local Saladworks location in Chicago, IL. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "00:00",
+      "close": "00:00"
+    },
+    "tuesday": {
+      "open": "00:00",
+      "close": "00:00"
+    },
+    "wednesday": {
+      "open": "00:00",
+      "close": "00:00"
+    },
+    "thursday": {
+      "open": "00:00",
+      "close": "00:00"
+    },
+    "friday": {
+      "open": "00:00",
+      "close": "00:00"
+    },
+    "saturday": {
+      "open": "00:00",
+      "close": "00:00"
+    },
+    "sunday": {
+      "open": "00:00",
+      "close": "00:00"
+    }
+  },
+  "oloSlug": null,
+  "oloVendorId": null,
+  "hasMenu": false
+}

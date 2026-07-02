@@ -1,0 +1,53 @@
+{
+  "id": "745",
+  "clientKey": "E745",
+  "name": "Overland Park",
+  "address1": "7745 W 159th St",
+  "address2": "",
+  "city": "Overland Park",
+  "county": "",
+  "state": "KS",
+  "postalCode": "66223",
+  "country": "US",
+  "latitude": 38.83885,
+  "longitude": -94.67779,
+  "phone": "+1 913-217-7341",
+  "email": "",
+  "detailUrl": "https://restaurants.saladworks.com/ks/overland-park/7745-west-159th-st/",
+  "localPageId": "7745-west-159th-st",
+  "metaTitle": "Salad Shop in Overland Park, 66223 | Saladworks - 7745-west-159th-st",
+  "metaDescription": "Stop into your local Saladworks location in Overland Park, KS. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "20:00"
+    }
+  },
+  "oloSlug": "saladworks-overland-park",
+  "oloVendorId": 277872,
+  "hasMenu": true
+}

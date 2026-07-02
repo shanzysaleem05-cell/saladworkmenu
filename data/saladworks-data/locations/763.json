@@ -1,0 +1,51 @@
+{
+  "id": "763",
+  "clientKey": "E763",
+  "name": "Saladworks + Frutta Bowls MD Anderson",
+  "address1": "7007 Bertner Ave.",
+  "address2": "Building 1MC",
+  "city": "Houston",
+  "county": "",
+  "state": "TX",
+  "postalCode": "77030",
+  "country": "US",
+  "latitude": 29.70101,
+  "longitude": -95.39883,
+  "phone": "",
+  "email": "",
+  "detailUrl": "https://restaurants.saladworks.com/tx/houston/7007-bertner-ave/",
+  "localPageId": "7007-bertner-ave",
+  "metaTitle": "Salad Shop in Houston, 77030 | Saladworks - 7007-bertner-ave",
+  "metaDescription": "Stop into your local Saladworks location in Houston, TX. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "07:00",
+      "close": "16:00"
+    },
+    "tuesday": {
+      "open": "07:00",
+      "close": "16:00"
+    },
+    "wednesday": {
+      "open": "07:00",
+      "close": "16:00"
+    },
+    "thursday": {
+      "open": "07:00",
+      "close": "16:00"
+    },
+    "friday": {
+      "open": "07:00",
+      "close": "16:00"
+    },
+    "saturday": {
+      "closed": true
+    },
+    "sunday": {
+      "closed": true
+    }
+  },
+  "oloSlug": null,
+  "oloVendorId": null,
+  "hasMenu": false
+}

@@ -30,7 +30,7 @@ export const menuData: MenuCategory[] = [
   },
   {
     id: "salads",
-    emoji: "🥗",
+    emoji: "�-",
     title: "Salads",
     subtitle: "Signature + custom",
     categoryImage: "/grilled-chicken-caesar.webp",
@@ -48,7 +48,7 @@ export const menuData: MenuCategory[] = [
       { id: "s11", name: "Tofu Superfood", image: "/tofu-superfood.webp", description: "A nutritious Tofu Superfood Salad loaded with protein-rich tofu, superfood greens, seeds, and nutrient-dense toppings. A plant-based powerhouse on the Saladworks menu.", price: 12.49 },
       { id: "s12", name: "Chicken Pesto", image: "/chicken-pesto.webp", description: "A delicious Chicken Pesto Salad with grilled chicken, fresh basil pesto, roasted tomatoes, and parmesan on crisp greens. A flavorful Italian-inspired option at Saladworks.", price: 12.99 },
       { id: "s13", name: "Asian Crispy Chicken", image: "/asian-crispy-chicken.webp", description: "A crunchy Asian Crispy Chicken Salad with golden crispy chicken, edamame, mandarin oranges, wonton strips, and mixed greens tossed in a savory Asian sesame dressing at Saladworks.", price: 13.49 },
-      { id: "s14", name: "Southwest Chicken Caesar", image: "/southwest-chicken-caesar.webp", description: "A fusion of classic Caesar and bold Southwest flavors — featuring grilled chicken, corn, black beans, jalapeños, and parmesan in a smoky Caesar dressing. A Saladworks crowd-pleaser.", price: 13.49 },
+      { id: "s14", name: "Southwest Chicken Caesar", image: "/southwest-chicken-caesar.webp", description: "A fusion of classic Caesar and bold Southwest flavors - featuring grilled chicken, corn, black beans, jalapeños, and parmesan in a smoky Caesar dressing. A Saladworks crowd-pleaser.", price: 13.49 },
       { id: "s15", name: "Smoky BBQ Crispy Chicken", image: "/smoky-bbq-crispy-chicken.webp", description: "A bold Smoky BBQ Crispy Chicken Salad with golden crispy chicken drizzled in smoky BBQ sauce, topped with cheddar cheese and fresh greens. A hearty, flavor-packed Saladworks salad.", price: 13.49 },
     ]
   },
@@ -91,8 +91,8 @@ export const menuData: MenuCategory[] = [
     categoryImage: "/broccoli-cheddar-soup.webp",
     items: [
       { id: "sp1", name: "Broccoli Cheddar Soup", image: "/broccoli-cheddar-soup.webp", description: "A thick and creamy Broccoli Cheddar Soup loaded with tender broccoli florets and rich sharp cheddar cheese. A hearty, comforting soup available in cup or bowl at Saladworks.", price: 4.99 },
-      { id: "sp2", name: "Chicken Noodle Soup", image: "/chicken-noodle-soup.webp", description: "A soul-warming classic Chicken Noodle Soup made with tender chicken, egg noodles, and fresh vegetables in a savory broth. Available in cup or bowl — perfect with any Saladworks meal.", price: 4.49 },
-      { id: "sp3", name: "Soup of the Day", image: "/soup-of-the-day.webp", description: "Ask about Saladworks' rotating Soup of the Day — a freshly made seasonal soup crafted daily from the finest ingredients. A delicious surprise available in cup or bowl size.", price: 4.99 },
+      { id: "sp2", name: "Chicken Noodle Soup", image: "/chicken-noodle-soup.webp", description: "A soul-warming classic Chicken Noodle Soup made with tender chicken, egg noodles, and fresh vegetables in a savory broth. Available in cup or bowl - perfect with any Saladworks meal.", price: 4.49 },
+      { id: "sp3", name: "Soup of the Day", image: "/soup-of-the-day.webp", description: "Ask about Saladworks' rotating Soup of the Day - a freshly made seasonal soup crafted daily from the finest ingredients. A delicious surprise available in cup or bowl size.", price: 4.99 },
     ]
   },
   {
@@ -117,9 +117,9 @@ export const menuData: MenuCategory[] = [
     items: [
       { id: "sd1", name: "Chocolate Chip Cookie", image: "/chocolate-chip-cookie.webp", description: "A freshly baked Chocolate Chip Cookie with rich melted chocolate chips and a soft, chewy center. The perfect sweet treat to finish your Saladworks meal on a delicious note.", price: 2.49 },
       { id: "sd2", name: "Chocolate Fudge Brownie", image: "/chocolate-fudge-brownie.webp", description: "A decadent Chocolate Fudge Brownie with a dense, rich chocolate interior and a crackly top. A premium dessert option for chocolate lovers at Saladworks.", price: 2.99 },
-      { id: "sd3", name: "Crispy Rice Marshmallow Treat", image: "/crispy-rice-marshmallow-treat.webp", description: "A classic Crispy Rice Marshmallow Treat — sweet, chewy, and perfectly crunchy. A nostalgic, crowd-pleasing dessert option available at Saladworks.", price: 2.49 },
-      { id: "sd4", name: "Chips", image: "/chips.webp", description: "Crunchy, salty chips — the perfect light snack side to pair with any Saladworks wrap, melt, or salad. A simple, satisfying addition to your meal.", price: 1.99 },
-      { id: "sd5", name: "Extra Roll", image: "/extra-roll.webp", description: "A warm, freshly baked dinner roll — soft inside with a golden crust. The perfect addition to any Saladworks soup or salad for a complete and satisfying meal.", price: 1.49 },
+      { id: "sd3", name: "Crispy Rice Marshmallow Treat", image: "/crispy-rice-marshmallow-treat.webp", description: "A classic Crispy Rice Marshmallow Treat - sweet, chewy, and perfectly crunchy. A nostalgic, crowd-pleasing dessert option available at Saladworks.", price: 2.49 },
+      { id: "sd4", name: "Chips", image: "/chips.webp", description: "Crunchy, salty chips - the perfect light snack side to pair with any Saladworks wrap, melt, or salad. A simple, satisfying addition to your meal.", price: 1.99 },
+      { id: "sd5", name: "Extra Roll", image: "/extra-roll.webp", description: "A warm, freshly baked dinner roll - soft inside with a golden crust. The perfect addition to any Saladworks soup or salad for a complete and satisfying meal.", price: 1.49 },
       { id: "sd6", name: "16oz Dressing", image: "/16oz-dressing.webp", description: "Take your favorite Saladworks salad dressing home! Available in a 16oz bottle, choose from our signature dressing flavors to enjoy fresh salads at home anytime.", price: 7.99 },
     ]
   },
@@ -133,16 +133,16 @@ export const menuData: MenuCategory[] = [
       { id: "b1", name: "Tractor Fountain Drink", image: "/tractor-fountain-drink.webp", description: "A refreshing Tractor Organic fountain drink made with real, certified organic ingredients. Available in various flavors for a clean and delicious beverage at Saladworks.", price: 3.49 },
       { id: "b2", name: "Tractor Gallon Pouch", image: "/tractor-gallon-pouch.webp", description: "A large Tractor Organic gallon pouch perfect for catering or group orders. Made with real organic ingredients and available in delicious flavors at Saladworks.", price: 14.99 },
       { id: "b3", name: "Bottled Water", image: "/bottled-water.webp", description: "Stay hydrated with a refreshing chilled bottled water. The clean, zero-calorie beverage option for health-conscious Saladworks guests.", price: 2.49 },
-      { id: "b4", name: "Coke (Bottle)", image: "/coke-(bottle).webp", description: "An ice-cold bottled Coca-Cola — the classic American beverage pairing for any Saladworks meal. Crisp, refreshing, and always satisfying.", price: 2.99 },
-      { id: "b5", name: "Diet Coke (Bottle)", image: "/diet-coke-(bottle).webp", description: "A refreshing bottled Diet Coke — a zero-calorie classic cola option for those watching their intake. A perfect beverage companion to your Saladworks order.", price: 2.99 },
-      { id: "b6", name: "Sprite (Bottle)", image: "/sprite-(bottle).webp", description: "A crisp and bubbly bottled Sprite — the clean, lemon-lime soda option available at Saladworks. A refreshing and light beverage choice for any meal.", price: 2.99 },
+      { id: "b4", name: "Coke (Bottle)", image: "/coke-(bottle).webp", description: "An ice-cold bottled Coca-Cola - the classic American beverage pairing for any Saladworks meal. Crisp, refreshing, and always satisfying.", price: 2.99 },
+      { id: "b5", name: "Diet Coke (Bottle)", image: "/diet-coke-(bottle).webp", description: "A refreshing bottled Diet Coke - a zero-calorie classic cola option for those watching their intake. A perfect beverage companion to your Saladworks order.", price: 2.99 },
+      { id: "b6", name: "Sprite (Bottle)", image: "/sprite-(bottle).webp", description: "A crisp and bubbly bottled Sprite - the clean, lemon-lime soda option available at Saladworks. A refreshing and light beverage choice for any meal.", price: 2.99 },
     ]
   },
   {
     id: "pick-2",
     emoji: "✏️",
     title: "Pick 2",
-    subtitle: "Your choice of any two items — Menu items may vary by location",
+    subtitle: "Your choice of any two items - Menu items may vary by location",
     categoryImage: "/grilled-chicken-caesar.webp",
     items: [
       { id: "p1", name: "Half Create Your Own", image: "/kids-create-your-own-salad.webp", description: "Build your own custom half salad at Saladworks as part of the Pick 2 combo. Choose your base greens and favorite toppings for a personalized, fresh, and healthy half-sized salad. 80–915 cal.", price: 13.99 },

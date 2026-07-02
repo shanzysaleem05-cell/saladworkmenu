@@ -1,0 +1,53 @@
+{
+  "id": "25",
+  "clientKey": "E25",
+  "name": "Saladworks + Frutta Bowls Norriton Square",
+  "address1": "95 E. Germantown Pike",
+  "address2": "",
+  "city": "East Norriton",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19401",
+  "country": "US",
+  "latitude": 40.13904,
+  "longitude": -75.30808,
+  "phone": "+1 610-382-1517",
+  "email": "EastNorriton@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/east-norriton/95-e-germantown-pike/",
+  "localPageId": "95-e-germantown-pike",
+  "metaTitle": "Salad Shop in East Norriton, 19401 | Saladworks - 95-e-germantown-pike",
+  "metaDescription": "Stop into your local Saladworks location in East Norriton, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "10:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-51039",
+  "oloVendorId": 177286,
+  "hasMenu": true
+}

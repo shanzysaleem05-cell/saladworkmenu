@@ -1,0 +1,53 @@
+{
+  "id": "48",
+  "clientKey": "E48",
+  "name": "Sterling Pointe Center",
+  "address1": "820 Sterling Pkwy",
+  "address2": "Suite 70",
+  "city": "Lincoln",
+  "county": "",
+  "state": "CA",
+  "postalCode": "95648",
+  "country": "US",
+  "latitude": 38.87159,
+  "longitude": -121.29618,
+  "phone": "+1 916-209-3839",
+  "email": "lincoln@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/ca/lincoln/820-sterling-parkway/",
+  "localPageId": "820-sterling-parkway",
+  "metaTitle": "Salad Shop in Lincoln, 95648 | Saladworks - 820-sterling-parkway",
+  "metaDescription": "Stop into your local Saladworks location in Lincoln, CA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "19:30"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "19:30"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "19:30"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "19:30"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "19:30"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-17001",
+  "oloVendorId": 184890,
+  "hasMenu": true
+}

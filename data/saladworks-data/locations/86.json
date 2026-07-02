@@ -1,0 +1,53 @@
+{
+  "id": "86",
+  "clientKey": "E86",
+  "name": "Gateway Shopping Center",
+  "address1": "159 E. Swedesford Road",
+  "address2": "",
+  "city": "Wayne",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19087",
+  "country": "US",
+  "latitude": 40.07333,
+  "longitude": -75.43399,
+  "phone": "+1 610-688-5755",
+  "email": "Gateway@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/wayne/159-e-swedesford-road/",
+  "localPageId": "159-e-swedesford-road",
+  "metaTitle": "Salad Shop in Wayne, 19087 | Saladworks - 159-e-swedesford-road",
+  "metaDescription": "Stop into your local Saladworks location in Wayne, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:15",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "09:15",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "09:15",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "09:15",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "09:15",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "10:30",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": "saladworks-51011",
+  "oloVendorId": 177354,
+  "hasMenu": true
+}

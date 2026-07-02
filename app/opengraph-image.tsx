@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'SaladWorks Menu Prices 2026 — Full Menu, Calories and Nutrition Guide'
+export const alt = 'SaladWorks Menu Prices 2026 - Full Menu, Calories and Nutrition Guide'
 export const size = {
   width: 1200,
   height: 630,

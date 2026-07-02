@@ -1,0 +1,53 @@
+{
+  "id": "368",
+  "clientKey": "E368",
+  "name": "League City, TX",
+  "address1": "2700 Marina Bay Drive",
+  "address2": "Suite P",
+  "city": "League City",
+  "county": "",
+  "state": "TX",
+  "postalCode": "77573",
+  "country": "US",
+  "latitude": 29.53836,
+  "longitude": -95.06633,
+  "phone": "+1 281-549-4503",
+  "email": "leaguecity@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/tx/league-city/2700-marina-bay-drive%20/",
+  "localPageId": "2700-marina-bay-drive ",
+  "metaTitle": "Salad Shop in League City, 77573 | Saladworks - 2700-marina-bay-drive ",
+  "metaDescription": "Stop into your local Saladworks location in League City, TX. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "sunday": {
+      "open": "10:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": null,
+  "oloVendorId": null,
+  "hasMenu": false
+}

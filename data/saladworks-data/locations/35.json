@@ -1,0 +1,53 @@
+{
+  "id": "35",
+  "clientKey": "E35",
+  "name": "Crossroads Plaza",
+  "address1": "1520 Route 38 East",
+  "address2": "",
+  "city": "Hainesport",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08036",
+  "country": "US",
+  "latitude": 39.98068,
+  "longitude": -74.80741,
+  "phone": "+1 609-702-8100",
+  "email": "Hainesport@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/hainesport/1520-route-38-east/",
+  "localPageId": "1520-route-38-east",
+  "metaTitle": "Salad Shop in Hainesport, 08036 | Saladworks - 1520-route-38-east",
+  "metaDescription": "Stop into your local Saladworks location in Hainesport, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-43010",
+  "oloVendorId": 177276,
+  "hasMenu": true
+}

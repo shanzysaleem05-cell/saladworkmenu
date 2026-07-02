@@ -1,0 +1,53 @@
+{
+  "id": "22",
+  "clientKey": "E22",
+  "name": "Locust Grove Plaza",
+  "address1": "1692 Clements Bridge Road",
+  "address2": "",
+  "city": "Deptford",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08096",
+  "country": "US",
+  "latitude": 39.83389,
+  "longitude": -75.1021,
+  "phone": "+1 856-202-5418",
+  "email": "Deptford@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/deptford/1692-clements-bridge-road/",
+  "localPageId": "1692-clements-bridge-road",
+  "metaTitle": "Salad Shop in Deptford, 08096 | Saladworks - 1692-clements-bridge-road",
+  "metaDescription": "Stop into your local Saladworks location in Deptford, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-43019",
+  "oloVendorId": 177299,
+  "hasMenu": true
+}

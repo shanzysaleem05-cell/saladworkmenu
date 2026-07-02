@@ -108,7 +108,7 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
 
             if (trimmed.startsWith('- ')) {
               const lines = trimmed.split('\n').filter(line => line.trim().startsWith('- '));
-              const priceMatches = lines.map(line => line.match(/-\s+\*\*(.*?)\*\*\s+(?:—|-)\s+(.*)/));
+              const priceMatches = lines.map(line => line.match(/-\s+\*\*(.*?)\*\*\s+(?:-|-)\s+(.*)/));
               const isPriceList = priceMatches.filter(Boolean).length > 0;
               
               if (isPriceList) {
@@ -123,7 +123,7 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-100">
                         {lines.map((item, i) => {
-                          const match = item.match(/-\s+\*\*(.*?)\*\*\s+(?:—|-)\s+(.*)/);
+                          const match = item.match(/-\s+\*\*(.*?)\*\*\s+(?:-|-)\s+(.*)/);
                           if (match) {
                             return (
                               <tr key={i} className="hover:bg-gray-50 transition-colors">

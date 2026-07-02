@@ -1,0 +1,53 @@
+{
+  "id": "57",
+  "clientKey": "E57",
+  "name": "Harmony Plaza",
+  "address1": "4150 Ogletown Stanton Road",
+  "address2": "",
+  "city": "Newark",
+  "county": "",
+  "state": "DE",
+  "postalCode": "19713",
+  "country": "US",
+  "latitude": 39.68603,
+  "longitude": -75.68321,
+  "phone": "+1 302-273-3702",
+  "email": "HarmonyPlaza@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/de/newark/4150-ogletown-stanton-road/",
+  "localPageId": "4150-ogletown-stanton-road",
+  "metaTitle": "Salad Shop in Newark, 19713 | Saladworks - 4150-ogletown-stanton-road",
+  "metaDescription": "Stop into your local Saladworks location in Newark, DE. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "sunday": {
+      "open": "10:00",
+      "close": "21:00"
+    }
+  },
+  "oloSlug": "saladworks-20017",
+  "oloVendorId": 177336,
+  "hasMenu": true
+}

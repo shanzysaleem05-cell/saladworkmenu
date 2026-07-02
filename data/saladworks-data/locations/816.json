@@ -1,0 +1,53 @@
+{
+  "id": "816",
+  "clientKey": "E816",
+  "name": "Saladworks + Frutta Bowls West Chester",
+  "address1": "1353 Dilworthtown Road",
+  "address2": "",
+  "city": "West Chester",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19382",
+  "country": "US",
+  "latitude": 39.9035,
+  "longitude": -75.56365,
+  "phone": "+1 484-307-0000",
+  "email": "",
+  "detailUrl": "https://restaurants.saladworks.com/pa/west-chester/1353-dilworthtown-road/",
+  "localPageId": "1353-dilworthtown-road",
+  "metaTitle": "Salad Shop in West Chester, 19382 | Saladworks - 1353-dilworthtown-road",
+  "metaDescription": "Stop into your local Saladworks location in West Chester, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "09:00",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": "saladworks-west-chester",
+  "oloVendorId": 293043,
+  "hasMenu": true
+}

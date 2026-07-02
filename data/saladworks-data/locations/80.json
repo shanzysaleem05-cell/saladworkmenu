@@ -1,0 +1,53 @@
+{
+  "id": "80",
+  "clientKey": "E80",
+  "name": "Cumberland Mall",
+  "address1": "3849 S Delsea Dr",
+  "address2": "",
+  "city": "Vineland",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08360",
+  "country": "US",
+  "latitude": 39.43187,
+  "longitude": -75.03548,
+  "phone": "+1 856-327-4600",
+  "email": "CumberlandMall@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/vineland/3849-s-delsea-dr/",
+  "localPageId": "3849-s-delsea-dr",
+  "metaTitle": "Salad Shop in Vineland, 08360 | Saladworks - 3849-s-delsea-dr",
+  "metaDescription": "Stop into your local Saladworks location in Vineland, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-43011",
+  "oloVendorId": 177290,
+  "hasMenu": true
+}

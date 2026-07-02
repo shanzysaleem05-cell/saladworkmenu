@@ -1,0 +1,53 @@
+{
+  "id": "54",
+  "clientKey": "E54",
+  "name": "Bank of America Plaza",
+  "address1": "3131 Route 38",
+  "address2": "",
+  "city": "Mount Laurel",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08054",
+  "country": "US",
+  "latitude": 39.97091,
+  "longitude": -74.88009,
+  "phone": "+1 856-439-0100",
+  "email": "MtLaurel@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/mount-laurel/3131-route-38/",
+  "localPageId": "3131-route-38",
+  "metaTitle": "Salad Shop in Mount Laurel, 08054 | Saladworks - 3131-route-38",
+  "metaDescription": "Stop into your local Saladworks location in Mount Laurel, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "20:00"
+    }
+  },
+  "oloSlug": "saladworks-43004",
+  "oloVendorId": 177311,
+  "hasMenu": true
+}

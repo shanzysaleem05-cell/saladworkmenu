@@ -1,0 +1,53 @@
+{
+  "id": "44",
+  "clientKey": "E44",
+  "name": "Saladworks + Frutta Bowls Lakewood Ranch",
+  "address1": "14555 State Road 70 E",
+  "address2": "",
+  "city": "Lakewood Ranch",
+  "county": "",
+  "state": "FL",
+  "postalCode": "34202",
+  "country": "US",
+  "latitude": 27.43178,
+  "longitude": -82.39471,
+  "phone": "+1 941-201-4343",
+  "email": "lakewoodranch@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/fl/lakewood-ranch/14555-state-road-70-e/",
+  "localPageId": "14555-state-road-70-e",
+  "metaTitle": "Salad Shop in Lakewood Ranch, 34202 | Saladworks - 14555-state-road-70-e",
+  "metaDescription": "Stop into your local Saladworks location in Lakewood Ranch, FL. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-22044",
+  "oloVendorId": 212312,
+  "hasMenu": true
+}

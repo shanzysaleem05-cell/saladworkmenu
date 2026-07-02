@@ -1,0 +1,53 @@
+{
+  "id": "812",
+  "clientKey": "E812",
+  "name": "Saladworks + Frutta Bowls Stuart",
+  "address1": "2345 SE Federal Hwy",
+  "address2": "",
+  "city": "Stuart",
+  "county": "",
+  "state": "FL",
+  "postalCode": "34994",
+  "country": "US",
+  "latitude": 27.17749,
+  "longitude": -80.23382,
+  "phone": "+1 772-732-7710",
+  "email": "Stuartfl@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/fl/stuart-/2345-se-federal-hwy/",
+  "localPageId": "2345-se-federal-hwy",
+  "metaTitle": "Salad Shop in Stuart, 34994 | Saladworks - 2345-se-federal-hwy",
+  "metaDescription": "Stop into your local Saladworks location in Stuart, FL. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": null,
+  "oloVendorId": null,
+  "hasMenu": false
+}

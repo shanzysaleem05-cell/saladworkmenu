@@ -1,0 +1,53 @@
+{
+  "id": "53",
+  "clientKey": "E53",
+  "name": "Saladworks + Frutta Bowls Middletown Crossing Shopping Center",
+  "address1": "494 E Main St",
+  "address2": "",
+  "city": "Middletown",
+  "county": "",
+  "state": "DE",
+  "postalCode": "19709",
+  "country": "US",
+  "latitude": 39.45014,
+  "longitude": -75.69798,
+  "phone": "+1 302-376-3772",
+  "email": "middletown@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/de/middletown/494-e-main-st/",
+  "localPageId": "494-e-main-st",
+  "metaTitle": "Salad Shop in Middletown, 19709 | Saladworks - 494-e-main-st",
+  "metaDescription": "Stop into your local Saladworks location in Middletown, DE. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-20008",
+  "oloVendorId": 177348,
+  "hasMenu": true
+}

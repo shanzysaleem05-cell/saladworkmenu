@@ -1,0 +1,53 @@
+{
+  "id": "73",
+  "clientKey": "E73",
+  "name": "South Salisbury",
+  "address1": "1405 S Salisbury Blvd",
+  "address2": "",
+  "city": "Salisbury",
+  "county": "",
+  "state": "MD",
+  "postalCode": "21801",
+  "country": "US",
+  "latitude": 38.34042,
+  "longitude": -75.60526,
+  "phone": "+1 443-736-4005",
+  "email": "SouthSalisbury@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/md/salisbury/1405-s-salisbury-blvd/",
+  "localPageId": "1405-s-salisbury-blvd",
+  "metaTitle": "Salad Shop in Salisbury, 21801 | Saladworks - 1405-s-salisbury-blvd",
+  "metaDescription": "Stop into your local Saladworks location in Salisbury, MD. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "18:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-33007",
+  "oloVendorId": 177266,
+  "hasMenu": true
+}

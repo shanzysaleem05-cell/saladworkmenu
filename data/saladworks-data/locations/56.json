@@ -1,0 +1,53 @@
+{
+  "id": "56",
+  "clientKey": "E56",
+  "name": "Christiana Mall",
+  "address1": "232 Christiana Mall Road",
+  "address2": "",
+  "city": "Newark",
+  "county": "",
+  "state": "DE",
+  "postalCode": "19702",
+  "country": "US",
+  "latitude": 39.67693,
+  "longitude": -75.64963,
+  "phone": "+1 302-738-3530",
+  "email": "ChristianaMall@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/de/newark/232-christiana-mall-road/",
+  "localPageId": "232-christiana-mall-road",
+  "metaTitle": "Salad Shop in Newark, 19702 | Saladworks - 232-christiana-mall-road",
+  "metaDescription": "Stop into your local Saladworks location in Newark, DE. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-20001",
+  "oloVendorId": 177289,
+  "hasMenu": true
+}

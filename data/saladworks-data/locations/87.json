@@ -1,0 +1,53 @@
+{
+  "id": "87",
+  "clientKey": "E87",
+  "name": "Waynechester Plaza",
+  "address1": "1628 Route 23 North",
+  "address2": "",
+  "city": "Wayne",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "07470",
+  "country": "US",
+  "latitude": 40.93948,
+  "longitude": -74.26905,
+  "phone": "+1 973-628-1687",
+  "email": "Waynechester@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/wayne/1628-route-23-north/",
+  "localPageId": "1628-route-23-north",
+  "metaTitle": "Salad Shop in Wayne, 07470 | Saladworks - 1628-route-23-north",
+  "metaDescription": "Stop into your local Saladworks location in Wayne, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-43027",
+  "oloVendorId": 177313,
+  "hasMenu": true
+}

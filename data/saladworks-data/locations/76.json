@@ -1,0 +1,53 @@
+{
+  "id": "76",
+  "clientKey": "E76",
+  "name": "Southampton Shopping Center",
+  "address1": "484 Second Street Pike",
+  "address2": "",
+  "city": "Southampton",
+  "county": "",
+  "state": "PA",
+  "postalCode": "18966",
+  "country": "US",
+  "latitude": 40.16946,
+  "longitude": -75.04648,
+  "phone": "+1 412-504-2365",
+  "email": "Southampton@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/southampton/484-second-street-pike/",
+  "localPageId": "484-second-street-pike",
+  "metaTitle": "Salad Shop in Southampton, 18966 | Saladworks - 484-second-street-pike",
+  "metaDescription": "Stop into your local Saladworks location in Southampton, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "18:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-51047",
+  "oloVendorId": 177351,
+  "hasMenu": true
+}

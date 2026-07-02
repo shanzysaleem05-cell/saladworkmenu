@@ -1,0 +1,50 @@
+# Saladworks Menu - Robots.txt
+# All crawlers are welcome!
+
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /guestpost/
+
+# Googlebot - Allowed per Google Ads guidelines
+User-agent: Googlebot
+Disallow: /admin/
+Disallow: /api/
+Disallow: /guestpost/
+
+# Google Ads Bots - Allowed per Google Ads guidelines
+User-agent: AdsBot-Google
+Disallow: /admin/
+Disallow: /api/
+Disallow: /guestpost/
+
+User-agent: AdsBot-Google-Mobile
+Disallow: /admin/
+Disallow: /api/
+Disallow: /guestpost/
+
+# Googlebot Image - Allowed per Google Ads guidelines
+User-agent: Googlebot-Image
+Disallow: /admin/
+Disallow: /api/
+Disallow: /guestpost/
+
+# Amazon AdBot - Explicitly allowed
+User-agent: AmazonAdBot
+Disallow: /admin/
+Disallow: /api/
+Disallow: /guestpost/
+
+# Bingbot
+User-agent: Bingbot
+Disallow: /admin/
+Disallow: /api/
+Disallow: /guestpost/
+
+# Host
+Host: https://saladworksmenu.us
+
+# Sitemaps
+Sitemap: https://saladworksmenu.us/sitemap.xml
+Sitemap: https://saladworksmenu.us/sitemap-states.xml
+Sitemap: https://saladworksmenu.us/image-sitemap.xml

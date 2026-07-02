@@ -1,0 +1,53 @@
+{
+  "id": "840",
+  "clientKey": "E840",
+  "name": "Clementon",
+  "address1": "1484 Blackwood-Clementon Road, Cherrywood Plaza",
+  "address2": "",
+  "city": "Clementon",
+  "county": "Camden",
+  "state": "NJ",
+  "postalCode": "08021",
+  "country": "US",
+  "latitude": 39.80287,
+  "longitude": -75.04172,
+  "phone": "+1 856-603-5796",
+  "email": "clementon@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/clementon/1484-blackwood-clementon-rd/",
+  "localPageId": "",
+  "metaTitle": "Salad Shop in Clementon, 08021 | Saladworks - ",
+  "metaDescription": "Stop into your local Saladworks location in Clementon, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": "saladworks-clementon-cherrywood-plaza",
+  "oloVendorId": 295648,
+  "hasMenu": true
+}

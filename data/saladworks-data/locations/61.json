@@ -1,0 +1,51 @@
+{
+  "id": "61",
+  "clientKey": "E61",
+  "name": "Howard Gittis Student Center",
+  "address1": "1755 N. 13th Street",
+  "address2": "",
+  "city": "Philadelphia",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19122",
+  "country": "US",
+  "latitude": 39.97904,
+  "longitude": -75.1551,
+  "phone": "+1 215-204-6399",
+  "email": "templeuniversity@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/philadelphia/1755-n-13th-street/",
+  "localPageId": "1755-n-13th-street",
+  "metaTitle": "Salad Shop in Philadelphia, 19122 | Saladworks - 1755-n-13th-street",
+  "metaDescription": "Stop into your local Saladworks location in Philadelphia, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "closed": true
+    },
+    "sunday": {
+      "closed": true
+    }
+  },
+  "oloSlug": null,
+  "oloVendorId": null,
+  "hasMenu": false
+}

@@ -1,0 +1,53 @@
+{
+  "id": "18",
+  "clientKey": "E18",
+  "name": "Collingswood",
+  "address1": "663 Haddon Avenue",
+  "address2": "",
+  "city": "Collingswood",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08108",
+  "country": "US",
+  "latitude": 39.91673,
+  "longitude": -75.06985,
+  "phone": "+1 856-858-7799",
+  "email": "Collingswood@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/collingswood/663-haddon-avenue/",
+  "localPageId": "663-haddon-avenue",
+  "metaTitle": "Salad Shop in Collingswood, 08108 | Saladworks - 663-haddon-avenue",
+  "metaDescription": "Stop into your local Saladworks location in Collingswood, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-43037",
+  "oloVendorId": 177280,
+  "hasMenu": true
+}

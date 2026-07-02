@@ -11,14 +11,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://saladworksmenu.us"),
   title: {
     template: "%s | SaladWorks Menu and Prices",
-    default: "SaladWorks Menu Prices 2026 — Full Menu, Calories and Nutrition Guide",
+    default: "SaladWorks Menu Prices 2026 - Full Menu, Calories and Nutrition Guide",
   },
-  description: "Experience the finest salads, wraps, melts and more — crafted fresh every day. View the complete SaladWorks menu, prices, calories, and nutritional info.",
+  description: "Experience the finest salads, wraps, melts and more - crafted fresh every day. View the complete SaladWorks menu, prices, calories, and nutritional info.",
   keywords: ["SaladWorks", "menu", "prices", "salads", "healthy food", "catering", "wraps", "soups"],
   authors: [{ name: "SaladWorksMenu.us Editorial Team" }],
   openGraph: {
-    title: "SaladWorks Menu Prices 2026 — Full Menu, Calories and Nutrition Guide",
-    description: "Experience the finest salads, wraps, melts and more — crafted fresh every day.",
+    title: "SaladWorks Menu Prices 2026 - Full Menu, Calories and Nutrition Guide",
+    description: "Experience the finest salads, wraps, melts and more - crafted fresh every day.",
     url: "https://saladworksmenu.us",
     siteName: "SaladWorks Menu",
     locale: "en_US",
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SaladWorks Menu Prices 2026 — Full Menu, Calories and Nutrition Guide",
-    description: "Experience the finest salads, wraps, melts and more — crafted fresh every day.",
+    title: "SaladWorks Menu Prices 2026 - Full Menu, Calories and Nutrition Guide",
+    description: "Experience the finest salads, wraps, melts and more - crafted fresh every day.",
     images: ["/opengraph-image"],
   },
   robots: {

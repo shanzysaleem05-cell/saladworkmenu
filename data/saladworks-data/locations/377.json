@@ -1,0 +1,53 @@
+{
+  "id": "377",
+  "clientKey": "E377",
+  "name": "Saladworks + Frutta Bowls Chesterfield",
+  "address1": "14446 Hull Street Rd.",
+  "address2": "",
+  "city": "Chesterfield",
+  "county": "",
+  "state": "VA",
+  "postalCode": "23832",
+  "country": "US",
+  "latitude": 37.40407,
+  "longitude": -77.67771,
+  "phone": "+1 804-200-4025",
+  "email": "chesterfield@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/va/chesterfield/14446-hull-street-rd/",
+  "localPageId": "14446-hull-street-rd",
+  "metaTitle": "Salad Shop in Chesterfield, 23832 | Saladworks - 14446-hull-street-rd",
+  "metaDescription": "Stop into your local Saladworks location in Chesterfield, VA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "10:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-chesterfield-va",
+  "oloVendorId": 242845,
+  "hasMenu": true
+}

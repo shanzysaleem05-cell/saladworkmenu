@@ -1,0 +1,53 @@
+{
+  "id": "98",
+  "clientKey": "E98",
+  "name": "Concord Square",
+  "address1": "4127 Concord Pike",
+  "address2": "",
+  "city": "Wilmington",
+  "county": "",
+  "state": "DE",
+  "postalCode": "19803",
+  "country": "US",
+  "latitude": 39.81122,
+  "longitude": -75.54912,
+  "phone": "+1 302-477-1987",
+  "email": "ConcordSquare@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/de/wilmington/4127-concord-pike/",
+  "localPageId": "4127-concord-pike",
+  "metaTitle": "Salad Shop in Wilmington, 19803 | Saladworks - 4127-concord-pike",
+  "metaDescription": "Stop into your local Saladworks location in Wilmington, DE. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-20003",
+  "oloVendorId": 177294,
+  "hasMenu": true
+}

@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/JsonLd"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://saladworksmenu.us"),
-  title: "SaladWorks Catering Menu & Prices 2026 — Packages, Trays & Group Orders",
+  title: "SaladWorks Catering Menu & Prices 2026 - Packages, Trays & Group Orders",
   description: "SaladWorks catering packages start at $89.99 for 10 people. Order salad bars, group trays, boxed meals and beverages for your next corporate event, party or family gathering. Request a free quote today.",
   keywords: [
     "SaladWorks catering",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     canonical: "https://saladworksmenu.us/catering",
   },
   openGraph: {
-    title: "SaladWorks Catering Menu & Prices 2026 — Packages from $89.99",
+    title: "SaladWorks Catering Menu & Prices 2026 - Packages from $89.99",
     description: "SaladWorks catering packages start at $89.99 for 10 people. Salad bars, group trays, boxed meals and beverages for any event size.",
     url: "https://saladworksmenu.us/catering",
     siteName: "SaladWorks Menu & Prices",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         url: "https://saladworksmenu.us/catering/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "SaladWorks Catering Packages 2026 — Starting at $89.99",
+        alt: "SaladWorks Catering Packages 2026 - Starting at $89.99",
       },
     ],
     locale: "en_US",

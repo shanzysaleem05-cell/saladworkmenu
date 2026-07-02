@@ -1,0 +1,53 @@
+{
+  "id": "32",
+  "clientKey": "E32",
+  "name": "Sunrise Plaza",
+  "address1": "68 West Jimmie Leeds Road",
+  "address2": "Unit 1B",
+  "city": "Galloway Twp.",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08205",
+  "country": "US",
+  "latitude": 39.47602,
+  "longitude": -74.5409,
+  "phone": "+1 609-241-6494",
+  "email": "Galloway@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/galloway-twp/68-west-jimmie-leeds-road/",
+  "localPageId": "68-west-jimmie-leeds-road",
+  "metaTitle": "Salad Shop in Galloway Twp., 08205 | Saladworks - 68-west-jimmie-leeds-road",
+  "metaDescription": "Stop into your local Saladworks location in Galloway Twp., NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "10:00",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": null,
+  "oloVendorId": null,
+  "hasMenu": false
+}

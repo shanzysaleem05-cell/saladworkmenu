@@ -1,0 +1,53 @@
+{
+  "id": "21",
+  "clientKey": "E21",
+  "name": "Hartford Corners at Delran",
+  "address1": "1321B Fairview Blvd",
+  "address2": "",
+  "city": "Delran",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08075",
+  "country": "US",
+  "latitude": 40.02039,
+  "longitude": -74.94249,
+  "phone": "+1 856-255-5040",
+  "email": "Delran@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/delran/1321b-fairview-blvd/",
+  "localPageId": "1321b-fairview-blvd",
+  "metaTitle": "Salad Shop in Delran, 08075 | Saladworks - 1321b-fairview-blvd",
+  "metaDescription": "Stop into your local Saladworks location in Delran, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:15",
+      "close": "21:00"
+    },
+    "sunday": {
+      "open": "10:15",
+      "close": "20:00"
+    }
+  },
+  "oloSlug": "saladworks-43023",
+  "oloVendorId": 177273,
+  "hasMenu": true
+}

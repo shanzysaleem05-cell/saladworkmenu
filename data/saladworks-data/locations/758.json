@@ -1,0 +1,53 @@
+{
+  "id": "758",
+  "clientKey": "E758",
+  "name": "Saladworks + Frutta Bowls Fairfax",
+  "address1": "9414 Fairfax Blvd",
+  "address2": "",
+  "city": "Fairfax",
+  "county": "",
+  "state": "VA",
+  "postalCode": "22031",
+  "country": "US",
+  "latitude": 38.86526,
+  "longitude": -77.27156,
+  "phone": "+1 276-253-1620",
+  "email": "",
+  "detailUrl": "https://restaurants.saladworks.com/va/fairfax/9414-fairfax-blvd/",
+  "localPageId": "9414-fairfax-blvd",
+  "metaTitle": "Salad Shop in Fairfax, 22031 | Saladworks - 9414-fairfax-blvd",
+  "metaDescription": "Stop into your local Saladworks location in Fairfax, VA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-fairfax",
+  "oloVendorId": 286250,
+  "hasMenu": true
+}

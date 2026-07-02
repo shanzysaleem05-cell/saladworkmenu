@@ -1,0 +1,53 @@
+{
+  "id": "34",
+  "clientKey": "E34",
+  "name": "Collegetown Shopping Center",
+  "address1": "791 Delsea Drive",
+  "address2": "",
+  "city": "Glassboro",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08028",
+  "country": "US",
+  "latitude": 39.72216,
+  "longitude": -75.11611,
+  "phone": "+1 856-863-2200",
+  "email": "Glassboro@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/glassboro/791-delsea-drive/",
+  "localPageId": "791-delsea-drive",
+  "metaTitle": "Salad Shop in Glassboro, 08028 | Saladworks - 791-delsea-drive",
+  "metaDescription": "Stop into your local Saladworks location in Glassboro, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:15",
+      "close": "21:00"
+    },
+    "sunday": {
+      "open": "10:15",
+      "close": "20:00"
+    }
+  },
+  "oloSlug": "saladworks-43033",
+  "oloVendorId": 177293,
+  "hasMenu": true
+}

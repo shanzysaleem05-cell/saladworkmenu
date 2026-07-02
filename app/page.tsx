@@ -1,10 +1,12 @@
 import { Metadata } from "next"
 import HomeClient from "./HomeClient"
 import { JsonLd } from "@/components/JsonLd"
+import { menuData } from "@/data/menuData"
+import { getNationalAverages, getDataDate } from "@/lib/stateData"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://saladworksmenu.us"),
-  title: "SaladWorks Menu Prices 2026 — Full Menu, Calories and Nutrition Guide",
+  title: "SaladWorks Menu Prices 2026 - Full Menu, Calories and Nutrition Guide",
   description: "Explore the complete SaladWorks menu with 2026 prices, calorie counts, and nutrition. Salads from $9.99, wraps from $11.99, and Pick 2 combos from $13.49.",
   keywords: [
     "SaladWorks menu prices",
@@ -35,7 +37,7 @@ export const metadata: Metadata = {
     canonical: "https://saladworksmenu.us",
   },
   openGraph: {
-    title: "SaladWorks Menu Prices 2026 — Full Menu, Calories and Nutrition Guide",
+    title: "SaladWorks Menu Prices 2026 - Full Menu, Calories and Nutrition Guide",
     description: "Explore the complete SaladWorks menu with 2026 prices, calorie counts, and nutrition. Salads from $9.99, wraps from $11.99, and Pick 2 combos from $13.49.",
     url: "https://saladworksmenu.us",
     siteName: "SaladWorks Menu & Prices",
@@ -45,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SaladWorks Menu Prices 2026 — Full Menu, Calories and Nutrition Guide",
+    title: "SaladWorks Menu Prices 2026 - Full Menu, Calories and Nutrition Guide",
     description: "Complete SaladWorks menu with 2026 prices, calories and nutrition facts.",
     images: ["/opengraph-image"],
     creator: "@saladworksmenu",
@@ -63,7 +65,7 @@ export default function Page() {
     "url": "https://saladworksmenu.us",
     "description": "Independent fan guide for SaladWorks menu prices, calories, and nutrition information for 2026.",
     "inLanguage": "en-US",
-    "dateModified": "2026-07-01",
+    "dateModified": getDataDate(),
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
@@ -144,12 +146,39 @@ export default function Page() {
     ]
   }
 
+  // Fetch real average prices and calories
+  const { categories: nationalCategories } = getNationalAverages()
+
+  // Update static menuData with real prices & calories
+  const updatedMenuData = menuData.map(cat => ({
+    ...cat,
+    items: cat.items.map(item => {
+      // Find the corresponding item in national averages
+      let realItem: any = null
+      for (const natCat of nationalCategories) {
+        realItem = natCat.items.find(i => 
+          i.slug === item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') ||
+          i.name.toLowerCase() === item.name.toLowerCase() ||
+          i.name.toLowerCase().includes(item.name.toLowerCase()) ||
+          item.name.toLowerCase().includes(i.name.toLowerCase())
+        )
+        if (realItem) break
+      }
+      
+      return {
+        ...item,
+        price: realItem ? realItem.price : item.price,
+        calories: realItem ? realItem.calories : null
+      }
+    })
+  }))
+
   return (
     <>
       <JsonLd data={websiteSchema} />
       <JsonLd data={organizationSchema} />
       <JsonLd data={faqSchema} />
-      <HomeClient />
+      <HomeClient menuData={updatedMenuData} dataDate={getDataDate()} />
     </>
   )
 }

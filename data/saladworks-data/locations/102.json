@@ -1,0 +1,53 @@
+{
+  "id": "102",
+  "clientKey": "E102",
+  "name": "Wyomissing Plaza Shopping Center",
+  "address1": "2109 State Hill Road",
+  "address2": "",
+  "city": "Wyomissing",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19610",
+  "country": "US",
+  "latitude": 40.34008,
+  "longitude": -75.97823,
+  "phone": "+1 610-750-6385",
+  "email": "Wyomissing@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/wyomissing/2109-state-hill-road/",
+  "localPageId": "2109-state-hill-road",
+  "metaTitle": "Salad Shop in Wyomissing, 19610 | Saladworks - 2109-state-hill-road",
+  "metaDescription": "Stop into your local Saladworks location in Wyomissing, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "sunday": {
+      "open": "10:00",
+      "close": "21:00"
+    }
+  },
+  "oloSlug": "saladworks-51058",
+  "oloVendorId": 177359,
+  "hasMenu": true
+}

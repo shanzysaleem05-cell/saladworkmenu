@@ -1,0 +1,53 @@
+{
+  "id": "12",
+  "clientKey": "E12",
+  "name": "Barclay Farms Shopping Center",
+  "address1": "1409 East Route 70",
+  "address2": "Barclay Farms",
+  "city": "Cherry Hill",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08034",
+  "country": "US",
+  "latitude": 39.91029,
+  "longitude": -74.99717,
+  "phone": "+1 856-428-2649",
+  "email": "CherryHillMall@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/cherry-hill/1409-east-route-70/",
+  "localPageId": "1409-east-route-70",
+  "metaTitle": "Salad Shop in Cherry Hill, 08034 | Saladworks - 1409-east-route-70",
+  "metaDescription": "Stop into your local Saladworks location in Cherry Hill, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-43006",
+  "oloVendorId": 177302,
+  "hasMenu": true
+}

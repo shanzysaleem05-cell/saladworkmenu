@@ -11,7 +11,7 @@ interface FoodCardProps {
   price: number;
   image: string;
   category?: string;
-  calories?: number;
+  calories?: number | string | null;
   isVeg?: boolean;
   isSpicy?: boolean;
 }
@@ -22,7 +22,7 @@ export function FoodCard({
   price, 
   image,
   category = "Salads",
-  calories = 320,
+  calories = null,
   isVeg = true,
   isSpicy = false
 }: FoodCardProps) {
@@ -69,8 +69,11 @@ export function FoodCard({
           <p className="text-[#6b7280] text-[12px] leading-snug mb-4 flex-1 line-clamp-2">{description}</p>
           
           <div className="flex items-center justify-between mb-3 border-b border-gray-100 pb-3">
-            <span className="font-black text-brand-orange text-[22px] tracking-tight">${price.toFixed(2)}</span>
-            <span className="text-[#9ca3af] text-[12px] font-medium">{calories} cal</span>
+            <div className="flex flex-col">
+              <span className="text-[9px] font-bold text-gray-400 tracking-widest uppercase mb-0.5">Avg Price</span>
+              <span className="font-black text-brand-orange text-[22px] tracking-tight leading-none">${price.toFixed(2)}</span>
+            </div>
+            <span className="text-[#9ca3af] text-[12px] font-medium">{calories ? `${calories} cal` : 'Varies'}</span>
           </div>
 
           <div className="w-full text-brand-orange font-bold text-[13px] group-hover:text-[#c44e30] transition-colors flex items-center justify-center gap-1 mt-auto">

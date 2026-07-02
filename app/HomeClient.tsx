@@ -7,11 +7,14 @@ import { ArrowRight, Leaf, ShieldCheck, MapPin, Gift, HelpCircle, Smartphone, St
 import { Button } from "@/components/Button"
 import { FAQAccordion } from "@/components/FAQAccordion"
 import { FoodCard } from "@/components/FoodCard"
-import { menuData } from "@/data/menuData"
 
-export default function HomeClient() {
+type MenuDataProp = any[]
+
+export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataProp, dataDate?: string }) {
   const [isOpen, setIsOpen] = useState(true)
   const [copiedCode, setCopiedCode] = useState<string | null>(null)
+
+  const prettyDate = dataDate ? new Date(dataDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) : '2026'
 
   useEffect(() => {
     const checkOpenStatus = () => {
@@ -42,13 +45,15 @@ export default function HomeClient() {
   return (
     <div className="flex flex-col w-full">
       {/* Hidden Date for SEO */}
-      <time 
-        dateTime="2026-07-01" 
-        className="hidden"
-        itemProp="dateModified"
-      >
-        2026-07-01
-      </time>
+      {dataDate && (
+        <time 
+          dateTime={dataDate} 
+          className="hidden"
+          itemProp="dateModified"
+        >
+          {dataDate}
+        </time>
+      )}
 
       {/* Section 1: Hero */}
       <section className="w-full pt-16 pb-24 bg-site-bg flex flex-col items-center justify-center text-center px-4">
@@ -150,7 +155,7 @@ export default function HomeClient() {
               <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
                 <div>
                   <h2 className="text-[32px] md:text-[40px] font-extrabold text-site-black tracking-tight leading-tight mb-2">
-                    {category.title} — Prices & Calories
+                    {category.title} - Prices & Calories
                   </h2>
                   <p className="text-[#6b7280] text-lg">{category.subtitle}</p>
                 </div>
@@ -192,7 +197,7 @@ export default function HomeClient() {
                     name={item.name}
                     description={item.description}
                     price={item.price}
-                    calories={Math.floor(item.price * 25)}
+                    calories={item.calories}
                     image={item.image || category.categoryImage || "/hot-honey-chicken-bowl.webp"}
                     category={category.title}
                     isVeg={category.id === "salads" || category.id === "soups"}
@@ -206,7 +211,7 @@ export default function HomeClient() {
                   <thead>
                     <tr className="bg-brand-orange">
                       <th className="py-4 px-6 text-white font-black text-xs tracking-widest uppercase w-1/4">{category.title.toUpperCase()} ITEM</th>
-                      <th className="py-4 px-6 text-white font-black text-xs tracking-widest uppercase w-1/6">PRICE</th>
+                      <th className="py-4 px-6 text-white font-black text-xs tracking-widest uppercase w-1/6">AVG. PRICE</th>
                       <th className="py-4 px-6 text-white font-black text-xs tracking-widest uppercase w-1/6">CALORIES</th>
                       <th className="py-4 px-6 text-white font-black text-xs tracking-widest uppercase w-5/12">DESCRIPTION</th>
                     </tr>
@@ -222,9 +227,7 @@ export default function HomeClient() {
                         <td className="py-6 px-6 align-top font-black text-site-black text-[15px]">
                           ${item.price.toFixed(2)}
                         </td>
-                        <td className="py-6 px-6 align-top text-gray-500 font-medium text-[14px]">
-                          {Math.floor(item.price * 25)} cal
-                        </td>
+                        <td className="py-6 px-6 align-top text-gray-500 font-medium text-[14px] text-center">{item.calories ? `${item.calories} cal` : 'Varies'}</td>
                         <td className="py-6 px-6 align-top text-gray-700 text-[14px] leading-relaxed">
                           {item.description}
                         </td>

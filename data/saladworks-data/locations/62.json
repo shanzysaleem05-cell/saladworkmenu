@@ -1,0 +1,53 @@
+{
+  "id": "62",
+  "clientKey": "E62",
+  "name": "Tremont Shopping Center",
+  "address1": "2508-10 Welsh Road",
+  "address2": "",
+  "city": "Philadelphia",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19152",
+  "country": "US",
+  "latitude": 40.07302,
+  "longitude": -75.03503,
+  "phone": "+1 215-676-0320",
+  "email": "Tremont@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/philadelphia/2508-10-welsh-road/",
+  "localPageId": "2508-10-welsh-road",
+  "metaTitle": "Salad Shop in Philadelphia, 19152 | Saladworks - 2508-10-welsh-road",
+  "metaDescription": "Stop into your local Saladworks location in Philadelphia, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": "saladworks-51054",
+  "oloVendorId": 177346,
+  "hasMenu": true
+}

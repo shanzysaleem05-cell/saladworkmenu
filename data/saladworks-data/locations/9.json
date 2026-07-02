@@ -1,0 +1,53 @@
+{
+  "id": "9",
+  "clientKey": "E9",
+  "name": "Lawrence Park Shopping Center",
+  "address1": "1991 Sproul Road",
+  "address2": "#45",
+  "city": "Broomall",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19008",
+  "country": "US",
+  "latitude": 39.96192,
+  "longitude": -75.35554,
+  "phone": "+1 610-359-9926",
+  "email": "LawrencePark@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/broomall/1991-sproul-road/",
+  "localPageId": "1991-sproul-road",
+  "metaTitle": "Salad Shop in Broomall, 19008 | Saladworks - 1991-sproul-road",
+  "metaDescription": "Stop into your local Saladworks location in Broomall, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "10:00",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": "saladworks-51023",
+  "oloVendorId": 177269,
+  "hasMenu": true
+}

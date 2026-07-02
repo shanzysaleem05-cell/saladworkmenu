@@ -1,0 +1,629 @@
+import fs from 'fs'
+import path from 'path'
+
+// ---------------------------------------------------------------------------
+// Types
+// ---------------------------------------------------------------------------
+
+export interface StateInfo {
+  code: string
+  slug: string
+  name: string
+  locationCount: number
+  cities: string[]
+}
+
+export interface StateMenuItem {
+  chainProductId: number
+  name: string
+  description: string
+  slug: string
+  price: number // average price
+  minPrice?: number
+  maxPrice?: number
+  calories: number
+  calorieLabel: string
+  image?: string
+  sizes: { name: string; price: number; calories: number }[]
+}
+
+export interface StateMenuCategory {
+  name: string
+  slug: string
+  items: StateMenuItem[]
+}
+
+export interface LocationHours {
+  monday: { open: string; close: string } | { closed: true }
+  tuesday: { open: string; close: string } | { closed: true }
+  wednesday: { open: string; close: string } | { closed: true }
+  thursday: { open: string; close: string } | { closed: true }
+  friday: { open: string; close: string } | { closed: true }
+  saturday: { open: string; close: string } | { closed: true }
+  sunday: { open: string; close: string } | { closed: true }
+}
+
+export interface StateLocation {
+  id: string
+  name: string
+  city: string
+  address: string
+  phone: string
+  postalCode: string
+  hours: LocationHours
+}
+
+// ---------------------------------------------------------------------------
+// State mapping
+// ---------------------------------------------------------------------------
+
+const STATE_MAP: Record<string, { slug: string; name: string }> = {
+  'CA': { slug: 'california', name: 'California' },
+  'CT': { slug: 'connecticut', name: 'Connecticut' },
+  'DC': { slug: 'washington-dc', name: 'Washington D.C.' },
+  'DE': { slug: 'delaware', name: 'Delaware' },
+  'FL': { slug: 'florida', name: 'Florida' },
+  'IN': { slug: 'indiana', name: 'Indiana' },
+  'KS': { slug: 'kansas', name: 'Kansas' },
+  'MD': { slug: 'maryland', name: 'Maryland' },
+  'MN': { slug: 'minnesota', name: 'Minnesota' },
+  'NC': { slug: 'north-carolina', name: 'North Carolina' },
+  'NJ': { slug: 'new-jersey', name: 'New Jersey' },
+  'NY': { slug: 'new-york', name: 'New York' },
+  'PA': { slug: 'pennsylvania', name: 'Pennsylvania' },
+  'TN': { slug: 'tennessee', name: 'Tennessee' },
+  'TX': { slug: 'texas', name: 'Texas' },
+  'VA': { slug: 'virginia', name: 'Virginia' },
+}
+
+const SLUG_TO_STATE: Record<string, string> = Object.fromEntries(
+  Object.entries(STATE_MAP).map(([code, { slug }]) => [slug, code])
+)
+
+// ---------------------------------------------------------------------------
+// Image mapping (OLO data has no images)
+// ---------------------------------------------------------------------------
+
+const IMAGE_MAP: Record<string, string> = {
+  'Hot Honey Chicken Bowl': '/hot-honey-chicken-bowl.webp',
+  'Sweet Chili Shrimp Bowl': '/sweet-chili-shrimp-bowl.webp',
+  'Fire-Grilled Steak Bowl': '/fire-grilled-steak-bowl.webp',
+  'Grilled Chicken Caesar Salad': '/grilled-chicken-caesar.webp',
+  'Avocado Cobb Salad': '/avocado-cobb.webp',
+  'Fuji Apple Crunch Salad': '/fuji-apple-crunch.webp',
+  "Sophie's Salad": '/sophies.webp',
+  'Mediterranean Chicken Salad': '/mediterranean-chicken.webp',
+  'NEW Mediterranean Chicken Salad': '/mediterranean-chicken.webp',
+  'Southwest Chipotle Ranch Salad': '/southwest-chipotle-ranch.webp',
+  'NEW Steakhouse Salad': '/steakhouse-salad.webp',
+  'Buffalo Bleu Salad': '/buffalo-chicken.webp',
+  'Chipotle Chicken and Bacon': '/chipotle-chicken-and-bacon.webp',
+  'Bently Salad': '/bently.webp',
+  'Tofu Superfood Salad': '/tofu-superfood.webp',
+  'Chicken Pesto': '/chicken-pesto.webp',
+  'Asian Crispy Chicken Salad': '/asian-crispy-chicken.webp',
+  'Southwest Chicken Caesar Salad': '/southwest-chicken-caesar.webp',
+  'Smoky BBQ Chicken Salad': '/smoky-bbq-crispy-chicken.webp',
+  'Roasted Turkey Club Salad': '/roasted-turkey-club.webp',
+  'NEW Steak & Cheddar Melt': '/steak-cheddar-melt.webp',
+  'Grilled Cheese': '/grilled-cheese.webp',
+  'Black & Blue Grilled Wrap': '/black-blue-grilled-wrap.webp',
+  'Buffalo Chicken Grilled Wrap': '/buffalo-chicken-grilled-wrap.webp',
+  'Cali Chicken Grilled Wrap': '/cali-chicken-grilled-wrap.webp',
+  'Turkey Jalapeno Crunch Grilled Wrap': '/turkey-jalapeno-crunch-wrap.webp',
+  'Broccoli Cheddar Soup': '/broccoli-cheddar-soup.webp',
+  'Chicken Noodle Soup': '/chicken-noodle-soup.webp',
+  'Kids Bento Box': '/kids-bento-box.webp',
+  'Kids Create Your Own Salad': '/kids-create-your-own-salad.webp',
+  'Kids Grilled Cheese': '/kids-grilled-cheese.webp',
+  'Kids Grilled Chicken Quesadilla': '/kids-grilled-chicken-quesadilla.webp',
+  'Chocolate Chip Cookie': '/chocolate-chip-cookie.webp',
+  'Chocolate Fudge Brownie': '/chocolate-fudge-brownie.webp',
+  'Crispy Rice Marshmallow Treat': '/crispy-rice-marshmallow-treat.webp',
+  'Bottled Water': '/bottled-water.webp',
+  'Fountain Beverage': '/tractor-fountain-drink.webp',
+}
+
+// ---------------------------------------------------------------------------
+// Category ordering & filtering
+// ---------------------------------------------------------------------------
+
+const CATEGORY_ORDER: string[] = [
+  'Protein Bowls',
+  'Salads & Wraps',
+  'Melts',
+  'Grilled Wraps',
+  'Soups',
+  'Kids Works',
+  'Sides & Desserts',
+  'Drinks',
+  'Family Meals',
+]
+
+const HIDDEN_CATEGORIES = new Set([
+  'Would you like Utensils?',
+  'Pick 2',
+  'GLP-1',
+  'High Protein',
+  'Create Your Own',
+])
+
+// ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
+
+function slugify(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[®™©]/g, '')
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '')
+}
+
+function itemSlugify(name: string): string {
+  // Strip leading "NEW " for cleaner slugs but keep in display name
+  const cleaned = name.replace(/^NEW\s+/i, '')
+  return slugify(cleaned)
+}
+
+function findImage(itemName: string): string | undefined {
+  // Exact match first
+  if (IMAGE_MAP[itemName]) return IMAGE_MAP[itemName]
+
+  // Check if any key is contained in the item name, or vice versa
+  for (const [key, imgPath] of Object.entries(IMAGE_MAP)) {
+    if (itemName.includes(key) || key.includes(itemName)) {
+      return imgPath
+    }
+  }
+
+  return undefined
+}
+
+function round2(n: number): number {
+  return Math.round(n * 100) / 100
+}
+
+// ---------------------------------------------------------------------------
+// Data directory paths
+// ---------------------------------------------------------------------------
+
+const DATA_DIR = path.join(process.cwd(), 'data', 'saladworks-data')
+const MENUS_DIR = path.join(DATA_DIR, 'menus')
+const LOCATIONS_DIR = path.join(DATA_DIR, 'locations')
+const INDEX_FILE = path.join(DATA_DIR, 'index.json')
+
+// ---------------------------------------------------------------------------
+// Caching
+// ---------------------------------------------------------------------------
+
+interface IndexLocation {
+  id: string
+  state: string
+  city: string
+  oloSlug: string | null
+  hasMenu: boolean
+}
+
+interface IndexData {
+  generatedAt: string
+  count: number
+  withMenu: number
+  locations: IndexLocation[]
+}
+
+interface MenuItemRaw {
+  id: number
+  chainProductId: number
+  name: string
+  description: string
+  price: number | null
+  priceFromOptions: boolean
+  calories: number | null
+  calorieLabel: string
+  sizes: Array<{ name: string; price: number; calories: number | null }>
+  optionGroupIds?: number[]
+}
+
+interface MenuCategoryRaw {
+  id: number
+  name: string
+  items: MenuItemRaw[]
+}
+
+interface MenuDataRaw {
+  slug: string
+  name: string
+  address: { state: string; city: string; [key: string]: unknown }
+  categories: MenuCategoryRaw[]
+  [key: string]: unknown
+}
+
+interface LocationDataRaw {
+  id: string
+  name: string
+  address1: string
+  address2?: string
+  city: string
+  state: string
+  postalCode: string
+  phone: string
+  hours: LocationHours
+  oloSlug: string | null
+  hasMenu: boolean
+  [key: string]: unknown
+}
+
+let _menuCache: Map<string, MenuDataRaw> | null = null
+let _locationCache: Map<string, LocationDataRaw> | null = null
+let _indexCache: IndexData | null = null
+
+function loadIndex(): IndexData {
+  if (_indexCache) return _indexCache
+  try {
+    const raw = fs.readFileSync(INDEX_FILE, 'utf-8')
+    _indexCache = JSON.parse(raw) as IndexData
+    return _indexCache
+  } catch (err) {
+    console.error('Failed to load index.json:', err)
+    _indexCache = { generatedAt: '', count: 0, withMenu: 0, locations: [] }
+    return _indexCache
+  }
+}
+
+function loadAllMenus(): Map<string, MenuDataRaw> {
+  if (_menuCache) return _menuCache
+  _menuCache = new Map()
+
+  try {
+    const files = fs.readdirSync(MENUS_DIR).filter(f => f.endsWith('.json'))
+    for (const file of files) {
+      try {
+        const raw = fs.readFileSync(path.join(MENUS_DIR, file), 'utf-8')
+        const data = JSON.parse(raw) as MenuDataRaw
+        // Key by the OLO slug (filename without .json)
+        const slug = file.replace('.json', '')
+        _menuCache.set(slug, data)
+      } catch {
+        // Skip unreadable menu files
+      }
+    }
+  } catch {
+    // Menus directory missing
+  }
+
+  return _menuCache
+}
+
+function loadAllLocations(): Map<string, LocationDataRaw> {
+  if (_locationCache) return _locationCache
+  _locationCache = new Map()
+
+  try {
+    const files = fs.readdirSync(LOCATIONS_DIR).filter(f => f.endsWith('.json'))
+    for (const file of files) {
+      try {
+        const raw = fs.readFileSync(path.join(LOCATIONS_DIR, file), 'utf-8')
+        const data = JSON.parse(raw) as LocationDataRaw
+        _locationCache.set(data.id, data)
+      } catch {
+        // Skip unreadable location files
+      }
+    }
+  } catch {
+    // Locations directory missing
+  }
+
+  return _locationCache
+}
+
+// ---------------------------------------------------------------------------
+// Internal helpers
+// ---------------------------------------------------------------------------
+
+/** Get all index locations that have a menu and belong to a given state code. */
+function getIndexLocationsForState(stateCode: string): IndexLocation[] {
+  const index = loadIndex()
+  return index.locations.filter(
+    l => l.state === stateCode && l.hasMenu && l.oloSlug
+  )
+}
+
+/** Build StateInfo for a given state code. */
+function buildStateInfo(stateCode: string): StateInfo | null {
+  const mapping = STATE_MAP[stateCode]
+  if (!mapping) return null
+
+  const locs = getIndexLocationsForState(stateCode)
+  if (locs.length === 0) return null
+
+  const cities = Array.from(new Set(locs.map(l => l.city))).sort()
+
+  return {
+    code: stateCode,
+    slug: mapping.slug,
+    name: mapping.name,
+    locationCount: locs.length,
+    cities,
+  }
+}
+
+/** Aggregate items by chainProductId, averaging prices across locations. */
+function aggregateMenus(
+  oloSlugs: string[]
+): StateMenuCategory[] {
+  const menus = loadAllMenus()
+
+  // Collect all categories across locations, keyed by category name
+  const categoryMap = new Map<
+    string,
+    Map<
+      number, // chainProductId
+      {
+        name: string
+        description: string
+        prices: number[]
+        calories: number | null
+        calorieLabel: string
+        sizes: Array<{ name: string; price: number; calories: number | null }>
+      }
+    >
+  >()
+
+  for (const oloSlug of oloSlugs) {
+    const menu = menus.get(oloSlug)
+    if (!menu?.categories) continue
+
+    for (const cat of menu.categories) {
+      if (HIDDEN_CATEGORIES.has(cat.name)) continue
+
+      if (!categoryMap.has(cat.name)) {
+        categoryMap.set(cat.name, new Map())
+      }
+      const itemMap = categoryMap.get(cat.name)!
+
+      for (const item of cat.items) {
+        // Skip items with null price
+        if (item.price === null) continue
+
+        if (itemMap.has(item.chainProductId)) {
+          const existing = itemMap.get(item.chainProductId)!
+          existing.prices.push(item.price)
+          // Keep latest non-empty description
+          if (item.description && !existing.description) {
+            existing.description = item.description
+          }
+          // Keep non-null calories
+          if (item.calories !== null && existing.calories === null) {
+            existing.calories = item.calories
+            existing.calorieLabel = item.calorieLabel
+          }
+          // Keep larger sizes array
+          if (item.sizes.length > existing.sizes.length) {
+            existing.sizes = item.sizes
+          }
+        } else {
+          itemMap.set(item.chainProductId, {
+            name: item.name,
+            description: item.description,
+            prices: [item.price],
+            calories: item.calories,
+            calorieLabel: item.calorieLabel,
+            sizes: [...item.sizes],
+          })
+        }
+      }
+    }
+  }
+
+  // Sort categories by defined order, then alphabetically for extras
+  const categoryNames = Array.from(categoryMap.keys())
+  categoryNames.sort((a, b) => {
+    const idxA = CATEGORY_ORDER.indexOf(a)
+    const idxB = CATEGORY_ORDER.indexOf(b)
+    if (idxA !== -1 && idxB !== -1) return idxA - idxB
+    if (idxA !== -1) return -1
+    if (idxB !== -1) return 1
+    return a.localeCompare(b)
+  })
+
+  const result: StateMenuCategory[] = []
+
+  for (const catName of categoryNames) {
+    const itemMap = categoryMap.get(catName)!
+    const items: StateMenuItem[] = []
+
+    for (const [chainProductId, data] of Array.from(itemMap)) {
+      const avgPrice = round2(
+        data.prices.reduce((sum, p) => sum + p, 0) / data.prices.length
+      )
+      const minPrice = Math.min(...data.prices)
+      const maxPrice = Math.max(...data.prices)
+      const image = findImage(data.name)
+
+      items.push({
+        chainProductId,
+        name: data.name,
+        slug: itemSlugify(data.name),
+        description: data.description,
+        price: avgPrice,
+        minPrice,
+        maxPrice,
+        calories: data.calories,
+        calorieLabel: data.calorieLabel,
+        sizes: data.sizes,
+        ...(image ? { image } : {}),
+      })
+    }
+
+    // Sort items by name within category
+    items.sort((a, b) => a.name.localeCompare(b.name))
+
+    result.push({
+      name: catName,
+      slug: slugify(catName),
+      items,
+    })
+  }
+
+  return result
+}
+
+// ---------------------------------------------------------------------------
+// Exported functions
+// ---------------------------------------------------------------------------
+
+/**
+ * Returns current date minus 2 days in YYYY-MM-DD format.
+ * Used to display "prices as of" date on menu pages.
+ */
+export function getDataDate(): string {
+  const d = new Date()
+  d.setDate(d.getDate() - 2)
+  return d.toISOString().split('T')[0]
+}
+
+/**
+ * Returns list of all states that have menu data, sorted alphabetically by name.
+ */
+export function getAllStates(): StateInfo[] {
+  const states: StateInfo[] = []
+
+  for (const stateCode of Object.keys(STATE_MAP)) {
+    const info = buildStateInfo(stateCode)
+    if (info) states.push(info)
+  }
+
+  return states.sort((a, b) => a.name.localeCompare(b.name))
+}
+
+/**
+ * Returns slugs for all states with menu data.
+ */
+export function getStateSlugs(): string[] {
+  return getAllStates().map(s => s.slug)
+}
+
+/**
+ * Returns true if the slug matches a valid state slug.
+ */
+export function isStateSlug(slug: string): boolean {
+  return slug in SLUG_TO_STATE
+}
+
+/**
+ * Returns aggregated menu data for a specific state.
+ * Reads all menu JSONs for locations in the state, averages prices for
+ * the same item (matched by chainProductId), and returns structured data.
+ */
+export function getStateMenuData(
+  stateSlug: string
+): { state: StateInfo; categories: StateMenuCategory[] } | null {
+  const stateCode = SLUG_TO_STATE[stateSlug]
+  if (!stateCode) return null
+
+  const stateInfo = buildStateInfo(stateCode)
+  if (!stateInfo) return null
+
+  const indexLocs = getIndexLocationsForState(stateCode)
+  const oloSlugs = indexLocs.map(l => l.oloSlug!)
+
+  const categories = aggregateMenus(oloSlugs)
+
+  return { state: stateInfo, categories }
+}
+
+/**
+ * Returns data for a specific menu item in a specific state.
+ */
+export function getStateItemData(
+  stateSlug: string,
+  itemSlug: string
+): { state: StateInfo; item: StateMenuItem; category: string } | null {
+  const menuData = getStateMenuData(stateSlug)
+  if (!menuData) return null
+
+  for (const cat of menuData.categories) {
+    const item = cat.items.find(i => i.slug === itemSlug)
+    if (item) {
+      return { state: menuData.state, item, category: cat.name }
+    }
+  }
+
+  return null
+}
+
+/**
+ * Returns all item slugs for a given state.
+ */
+export function getStateItemSlugs(stateSlug: string): string[] {
+  const menuData = getStateMenuData(stateSlug)
+  if (!menuData) return []
+
+  const slugs: string[] = []
+  for (const cat of menuData.categories) {
+    for (const item of cat.items) {
+      slugs.push(item.slug)
+    }
+  }
+  return slugs
+}
+
+/**
+ * Returns national averages - prices averaged across ALL locations.
+ */
+export function getNationalAverages(): { categories: StateMenuCategory[] } {
+  const index = loadIndex()
+  const allSlugs = index.locations
+    .filter(l => l.hasMenu && l.oloSlug)
+    .map(l => l.oloSlug!)
+
+  const categories = aggregateMenus(allSlugs)
+  return { categories }
+}
+
+/**
+ * Returns all locations in a state with their hours and address info.
+ */
+export function getStateLocations(stateSlug: string): StateLocation[] {
+  const stateCode = SLUG_TO_STATE[stateSlug]
+  if (!stateCode) return []
+
+  const index = loadIndex()
+  const locations = loadAllLocations()
+  const result: StateLocation[] = []
+
+  const stateLocs = index.locations.filter(l => l.state === stateCode)
+
+  for (const loc of stateLocs) {
+    const detail = locations.get(loc.id)
+    if (!detail) continue
+
+    result.push({
+      id: detail.id,
+      name: detail.name,
+      city: detail.city,
+      address: [detail.address1, detail.address2].filter(Boolean).join(', '),
+      phone: detail.phone,
+      postalCode: detail.postalCode,
+      hours: detail.hours,
+    })
+  }
+
+  return result.sort((a, b) => a.city.localeCompare(b.city) || a.name.localeCompare(b.name))
+}
+
+/**
+ * Returns all states with their locations and hours data.
+ */
+export function getAllStateHoursData(): Array<{
+  state: StateInfo
+  locations: StateLocation[]
+}> {
+  const states = getAllStates()
+  return states.map(state => ({
+    state,
+    locations: getStateLocations(state.slug),
+  }))
+}

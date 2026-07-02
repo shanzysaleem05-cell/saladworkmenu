@@ -1,0 +1,53 @@
+{
+  "id": "20",
+  "clientKey": "E20",
+  "name": "Plymouth Square Shopping Center",
+  "address1": "200 West Ridge Pike",
+  "address2": "#101",
+  "city": "Conshohocken",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19428",
+  "country": "US",
+  "latitude": 40.10101,
+  "longitude": -75.30489,
+  "phone": "+1 610-825-5211",
+  "email": "PlymouthSquare@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/conshohocken/200-west-ridge-pike/",
+  "localPageId": "200-west-ridge-pike",
+  "metaTitle": "Salad Shop in Conshohocken, 19428 | Saladworks - 200-west-ridge-pike",
+  "metaDescription": "Stop into your local Saladworks location in Conshohocken, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "16:00"
+    }
+  },
+  "oloSlug": "saladworks-51037",
+  "oloVendorId": 177281,
+  "hasMenu": true
+}

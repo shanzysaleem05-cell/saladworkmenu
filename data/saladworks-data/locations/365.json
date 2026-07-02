@@ -1,0 +1,53 @@
+{
+  "id": "365",
+  "clientKey": "E365",
+  "name": "University of Nebraska- Lincoln",
+  "address1": "840 N 17th St",
+  "address2": "",
+  "city": "Lincoln",
+  "county": "",
+  "state": "NE",
+  "postalCode": "68508",
+  "country": "US",
+  "latitude": 40.82224,
+  "longitude": -96.69564,
+  "phone": "",
+  "email": "dannis2@unl.edu",
+  "detailUrl": "https://restaurants.saladworks.com/ne/lincoln/840-n-17th-st/",
+  "localPageId": "840-n-17th-st",
+  "metaTitle": "Salad Shop in Lincoln, 68508 | Saladworks - 840-n-17th-st",
+  "metaDescription": "Stop into your local Saladworks location in Lincoln, NE. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": null,
+  "oloVendorId": null,
+  "hasMenu": false
+}

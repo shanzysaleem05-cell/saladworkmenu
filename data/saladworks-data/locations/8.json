@@ -1,0 +1,53 @@
+{
+  "id": "8",
+  "clientKey": "E8",
+  "name": "Bridgewater Commons",
+  "address1": "400 Commons Way",
+  "address2": "Unit 3500",
+  "city": "Bridgewater",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08807",
+  "country": "US",
+  "latitude": 40.58589,
+  "longitude": -74.61824,
+  "phone": "+1 908-526-3155",
+  "email": "BridgewaterMall@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/bridgewater/400-commons-way/",
+  "localPageId": "400-commons-way",
+  "metaTitle": "Salad Shop in Bridgewater, 08807 | Saladworks - 400-commons-way",
+  "metaDescription": "Stop into your local Saladworks location in Bridgewater, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "20:30"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "20:30"
+    },
+    "sunday": {
+      "open": "10:30",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-43050",
+  "oloVendorId": 177288,
+  "hasMenu": true
+}

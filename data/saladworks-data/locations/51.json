@@ -1,0 +1,53 @@
+{
+  "id": "51",
+  "clientKey": "E51",
+  "name": "Greentree Square Shopping Center",
+  "address1": "914 NJ-73",
+  "address2": "",
+  "city": "Marlton",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08053",
+  "country": "US",
+  "latitude": 39.90706,
+  "longitude": -74.93709,
+  "phone": "+1 856-596-1991",
+  "email": "Greentree@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/marlton/914-nj-73/",
+  "localPageId": "914-nj-73",
+  "metaTitle": "Salad Shop in Marlton, 08053 | Saladworks - 914-nj-73",
+  "metaDescription": "Stop into your local Saladworks location in Marlton, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-43002",
+  "oloVendorId": 177307,
+  "hasMenu": true
+}

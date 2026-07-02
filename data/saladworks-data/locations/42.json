@@ -1,0 +1,53 @@
+{
+  "id": "42",
+  "clientKey": "E42",
+  "name": "Huntingdon Valley Shopping Center",
+  "address1": "759 Huntingdon Pike B",
+  "address2": "B",
+  "city": "Huntingdon Valley",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19006",
+  "country": "US",
+  "latitude": 40.08785,
+  "longitude": -75.09255,
+  "phone": "+1 215-277-5628",
+  "email": "HuntingdonValley@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/huntingdon-valley/759-huntingdon-pike-b/",
+  "localPageId": "759-huntingdon-pike-b",
+  "metaTitle": "Salad Shop in Huntingdon Valley, 19006 | Saladworks - 759-huntingdon-pike-b",
+  "metaDescription": "Stop into your local Saladworks location in Huntingdon Valley, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "21:00"
+    },
+    "sunday": {
+      "open": "10:30",
+      "close": "20:00"
+    }
+  },
+  "oloSlug": "saladworks-51052",
+  "oloVendorId": 177306,
+  "hasMenu": true
+}

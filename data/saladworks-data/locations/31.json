@@ -1,0 +1,53 @@
+{
+  "id": "31",
+  "clientKey": "E31",
+  "name": "Colonial Plaza Shopping Center",
+  "address1": "341 W. Main Street",
+  "address2": "",
+  "city": "Freehold",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "07728",
+  "country": "US",
+  "latitude": 40.2441,
+  "longitude": -74.29987,
+  "phone": "+1 732-462-0275",
+  "email": "FreeholdColonialPlaza@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/freehold/341-w-main-street/",
+  "localPageId": "341-w-main-street",
+  "metaTitle": "Salad Shop in Freehold, 07728 | Saladworks - 341-w-main-street",
+  "metaDescription": "Stop into your local Saladworks location in Freehold, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "10:15",
+      "close": "19:00"
+    },
+    "sunday": {
+      "open": "10:15",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-43059",
+  "oloVendorId": 177270,
+  "hasMenu": true
+}

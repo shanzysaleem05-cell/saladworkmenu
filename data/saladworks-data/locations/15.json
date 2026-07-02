@@ -1,0 +1,53 @@
+{
+  "id": "15",
+  "clientKey": "E15",
+  "name": "The Shoppes at Cinnaminson",
+  "address1": "175 Route 130",
+  "address2": "",
+  "city": "Cinnaminson",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08077",
+  "country": "US",
+  "latitude": 39.99088,
+  "longitude": -75.00603,
+  "phone": "+1 856-829-1629",
+  "email": "Cinnaminson@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/cinnaminson/175-route-130/",
+  "localPageId": "175-route-130",
+  "metaTitle": "Salad Shop in Cinnaminson, 08077 | Saladworks - 175-route-130",
+  "metaDescription": "Stop into your local Saladworks location in Cinnaminson, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "sunday": {
+      "open": "10:15",
+      "close": "20:00"
+    }
+  },
+  "oloSlug": "saladworks-43060",
+  "oloVendorId": 177274,
+  "hasMenu": true
+}

@@ -56,10 +56,10 @@ export default function MenuPage() {
             SaladWorks Menu 2026
           </h1>
           <p className="text-brand-orange text-[15px] md:text-[17px] font-extrabold tracking-wide uppercase mb-8">
-            Full Menu With Prices & Calories — All 50+ Items
+            Full Menu With Prices & Calories - All 50+ Items
           </p>
           <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-10 font-medium">
-            The complete SaladWorks menu for 2026 — every item across 8 categories with estimated prices and calorie counts. Browse signature salads, warm grain bowls, wraps, soups, and more. Updated regularly.
+            The complete SaladWorks menu for 2026 - every item across 8 categories with estimated prices and calorie counts. Browse signature salads, warm grain bowls, wraps, soups, and more. Updated regularly.
           </p>
           
           <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-[15px] text-gray-500 font-medium">
@@ -68,8 +68,7 @@ export default function MenuPage() {
             <span><strong className="text-site-black font-extrabold">8</strong> categories</span>
             <span className="hidden md:inline text-gray-300">|</span>
             <span>Prices from <strong className="text-site-black font-extrabold">$2.99</strong></span>
-            <span className="hidden md:inline text-gray-300">|</span>
-            <span>100% free & unofficial</span>
+
           </div>
         </div>
       </div>

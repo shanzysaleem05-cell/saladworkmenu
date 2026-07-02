@@ -1,0 +1,53 @@
+{
+  "id": "36",
+  "clientKey": "E36",
+  "name": "Hamilton Square Shopping Center",
+  "address1": "957 New Jersey 33",
+  "address2": "",
+  "city": "Hamilton Square",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08690",
+  "country": "US",
+  "latitude": 40.2278,
+  "longitude": -74.66941,
+  "phone": "+1 609-890-2410",
+  "email": "HamiltonSquare@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/hamilton-square/957-new-jersey-33/",
+  "localPageId": "957-new-jersey-33",
+  "metaTitle": "Salad Shop in Hamilton Square, 08690 | Saladworks - 957-new-jersey-33",
+  "metaDescription": "Stop into your local Saladworks location in Hamilton Square, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-43008",
+  "oloVendorId": 177321,
+  "hasMenu": true
+}

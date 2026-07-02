@@ -1,0 +1,53 @@
+{
+  "id": "28",
+  "clientKey": "E28",
+  "name": "Elm Plaza",
+  "address1": "95 Elm St.",
+  "address2": "",
+  "city": "Enfield",
+  "county": "",
+  "state": "CT",
+  "postalCode": "06082",
+  "country": "US",
+  "latitude": 42.00019,
+  "longitude": -72.58278,
+  "phone": "+1 860-835-5047",
+  "email": "elmplazact@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/ct/enfield/95-elm-street/",
+  "localPageId": "95-elm-street",
+  "metaTitle": "Salad Shop in Enfield, 06082 | Saladworks - 95-elm-street",
+  "metaDescription": "Stop into your local Saladworks location in Enfield, CT. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "10:30",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-enfield-elm-plaza",
+  "oloVendorId": 219027,
+  "hasMenu": true
+}

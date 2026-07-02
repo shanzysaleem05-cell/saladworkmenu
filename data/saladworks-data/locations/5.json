@@ -1,0 +1,53 @@
+{
+  "id": "5",
+  "clientKey": "E5",
+  "name": "Tollgate Marketplace Shopping Center",
+  "address1": "617 Bel Air Road",
+  "address2": "",
+  "city": "Bel Air",
+  "county": "",
+  "state": "MD",
+  "postalCode": "21014",
+  "country": "US",
+  "latitude": 39.52466,
+  "longitude": -76.3533,
+  "phone": "+1 443-640-4680",
+  "email": "BelAir-tollgate@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/md/bel-air/617-bel-air-road/",
+  "localPageId": "617-bel-air-road",
+  "metaTitle": "Salad Shop in Bel Air, 21014 | Saladworks - 617-bel-air-road",
+  "metaDescription": "Stop into your local Saladworks location in Bel Air, MD. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": "saladworks-33009",
+  "oloVendorId": 177342,
+  "hasMenu": true
+}

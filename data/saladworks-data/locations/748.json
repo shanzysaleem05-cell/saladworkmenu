@@ -1,0 +1,53 @@
+{
+  "id": "748",
+  "clientKey": "E748",
+  "name": "Saladworks + Frutta Bowls Newark",
+  "address1": "7 William St.",
+  "address2": "",
+  "city": "Newark",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "07102",
+  "country": "US",
+  "latitude": 40.73345,
+  "longitude": -74.17406,
+  "phone": "",
+  "email": "",
+  "detailUrl": "https://restaurants.saladworks.com/nj/newark/7-william-st/",
+  "localPageId": "7-william-st",
+  "metaTitle": "Salad Shop in Newark, 07102 | Saladworks - 7-william-st",
+  "metaDescription": "Stop into your local Saladworks location in Newark, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "18:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": null,
+  "oloVendorId": null,
+  "hasMenu": false
+}

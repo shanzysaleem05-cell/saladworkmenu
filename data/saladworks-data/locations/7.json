@@ -1,0 +1,53 @@
+{
+  "id": "7",
+  "clientKey": "E7",
+  "name": "Schoenersville Center",
+  "address1": "3215 Schoenersville Road",
+  "address2": "",
+  "city": "Bethlehem",
+  "county": "",
+  "state": "PA",
+  "postalCode": "18017",
+  "country": "US",
+  "latitude": 40.65679,
+  "longitude": -75.41829,
+  "phone": "+1 610-264-4444",
+  "email": "Bethlehem@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/bethlehem/3215-schoenersville-road/",
+  "localPageId": "3215-schoenersville-road",
+  "metaTitle": "Salad Shop in Bethlehem, 18017 | Saladworks - 3215-schoenersville-road",
+  "metaDescription": "Stop into your local Saladworks location in Bethlehem, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": "saladworks-51049",
+  "oloVendorId": 177264,
+  "hasMenu": true
+}

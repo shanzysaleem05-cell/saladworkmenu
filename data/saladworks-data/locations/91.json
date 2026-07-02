@@ -1,0 +1,53 @@
+{
+  "id": "91",
+  "clientKey": "E91",
+  "name": "Shoppes at Jenners Village",
+  "address1": "31 Jenners Village Center",
+  "address2": "",
+  "city": "West Grove",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19390",
+  "country": "US",
+  "latitude": 39.8236,
+  "longitude": -75.87493,
+  "phone": "+1 610-869-8500",
+  "email": "Jennersville@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/west-grove/31-jenners-village-center/",
+  "localPageId": "31-jenners-village-center",
+  "metaTitle": "Salad Shop in West Grove, 19390 | Saladworks - 31-jenners-village-center",
+  "metaDescription": "Stop into your local Saladworks location in West Grove, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "19:45"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:45"
+    }
+  },
+  "oloSlug": "saladworks-51050",
+  "oloVendorId": 177355,
+  "hasMenu": true
+}

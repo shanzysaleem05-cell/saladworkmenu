@@ -1,0 +1,53 @@
+{
+  "id": "380",
+  "clientKey": "E380",
+  "name": " Saladworks + Frutta Bowls Newport News, VA",
+  "address1": "701 Mariners Row",
+  "address2": "Suite 110",
+  "city": "Newport News",
+  "county": "",
+  "state": "VA",
+  "postalCode": "23606",
+  "country": "US",
+  "latitude": 37.08614,
+  "longitude": -76.47387,
+  "phone": "+1 757-990-3060",
+  "email": "newportnewsva@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/va/newport-news/701-mariners-row/",
+  "localPageId": "701-mariners-row",
+  "metaTitle": "Salad Shop in Newport News, 23606 | Saladworks - 701-mariners-row",
+  "metaDescription": "Stop into your local Saladworks location in Newport News, VA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "sunday": {
+      "open": "10:30",
+      "close": "17:30"
+    }
+  },
+  "oloSlug": "saladworks-newport-news-va",
+  "oloVendorId": 242847,
+  "hasMenu": true
+}

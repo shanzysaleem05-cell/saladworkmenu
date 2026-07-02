@@ -1,0 +1,46 @@
+{
+  "id": "828",
+  "clientKey": "E828",
+  "name": "Saladworks + Frutta Bowls Lake Mary, FL",
+  "address1": "3879 Lake Emma Rd",
+  "address2": "",
+  "city": "Lake Mary",
+  "county": "US",
+  "state": "FL",
+  "postalCode": "32746",
+  "country": "US",
+  "latitude": 28.75482,
+  "longitude": -81.35659,
+  "phone": "+1 858-225-4110",
+  "email": "lakemaryfl@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/fl/lake-mary/3879-lake-emma-rd/",
+  "localPageId": "3879-lake-emma-rd",
+  "metaTitle": "Salad Shop in Lake Mary, 32746 | Saladworks - 3879-lake-emma-rd",
+  "metaDescription": "Stop into your local Saladworks location in Lake Mary, FL. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "closed": true
+    },
+    "tuesday": {
+      "closed": true
+    },
+    "wednesday": {
+      "closed": true
+    },
+    "thursday": {
+      "closed": true
+    },
+    "friday": {
+      "closed": true
+    },
+    "saturday": {
+      "closed": true
+    },
+    "sunday": {
+      "closed": true
+    }
+  },
+  "oloSlug": null,
+  "oloVendorId": null,
+  "hasMenu": false
+}

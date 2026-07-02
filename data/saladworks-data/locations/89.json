@@ -1,0 +1,53 @@
+{
+  "id": "89",
+  "clientKey": "E89",
+  "name": "Berlin Circle Plaza",
+  "address1": "116 Walker Avenue",
+  "address2": "B",
+  "city": "West Berlin",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08091",
+  "country": "US",
+  "latitude": 39.80619,
+  "longitude": -74.93561,
+  "phone": "+1 856-210-6161",
+  "email": "WestBerlin@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/west-berlin/116-walker-avenue/",
+  "localPageId": "116-walker-avenue",
+  "metaTitle": "Salad Shop in West Berlin, 08091 | Saladworks - 116-walker-avenue",
+  "metaDescription": "Stop into your local Saladworks location in West Berlin, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-43061",
+  "oloVendorId": 177268,
+  "hasMenu": true
+}

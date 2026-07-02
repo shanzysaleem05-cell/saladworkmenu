@@ -1,0 +1,53 @@
+{
+  "id": "83",
+  "clientKey": "E83",
+  "name": "Center Pointe Place",
+  "address1": "872 W. Street Road",
+  "address2": "",
+  "city": "Warminster",
+  "county": "",
+  "state": "PA",
+  "postalCode": "18974",
+  "country": "US",
+  "latitude": 40.20841,
+  "longitude": -75.10306,
+  "phone": "+1 215-444-0752",
+  "email": "Warminster@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/warminster/872-w-street-road/",
+  "localPageId": "872-w-street-road",
+  "metaTitle": "Salad Shop in Warminster, 18974 | Saladworks - 872-w-street-road",
+  "metaDescription": "Stop into your local Saladworks location in Warminster, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": "saladworks-51021",
+  "oloVendorId": 177353,
+  "hasMenu": true
+}

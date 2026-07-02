@@ -1,0 +1,53 @@
+{
+  "id": "361",
+  "clientKey": "E361",
+  "name": "Cross Keys Place Shopping Center",
+  "address1": "4371 Swamp Road",
+  "address2": "",
+  "city": "Doylestown",
+  "county": "",
+  "state": "PA",
+  "postalCode": "18901",
+  "country": "US",
+  "latitude": 40.33091,
+  "longitude": -75.13324,
+  "phone": "+1 215-345-7878",
+  "email": "Doylestown@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/doylestown/4371-swamp-road",
+  "localPageId": "4371-swamp-road",
+  "metaTitle": "Salad Shop in Doylestown, 18901 | Saladworks - 4371-swamp-road",
+  "metaDescription": "Stop into your local Saladworks location in Doylestown, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "sunday": {
+      "open": "10:00",
+      "close": "21:00"
+    }
+  },
+  "oloSlug": "saladworks-51034",
+  "oloVendorId": 177285,
+  "hasMenu": true
+}

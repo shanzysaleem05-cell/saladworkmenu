@@ -1,0 +1,53 @@
+{
+  "id": "66",
+  "clientKey": "E66",
+  "name": "Philadelphia Premium Outlets",
+  "address1": "18 W Lightcap Road",
+  "address2": "suite 1043",
+  "city": "Pottstown",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19464",
+  "country": "US",
+  "latitude": 40.23638,
+  "longitude": -75.57009,
+  "phone": "+1 267-643-5504",
+  "email": "papremiumoutlets@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/pottstown/18-w-lightcap-road-suite-1043/",
+  "localPageId": "18-w-lightcap-road-suite-1043",
+  "metaTitle": "Salad Shop in Pottstown, 19464 | Saladworks - 18-w-lightcap-road-suite-1043",
+  "metaDescription": "Stop into your local Saladworks location in Pottstown, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "18:45"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "18:45"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "18:45"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "18:45"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "20:30"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "20:30"
+    },
+    "sunday": {
+      "open": "10:30",
+      "close": "17:30"
+    }
+  },
+  "oloSlug": "saladworks-51084",
+  "oloVendorId": 177349,
+  "hasMenu": true
+}

@@ -1,0 +1,53 @@
+{
+  "id": "93",
+  "clientKey": "E93",
+  "name": "Palisades Center",
+  "address1": "1000 Palisades Center Drive",
+  "address2": "",
+  "city": "West Nyack",
+  "county": "",
+  "state": "NY",
+  "postalCode": "10994",
+  "country": "US",
+  "latitude": 41.09708,
+  "longitude": -73.95603,
+  "phone": "+1 845-358-8033",
+  "email": "Palisades@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/ny/west-nyack/1000-palisades-center-drive/",
+  "localPageId": "1000-palisades-center-drive",
+  "metaTitle": "Salad Shop in West Nyack, 10994 | Saladworks - 1000-palisades-center-drive",
+  "metaDescription": "Stop into your local Saladworks location in West Nyack, NY. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "18:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "18:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "18:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "18:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "18:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "18:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-45003",
+  "oloVendorId": 177291,
+  "hasMenu": true
+}

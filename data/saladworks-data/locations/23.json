@@ -1,0 +1,53 @@
+{
+  "id": "23",
+  "clientKey": "E23",
+  "name": "Farley Plaza",
+  "address1": "1211 N. DuPont Highway",
+  "address2": "Suite 5",
+  "city": "Dover",
+  "county": "",
+  "state": "DE",
+  "postalCode": "19901",
+  "country": "US",
+  "latitude": 39.18931,
+  "longitude": -75.53936,
+  "phone": "+1 302-747-7224",
+  "email": "dover@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/de/dover/1211-n-dupont-highway/",
+  "localPageId": "1211-n-dupont-highway",
+  "metaTitle": "Salad Shop in Dover, 19901 | Saladworks - 1211-n-dupont-highway",
+  "metaDescription": "Stop into your local Saladworks location in Dover, DE. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-20011",
+  "oloVendorId": 177317,
+  "hasMenu": true
+}

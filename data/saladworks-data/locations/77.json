@@ -1,0 +1,53 @@
+{
+  "id": "77",
+  "clientKey": "E77",
+  "name": "Orchards at Dover",
+  "address1": "1311 NJ-37 west",
+  "address2": "",
+  "city": "Toms River",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08755",
+  "country": "US",
+  "latitude": 39.98213,
+  "longitude": -74.25452,
+  "phone": "+1 732-505-8200",
+  "email": "TomsRiver@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/toms-river/1311-nj-37-west/",
+  "localPageId": "1311-nj-37-west",
+  "metaTitle": "Salad Shop in Toms River, 08755 | Saladworks - 1311-nj-37-west",
+  "metaDescription": "Stop into your local Saladworks location in Toms River, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "20:00"
+    }
+  },
+  "oloSlug": "saladworks-43043",
+  "oloVendorId": 177300,
+  "hasMenu": true
+}

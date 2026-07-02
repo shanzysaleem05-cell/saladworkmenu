@@ -1,0 +1,51 @@
+{
+  "id": "71",
+  "clientKey": "E71",
+  "name": "Rochester Marriott Subway",
+  "address1": "101 1st Avenue SW",
+  "address2": "Marriott Subway Level",
+  "city": "Rochester",
+  "county": "",
+  "state": "MN",
+  "postalCode": "55902",
+  "country": "US",
+  "latitude": 44.02219,
+  "longitude": -92.46497,
+  "phone": "+1 507-361-3333",
+  "email": "mn-rochester@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/mn/rochester/101-1st-avenue-sw/",
+  "localPageId": "101-1st-avenue-sw",
+  "metaTitle": "Salad Shop in Rochester, 55902 | Saladworks - 101-1st-avenue-sw",
+  "metaDescription": "Stop into your local Saladworks location in Rochester, MN. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "15:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "15:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "15:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "15:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "15:00"
+    },
+    "saturday": {
+      "closed": true
+    },
+    "sunday": {
+      "closed": true
+    }
+  },
+  "oloSlug": "saladworks-36001",
+  "oloVendorId": 177341,
+  "hasMenu": true
+}

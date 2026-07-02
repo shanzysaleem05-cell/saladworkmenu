@@ -1,0 +1,53 @@
+{
+  "id": "796",
+  "clientKey": "E796",
+  "name": "Alexandria",
+  "address1": "1033 W Glebe Rd",
+  "address2": "",
+  "city": "Alexandria",
+  "county": "",
+  "state": "VA",
+  "postalCode": "22305",
+  "country": "US",
+  "latitude": 38.84313,
+  "longitude": -77.07504,
+  "phone": "+1 703-875-1800",
+  "email": "tsg19@thesimplegreek.com",
+  "detailUrl": "https://restaurants.saladworks.com/va/alexandria/1033-w-glebe-rd/",
+  "localPageId": "1033-w-glebe-rd",
+  "metaTitle": "Salad Shop in Alexandria, 22305 | Saladworks - 1033-w-glebe-rd",
+  "metaDescription": "Stop into your local Saladworks location in Alexandria, VA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "07:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "07:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "07:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "07:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "07:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "17:00"
+    }
+  },
+  "oloSlug": "saladworks-west-chester",
+  "oloVendorId": 293043,
+  "hasMenu": true
+}

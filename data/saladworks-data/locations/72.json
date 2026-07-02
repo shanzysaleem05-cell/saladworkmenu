@@ -1,0 +1,53 @@
+{
+  "id": "72",
+  "clientKey": "E72",
+  "name": "Avalon Plaza",
+  "address1": "2737-B North Salisbury Blvd.",
+  "address2": "B",
+  "city": "Salisbury",
+  "county": "",
+  "state": "MD",
+  "postalCode": "21804",
+  "country": "US",
+  "latitude": 38.41861,
+  "longitude": -75.56436,
+  "phone": "+1 410-572-6170",
+  "email": "NorthSalisbury@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/md/salisbury/2737-b-north-salisbury-blvd/",
+  "localPageId": "2737-b-north-salisbury-blvd",
+  "metaTitle": "Salad Shop in Salisbury, 21804 | Saladworks - 2737-b-north-salisbury-blvd",
+  "metaDescription": "Stop into your local Saladworks location in Salisbury, MD. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-33003",
+  "oloVendorId": 177333,
+  "hasMenu": true
+}

@@ -1,0 +1,53 @@
+{
+  "id": "74",
+  "clientKey": "E74",
+  "name": "Crosskeys Plaza",
+  "address1": "444 Hurffville Crosskeys Road",
+  "address2": "Unit #2",
+  "city": "Sewell",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08080",
+  "country": "US",
+  "latitude": 39.73475,
+  "longitude": -75.06855,
+  "phone": "+1 856-553-6325",
+  "email": "Sewell@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/sewell/444-hurffville-crosskeys-road-unit-2/",
+  "localPageId": "444-hurffville-crosskeys-road-unit-2",
+  "metaTitle": "Salad Shop in Sewell, 08080 | Saladworks - 444-hurffville-crosskeys-road-unit-2",
+  "metaDescription": "Stop into your local Saladworks location in Sewell, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": "saladworks-43055",
+  "oloVendorId": 177334,
+  "hasMenu": true
+}

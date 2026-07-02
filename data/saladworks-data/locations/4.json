@@ -1,0 +1,53 @@
+{
+  "id": "4",
+  "clientKey": "E4",
+  "name": "Fox Run Shopping Center",
+  "address1": "206 Fox Hunt Drive",
+  "address2": "",
+  "city": "Bear",
+  "county": "",
+  "state": "DE",
+  "postalCode": "19701",
+  "country": "US",
+  "latitude": 39.60781,
+  "longitude": -75.71323,
+  "phone": "+1 302-834-4437",
+  "email": "FoxRun@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/de/bear/206-fox-hunt-drive/",
+  "localPageId": "206-fox-hunt-drive",
+  "metaTitle": "Salad Shop in Bear, 19701 | Saladworks - 206-fox-hunt-drive",
+  "metaDescription": "Stop into your local Saladworks location in Bear, DE. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-20005",
+  "oloVendorId": 177275,
+  "hasMenu": true
+}

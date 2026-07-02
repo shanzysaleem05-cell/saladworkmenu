@@ -1,0 +1,46 @@
+{
+  "id": "833",
+  "clientKey": "E833",
+  "name": "Saladworks + Frutta Bowls Washington, DC",
+  "address1": "320 Florida Ave. NE",
+  "address2": "Bay 2A",
+  "city": "Washington",
+  "county": "",
+  "state": "DC",
+  "postalCode": "20002",
+  "country": "US",
+  "latitude": 38.90786,
+  "longitude": -77.00145,
+  "phone": "+1 239-404-4775",
+  "email": "washingtondc@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/allentown/1403-north-cedar-crest-boulevard/",
+  "localPageId": "320-florida-ave-ne",
+  "metaTitle": "Salad Shop in Washington, 20002 | Saladworks - 320-florida-ave-ne",
+  "metaDescription": "Stop into your local Saladworks location in Washington, DC. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "closed": true
+    },
+    "tuesday": {
+      "closed": true
+    },
+    "wednesday": {
+      "closed": true
+    },
+    "thursday": {
+      "closed": true
+    },
+    "friday": {
+      "closed": true
+    },
+    "saturday": {
+      "closed": true
+    },
+    "sunday": {
+      "closed": true
+    }
+  },
+  "oloSlug": "saladworks-51057",
+  "oloVendorId": 177262,
+  "hasMenu": true
+}

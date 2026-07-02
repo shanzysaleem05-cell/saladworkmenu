@@ -1,0 +1,53 @@
+{
+  "id": "99",
+  "clientKey": "E99",
+  "name": "Millcreek Shopping Center",
+  "address1": "4565-4567 Kirkwood Highway",
+  "address2": "",
+  "city": "Wilmington",
+  "county": "",
+  "state": "DE",
+  "postalCode": "19808",
+  "country": "US",
+  "latitude": 39.72502,
+  "longitude": -75.65715,
+  "phone": "+1 302-543-6495",
+  "email": "Millcreek@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/de/wilmington/4565-4567-kirkwood-highway/",
+  "localPageId": "4565-4567-kirkwood-highway",
+  "metaTitle": "Salad Shop in Wilmington, 19808 | Saladworks - 4565-4567-kirkwood-highway",
+  "metaDescription": "Stop into your local Saladworks location in Wilmington, DE. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "sunday": {
+      "open": "10:00",
+      "close": "21:00"
+    }
+  },
+  "oloSlug": "saladworks-20006",
+  "oloVendorId": 177316,
+  "hasMenu": true
+}

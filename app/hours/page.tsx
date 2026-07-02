@@ -2,66 +2,63 @@ import { Metadata } from "next"
 import { JsonLd } from "@/components/JsonLd"
 import { FaqSection } from "@/components/FaqSection"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
+import { getAllStateHoursData, getDataDate } from "@/lib/stateData"
+import Link from "next/link"
+import { MapPin } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Hours & Locations",
-  description: "Check the daily operating hours for SaladWorks. We are open Monday to Friday from 7:00 AM to 7:00 PM to serve you fresh salads, wraps, and more.",
-  keywords: ["SaladWorks hours", "SaladWorks open time", "SaladWorks closing time", "SaladWorks weekend hours"],
+  title: "SaladWorks Hours & Locations | See Real Operating Hours",
+  description: "Find real, up-to-date operating hours for every SaladWorks location across 16+ states. Check when your local Saladworks is open for fresh salads, wraps, and more.",
+  keywords: ["SaladWorks hours", "SaladWorks open time", "SaladWorks closing time", "SaladWorks locations", "Saladworks near me", "Is Saladworks open today"],
   alternates: {
     canonical: "https://saladworksmenu.us/hours",
   },
   openGraph: {
     title: "Hours & Locations | SaladWorks Menu & Prices",
-    description: "Check the daily operating hours for SaladWorks. We are open Monday to Friday from 7:00 AM to 7:00 PM.",
+    description: "Check the daily operating hours for every SaladWorks location.",
     url: "https://saladworksmenu.us/hours",
   },
 }
 
 export default function HoursPage() {
+  const dataDate = getDataDate()
+  const prettyDate = new Date(dataDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })
+  const stateHours = getAllStateHoursData()
+  const totalLocations = stateHours.reduce((sum, s) => sum + s.locations.length, 0)
+  const totalStates = stateHours.length
+
   const schema = {
     "@context": "https://schema.org",
-    "@type": "FoodEstablishment",
-    "name": "SaladWorks",
-    "image": "https://saladworksmenu.us/opengraph-image",
-    "url": "https://saladworksmenu.us",
-    "telephone": "(555) 123-4567",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Fresh Avenue",
-      "addressLocality": "Food City",
-      "postalCode": "12345",
-      "addressCountry": "US"
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "07:00",
-        "closes": "19:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday", "Sunday"],
-        "opens": "00:00",
-        "closes": "00:00"
-      }
-    ]
+    "@type": "WebPage",
+    "name": "Saladworks Hours & Locations",
+    "description": `Operating hours for ${totalLocations} Saladworks locations across ${totalStates} states.`,
+    "dateModified": dataDate
   }
 
   const faqs = [
     {
-      question: "What time does SaladWorks open and close?",
-      answer: "SaladWorks is open from 7:00 AM to 7:00 PM, Monday through Friday. We are currently closed on Saturdays and Sundays."
+      question: "What time does SaladWorks usually open and close?",
+      answer: "Most SaladWorks locations open at 10:00 AM or 10:30 AM and close between 8:00 PM and 9:00 PM. However, hours vary significantly by location and day of the week, so check the specific hours for your state below."
     },
     {
-      question: "Are you open on Sundays?",
-      answer: "No, SaladWorks is closed on Sundays to allow our team to rest and prepare for the week ahead."
+      question: "Are Saladworks locations open on Sundays?",
+      answer: "Yes, many SaladWorks locations are open on Sundays, typically with reduced hours like 11:00 AM to 7:00 PM or 8:00 PM. Some locations, especially inside malls or office buildings, may be closed on Sundays."
     },
     {
       question: "Do SaladWorks hours change on holidays?",
-      answer: "Yes, our hours may vary on major national holidays. We recommend calling your local SaladWorks ahead of time during holiday periods to confirm our operating hours."
+      answer: "Yes, operating hours may vary on major national holidays like Thanksgiving, Christmas, and New Year's Day. We recommend calling your local SaladWorks ahead of time during holiday periods."
+    },
+    {
+      question: "How many SaladWorks locations are there?",
+      answer: `We are currently tracking real-time menu and hours data for ${totalLocations} SaladWorks locations across ${totalStates} states.`
     }
   ]
+
+  // Helper to format hours display cleanly
+  const formatDayHours = (day: any) => {
+    if (day.closed) return "Closed"
+    return `${day.open} – ${day.close}`
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-site-bg">
@@ -71,52 +68,88 @@ export default function HoursPage() {
         { label: "Hours & Locations", href: "/hours" }
       ]} />
       
-      <div className="py-24 bg-site-bg">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="text-center mb-12">
-            <span className="inline-block bg-brand-orange text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 mb-6">
+      <div className="py-20 bg-site-bg">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-16">
+            <span className="inline-block bg-brand-orange text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 mb-6 rounded-full">
               🕐 Store Hours
             </span>
-            <h1 className="text-[36px] md:text-[44px] font-black text-site-black leading-tight tracking-tight mb-4">
-              SaladWorks Hours of Operation
+            <h1 className="text-[36px] md:text-[48px] font-black text-site-black leading-tight tracking-tight mb-4">
+              SaladWorks Hours & Locations
             </h1>
-            <p className="text-gray-500 text-[15px] leading-relaxed max-w-xl mx-auto mb-8">
-              Hours may vary slightly by location. Please check with your local SaladWorks for the most accurate schedule.
+            <p className="text-gray-500 text-[18px] leading-relaxed max-w-2xl mx-auto mb-8">
+              Find up-to-date operating hours for {totalLocations} SaladWorks locations across {totalStates} states. Last verified {prettyDate}.
             </p>
-            <div className="inline-flex items-center gap-3 bg-white border border-green-200 rounded-xl px-6 py-3 shadow-sm">
-              <span className="w-3 h-3 rounded-full bg-green-500 animate-pulse shrink-0"></span>
-              <span className="font-bold text-site-black text-sm">Currently Open</span>
-              <span className="text-gray-400 text-sm ml-4">Mon – Fri • 07:00 AM – 07:00 PM</span>
-            </div>
           </div>
 
-          <div className="flex flex-col gap-3">
-            {[
-              { day: "Monday",    hours: "07:00 AM – 07:00 PM", open: true },
-              { day: "Tuesday",   hours: "07:00 AM – 07:00 PM", open: true },
-              { day: "Wednesday", hours: "07:00 AM – 07:00 PM", open: true },
-              { day: "Thursday",  hours: "07:00 AM – 07:00 PM", open: true },
-              { day: "Friday",    hours: "07:00 AM – 07:00 PM", open: true },
-              { day: "Saturday",  hours: "Closed", open: false },
-              { day: "Sunday",    hours: "Closed", open: false },
-            ].map((schedule, idx) => (
-              <div 
-                key={idx} 
-                className={`flex justify-between items-center px-6 py-5 rounded-xl border ${
-                  schedule.open 
-                    ? "bg-white border-gray-100 shadow-sm" 
-                    : "bg-gray-50/50 border-gray-100/50 opacity-70"
-                }`}
-              >
-                <span className={`font-extrabold ${schedule.open ? 'text-site-black text-lg' : 'text-gray-400 text-base'}`}>
-                  {schedule.day}
-                </span>
-                <span className={`font-bold ${schedule.open ? 'text-brand-orange text-lg' : 'text-gray-400 text-base'}`}>
-                  {schedule.hours}
-                </span>
+          <div className="flex flex-col gap-12">
+            {stateHours.map((stateData) => (
+              <div key={stateData.state.code} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                
+                {/* State Header */}
+                <div className="bg-brand-deep p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <div>
+                    <h2 className="text-2xl font-black text-white flex items-center gap-2">
+                      <MapPin className="w-5 h-5 text-brand-orange" />
+                      {stateData.state.name} SaladWorks Locations
+                    </h2>
+                    <p className="text-gray-300 mt-1 text-sm">
+                      {stateData.locations.length} Location{stateData.locations.length > 1 ? 's' : ''} • <Link href={`/menu/${stateData.state.slug}`} className="text-brand-orange hover:underline font-semibold">View {stateData.state.name} Menu Prices →</Link>
+                    </p>
+                  </div>
+                </div>
+
+                {/* Locations List */}
+                <div className="divide-y divide-gray-100">
+                  {stateData.locations.map((loc) => (
+                    <div key={loc.id} className="p-6 md:p-8 hover:bg-gray-50 transition-colors">
+                      <div className="flex flex-col md:flex-row gap-8">
+                        
+                        {/* Location Details */}
+                        <div className="md:w-1/3">
+                          <h3 className="font-bold text-site-black text-lg mb-2">{loc.name}</h3>
+                          <address className="not-italic text-gray-500 text-[15px] leading-relaxed mb-3">
+                            {loc.address}<br />
+                            {loc.city}, {stateData.state.code} {loc.postalCode}
+                          </address>
+                          {loc.phone && (
+                            <a href={`tel:${loc.phone}`} className="inline-flex items-center text-sm font-bold text-brand-green hover:text-brand-deep">
+                              📞 {loc.phone}
+                            </a>
+                          )}
+                        </div>
+
+                        {/* Hours Table */}
+                        <div className="md:w-2/3">
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-6">
+                            {[
+                              { label: 'Monday', hours: formatDayHours(loc.hours.monday) },
+                              { label: 'Tuesday', hours: formatDayHours(loc.hours.tuesday) },
+                              { label: 'Wednesday', hours: formatDayHours(loc.hours.wednesday) },
+                              { label: 'Thursday', hours: formatDayHours(loc.hours.thursday) },
+                              { label: 'Friday', hours: formatDayHours(loc.hours.friday) },
+                              { label: 'Saturday', hours: formatDayHours(loc.hours.saturday) },
+                              { label: 'Sunday', hours: formatDayHours(loc.hours.sunday) },
+                            ].map((day, i) => (
+                              <div key={i} className="flex flex-col">
+                                <span className="text-[12px] font-bold text-gray-400 uppercase tracking-wider mb-1">{day.label}</span>
+                                <span className={`text-[14px] font-semibold ${day.hours === 'Closed' ? 'text-brand-orange' : 'text-site-black'}`}>
+                                  {day.hours}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
               </div>
             ))}
           </div>
+
         </div>
       </div>
       

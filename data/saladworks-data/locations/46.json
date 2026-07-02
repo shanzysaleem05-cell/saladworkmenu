@@ -1,0 +1,53 @@
+{
+  "id": "46",
+  "clientKey": "E46",
+  "name": "Hart Plaza Shopping Center",
+  "address1": "360 North Oxford Valley Road",
+  "address2": "",
+  "city": "Langhorne",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19047",
+  "country": "US",
+  "latitude": 40.18267,
+  "longitude": -74.86966,
+  "phone": "+1 215-269-9644",
+  "email": "OxfordValley@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/langhorne/360-north-oxford-valley-road/",
+  "localPageId": "360-north-oxford-valley-road",
+  "metaTitle": "Salad Shop in Langhorne, 19047 | Saladworks - 360-north-oxford-valley-road",
+  "metaDescription": "Stop into your local Saladworks location in Langhorne, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:15",
+      "close": "21:00"
+    },
+    "sunday": {
+      "open": "10:15",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": "saladworks-51015",
+  "oloVendorId": 177309,
+  "hasMenu": true
+}

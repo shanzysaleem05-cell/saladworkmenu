@@ -1,0 +1,53 @@
+{
+  "id": "379",
+  "clientKey": "E379",
+  "name": "Saladworks + Frutta Bowls Menlo Park Mall",
+  "address1": "55 Parsonage Road",
+  "address2": "",
+  "city": "Edison",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08837",
+  "country": "US",
+  "latitude": 40.54738,
+  "longitude": -74.33565,
+  "phone": "+1 732-887-3719",
+  "email": "menloparkmall@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/edison/55-parsonage-road/",
+  "localPageId": "55-parsonage-road",
+  "metaTitle": "Salad Shop in Edison, 08837 | Saladworks - 55-parsonage-road",
+  "metaDescription": "Stop into your local Saladworks location in Edison, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "sunday": {
+      "open": "12:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-menlo-park-mall",
+  "oloVendorId": 242804,
+  "hasMenu": true
+}

@@ -1,0 +1,53 @@
+{
+  "id": "59",
+  "clientKey": "E59",
+  "name": "Shops at Liberty Place",
+  "address1": "1625 Chestnut Street",
+  "address2": "204",
+  "city": "Philadelphia",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19103",
+  "country": "US",
+  "latitude": 39.95201,
+  "longitude": -75.16776,
+  "phone": "+1 215-963-9099",
+  "email": "LibertyPlace@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/philadelphia/1625-chestnut-street/",
+  "localPageId": "1625-chestnut-street",
+  "metaTitle": "Salad Shop in Philadelphia, 19103 | Saladworks - 1625-chestnut-street",
+  "metaDescription": "Stop into your local Saladworks location in Philadelphia, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:30",
+      "close": "19:00"
+    },
+    "tuesday": {
+      "open": "09:30",
+      "close": "19:00"
+    },
+    "wednesday": {
+      "open": "09:30",
+      "close": "19:00"
+    },
+    "thursday": {
+      "open": "09:30",
+      "close": "19:00"
+    },
+    "friday": {
+      "open": "09:30",
+      "close": "19:00"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "18:45"
+    },
+    "sunday": {
+      "open": "12:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-51006",
+  "oloVendorId": 177327,
+  "hasMenu": true
+}

@@ -1,0 +1,53 @@
+{
+  "id": "47",
+  "clientKey": "E47",
+  "name": "Pavillion at Lansdale",
+  "address1": "443 South Broad Street",
+  "address2": "",
+  "city": "Lansdale",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19446",
+  "country": "US",
+  "latitude": 40.23557,
+  "longitude": -75.28869,
+  "phone": "+1 215-420-9351",
+  "email": "lansdale@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/lansdale/443-south-broad-street/",
+  "localPageId": "443-south-broad-street",
+  "metaTitle": "Salad Shop in Lansdale, 19446 | Saladworks - 443-south-broad-street",
+  "metaDescription": "Stop into your local Saladworks location in Lansdale, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-51085",
+  "oloVendorId": 177312,
+  "hasMenu": true
+}

@@ -1,0 +1,53 @@
+{
+  "id": "29",
+  "clientKey": "E29",
+  "name": "Main Street at Exton",
+  "address1": "124 Woodcutter Street",
+  "address2": "",
+  "city": "Exton",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19341",
+  "country": "US",
+  "latitude": 40.02286,
+  "longitude": -75.62922,
+  "phone": "+1 610-363-2760",
+  "email": "MainStreetExton@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/exton/124-woodcutter-street/",
+  "localPageId": "124-woodcutter-street",
+  "metaTitle": "Salad Shop in Exton, 19341 | Saladworks - 124-woodcutter-street",
+  "metaDescription": "Stop into your local Saladworks location in Exton, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "sunday": {
+      "open": "10:15",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": "saladworks-51066",
+  "oloVendorId": 177296,
+  "hasMenu": true
+}

@@ -85,7 +85,7 @@ export default function AboutClient() {
                 <ShieldCheck className="text-brand-green h-6 w-6 mb-4" />
                 <h3 className="text-xl font-bold text-site-black mb-2">Original Content</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  We strictly prohibit AI-generated filler or scraped content. Every article, guide, and review on SaladWorksMenu.us is written by human food experts who genuinely care about the brand.
+                  We strictly prohibit AI-generated filler or copied content. Every article, guide, and review on SaladWorksMenu.us is written by human food experts who genuinely care about the brand.
                 </p>
               </div>
             </div>

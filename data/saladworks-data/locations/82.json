@@ -1,0 +1,53 @@
+{
+  "id": "82",
+  "clientKey": "E82",
+  "name": "Saladworks + Frutta Bowls Haygood Shopping Center",
+  "address1": "1037 independence blvd",
+  "address2": "",
+  "city": "Virginia Beach",
+  "county": "",
+  "state": "VA",
+  "postalCode": "23455",
+  "country": "US",
+  "latitude": 36.87175,
+  "longitude": -76.13487,
+  "phone": "+1 757-937-5577",
+  "email": "haygood@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/va/virginia-beach/1037-independence-blvd/",
+  "localPageId": "1037-independence-blvd",
+  "metaTitle": "Salad Shop in Virginia Beach, 23455 | Saladworks - 1037-independence-blvd",
+  "metaDescription": "Stop into your local Saladworks location in Virginia Beach, VA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "sunday": {
+      "open": "10:30",
+      "close": "17:30"
+    }
+  },
+  "oloSlug": "saladworks-59009",
+  "oloVendorId": 209478,
+  "hasMenu": true
+}

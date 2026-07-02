@@ -1,0 +1,53 @@
+{
+  "id": "30",
+  "clientKey": "E30",
+  "name": "Bucks Crossing",
+  "address1": "115 E. Street Road",
+  "address2": "",
+  "city": "Feasterville",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19053",
+  "country": "US",
+  "latitude": 40.14721,
+  "longitude": -74.9992,
+  "phone": "+1 267-288-5730",
+  "email": "Feasterville@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/feasterville/115-e-street-road/",
+  "localPageId": "115-e-street-road",
+  "metaTitle": "Salad Shop in Feasterville, 19053 | Saladworks - 115-e-street-road",
+  "metaDescription": "Stop into your local Saladworks location in Feasterville, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "10:30",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-51062",
+  "oloVendorId": 177297,
+  "hasMenu": true
+}

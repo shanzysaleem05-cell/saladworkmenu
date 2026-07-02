@@ -1,0 +1,53 @@
+{
+  "id": "55",
+  "clientKey": "E55",
+  "name": "Frutta Bowls + Saladworks Olympic Plaza Shopping Center",
+  "address1": "506 North 12th Street",
+  "address2": "Suite N Unit 1",
+  "city": "Murray",
+  "county": "",
+  "state": "KY",
+  "postalCode": "42071",
+  "country": "US",
+  "latitude": 36.61851,
+  "longitude": -88.31338,
+  "phone": "+1 270-715-3123",
+  "email": "murray@fruttabowls.com",
+  "detailUrl": "https://restaurants.saladworks.com/ky/murray/506-north-12th-street/",
+  "localPageId": "506-north-12th-street",
+  "metaTitle": "Salad Shop in Murray, 42071 | Saladworks - 506-north-12th-street",
+  "metaDescription": "Stop into your local Saladworks location in Murray, KY. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "19:30"
+    },
+    "sunday": {
+      "open": "10:30",
+      "close": "17:30"
+    }
+  },
+  "oloSlug": null,
+  "oloVendorId": null,
+  "hasMenu": false
+}

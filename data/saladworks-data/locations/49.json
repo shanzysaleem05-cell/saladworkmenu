@@ -1,0 +1,53 @@
+{
+  "id": "49",
+  "clientKey": "E49",
+  "name": "Shoppes at Kissel Village",
+  "address1": "988 B Lititz Pike",
+  "address2": "",
+  "city": "Lititz",
+  "county": "",
+  "state": "PA",
+  "postalCode": "17543",
+  "country": "US",
+  "latitude": 40.13149,
+  "longitude": -76.30884,
+  "phone": "+1 717-627-1144",
+  "email": "Lititz@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/lititz/988-b-lititz-pike/",
+  "localPageId": "988-b-lititz-pike",
+  "metaTitle": "Salad Shop in Lititz, 17543 | Saladworks - 988-b-lititz-pike",
+  "metaDescription": "Stop into your local Saladworks location in Lititz, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "tuesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "wednesday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "thursday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "friday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "sunday": {
+      "open": "10:00",
+      "close": "21:00"
+    }
+  },
+  "oloSlug": "saladworks-51045",
+  "oloVendorId": 177318,
+  "hasMenu": true
+}

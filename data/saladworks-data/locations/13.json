@@ -1,0 +1,53 @@
+{
+  "id": "13",
+  "clientKey": "E13",
+  "name": "Towne Place at Greenbrier",
+  "address1": "717 Eden Way North",
+  "address2": "Suite 614",
+  "city": "Chesapeake",
+  "county": "",
+  "state": "VA",
+  "postalCode": "23320",
+  "country": "US",
+  "latitude": 36.77201,
+  "longitude": -76.23673,
+  "phone": "+1 757-410-4385",
+  "email": "Greenbrier@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/va/chesapeake/717-eden-way-north/",
+  "localPageId": "717-eden-way-north",
+  "metaTitle": "Salad Shop in Chesapeake, 23320 | Saladworks - 717-eden-way-north",
+  "metaDescription": "Stop into your local Saladworks location in Chesapeake, VA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-59007",
+  "oloVendorId": 177298,
+  "hasMenu": true
+}

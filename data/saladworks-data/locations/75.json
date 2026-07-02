@@ -1,0 +1,53 @@
+{
+  "id": "75",
+  "clientKey": "E75",
+  "name": "Sicklerville, NJ",
+  "address1": "693 Berlin - Crosskeys Hwy & Johnson Rd",
+  "address2": "",
+  "city": "Sicklerville",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "08081",
+  "country": "US",
+  "latitude": 39.72723,
+  "longitude": -75.01434,
+  "phone": "+1 856-740-0505",
+  "email": "Sicklerville@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/sicklerville/693-berlin-crosskeys-hwy-johnson-rd/",
+  "localPageId": "693-berlin-crosskeys-hwy-johnson-rd",
+  "metaTitle": "Salad Shop in Sicklerville, 08081 | Saladworks - 693-berlin-crosskeys-hwy-johnson-rd",
+  "metaDescription": "Stop into your local Saladworks location in Sicklerville, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": "saladworks-43044",
+  "oloVendorId": 177335,
+  "hasMenu": true
+}

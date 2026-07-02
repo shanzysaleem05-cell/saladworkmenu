@@ -1,21 +1,21 @@
-import { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
 import { blogData } from '@/data/blogData'
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export async function GET() {
   const baseUrl = 'https://saladworksmenu.us'
   const staticDate = '2026-07-01'
 
-  const staticPages: MetadataRoute.Sitemap = [
-    { url: `${baseUrl}`, lastModified: staticDate, changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${baseUrl}/menu`, lastModified: staticDate, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${baseUrl}/catering`, lastModified: staticDate, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/blog`, lastModified: staticDate, changeFrequency: 'daily', priority: 0.8 },
-    { url: `${baseUrl}/nutrition`, lastModified: staticDate, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/coupons`, lastModified: staticDate, changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${baseUrl}/about`, lastModified: staticDate, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${baseUrl}/contact`, lastModified: staticDate, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${baseUrl}/legal`, lastModified: staticDate, changeFrequency: 'yearly', priority: 0.3 },
+  const staticUrls = [
+    { url: `${baseUrl}`, lastModified: staticDate, changefreq: 'weekly', priority: 1.0 },
+    { url: `${baseUrl}/menu`, lastModified: staticDate, changefreq: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/hours`, lastModified: staticDate, changefreq: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/catering`, lastModified: staticDate, changefreq: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/blog`, lastModified: staticDate, changefreq: 'daily', priority: 0.8 },
+    { url: `${baseUrl}/nutrition`, lastModified: staticDate, changefreq: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/coupons`, lastModified: staticDate, changefreq: 'weekly', priority: 0.7 },
+    { url: `${baseUrl}/about`, lastModified: staticDate, changefreq: 'monthly', priority: 0.5 },
+    { url: `${baseUrl}/contact`, lastModified: staticDate, changefreq: 'monthly', priority: 0.5 },
+    { url: `${baseUrl}/legal`, lastModified: staticDate, changefreq: 'yearly', priority: 0.3 },
   ]
 
   const menuItems = [
@@ -37,27 +37,49 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'half-signature-salad', 'half-melt', 'soup', 'wrap-or-grilled-wrap'
   ]
 
-  const menuPages: MetadataRoute.Sitemap = menuItems.map((item) => ({
+  const menuUrls = menuItems.map(item => ({
     url: `${baseUrl}/menu/${item}`,
     lastModified: staticDate,
-    changeFrequency: 'monthly',
+    changefreq: 'monthly',
     priority: 0.6,
   }))
 
   const posts = getAllPosts()
-  const mdxBlogPages: MetadataRoute.Sitemap = posts.map((post) => ({
+  const mdxBlogUrls = posts.map(post => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: post.date || staticDate,
-    changeFrequency: 'monthly',
+    changefreq: 'monthly',
     priority: 0.7,
   }))
 
-  const dataBlogPages: MetadataRoute.Sitemap = blogData.map((post) => ({
+  const dataBlogUrls = blogData.map(post => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: post.date || staticDate,
-    changeFrequency: 'monthly',
+    changefreq: 'monthly',
     priority: 0.7,
   }))
 
-  return [...staticPages, ...menuPages, ...mdxBlogPages, ...dataBlogPages]
+  const allUrls = [...staticUrls, ...menuUrls, ...mdxBlogUrls, ...dataBlogUrls]
+
+  let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`
+
+  for (const item of allUrls) {
+    xml += `
+  <url>
+    <loc>${item.url}</loc>
+    <lastmod>${item.lastModified}</lastmod>
+    <changefreq>${item.changefreq}</changefreq>
+    <priority>${item.priority}</priority>
+  </url>`
+  }
+
+  xml += `
+</urlset>`
+
+  return new Response(xml, {
+    headers: {
+      'Content-Type': 'application/xml',
+    },
+  })
 }

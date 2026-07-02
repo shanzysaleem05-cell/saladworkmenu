@@ -1,0 +1,53 @@
+{
+  "id": "814",
+  "clientKey": "E814",
+  "name": "Saladworks + Frutta Bowls Riverview",
+  "address1": "9830 Upper Alafia Ct.",
+  "address2": "Suite 107",
+  "city": "Riverview",
+  "county": "",
+  "state": "FL",
+  "postalCode": "33578",
+  "country": "US",
+  "latitude": 27.85369,
+  "longitude": -82.34348,
+  "phone": "+1 813-875-5050",
+  "email": "riverviewfl@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/fl/riverview/9830-upper-alafia-ct/",
+  "localPageId": "9830-upper-alafia-ct",
+  "metaTitle": "Salad Shop in Riverview, 33578 | Saladworks - 9830-upper-alafia-ct",
+  "metaDescription": "Stop into your local Saladworks location in Riverview, FL. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "18:00"
+    }
+  },
+  "oloSlug": "saladworks-riverview",
+  "oloVendorId": 290778,
+  "hasMenu": true
+}

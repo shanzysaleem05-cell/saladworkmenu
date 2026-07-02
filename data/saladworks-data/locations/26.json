@@ -1,0 +1,53 @@
+{
+  "id": "26",
+  "clientKey": "E26",
+  "name": "Lowe's Shopping Center",
+  "address1": "30 NJ-17",
+  "address2": "",
+  "city": "East Rutherford",
+  "county": "",
+  "state": "NJ",
+  "postalCode": "07073",
+  "country": "US",
+  "latitude": 40.83135,
+  "longitude": -74.0891,
+  "phone": "+1 201-939-8886",
+  "email": "EastRutherford@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/nj/east-rutherford/30-nj-17/",
+  "localPageId": "30-nj-17",
+  "metaTitle": "Salad Shop in East Rutherford, 07073 | Saladworks - 30-nj-17",
+  "metaDescription": "Stop into your local Saladworks location in East Rutherford, NJ. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "10:30",
+      "close": "19:45"
+    },
+    "tuesday": {
+      "open": "10:30",
+      "close": "19:45"
+    },
+    "wednesday": {
+      "open": "10:30",
+      "close": "19:45"
+    },
+    "thursday": {
+      "open": "10:30",
+      "close": "19:45"
+    },
+    "friday": {
+      "open": "10:30",
+      "close": "19:45"
+    },
+    "saturday": {
+      "open": "10:30",
+      "close": "19:45"
+    },
+    "sunday": {
+      "open": "10:30",
+      "close": "17:45"
+    }
+  },
+  "oloSlug": "saladworks-43040",
+  "oloVendorId": 177328,
+  "hasMenu": true
+}

@@ -1,0 +1,53 @@
+{
+  "id": "6",
+  "clientKey": "E6",
+  "name": "Bensalem Plaza",
+  "address1": "2104 Street Road",
+  "address2": "",
+  "city": "Bensalem",
+  "county": "",
+  "state": "PA",
+  "postalCode": "19020",
+  "country": "US",
+  "latitude": 40.0991,
+  "longitude": -74.94882,
+  "phone": "+1 215-639-5401",
+  "email": "Bensalem@saladworks.com",
+  "detailUrl": "https://restaurants.saladworks.com/pa/bensalem/2104-street-road/",
+  "localPageId": "2104-street-road",
+  "metaTitle": "Salad Shop in Bensalem, 19020 | Saladworks - 2104-street-road",
+  "metaDescription": "Stop into your local Saladworks location in Bensalem, PA. Visit us for fresh salads, soups, sandwiches and more with online ordering and delivery.",
+  "hours": {
+    "monday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "tuesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "wednesday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "thursday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "friday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "saturday": {
+      "open": "11:00",
+      "close": "20:00"
+    },
+    "sunday": {
+      "open": "11:00",
+      "close": "19:00"
+    }
+  },
+  "oloSlug": "saladworks-51029",
+  "oloVendorId": 177263,
+  "hasMenu": true
+}
