@@ -51,6 +51,44 @@ export default function HoursPage() {
       answer: "Yes, operating hours may vary significantly on major national holidays like Thanksgiving, Christmas, and New Year's Day. We highly recommend calling your local SaladWorks ahead of time during holiday periods using the phone numbers provided in our directory."
     }
   ]
+  // Calculate most common timings for SEO table
+  const timingGroups = new Map<string, Set<string>>();
+  
+  const formatTime = (timeStr: string) => {
+    try {
+      const [hours, minutes] = timeStr.split(':');
+      let h = parseInt(hours, 10);
+      const ampm = h >= 12 ? 'PM' : 'AM';
+      h = h % 12 || 12;
+      return `${h}:${minutes} ${ampm}`;
+    } catch {
+      return timeStr;
+    }
+  };
+
+  stateHours.forEach(stateGroup => {
+    stateGroup.locations.forEach(loc => {
+      if (loc.hours && loc.hours.monday && !('closed' in loc.hours.monday)) {
+        // @ts-ignore - we checked it's not closed
+        const h = loc.hours.monday;
+        if (h.open && h.close) {
+          const timingStr = `${formatTime(h.open)} - ${formatTime(h.close)}`;
+          if (!timingGroups.has(timingStr)) {
+            timingGroups.set(timingStr, new Set());
+          }
+          timingGroups.get(timingStr)!.add(stateGroup.state.name);
+        }
+      }
+    });
+  });
+
+  const topTimings = Array.from(timingGroups.entries())
+    .sort((a, b) => b[1].size - a[1].size)
+    .slice(0, 6)
+    .map(([timing, states]) => ({
+      timing,
+      states: Array.from(states).sort().join(', ')
+    }));
 
   return (
     <div className="flex flex-col min-h-screen bg-site-bg">
@@ -79,12 +117,40 @@ export default function HoursPage() {
           {/* Interactive Client Locator */}
           <HoursClient initialData={stateHours} />
 
+          {/* SEO Table: Standard Operating Hours */}
+          {topTimings.length > 0 && (
+            <div className="mt-16 bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+              <h2 className="text-2xl md:text-3xl font-black text-site-black mb-6">Standard Saladworks Operating Hours by State</h2>
+              <p className="text-gray-600 mb-8 text-lg">
+                While hours can vary by specific location (especially malls and airports), here is a structured summary of the most common daily schedules across different states.
+              </p>
+              <div className="overflow-x-auto rounded-xl border border-gray-200">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-gray-50 border-b border-gray-200">
+                      <th className="py-5 px-6 font-black text-site-black text-[15px] uppercase tracking-wider w-1/3">Typical Hours (Mon - Fri)</th>
+                      <th className="py-5 px-6 font-black text-site-black text-[15px] uppercase tracking-wider">States with these Hours</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {topTimings.map((row, i) => (
+                      <tr key={i} className="border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
+                        <td className="py-4 px-6 font-bold text-brand-orange whitespace-nowrap">{row.timing}</td>
+                        <td className="py-4 px-6 text-gray-600 font-medium leading-relaxed">{row.states}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
           {/* SEO Content Section */}
-          <div className="mt-20 bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-sm">
+          <div className="mt-10 bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-sm">
             <h2 className="text-2xl md:text-3xl font-black text-site-black mb-6">Why Check SaladWorks Hours Before You Visit?</h2>
             <div className="prose prose-lg max-w-none text-gray-600">
               <p>
-                Saladworks is renowned for its fresh, customizable salads, hearty wraps, and comforting soups. However, because Saladworks operates in a wide variety of venues—from standalone drive-thrus to busy mall food courts and university campuses—their <strong>opening and closing times can vary drastically</strong>.
+                Saladworks is renowned for its fresh, customizable salads, hearty wraps, and comforting soups. However, because Saladworks operates in a wide variety of venues - from standalone drive-thrus to busy mall food courts and university campuses - their <strong>opening and closing times can vary drastically</strong>.
               </p>
               <p>
                 For example, a Saladworks located in a business district might close as early as 4:00 PM and remain completely closed on weekends, whereas a suburban shopping mall location will likely stay open until 9:00 PM all seven days of the week. 
