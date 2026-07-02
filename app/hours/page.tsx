@@ -6,9 +6,8 @@ import { getAllStateHoursData, getDataDate } from "@/lib/stateData"
 import { HoursClient } from "./HoursClient"
 
 export const metadata: Metadata = {
-  title: "SaladWorks Hours & Locations 2026 | Find Near Me & Open Times",
-  description: "Looking for SaladWorks hours? Find real, up-to-date operating hours, opening times, and closing times for every SaladWorks location. Search to see if it's open now!",
-  keywords: ["SaladWorks hours", "SaladWorks open time", "SaladWorks closing time", "SaladWorks locations", "Saladworks near me", "Is Saladworks open today", "Saladworks map"],
+  title: "SaladWorks Hours & Locations (2026) | Store Locator",
+  description: "Find the exact operating hours for every SaladWorks location. Search our store directory to check opening and closing times near you.",
   alternates: {
     canonical: "https://saladworksmenu.us/hours",
   },
@@ -26,36 +25,12 @@ export default function HoursPage() {
   const totalLocations = stateHours.reduce((sum, s) => sum + s.locations.length, 0)
   const totalStates = stateHours.length
 
-  // Generate LocalBusiness Schema for SEO ranking on Google
-  const localBusinessSchemas = stateHours.flatMap(stateGroup => 
-    stateGroup.locations.map(loc => ({
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "name": `Saladworks - ${loc.name}`,
-      "image": "https://saladworksmenu.us/opengraph-image.jpg",
-      "@id": `https://saladworksmenu.us/hours#${loc.id}`,
-      "url": `https://saladworksmenu.us/menu/${stateGroup.state.slug}`,
-      "telephone": loc.phone || "",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": loc.address,
-        "addressLocality": loc.city,
-        "addressRegion": stateGroup.state.code,
-        "postalCode": loc.postalCode,
-        "addressCountry": "US"
-      },
-      "servesCuisine": "Salads, Wraps, Soups",
-      "priceRange": "$$"
-    }))
-  )
-
   const schema = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Saladworks Hours & Locations Guide",
-    "description": `Operating hours for ${totalLocations} Saladworks locations across ${totalStates} states.`,
-    "dateModified": dataDate,
-    "mainEntity": localBusinessSchemas
+    "@type": "CollectionPage",
+    "name": "Saladworks Locations Directory",
+    "description": `A complete directory of operating hours for ${totalLocations} Saladworks locations.`,
+    "dateModified": dataDate
   }
 
   const faqs = [
@@ -95,9 +70,9 @@ export default function HoursPage() {
               SaladWorks Hours & Locations ({new Date().getFullYear()})
             </h1>
             <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed max-w-3xl mx-auto mb-8">
-              Wondering <strong>"What time does Saladworks close?"</strong> or trying to find the nearest Saladworks location? 
+              Wondering when your local restaurant closes or trying to find the nearest location? 
               You've come to the right place. Our database tracks the real-time operating schedules for <strong>{totalLocations} restaurants</strong> across {totalStates} states. 
-              Search below to instantly see which stores are open near you today!
+              Search below to instantly see which stores are currently open near you!
             </p>
           </div>
 
@@ -115,7 +90,7 @@ export default function HoursPage() {
                 For example, a Saladworks located in a business district might close as early as 4:00 PM and remain completely closed on weekends, whereas a suburban shopping mall location will likely stay open until 9:00 PM all seven days of the week. 
               </p>
               <p>
-                By using our advanced location finder above, you can confidently search for <strong>"Saladworks near me"</strong>, check the precise weekly schedule without encountering confusing em-dashes or broken formatting, and even tap to call the store directly to confirm their holiday schedules!
+                By using our advanced location finder above, you can confidently search for restaurants in your area, check the precise weekly schedule without encountering confusing formats, and even tap to call the store directly to confirm their holiday schedules!
               </p>
             </div>
           </div>
