@@ -285,17 +285,12 @@ function itemSlugify(name: string): string {
 }
 
 function findImage(itemName: string): string | undefined {
-  // Exact match first
-  if (IMAGE_MAP[itemName]) return IMAGE_MAP[itemName]
-
-  // Check if any key is contained in the item name, or vice versa
-  for (const [key, imgPath] of Object.entries(IMAGE_MAP)) {
-    if (itemName.includes(key) || key.includes(itemName)) {
-      return imgPath
-    }
-  }
-
-  return undefined
+  // Exact match only. A loose substring fallback used to live here, but
+  // verified against every real item name it never produced a correct match
+  // it didn't already get via exact key — it only ever misfired (e.g. "Cold
+  // Brew" matching inside "Nutella Mocha Cold Brew" and showing the wrong
+  // photo). No image is more honest than a wrong one.
+  return IMAGE_MAP[itemName]
 }
 
 function round2(n: number): number {
