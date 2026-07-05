@@ -10,15 +10,12 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // www -> non-www (fixes GSC indexing both hosts as separate properties).
-      // Also configure this at the DNS/hosting layer (e.g. Vercel domain
-      // settings) so it's enforced before requests even reach Next.js.
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.saladworksmenu.us' }],
-        destination: 'https://saladworksmenu.us/:path*',
-        permanent: true,
-      },
+      // NOTE: www <-> non-www canonicalization must be handled at the
+      // hosting/DNS layer only (e.g. Vercel Project -> Settings -> Domains,
+      // set one domain as primary). Do NOT add an app-level redirect here
+      // too - if the host is already redirecting the other direction, an
+      // app-level redirect the opposite way creates an infinite redirect
+      // loop (ERR_TOO_MANY_REDIRECTS).
       // Old un-sanitized item slugs (crawled/indexed by Google before the
       // slug generator was fixed to strip "&", "(", ")" and accents) -> the
       // new clean slugs produced by lib/utils.ts `slugify()`.
