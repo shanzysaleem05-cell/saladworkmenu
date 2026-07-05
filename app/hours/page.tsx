@@ -6,14 +6,14 @@ import { getAllStateHoursData, getDataDate } from "@/lib/stateData"
 import { HoursClient } from "./HoursClient"
 
 export const metadata: Metadata = {
-  title: "SaladWorks Hours & Locations (2026) | Store Locator",
-  description: "Find the exact operating hours for every SaladWorks location. Search our store directory to check opening and closing times near you.",
+  title: { absolute: "SaladWorks Near Me - Hours & Locations (2026)" },
+  description: "Find SaladWorks near you: exact operating hours for every location, searchable by city, state, or zip code, plus live open-now status.",
   alternates: {
     canonical: "https://saladworksmenu.us/hours",
   },
   openGraph: {
-    title: "Hours & Locations | SaladWorks Menu & Prices",
-    description: "Check the daily operating hours for every SaladWorks location.",
+    title: "SaladWorks Near Me - Hours & Locations",
+    description: "Find SaladWorks near you: exact operating hours for every location, searchable by city, state, or zip code.",
     url: "https://saladworksmenu.us/hours",
   },
 }
@@ -35,8 +35,12 @@ export default function HoursPage() {
 
   const faqs = [
     {
+      question: "Where is the closest SaladWorks near me?",
+      answer: `Use the location search above and type your city, state, or zip code to see every SaladWorks near you, sorted with distance and live open/closed status. This directory covers ${totalLocations} locations across ${totalStates} states, last verified ${prettyDate}.`
+    },
+    {
       question: "What time does SaladWorks usually open and close?",
-      answer: "Most SaladWorks locations open around 10:00 AM or 10:30 AM and close between 8:00 PM and 9:00 PM. However, mall and airport locations may have wildly different hours. Use our store locator above to find the exact opening time for the Saladworks near you."
+      answer: "Most SaladWorks locations open around 10:00 AM or 10:30 AM and close between 8:00 PM and 9:00 PM. However, mall and airport locations may have wildly different hours. Use the store locator above to find the exact opening time for the SaladWorks nearest you."
     },
     {
       question: "Are Saladworks locations open on Sundays?",
@@ -44,11 +48,11 @@ export default function HoursPage() {
     },
     {
       question: "How do I find out if a specific Saladworks is open right now?",
-      answer: "Simply type your city, state, or zip code into our smart search bar above. It will calculate your local time and show a green 'Open Now' or red 'Closed' badge next to each restaurant based on their real daily hours."
+      answer: "Type your city, state, or zip code into the smart search bar above. It calculates your local time and shows a green 'Open Now' or red 'Closed' badge next to each restaurant based on their real daily hours."
     },
     {
       question: "Do SaladWorks hours change on holidays?",
-      answer: "Yes, operating hours may vary significantly on major national holidays like Thanksgiving, Christmas, and New Year's Day. We highly recommend calling your local SaladWorks ahead of time during holiday periods using the phone numbers provided in our directory."
+      answer: "Yes, operating hours may vary significantly on major national holidays like Thanksgiving, Christmas, and New Year's Day. Call the local SaladWorks ahead of time during holiday periods using the phone numbers provided in the directory above."
     }
   ]
   // Calculate most common timings for SEO table
@@ -105,12 +109,12 @@ export default function HoursPage() {
               🕐 Find a Restaurant Near You
             </span>
             <h1 className="text-[32px] md:text-[48px] font-black text-site-black leading-tight tracking-tight mb-6">
-              SaladWorks Hours & Locations ({new Date().getFullYear()})
+              SaladWorks Near Me - Hours & Locations ({new Date().getFullYear()})
             </h1>
             <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed max-w-3xl mx-auto mb-8">
-              Wondering when your local restaurant closes or trying to find the nearest location? 
-              You've come to the right place. Our database tracks the real-time operating schedules for <strong>{totalLocations} restaurants</strong> across {totalStates} states. 
-              Search below to instantly see which stores are currently open near you!
+              Looking for a SaladWorks near you? Search by city, state, or zip code to find the closest location,
+              its exact hours, and whether it's open right now. This directory tracks operating schedules for <strong>{totalLocations} restaurants</strong> across {totalStates} states,
+              last verified {prettyDate}.
             </p>
           </div>
 
@@ -159,7 +163,7 @@ export default function HoursPage() {
                 For example, a Saladworks located in a business district might close as early as 4:00 PM and remain completely closed on weekends, whereas a suburban shopping mall location will likely stay open until 9:00 PM all seven days of the week. 
               </p>
               <p>
-                By using our advanced location finder above, you can confidently search for restaurants in your area, check the precise weekly schedule without encountering confusing formats, and even tap to call the store directly to confirm their holiday schedules!
+                Using the location finder above, you can confidently search for restaurants in your area, check the precise weekly schedule without encountering confusing formats, and even tap to call the store directly to confirm their holiday schedules.
               </p>
             </div>
           </div>

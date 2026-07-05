@@ -1,12 +1,13 @@
 import { isStateSlug, getStateItemData, getStateItemSlugs, getStateSlugs, getDataDate, getStateMenuData, getItemCityPrices, getItemStateComparison, getComparisonStates, getStateHoursSummary } from "@/lib/stateData"
 import Link from "next/link"
 import Image from "next/image"
-import { MapPin, DollarSign, Flame, Calendar, Store, ChevronRight } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 import { notFound } from "next/navigation"
 import { Metadata, ResolvingMetadata } from "next"
 import { JsonLd } from "@/components/JsonLd"
 import { FaqSection } from "@/components/FaqSection"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
+import { FoodCard } from "@/components/FoodCard"
 
 type Props = {
   params: { slug1: string; slug2: string }
@@ -37,10 +38,9 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     const priceText = item.minPrice !== undefined && item.maxPrice !== undefined && item.minPrice !== item.maxPrice
       ? `$${item.minPrice.toFixed(2)}–$${item.maxPrice.toFixed(2)}`
       : `$${item.price.toFixed(2)}`
-    const calText = item.calories ? ` | ${item.calories} Calories` : ''
 
     return {
-      title: `Saladworks ${item.name} Price in ${state.name} (${year}) - ${priceText}${calText}`,
+      title: { absolute: `${item.name} Price in ${state.name} (${year}) | SaladWorks` },
       description: `The Saladworks ${item.name} costs ${priceText} in ${state.name} (${year}). Real prices sourced directly from ${state.locationCount} ${state.name} locations. See calories, nutrition, and ordering info.`,
       keywords: [
         `Saladworks ${item.name} price ${state.name}`,
@@ -158,63 +158,17 @@ export default function Slug2Page({ params }: Props) {
           { label: `${item.name} Price`, href: "#" }
         ]} />
 
-        {/* Hero Section */}
-        <section className="bg-gradient-to-r from-brand-deep via-[#2d1a0a] to-brand-deep py-10 md:py-14">
-          <div className="container mx-auto px-4 max-w-5xl text-center">
-            <h1 className="text-[32px] md:text-[48px] font-black text-white leading-tight tracking-tight mb-3">
-              {item.name}
-            </h1>
-            <p className="text-brand-orange text-[20px] md:text-[26px] font-black mb-3">
-              {priceRangeText} in {state.name} | {prettyDate}
-            </p>
-            <p className="text-gray-300 text-[16px] max-w-2xl mx-auto leading-relaxed mb-6">
-              {item.description}
-            </p>
-            <div className="flex flex-wrap gap-3 justify-center">
-              <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-[13px] font-bold border border-white/20">
-                <MapPin className="w-3.5 h-3.5 text-brand-orange" /> {category}
-              </span>
-              {calDisplay && (
-                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-[13px] font-bold border border-white/20">
-                  <Flame className="w-3.5 h-3.5 text-brand-orange" /> {calDisplay}
-                </span>
-              )}
-              <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-[13px] font-bold border border-white/20">
-                <Store className="w-3.5 h-3.5 text-brand-orange" /> {state.locationCount} {state.name} Location{state.locationCount > 1 ? 's' : ''}
-              </span>
-            </div>
-          </div>
-        </section>
+        {/* Main Content */}
+        <section className="container mx-auto px-4 py-12 md:py-16">
+          <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-start">
 
-        {/* Date Bar */}
-        <div className="bg-brand-orange text-white text-center py-2.5 text-[13px] font-bold flex items-center justify-center gap-4 flex-wrap">
-          <span className="flex items-center gap-1.5">
-            <Calendar className="w-3.5 h-3.5" /> Price Guide Updated: <span className="bg-white text-brand-orange px-2.5 py-0.5 rounded-md font-black text-[12px]">{prettyDate}</span>
-          </span>
-          <span className="hidden sm:inline">|</span>
-          <span className="flex items-center gap-1.5">
-            ✅ Real {state.name} prices from {state.locationCount} location{state.locationCount > 1 ? 's' : ''}
-          </span>
-        </div>
-
-        {/* Main Content with Sticky Image */}
-        <section className="container mx-auto px-4 py-12 md:py-16 max-w-6xl">
-          <div className="flex flex-col md:flex-row gap-10 lg:gap-16 items-start">
-            
-            {/* Left Column - Sticky Image */}
-            <div className="w-full md:w-5/12 shrink-0 md:sticky md:top-24">
-              <div className="relative aspect-square rounded-[20px] overflow-hidden shadow-lg border border-gray-100 bg-gray-100">
-                <Image src={item.image || fallbackImg} alt={`Saladworks ${item.name} in ${state.name} - ${priceRangeText}`} fill priority sizes="(max-width: 768px) 100vw, 480px" className="object-cover" />
-                {hasPriceRange && (
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
-                    <span className="bg-brand-orange text-white font-black text-[16px] px-5 py-2 rounded-full shadow-lg border-2 border-white">
-                      {priceRangeText}
-                    </span>
-                  </div>
-                )}
+            {/* Left Column - Image + Quick Facts */}
+            <div className="w-full md:w-1/2 shrink-0">
+              <div className="relative aspect-square md:aspect-[4/3] rounded-[24px] overflow-hidden shadow-sm border border-gray-100 bg-gray-100">
+                <Image src={item.image || fallbackImg} alt={`Saladworks ${item.name} in ${state.name} - ${priceRangeText}`} fill priority sizes="(max-width: 768px) 100vw, 600px" className="object-cover" />
               </div>
-              
-              {/* Quick Info Card under image */}
+
+              {/* Quick Facts Card */}
               <div className="mt-6 bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
                 <h3 className="font-black text-site-black text-[15px] mb-3">Quick Facts</h3>
                 <div className="space-y-3 text-[14px]">
@@ -249,48 +203,60 @@ export default function Slug2Page({ params }: Props) {
             </div>
 
             {/* Right Column - Content */}
-            <div className="w-full md:w-7/12 flex flex-col">
-              
-              {/* H2: Price Details */}
-              <h2 className="text-[26px] md:text-[32px] font-black text-site-black leading-tight tracking-tight mb-4">
-                Saladworks {item.name} Price in {state.name} ({year})
-              </h2>
+            <div className="w-full md:w-1/2 flex flex-col">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="bg-brand-orange/10 text-brand-orange px-2 py-1 rounded text-[11px] font-bold">
+                  {category}
+                </span>
+              </div>
+              <h1 className="text-[36px] md:text-[44px] font-black text-site-black leading-tight tracking-tight mb-4">
+                {item.name}
+              </h1>
+              <p className="text-[#6b7280] text-[15px] leading-relaxed mb-8">
+                {item.description} Available at {state.locationCount} Saladworks location{state.locationCount > 1 ? 's' : ''} in {state.name}, updated {prettyDate}.
+              </p>
 
-              <p className="text-gray-700 text-[17px] leading-relaxed mb-6 font-medium">
+              <div className="flex border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-sm">
+                <div className="flex-1 p-6 flex flex-col items-center justify-center border-r border-gray-200 bg-gray-50/50">
+                  <span className="text-[11px] font-bold tracking-widest text-gray-500 uppercase mb-2">{hasPriceRange ? 'Price Range' : 'Average Price'}</span>
+                  <span className="text-[32px] font-black text-brand-orange">{priceRangeText}</span>
+                </div>
+                <div className="flex-1 p-6 flex flex-col items-center justify-center bg-gray-50/50">
+                  <span className="text-[11px] font-bold tracking-widest text-gray-500 uppercase mb-2">Calories</span>
+                  <span className="text-[32px] font-black text-site-black">{calDisplay || 'Varies'}</span>
+                </div>
+              </div>
+
+              <p className="text-gray-600 text-[15px] leading-relaxed mb-6">
                 The Saladworks <strong>{item.name}</strong> costs <strong>${item.price.toFixed(2)}</strong> on average in {state.name} as of {monthYear}, available at {itemLocationCount > 0 ? itemLocationCount : state.locationCount} location{(itemLocationCount > 0 ? itemLocationCount : state.locationCount) > 1 ? 's' : ''}{cityPrices.length > 0 ? ` across ${cityPrices.length} cit${cityPrices.length > 1 ? 'ies' : 'y'}` : ''}.
                 {cheapestCity && priciestCity && cheapestCity.price !== priciestCity.price ? ` It is cheapest in ${cheapestCity.city} ($${cheapestCity.price.toFixed(2)}) and most expensive in ${priciestCity.city} ($${priciestCity.price.toFixed(2)}).` : ''}
                 {nationalAvg > 0 ? ` The ${state.name} price is ${nationalDiffText}.` : ''}
               </p>
 
-              <p className="text-gray-600 text-[16px] leading-relaxed mb-6">
+              <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
                 The prices on this page come directly from the Saladworks ordering system, sourced from <strong>{state.locationCount} restaurant{state.locationCount > 1 ? 's' : ''}</strong> across {state.name}. Unlike most sites that show guessed or outdated prices, every number here was pulled from live menu data.
               </p>
 
+              <div className="border-l-4 border-brand-orange bg-brand-orange/5 p-4 rounded-r-lg mb-8">
+                <p className="text-site-black text-[14px] italic leading-relaxed">
+                  <span className="font-bold text-brand-orange">Pro tip:</span> Prices are averaged across every {state.name} location — your specific restaurant may charge slightly more or less. Always confirm with your local Saladworks.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-[11px] font-semibold">Fresh Ingredients</span>
+                <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-[11px] font-semibold">Customizable</span>
+                <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-[11px] font-semibold">Real {state.name} Pricing</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16">
               {hasPriceRange && (
-                <p className="text-gray-600 text-[16px] leading-relaxed mb-6">
+                <p className="text-gray-600 text-[16px] leading-relaxed mb-8 max-w-3xl">
                   Saladworks {item.name} prices vary by location in {state.name}. A {item.name} at one location may cost <strong>${item.minPrice!.toFixed(2)}</strong> while another charges <strong>${item.maxPrice!.toFixed(2)}</strong>. Local rent, labor costs, and market conditions all play a role. This page shows real price data for {state.name} specifically - not national averages.
                 </p>
               )}
-
-              {/* Price Cards */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
-                <div className="bg-brand-orange/5 border border-brand-orange/20 rounded-xl p-4 text-center">
-                  <span className="text-[11px] font-bold tracking-widest text-gray-500 uppercase block mb-1">Average</span>
-                  <span className="text-[28px] font-black text-brand-orange block">${item.price.toFixed(2)}</span>
-                </div>
-                {hasPriceRange && (
-                  <>
-                    <div className="bg-green-50 border border-green-200 rounded-xl p-4 text-center">
-                      <span className="text-[11px] font-bold tracking-widest text-gray-500 uppercase block mb-1">Lowest</span>
-                      <span className="text-[28px] font-black text-green-600 block">${item.minPrice!.toFixed(2)}</span>
-                    </div>
-                    <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
-                      <span className="text-[11px] font-bold tracking-widest text-gray-500 uppercase block mb-1">Highest</span>
-                      <span className="text-[28px] font-black text-red-500 block">${item.maxPrice!.toFixed(2)}</span>
-                    </div>
-                  </>
-                )}
-              </div>
 
               {/* City-by-City Price Table */}
               {cityPrices.length > 1 && (
@@ -395,12 +361,6 @@ export default function Slug2Page({ params }: Props) {
                 </div>
               </div>
 
-              {/* Disclaimer */}
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 text-[13px] text-amber-800">
-                ⚠️ Prices are averaged across {state.locationCount} {state.name} location{state.locationCount > 1 ? 's' : ''}. Your specific restaurant may charge slightly more or less. Always confirm with your local Saladworks.
-              </div>
-
-            </div>
           </div>
         </section>
 
@@ -447,30 +407,23 @@ export default function Slug2Page({ params }: Props) {
             <div className="container mx-auto px-4 max-w-6xl">
               <h2 className="text-[26px] font-black text-site-black mb-2">More {category} at Saladworks in {state.name}</h2>
               <p className="text-gray-500 text-[15px] mb-8">Compare prices for other {category.toLowerCase()} items available in {state.name}.</p>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
                 {relatedItems.map((ri) => {
                   const riRange = ri.minPrice !== undefined && ri.maxPrice !== undefined && ri.minPrice !== ri.maxPrice
                     ? `$${ri.minPrice.toFixed(2)}–$${ri.maxPrice.toFixed(2)}`
-                    : `$${ri.price.toFixed(2)}`
+                    : undefined
                   return (
-                    <Link key={ri.chainProductId} href={`/menu/${state.slug}/${ri.slug}`} className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                      {ri.image ? (
-                        <div className="relative aspect-[16/10] bg-gray-100">
-                          <Image src={ri.image} alt={`${ri.name} price in ${state.name}`} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform" />
-                        </div>
-                      ) : (
-                        <div className="aspect-[16/10] bg-gradient-to-br from-brand-green/10 to-brand-leaf/10 flex items-center justify-center">
-                          <span className="text-brand-green font-bold text-[14px]">Saladworks</span>
-                        </div>
-                      )}
-                      <div className="p-4">
-                        <h3 className="font-bold text-site-black text-[15px] mb-1 group-hover:text-brand-orange transition-colors">{ri.name}</h3>
-                        <div className="flex items-center gap-3">
-                          <span className="font-black text-brand-orange text-[16px]">{riRange}</span>
-                          {ri.calories && <span className="text-gray-400 text-[12px]">{ri.calories} Cal</span>}
-                        </div>
-                      </div>
-                    </Link>
+                    <FoodCard
+                      key={ri.chainProductId}
+                      name={ri.name}
+                      description={ri.description}
+                      price={ri.price}
+                      priceRangeText={riRange}
+                      calories={ri.calories ?? null}
+                      image={ri.image || fallbackImg}
+                      category={category}
+                      href={`/menu/${state.slug}/${ri.slug}`}
+                    />
                   )
                 })}
               </div>

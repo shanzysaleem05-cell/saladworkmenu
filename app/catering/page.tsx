@@ -1,10 +1,10 @@
 import { Metadata } from "next"
 import CateringClient from "./CateringClient"
 import { JsonLd } from "@/components/JsonLd"
+import { cateringFaqs } from "@/data/cateringFaqs"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://saladworksmenu.us"),
-  title: "SaladWorks Catering Menu & Prices 2026 - Packages, Trays & Group Orders",
+  title: { absolute: "SaladWorks Catering Menu & Prices 2026" },
   description: "SaladWorks catering packages start at $89.99 for 10 people. Order salad bars, group trays, boxed meals and beverages for your next corporate event, party or family gathering. Request a free quote today.",
   keywords: [
     "SaladWorks catering",
@@ -113,75 +113,19 @@ export default function CateringPage() {
     ]
   };
 
+  // Built from the same data the visible FAQ accordion renders (see
+  // app/catering/CateringClient.tsx) so the schema always matches on-page text.
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How much does SaladWorks catering cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "SaladWorks catering packages start at $89.99 for the Basic Package which feeds up to 10 people. The Party Package for up to 25 people is $199.99, and the Corporate Package for up to 50 people is $379.99."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does SaladWorks offer delivery for catering orders?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, SaladWorks offers catering delivery to your event location. Delivery availability and fees vary by location. Contact your nearest SaladWorks to confirm delivery options."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much advance notice is required for catering?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "SaladWorks requires at least 24 hours advance notice for standard orders. For large events of 25 or more people, order 3 to 5 business days in advance."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I customize the catering menu for dietary restrictions?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. SaladWorks catering can be customized for vegetarian, vegan, and gluten-free dietary needs. Include your requirements in the Special Requests field on the quote form."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the minimum order for SaladWorks catering?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The minimum catering order is typically the Basic Package serving 8 to 10 people starting at $89.99. Minimums may vary by location."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I cancel or modify my catering order?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Changes or cancellations made more than 24 hours before the event can generally be accommodated. Contact your local SaladWorks as soon as possible."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does SaladWorks catering include setup and serving?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "SaladWorks catering is delivered ready to serve. Setup assistance varies by location. Contact your local SaladWorks to discuss specific setup needs."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I place a SaladWorks catering order?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Fill out the quote request form on this page, call your local SaladWorks directly, or visit saladworks.com. A specialist will confirm your order within 24 hours."
-        }
+    "mainEntity": cateringFaqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
       }
-    ]
+    }))
   };
 
   return (

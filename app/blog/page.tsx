@@ -30,11 +30,11 @@ export default function BlogPage() {
   const faqs = [
     {
       question: "How often is the SaladWorks blog updated?",
-      answer: "We aim to update our blog several times a month with new menu announcements, seasonal ingredient highlights, and healthy eating tips."
+      answer: "This blog is updated several times a month with new menu guides, price comparisons, and healthy eating tips about SaladWorks."
     },
     {
       question: "What topics are covered on the blog?",
-      answer: "Our blog covers a wide range of topics including detailed nutritional breakdowns of our menu items, the sourcing of our fresh ingredients, company news, and general wellness and healthy lifestyle advice."
+      answer: "This blog covers a wide range of topics including detailed nutritional breakdowns of SaladWorks menu items, price guides, catering reviews, and general wellness and healthy lifestyle advice."
     }
   ]
 

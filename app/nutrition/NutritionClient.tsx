@@ -3,6 +3,7 @@
 import { menuData } from "@/data/menuData"
 import Link from "next/link"
 import { NutritionCalculator } from "@/components/NutritionCalculator"
+import { slugify } from "@/lib/utils"
 
 export default function NutritionPage() {
   return (
@@ -75,7 +76,7 @@ export default function NutritionPage() {
                     return (
                       <tr key={item.id} className={`border-b border-gray-100 last:border-0 ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}>
                         <td className="py-4 px-6">
-                          <Link href={`/menu/${item.name.toLowerCase().replace(/ /g, '-')}`} className="font-bold text-site-black hover:text-brand-orange transition-colors">
+                          <Link href={`/menu/${slugify(item.name)}`} className="font-bold text-site-black hover:text-brand-orange transition-colors">
                             {item.name}
                           </Link>
                         </td>

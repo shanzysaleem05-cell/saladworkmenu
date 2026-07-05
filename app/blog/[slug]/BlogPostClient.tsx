@@ -5,22 +5,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { NutritionCalculator } from "@/components/NutritionCalculator"
 
-
-export async function generateStaticParams() {
-  return blogData.map((post) => ({
-    slug: post.slug,
-  }))
-}
-
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = blogData.find(p => p.slug === params.slug)
-  if (!post) return { title: 'Post Not Found' }
-  return {
-    title: `${post.title} | SaladWorks Blog`,
-    description: post.excerpt,
-  }
-}
-
 export default function SinglePostPage({ params }: { params: { slug: string } }) {
   const post = blogData.find(p => p.slug === params.slug)
   if (!post) notFound()

@@ -3,9 +3,10 @@ import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 import { Metadata } from "next"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
+import { FaqSection } from "@/components/FaqSection"
 
 export const metadata: Metadata = {
-  title: "Saladworks Menu Directory - Browse Prices by State & City",
+  title: { absolute: "Saladworks Menu Directory - Browse Prices by State & City" },
   description: "Browse every Saladworks menu and price page by state. Find local menus with real prices, calories, and hours for every state with Saladworks locations.",
   alternates: { canonical: "https://saladworksmenu.us/directory" },
 }
@@ -65,6 +66,21 @@ export default function DirectoryPage() {
           <Link href="/blog" className="bg-white border border-gray-200 rounded-xl p-4 font-bold text-site-black text-[14px] hover:border-brand-green hover:text-brand-green transition-colors">Blog & Guides</Link>
         </div>
       </section>
+
+      <FaqSection faqs={[
+        {
+          question: "How many Saladworks locations are in this directory?",
+          answer: `This directory covers ${states.reduce((sum, s) => sum + s.locationCount, 0)} Saladworks locations across ${states.length} states, each with its own dedicated menu and price page updated ${prettyDate}.`
+        },
+        {
+          question: "How do I find Saladworks menu prices near me?",
+          answer: "Pick your state from the list above to see the full local menu with real prices sourced from restaurants in that state, or use our Hours & Locations page to search by city or zip code."
+        },
+        {
+          question: "Why are prices different for each state?",
+          answer: "Saladworks locations are franchised, so menu prices reflect local rent, labor costs, and market conditions. Each state page on this site is built from real location menu data, not national estimates."
+        },
+      ]} />
     </div>
   )
 }

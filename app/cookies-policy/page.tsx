@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
 
 export const metadata: Metadata = {
-  title: "Cookies Policy | SaladWorks",
+  title: "Cookies Policy",
   description: "Learn how we use cookies and similar technologies on SaladWorksMenu.us to improve user experience and deliver relevant content.",
   alternates: {
     canonical: "https://saladworksmenu.us/cookies-policy",

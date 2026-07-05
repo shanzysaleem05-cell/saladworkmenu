@@ -7,7 +7,12 @@ export async function GET() {
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>${baseUrl}</loc>`
+    <loc>${baseUrl}</loc>
+    <image:image>
+      <image:loc>${baseUrl}/favicon-96x96.png</image:loc>
+      <image:caption>SaladWorks Menu favicon</image:caption>
+      <image:title>SaladWorks Menu & Prices - Site Icon</image:title>
+    </image:image>`
 
   for (const category of menuData) {
     for (const item of category.items) {

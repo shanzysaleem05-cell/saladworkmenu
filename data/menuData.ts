@@ -30,7 +30,7 @@ export const menuData: MenuCategory[] = [
   },
   {
     id: "salads",
-    emoji: "�-",
+    emoji: "🥗",
     title: "Salads",
     subtitle: "Signature + custom",
     categoryImage: "/grilled-chicken-caesar.webp",
@@ -63,7 +63,7 @@ export const menuData: MenuCategory[] = [
       { id: "w2", name: "Buffalo Bleu Wrap", image: "/buffalo-bleu-wrap.webp", description: "A fiery Buffalo Bleu Wrap with crispy buffalo chicken, tangy blue cheese crumbles, and fresh greens wrapped in a soft tortilla. A bold and satisfying Saladworks wrap option.", price: 12.99 },
       { id: "w3", name: "Black Blue Grilled Wrap", image: "/black-blue-grilled-wrap.webp", description: "A hearty Black Blue Grilled Wrap with seasoned grilled steak or chicken, bold blue cheese, and fresh vegetables in a warm flour tortilla. A premium Saladworks wrap experience.", price: 13.49 },
       { id: "w4", name: "Bently Wrap", image: "/bently-wrap.webp", description: "The signature Bently Wrap featuring a unique gourmet combination of fresh Saladworks ingredients wrapped in a soft flour tortilla. A fan-favorite wrap at Saladworks.", price: 12.49 },
-      { id: "w5", name: "Turkey Jalapeño Crunch Wrap", image: "/turkey-jalapeno-crunch-wrap.webp", description: "A spicy Turkey Jalapeño Crunch Wrap with sliced turkey, pickled jalapeños, crispy crunch mix, and fresh greens in a warm tortilla. A satisfying kick for spice lovers at Saladworks.", price: 12.49 },
+      { id: "w5", name: "Turkey Jalapeno Crunch Wrap", image: "/turkey-jalapeno-crunch-wrap.webp", description: "A spicy Turkey Jalapeno Crunch Wrap with sliced turkey, pickled jalapenos, crispy crunch mix, and fresh greens in a warm tortilla. A satisfying kick for spice lovers at Saladworks.", price: 12.49 },
       { id: "w6", name: "Mediterranean Chicken Wrap", image: "/mediterranean-chicken-wrap.webp", description: "A fresh Mediterranean Chicken Wrap with grilled chicken, feta cheese, olives, roasted peppers, and greens in a soft tortilla with Mediterranean dressing. A healthy Saladworks wrap.", price: 12.99 },
       { id: "w7", name: "Tofu Superfood Wrap", image: "/tofu-superfood-wrap.webp", description: "A plant-based Tofu Superfood Wrap packed with nutritious tofu, supergreens, seeds, and fresh vegetables in a soft flour tortilla. A healthy, vegan-friendly Saladworks wrap.", price: 11.99 },
       { id: "w8", name: "Roasted Turkey Club", image: "/roasted-turkey-club.webp", description: "A classic Roasted Turkey Club Wrap with freshly roasted turkey, crispy bacon, lettuce, tomato, and creamy mayo in a warm flour tortilla. A timeless Saladworks sandwich-style wrap.", price: 12.49 },

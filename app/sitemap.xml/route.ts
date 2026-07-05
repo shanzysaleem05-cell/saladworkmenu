@@ -1,6 +1,7 @@
-import { getAllPosts } from '@/lib/blog'
 import { blogData } from '@/data/blogData'
-import { getDataDate, getComparableItemSlugs } from '@/lib/stateData'
+import { menuData } from '@/data/menuData'
+import { slugify } from '@/lib/utils'
+import { getDataDate, getComparableItemSlugs, getStateSlugs, getStateItemSlugs } from '@/lib/stateData'
 
 export async function GET() {
   const baseUrl = 'https://saladworksmenu.us'
@@ -16,7 +17,9 @@ export async function GET() {
     `${baseUrl}/coupons`,
     `${baseUrl}/about`,
     `${baseUrl}/contact`,
-    `${baseUrl}/legal`,
+    `${baseUrl}/privacy-policy`,
+    `${baseUrl}/terms-and-conditions`,
+    `${baseUrl}/cookies-policy`,
     `${baseUrl}/directory`,
     `${baseUrl}/menu/prices-by-state`,
   ]
@@ -25,26 +28,22 @@ export async function GET() {
     slug => `${baseUrl}/menu/prices-by-state/${slug}`
   )
 
-  const menuItems = [
-    'hot-honey-chicken-bowl', 'sweet-chili-shrimp-bowl', 'fire-grilled-steak-bowl',
-    'grilled-chicken-caesar', 'avocado-cobb', 'fuji-apple-crunch', 'sophies',
-    'mediterranean-chicken', 'southwest-chipotle-ranch', 'steakhouse-salad',
-    'buffalo-chicken', 'chipotle-chicken-and-bacon', 'bently', 'tofu-superfood',
-    'chicken-pesto', 'asian-crispy-chicken', 'southwest-chicken-caesar',
-    'smoky-bbq-crispy-chicken', 'grilled-chicken-caesar-wrap', 'buffalo-bleu-wrap',
-    'black-blue-grilled-wrap', 'bently-wrap', 'turkey-jalapeno-crunch-wrap',
-    'mediterranean-chicken-wrap', 'tofu-superfood-wrap', 'roasted-turkey-club',
-    'cali-chicken-grilled-wrap', 'buffalo-chicken-grilled-wrap', 'turkey-cheddar-and-bacon',
-    'steak-cheddar-melt', 'grilled-cheese', 'broccoli-cheddar-soup', 'chicken-noodle-soup',
-    'soup-of-the-day', 'kids-bento-box', 'kids-create-your-own-salad', 'kids-grilled-cheese',
-    'kids-grilled-chicken-quesadilla', 'chocolate-chip-cookie', 'chocolate-fudge-brownie',
-    'crispy-rice-marshmallow-treat', 'chips', 'extra-roll', '16oz-dressing',
-    'tractor-fountain-drink', 'tractor-gallon-pouch', 'bottled-water', 'coke-bottle',
-    'diet-coke-bottle', 'sprite-bottle', 'half-create-your-own', 'half-premium-salad',
-    'half-signature-salad', 'half-melt', 'soup', 'wrap-or-grilled-wrap'
-  ]
+  // Legacy flat menu-item pages, generated with the same slugify() used to
+  // build the actual routes — no more hand-typed slug list that can drift
+  // out of sync with what generateStaticParams() actually builds.
+  const menuUrls = menuData.flatMap(category =>
+    category.items.map(item => `${baseUrl}/menu/${slugify(item.name)}`)
+  )
 
-  const menuUrls = menuItems.map(item => `${baseUrl}/menu/${item}`)
+  // Per-state menu pages and per-state x per-item price pages — these carry
+  // the richest, cleanest unique content on the site and were previously
+  // missing from the sitemap entirely.
+  const stateSlugs = getStateSlugs()
+  const stateMenuUrls = stateSlugs.map(slug => `${baseUrl}/menu/${slug}`)
+  const stateItemUrls = stateSlugs.flatMap(stateSlug =>
+    getStateItemSlugs(stateSlug).map(itemSlug => `${baseUrl}/menu/${stateSlug}/${itemSlug}`)
+  )
+  const directoryStateUrls = stateSlugs.map(slug => `${baseUrl}/directory/${slug}`)
 
   // Blog posts carry their own publish date — that is their honest lastmod,
   // independent of when the menu data was refreshed.
@@ -54,17 +53,24 @@ export async function GET() {
     return isNaN(parsed.getTime()) ? dataDate : parsed.toISOString().slice(0, 10)
   }
 
+  // Only real, rendered posts (data/blogData.ts) go in the sitemap.
+  // content/posts/*.mdx are not wired into any renderer yet — submitting
+  // those slugs produced soft-404s ("Post not found", HTTP 200) that Google
+  // flagged as "Crawled - currently not indexed".
   const blogUrls = new Map<string, string>()
-  for (const post of getAllPosts()) {
-    blogUrls.set(`${baseUrl}/blog/${post.slug}`, normalizeDate(post.date))
-  }
   for (const post of blogData) {
-    const url = `${baseUrl}/blog/${post.slug}`
-    if (!blogUrls.has(url)) blogUrls.set(url, normalizeDate(post.date))
+    blogUrls.set(`${baseUrl}/blog/${post.slug}`, normalizeDate(post.date))
   }
 
   const allUrls: Array<{ url: string; lastmod: string }> = [
-    ...[...staticUrls, ...compareUrls, ...menuUrls].map(url => ({ url, lastmod: dataDate })),
+    ...[
+      ...staticUrls,
+      ...compareUrls,
+      ...menuUrls,
+      ...stateMenuUrls,
+      ...stateItemUrls,
+      ...directoryStateUrls,
+    ].map(url => ({ url, lastmod: dataDate })),
     ...Array.from(blogUrls, ([url, lastmod]) => ({ url, lastmod })),
   ]
 

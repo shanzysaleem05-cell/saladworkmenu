@@ -6,6 +6,7 @@ import { menuData } from "@/data/menuData"
 import { SectionHeading } from "@/components/SectionHeading"
 import { FoodCard } from "@/components/FoodCard"
 import Link from "next/link"
+import { slugify } from "@/lib/utils"
 
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState(menuData[0].id)
@@ -245,7 +246,7 @@ export default function MenuPage() {
                   {category.items.map((item, index) => (
                     <tr key={item.id} className={`border-b border-gray-100 last:border-0 ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}>
                       <td className="py-6 px-6 align-top">
-                        <Link href={`/menu/${item.name.toLowerCase().replace(/ /g, '-')}`} className="font-extrabold text-site-black hover:text-brand-orange transition-colors">
+                        <Link href={`/menu/${slugify(item.name)}`} className="font-extrabold text-site-black hover:text-brand-orange transition-colors">
                           {item.name}*
                         </Link>
                       </td>

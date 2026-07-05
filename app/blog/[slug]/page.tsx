@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { notFound } from "next/navigation"
 import BlogPostClient from "./BlogPostClient"
 import { JsonLd } from "@/components/JsonLd"
 import { FaqSection } from "@/components/FaqSection"
@@ -7,6 +8,10 @@ import { blogData } from "@/data/blogData"
 
 interface Props {
   params: { slug: string }
+}
+
+export async function generateStaticParams() {
+  return blogData.map((post) => ({ slug: post.slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -65,8 +70,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function BlogPostPage({ params }: Props) {
   const post = blogData.find(p => p.slug === params.slug)
-  
-  if (!post) return <div className="py-24 text-center">Post not found</div>
+
+  if (!post) notFound()
 
   const url = `https://saladworksmenu.us/blog/${post.slug}`
   const imageUrl = `https://saladworksmenu.us${post.image}`

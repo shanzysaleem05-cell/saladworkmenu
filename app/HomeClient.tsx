@@ -7,6 +7,7 @@ import { ArrowRight, Leaf, ShieldCheck, MapPin, Gift, HelpCircle, Smartphone, St
 import { Button } from "@/components/Button"
 import { FAQAccordion } from "@/components/FAQAccordion"
 import { FoodCard } from "@/components/FoodCard"
+import { slugify } from "@/lib/utils"
 
 type MenuDataProp = any[]
 
@@ -105,7 +106,7 @@ export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataP
             </Link>
           </Button>
           <Button size="lg" variant="outline" className="rounded-none border border-gray-300 bg-site-white text-site-black hover:bg-gray-50 hover:text-site-black px-8 h-14 text-base font-bold shadow-sm flex items-center gap-2" asChild>
-            <Link href="/menu#deals">
+            <Link href="/coupons">
               Get Coupons & Save
               <ArrowRight className="h-4 w-4" />
             </Link>
@@ -125,7 +126,7 @@ export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataP
           <div className="space-y-6 text-[#4b5563] text-lg leading-relaxed font-medium text-center max-w-[1000px] mx-auto">
             <p>
               SaladWorks is known for generous portions and fresh daily 
-              preparation. Guests love pairing items from the <Link href="/menu" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">full menu</Link> with SaladWorks' famous <Link href="/menu#salads" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">signature salads and dressings</Link>. SaladWorks prepares dressings fresh every morning and provides complete <Link href="/menu#nutrition" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">nutrition details</Link> for full transparency.
+              preparation. Guests love pairing items from the <Link href="/menu" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">full menu</Link> with SaladWorks' famous <Link href="/menu#salads" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">signature salads and dressings</Link>. SaladWorks prepares dressings fresh every morning and provides complete <Link href="/nutrition" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">nutrition details</Link> for full transparency.
             </p>
             <p>
               SaladWorks offers great value through their <Link href="/menu" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">lunch specials</Link> and popular <Link href="/menu#pick-2" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">Pick 2 Combo</Link> deals. Enjoy rotating <Link href="/blog" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">seasonal specials</Link> for limited-time recipes, or order SaladWorks <Link href="/catering" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">catering packages</Link> for your next office gathering or family celebration.
@@ -220,7 +221,7 @@ export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataP
                     {category.items.map((item, index) => (
                       <tr key={item.id} className={`border-b border-gray-100 last:border-0 ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}>
                         <td className="py-6 px-6 align-top">
-                          <Link href={`/menu/${item.name.toLowerCase().replace(/ /g, '-')}`} className="font-extrabold text-site-black hover:text-brand-orange transition-colors">
+                          <Link href={`/menu/${slugify(item.name)}`} className="font-extrabold text-site-black hover:text-brand-orange transition-colors">
                             {item.name}*
                           </Link>
                         </td>

@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { slugify } from './utils'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -268,15 +269,6 @@ const HIDDEN_CATEGORIES = new Set([
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
-
-function slugify(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[®™©]/g, '')
-    .replace(/&/g, 'and')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '')
-}
 
 function itemSlugify(name: string): string {
   // Strip leading "NEW " for cleaner slugs but keep in display name

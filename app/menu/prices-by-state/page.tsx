@@ -1,10 +1,11 @@
-import { getComparableItemSlugs, findItemAcrossStates, getItemStateComparison, getDataDate } from "@/lib/stateData"
+import { getComparableItemSlugs, findItemAcrossStates, getItemStateComparison, getDataDate, getStateSlugs } from "@/lib/stateData"
 import Link from "next/link"
 import { Metadata } from "next"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
+import { FaqSection } from "@/components/FaqSection"
 
 export const metadata: Metadata = {
-  title: `Saladworks Prices by State - Compare Every Menu Item (${new Date().getFullYear()})`,
+  title: { absolute: `Saladworks Prices by State - Compare Every Item (${new Date().getFullYear()})` },
   description: "Compare Saladworks menu item prices across every state. See which states have the cheapest salads, bowls, wraps, and soups — real data from live location menus.",
   alternates: { canonical: "https://saladworksmenu.us/menu/prices-by-state" },
 }
@@ -65,6 +66,21 @@ export default function PricesByStateIndexPage() {
           </div>
         ))}
       </section>
+
+      <FaqSection faqs={[
+        {
+          question: "Why do Saladworks menu prices vary by state?",
+          answer: "Saladworks locations are franchised, so each restaurant sets prices based on local rent, labor costs, and market conditions. That's why the same item can cost more in one state than another."
+        },
+        {
+          question: "How many menu items can I compare across states?",
+          answer: `${items.length} Saladworks menu items have enough multi-state location data to compare prices, updated ${prettyDate}. Items carried at only one location aren't included since there's nothing to compare.`
+        },
+        {
+          question: "Where does this price data come from?",
+          answer: `Every price on this page comes from real, live Saladworks location menus across ${getStateSlugs().length} states — not national estimates or guesses.`
+        },
+      ]} />
     </div>
   )
 }

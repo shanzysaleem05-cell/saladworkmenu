@@ -4,30 +4,35 @@ import { motion } from "framer-motion"
 import { ArrowRight, Leaf, Flame } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { slugify } from "@/lib/utils"
 
 interface FoodCardProps {
   name: string;
   description: string;
   price: number;
+  priceRangeText?: string;
   image: string;
   category?: string;
   calories?: number | string | null;
   isVeg?: boolean;
   isSpicy?: boolean;
+  href?: string;
 }
 
-export function FoodCard({ 
-  name, 
-  description, 
-  price, 
+export function FoodCard({
+  name,
+  description,
+  price,
+  priceRangeText,
   image,
   category = "Salads",
   calories = null,
   isVeg = true,
-  isSpicy = false
+  isSpicy = false,
+  href
 }: FoodCardProps) {
   return (
-    <Link href={`/menu/${name.toLowerCase().replace(/ /g, '-')}`} className="block h-full group">
+    <Link href={href || `/menu/${slugify(name)}`} className="block h-full group">
       <motion.div 
         whileHover={{ y: -4 }}
         className="bg-site-white border border-gray-200 rounded-[16px] overflow-hidden flex flex-col h-full shadow-sm hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)] transition-all duration-300"
@@ -71,7 +76,7 @@ export function FoodCard({
           <div className="flex items-center justify-between mb-3 border-b border-gray-100 pb-3">
             <div className="flex flex-col">
               <span className="text-[9px] font-bold text-gray-400 tracking-widest uppercase mb-0.5">Avg Price</span>
-              <span className="font-black text-brand-orange text-[22px] tracking-tight leading-none">${price.toFixed(2)}</span>
+              <span className="font-black text-brand-orange text-[22px] tracking-tight leading-none">{priceRangeText || `$${price.toFixed(2)}`}</span>
             </div>
             <span className="text-[#9ca3af] text-[12px] font-medium">{calories ? `${calories} cal` : 'Varies'}</span>
           </div>

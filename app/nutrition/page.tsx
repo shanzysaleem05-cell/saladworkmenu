@@ -33,8 +33,8 @@ export default function NutritionPage() {
       answer: "The nutritional values provided are estimates based on standard recipes. Customized orders and slight variations in portion sizes will affect the actual nutritional content."
     },
     {
-      question: "Do you have low-carb options?",
-      answer: "Yes, many of our salads can be made low-carb by omitting croutons, certain fruits, and opting for lighter dressings like vinaigrettes."
+      question: "Does SaladWorks have low-carb options?",
+      answer: "Yes, many SaladWorks salads can be made low-carb by omitting croutons, certain fruits, and opting for lighter dressings like vinaigrettes."
     }
   ]
 

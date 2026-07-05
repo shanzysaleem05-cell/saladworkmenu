@@ -9,6 +9,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { cateringFaqs } from "@/data/cateringFaqs"
 
 export default function CateringClient() {
   return (
@@ -27,7 +28,7 @@ export default function CateringClient() {
           transition={{ duration: 0.7 }}
           className="text-[32px] md:text-[44px] font-extrabold text-site-black mb-6 tracking-tight leading-tight max-w-3xl mx-auto"
         >
-          Salad Works Catering Prices
+          SaladWorks Catering Prices
         </motion.h2>
         
         <motion.p 
@@ -436,41 +437,16 @@ export default function CateringClient() {
           <SectionHeading title="Catering FAQs" centered />
           
           <div className="mt-12 space-y-4">
-            {[
-              {
-                q: "What is included in SaladWorks catering?",
-                a: "Delivery includes setup, plates, silverware, napkins and cups if applicable."
-              },
-              {
-                q: "Does SaladWorks deliver?",
-                a: "SaladWorks does deliver. Delivery radius, minimum amount to be delivered and delivery fees will vary by location. Please reach out to the location directly for any specific questions regarding delivery fees and requirements."
-              },
-              {
-                q: "Can I order SaladWorks catering online?",
-                a: "Orders can be placed online at www.catering.saladworks.com."
-              },
-              {
-                q: "How far in advance do I need to place a catering order?",
-                a: "You can order online at www.catering.saladworks.com up to three hours before needing your order. Please call the location directly with any questions and requests."
-              },
-              {
-                q: "Are there vegetarian or gluten-free options available?",
-                a: "SaladWorks offers vegetarian and gluten-free options. Use the interactive Allergen & Nutritional Menus at https://saladworks.widget.eagle.bigzpoon.com/home to find the best choices."
-              },
-              {
-                q: "Can I customize my catering order?",
-                a: "Please add any customization requests in the notes when placing your orders. You can also contact the location directly with any questions or concerns."
-              }
-            ].map((faq, i) => (
+            {cateringFaqs.map((faq, i) => (
               <details key={i} className="group border border-gray-200 rounded-lg bg-site-bg open:bg-white transition-colors">
                 <summary className="flex cursor-pointer items-center justify-between p-6 font-bold text-site-black">
-                  <h3 className="m-0 text-base">{faq.q}</h3>
+                  <h3 className="m-0 text-base">{faq.question}</h3>
                   <span className="ml-4 flex-shrink-0 text-brand-orange group-open:-rotate-180 transition-transform duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="h-5 w-5"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
                   </span>
                 </summary>
                 <div className="px-6 pb-6 text-gray-600 leading-relaxed">
-                  {faq.a}
+                  {faq.answer}
                 </div>
               </details>
             ))}

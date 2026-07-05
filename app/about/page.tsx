@@ -5,7 +5,7 @@ import { FaqSection } from "@/components/FaqSection"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
 
 export const metadata: Metadata = {
-  title: "About Us | SaladWorksMenu.us (Independent Fan Guide)",
+  title: { absolute: "About Us | SaladWorksMenu.us (Independent Fan Guide)" },
   description: "Learn about SaladWorksMenu.us. The site is an independent blog providing accurate menu prices, nutrition facts, and dietary guides for SaladWorks fans.",
   keywords: ["About SaladWorksMenu", "independent menu guide", "restaurant prices blog", "SaladWorks nutrition facts", "food blog methodology"],
   alternates: {
