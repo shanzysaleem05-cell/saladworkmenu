@@ -4,6 +4,7 @@ import { notFound } from "next/navigation"
 import { Metadata } from "next"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
 import { FaqSection } from "@/components/FaqSection"
+import { JsonLd } from "@/components/JsonLd"
 
 type Props = {
   params: { state: string }
@@ -34,8 +35,27 @@ export default function StateDirectoryPage({ params }: Props) {
   const prettyDate = new Date(dataDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })
   const totalItems = categories.reduce((sum, c) => sum + c.items.length, 0)
 
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": `Saladworks ${state.name} - All Menu & Price Pages`,
+    "url": `https://saladworksmenu.us/directory/${state.slug}`,
+    "hasPart": {
+      "@type": "ItemList",
+      "itemListElement": categories.flatMap((cat, ci) =>
+        cat.items.map((item, ii) => ({
+          "@type": "ListItem",
+          "position": ci * 100 + ii + 1,
+          "name": `${item.name} Price in ${state.name}`,
+          "url": `https://saladworksmenu.us/menu/${state.slug}/${item.slug}`
+        }))
+      )
+    }
+  }
+
   return (
     <div className="flex flex-col w-full bg-site-white">
+      <JsonLd data={itemListSchema} />
       <Breadcrumbs items={[
         { label: "Home", href: "/" },
         { label: "Directory", href: "/directory" },

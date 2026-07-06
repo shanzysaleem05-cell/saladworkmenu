@@ -41,6 +41,37 @@ Disallow: /admin/
 Disallow: /api/
 Disallow: /guestpost/
 
+# Google AI Overviews / AI Mode share the main Googlebot index - no separate
+# bot to allow. These are the crawlers behind ChatGPT, Perplexity, and Claude
+# answers/citations - explicitly welcomed so this content is eligible to be
+# surfaced and cited there.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 # Host
 Host: https://saladworksmenu.us
 

@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Metadata } from "next"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
 import { FaqSection } from "@/components/FaqSection"
+import { JsonLd } from "@/components/JsonLd"
 
 export const metadata: Metadata = {
   title: { absolute: `Saladworks Prices by State - Compare Every Item (${new Date().getFullYear()})` },
@@ -30,8 +31,25 @@ export default function PricesByStateIndexPage() {
     byCategory.get(item.category)!.push(item)
   }
 
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Saladworks Prices by State",
+    "url": "https://saladworksmenu.us/menu/prices-by-state",
+    "hasPart": {
+      "@type": "ItemList",
+      "itemListElement": items.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "url": `https://saladworksmenu.us/menu/prices-by-state/${item.slug}`
+      }))
+    }
+  }
+
   return (
     <div className="flex flex-col w-full bg-site-white">
+      <JsonLd data={itemListSchema} />
       <Breadcrumbs items={[
         { label: "Home", href: "/" },
         { label: "Menu & Prices", href: "/menu" },

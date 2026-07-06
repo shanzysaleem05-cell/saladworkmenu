@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react"
 import { Metadata } from "next"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
 import { FaqSection } from "@/components/FaqSection"
+import { JsonLd } from "@/components/JsonLd"
 
 export const metadata: Metadata = {
   title: { absolute: "Saladworks Menu Directory - Browse Prices by State & City" },
@@ -16,8 +17,25 @@ export default function DirectoryPage() {
   const dataDate = getDataDate()
   const prettyDate = new Date(dataDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })
 
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Saladworks Menu Directory",
+    "url": "https://saladworksmenu.us/directory",
+    "hasPart": {
+      "@type": "ItemList",
+      "itemListElement": states.map((state, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": `Saladworks ${state.name} Menu`,
+        "url": `https://saladworksmenu.us/menu/${state.slug}`
+      }))
+    }
+  }
+
   return (
     <div className="flex flex-col w-full bg-site-white">
+      <JsonLd data={itemListSchema} />
       <Breadcrumbs items={[
         { label: "Home", href: "/" },
         { label: "Directory", href: "#" }
