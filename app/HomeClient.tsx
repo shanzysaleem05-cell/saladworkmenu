@@ -66,7 +66,7 @@ export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataP
           className="text-[32px] md:text-[44px] font-extrabold text-site-black mb-6 tracking-tight leading-tight max-w-3xl mx-auto"
         >
           SaladWorks Menu Prices 2026 <br />
-          Complete Guide
+          Salads, Wraps & Grilled Chicken
         </motion.h1>
         
         <motion.p 
@@ -118,8 +118,8 @@ export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataP
       <section className="py-20 bg-site-bg border-b border-gray-200">
         <div className="container mx-auto px-4 max-w-[1100px]">
           <div className="text-center mb-10 w-full flex flex-col items-center">
-            <h2 className="text-[30px] md:text-[38px] lg:text-[44px] font-extrabold text-site-black tracking-tight leading-tight md:whitespace-nowrap max-w-none">
-              The Complete SaladWorks Menu Guide for 2026
+            <h2 className="text-[28px] md:text-[36px] lg:text-[40px] font-extrabold text-site-black tracking-tight leading-tight max-w-3xl mx-auto">
+              The Complete SaladWorks Salad, Wrap & Grilled Chicken Menu Guide for 2026
             </h2>
           </div>
           

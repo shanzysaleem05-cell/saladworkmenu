@@ -5,6 +5,16 @@ import Link from "next/link"
 import Image from "next/image"
 import { NutritionCalculator } from "@/components/NutritionCalculator"
 
+// Shared inline-markdown parser (bold, italic, links) so every block type
+// (paragraphs, bullet lists, numbered lists) renders the same markdown
+// subset instead of each list type re-implementing its own partial regex.
+function parseInline(text: string): string {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+    .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-brand-green font-bold hover:underline transition-colors">$1</a>');
+}
+
 export default function SinglePostPage({ params }: { params: { slug: string } }) {
   const post = blogData.find(p => p.slug === params.slug)
   if (!post) notFound()
@@ -84,7 +94,7 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
               return (
                 <ul key={idx} className="list-decimal pl-5 my-6 space-y-2 font-medium">
                   {trimmed.split('\n').map((item, i) => (
-                    <li key={i}>{item.replace(/^\d+\.\s*/, '')}</li>
+                    <li key={i} dangerouslySetInnerHTML={{ __html: parseInline(item.replace(/^\d+\.\s*/, '')) }} />
                   ))}
                 </ul>
               )
@@ -117,10 +127,10 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
                             )
                           }
                           // Handle non-price items in the list gracefully
-                          const cleanItem = item.replace(/^- \*\*(.*?)\*\*/, '$1').replace(/^- /, '');
+                          const cleanItem = parseInline(item.replace(/^- /, ''));
                           return (
                             <tr key={i} className="hover:bg-gray-50 transition-colors">
-                              <td className="py-4 px-6 text-site-black font-semibold border-0" colSpan={2}>{cleanItem}</td>
+                              <td className="py-4 px-6 text-site-black font-semibold border-0" colSpan={2} dangerouslySetInnerHTML={{ __html: cleanItem }} />
                             </tr>
                           )
                         })}
@@ -134,7 +144,7 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
               return (
                 <ul key={idx} className="list-disc pl-5 my-6 space-y-2 text-gray-700">
                   {lines.map((item, i) => {
-                    const cleanItem = item.replace(/^- \*\*(.*?)\*\*/, '<strong>$1</strong>').replace(/^- /, '');
+                    const cleanItem = parseInline(item.replace(/^- /, ''));
                     return <li key={i} dangerouslySetInnerHTML={{ __html: cleanItem }} />
                   })}
                 </ul>
@@ -156,12 +166,7 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
             }
 
             // Standard paragraph with link parsing
-            const cleanText = trimmed
-              .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-              .replace(/\*(.*?)\*/g, '<em>$1</em>')
-              .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-brand-green font-bold hover:underline transition-colors">$1</a>');
-              
-            return <p key={idx} className="mb-6 leading-relaxed text-gray-600 text-lg" dangerouslySetInnerHTML={{ __html: cleanText }} />
+            return <p key={idx} className="mb-6 leading-relaxed text-gray-600 text-lg" dangerouslySetInnerHTML={{ __html: parseInline(trimmed) }} />
           })}
         </article>
 

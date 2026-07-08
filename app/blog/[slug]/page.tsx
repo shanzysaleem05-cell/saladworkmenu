@@ -97,7 +97,7 @@ export default function BlogPostPage({ params }: Props) {
     }
   }
 
-  const faqs = [
+  const faqs = post.faqs && post.faqs.length > 0 ? post.faqs : [
     {
       question: "Can I find more articles like this?",
       answer: "Yes, visit our main Blog page to read more articles about healthy living, menu updates, and SaladWorks news."

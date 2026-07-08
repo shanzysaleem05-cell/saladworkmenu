@@ -7,9 +7,112 @@ export interface BlogPost {
   category: string;
   image: string;
   content: string;
+  faqs?: { question: string; answer: string }[];
 }
 
 export const blogData: BlogPost[] = [
+  {
+    slug: "saladworks-delivery-guide",
+    title: "SaladWorks Delivery Guide 2026: Order Salads Online",
+    excerpt: "Craving a fresh salad without leaving home? See every SaladWorks delivery app, fees, best menu picks, and how to find delivery near you in 2026.",
+    date: "2026-07-08",
+    readTime: "7 min read",
+    category: "Delivery & Ordering",
+    image: "/SaladWorks-Delivery.webp",
+    content: `# SaladWorks Delivery Guide 2026: Order Salads Online
+
+Salad delivery has become the easiest way to eat fresh without stepping into a kitchen, and SaladWorks is one of the most popular stops for it. Whether you're ordering lunch for the office or a quick dinner at home, this guide covers every way to get SaladWorks salad delivery, what it costs, which menu items travel best, and how to find delivery near you in 2026.
+
+## Does SaladWorks Offer Delivery?
+
+Yes. SaladWorks delivery is available at most locations through major third-party delivery apps, and many stores also support ordering directly from the [SaladWorks menu](/menu) for pickup or delivery. Availability, delivery radius, and hours depend on your local store, so it's always worth checking your nearest location before you order.
+
+## How to Order SaladWorks Delivery
+
+- **DoorDash:** The most widely available option for SaladWorks delivery, with real-time order tracking and frequent promotions for new customers.
+- **Uber Eats:** Good coverage in most metro areas, often with bundled small-order fees waived above a certain cart size.
+- **Grubhub:** A solid choice if you're ordering for a group, since it supports group-order links and split payments.
+- **Direct Online Ordering:** Many SaladWorks locations let you order straight from their store page for pickup, and some offer their own delivery checkout without a third-party app.
+
+Comparing prices across two or three apps before you order is worth the extra minute - delivery fees and current promo codes vary a lot between platforms and change often.
+
+## SaladWorks Delivery Fees & Minimum Order
+
+Delivery fees and minimums are set by each individual store and the delivery platform, not by SaladWorks corporate, so exact pricing varies by location. In general, expect:
+
+- A delivery fee ranging from about $1.99 to $7.99 depending on distance and platform.
+- A small order fee if your cart is under the platform's minimum (often around $10-$12).
+- Service fees and taxes added at checkout, separate from the delivery fee itself.
+- Lower or waived delivery fees for members of a platform's subscription program (like DashPass or Uber One).
+
+If saving money matters more than speed, check the [SaladWorks coupons and deals](/coupons) page before you order - many current promo codes work on both pickup and delivery orders.
+
+## Best SaladWorks Menu Items for Delivery
+
+Not every menu item survives a delivery bag equally well. These hold up best in transit:
+
+- **Build Your Own Salad:** Ask for dressing on the side so lettuce and toppings stay crisp until you're ready to eat.
+- **Wraps:** Wraps travel better than open salads since the tortilla holds everything together.
+- **Grain and Protein Bowls:** Warm proteins and grains stay hot longer than a cold salad, making bowls a reliable delivery pick.
+- **Soups:** Order soup in the cup or bowl size with the lid sealed - it's one of the most delivery-friendly items on the [Saladworks menu](/menu).
+
+Avoid ordering items with a lot of loose toppings or crunchy elements mixed in ahead of time, since they can get soggy by the time delivery arrives.
+
+## SaladWorks Delivery vs Pickup: Which Should You Choose
+
+Delivery is the better choice when you're short on time, ordering for a group that can't leave the office, or the weather makes a walk unappealing. Pickup is faster overall (no waiting on a driver), usually cheaper since you skip delivery and service fees, and it guarantees your salad is built fresh right before you eat it. If your local store is close by, pickup is generally the better value; if it's far or you're ordering for several people, delivery saves more time than it costs.
+
+## Healthy Delivery: Calories & Nutrition
+
+Delivery doesn't have to mean giving up on your nutrition goals. Use the calculator below to build the same bowl you'd order for delivery and see the exact calorie and macro breakdown before you check out.
+
+[CALCULATOR_WIDGET]
+
+For a full breakdown of every item, visit the complete [SaladWorks nutrition guide](/nutrition).
+
+## Find SaladWorks Delivery Near You
+
+SaladWorks delivery availability depends on how many stores are near you, and prices can vary by state and city. Browse SaladWorks menu prices and locations for these states:
+
+- [New York](/menu/new-york)
+- [New Jersey](/menu/new-jersey)
+- [Pennsylvania](/menu/pennsylvania)
+- [California](/menu/california)
+- [Florida](/menu/florida)
+- [Texas](/menu/texas)
+
+See the full [SaladWorks store directory](/directory) to find every state with SaladWorks locations, or check [SaladWorks hours](/hours) to confirm your local store is open before you order.
+
+## SaladWorks Catering Delivery for Groups
+
+Feeding a bigger group? SaladWorks also delivers catering trays and boxed lunches for offices, meetings, and events, separate from single-order delivery apps. Visit the [SaladWorks catering](/catering) page to see packages, pricing, and lead times for group delivery orders.
+
+## Save on Delivery with SaladWorks Coupons
+
+Before you check out, always look for an active promo code. Visit the [SaladWorks coupons and deals](/coupons) page for the latest offers that can apply to delivery orders, including new-customer discounts and free-delivery thresholds on select platforms.`,
+    faqs: [
+      {
+        question: "Does SaladWorks deliver near me?",
+        answer: "SaladWorks delivery is available at most locations through DoorDash, Uber Eats, and Grubhub, though exact coverage depends on how close the nearest store is to your address. Check the SaladWorks store directory or your preferred delivery app to confirm availability at your address."
+      },
+      {
+        question: "How much is the SaladWorks delivery fee?",
+        answer: "Delivery fees typically range from about $1.99 to $7.99 depending on the platform, your distance from the store, and whether you have a subscription like DashPass or Uber One. Fees are set by the individual store and delivery platform, not a fixed nationwide rate."
+      },
+      {
+        question: "What is the best SaladWorks menu item to order for delivery?",
+        answer: "Build Your Own Salads with dressing on the side, wraps, and grain or protein bowls hold up best during delivery. Soups also travel well when ordered in a sealed cup or bowl."
+      },
+      {
+        question: "Can I get SaladWorks catering delivered?",
+        answer: "Yes. SaladWorks offers catering delivery for offices, meetings, and events, separate from regular single-order delivery apps. Visit the SaladWorks catering page for package options and pricing."
+      },
+      {
+        question: "Is SaladWorks delivery cheaper through the app or a delivery platform?",
+        answer: "It depends on current promotions. Comparing DoorDash, Uber Eats, and Grubhub before ordering - and checking the SaladWorks coupons page for active promo codes - usually finds the lowest total cost."
+      }
+    ]
+  },
   {
     slug: "saladworks-menu-and-price-2026",
     title: "Saladworks Menu and Price 2026",
