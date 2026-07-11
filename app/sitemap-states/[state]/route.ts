@@ -15,7 +15,7 @@ export async function GET(
     return new Response('Not found', { status: 404 })
   }
 
-  const baseUrl = 'https://saladworksmenu.us'
+  const baseUrl = 'https://www.saladworksmenu.us'
   const dataDate = getDataDate()
 
   const urls = [

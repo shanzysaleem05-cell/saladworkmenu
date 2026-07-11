@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   description: "Explore the full nutritional information for the entire SaladWorks menu. Find calories, fat, carbs, and protein for all salads, wraps, and soups.",
   keywords: ["SaladWorks nutrition", "SaladWorks calories", "healthy menu items", "SaladWorks macros"],
   alternates: {
-    canonical: "https://saladworksmenu.us/nutrition",
+    canonical: "https://www.saladworksmenu.us/nutrition",
   },
   openGraph: {
     title: "SaladWorks Nutrition Facts & Calories",
     description: "Explore the full nutritional information for the entire SaladWorks menu.",
-    url: "https://saladworksmenu.us/nutrition",
+    url: "https://www.saladworksmenu.us/nutrition",
   },
 }
 
@@ -24,7 +24,7 @@ export default function NutritionPage() {
     "@type": "WebPage",
     "name": "SaladWorks Nutrition Guide",
     "description": "Comprehensive nutritional information for all SaladWorks menu items.",
-    "url": "https://saladworksmenu.us/nutrition"
+    "url": "https://www.saladworksmenu.us/nutrition"
   }
 
   const faqs = [

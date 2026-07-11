@@ -29,11 +29,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Saladworks ${item.name} Price by State (${year}) - Cheapest: ${cheapest.name} $${cheapest.avgPrice.toFixed(2)}`,
     description: `Compare Saladworks ${item.name} prices across ${states.length} states. National average: $${nationalAvg.toFixed(2)}. Cheapest in ${cheapest.name} ($${cheapest.avgPrice.toFixed(2)}), most expensive in ${priciest.name} ($${priciest.avgPrice.toFixed(2)}). Real location data.`,
-    alternates: { canonical: `https://saladworksmenu.us/menu/prices-by-state/${item.slug}` },
+    alternates: { canonical: `https://www.saladworksmenu.us/menu/prices-by-state/${item.slug}` },
     openGraph: {
       title: `Saladworks ${item.name} Price by State (${year})`,
       description: `Which state has the cheapest Saladworks ${item.name}? Compare real prices across ${states.length} states.`,
-      url: `https://saladworksmenu.us/menu/prices-by-state/${item.slug}`,
+      url: `https://www.saladworksmenu.us/menu/prices-by-state/${item.slug}`,
       type: "website",
     },
   }
@@ -59,12 +59,12 @@ export default function PricesByStatePage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": `Saladworks ${item.name}`,
-    ...(item.image ? { "image": `https://saladworksmenu.us${item.image}` } : {}),
+    ...(item.image ? { "image": `https://www.saladworksmenu.us${item.image}` } : {}),
     "description": item.description,
     "brand": { "@type": "Brand", "name": "SaladWorks" },
     "offers": {
       "@type": "AggregateOffer",
-      "url": `https://saladworksmenu.us/menu/prices-by-state/${item.slug}`,
+      "url": `https://www.saladworksmenu.us/menu/prices-by-state/${item.slug}`,
       "priceCurrency": "USD",
       "lowPrice": Math.min(...states.map(s => s.minPrice)),
       "highPrice": Math.max(...states.map(s => s.maxPrice)),

@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   description: "Read the latest news, healthy eating tips, and menu updates from SaladWorks. Stay informed on our seasonal ingredients and limited-time offers.",
   keywords: ["SaladWorks blog", "healthy eating tips", "SaladWorks news", "menu updates"],
   alternates: {
-    canonical: "https://saladworksmenu.us/blog",
+    canonical: "https://www.saladworksmenu.us/blog",
   },
   openGraph: {
     title: "SaladWorks Blog & News",
     description: "Read the latest news, healthy eating tips, and menu updates from SaladWorks.",
-    url: "https://saladworksmenu.us/blog",
+    url: "https://www.saladworksmenu.us/blog",
   },
 }
 
@@ -24,7 +24,7 @@ export default function BlogPage() {
     "@type": "Blog",
     "name": "SaladWorks Blog",
     "description": "News, updates, and healthy eating tips from SaladWorks.",
-    "url": "https://saladworksmenu.us/blog"
+    "url": "https://www.saladworksmenu.us/blog"
   }
 
   const faqs = [

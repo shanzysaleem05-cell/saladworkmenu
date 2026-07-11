@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Read our privacy policy to understand how we collect, use, and protect your information on our independent SaladWorks fan guide.",
   alternates: {
-    canonical: "https://saladworksmenu.us/privacy-policy",
+    canonical: "https://www.saladworksmenu.us/privacy-policy",
   },
 }
 
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <p className="mb-8">
-              At SaladWorksMenu.us, accessible from https://saladworksmenu.us, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by SaladWorksMenu.us and how we use it.
+              At SaladWorksMenu.us, accessible from https://www.saladworksmenu.us, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by SaladWorksMenu.us and how we use it.
             </p>
 
             <h2 className="text-2xl font-black text-site-black mb-4">1. Information We Collect</h2>

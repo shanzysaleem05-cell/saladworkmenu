@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/JsonLd"
 export const metadata: Metadata = {
   title: { absolute: "Saladworks Menu Directory - Browse Prices by State & City" },
   description: "Browse every Saladworks menu and price page by state. Find local menus with real prices, calories, and hours for every state with Saladworks locations.",
-  alternates: { canonical: "https://saladworksmenu.us/directory" },
+  alternates: { canonical: "https://www.saladworksmenu.us/directory" },
 }
 
 export default function DirectoryPage() {
@@ -21,14 +21,14 @@ export default function DirectoryPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Saladworks Menu Directory",
-    "url": "https://saladworksmenu.us/directory",
+    "url": "https://www.saladworksmenu.us/directory",
     "hasPart": {
       "@type": "ItemList",
       "itemListElement": states.map((state, index) => ({
         "@type": "ListItem",
         "position": index + 1,
         "name": `Saladworks ${state.name} Menu`,
-        "url": `https://saladworksmenu.us/menu/${state.slug}`
+        "url": `https://www.saladworksmenu.us/menu/${state.slug}`
       }))
     }
   }

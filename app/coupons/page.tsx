@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   description: "Find the latest SaladWorks coupons, promo codes, and special deals. Save money on your favorite salads, wraps, and Pick 2 combos today.",
   keywords: ["SaladWorks coupons", "SaladWorks promo code", "SaladWorks deals", "SaladWorks discounts"],
   alternates: {
-    canonical: "https://saladworksmenu.us/coupons",
+    canonical: "https://www.saladworksmenu.us/coupons",
   },
   openGraph: {
     title: "SaladWorks Coupons & Promo Codes",
     description: "Find the latest SaladWorks coupons, promo codes, and special deals to save on your next meal.",
-    url: "https://saladworksmenu.us/coupons",
+    url: "https://www.saladworksmenu.us/coupons",
   },
 }
 
@@ -24,7 +24,7 @@ export default function CouponsPage() {
     "@type": "WebPage",
     "name": "SaladWorks Coupons & Deals",
     "description": "A collection of current promo codes and offers for SaladWorks.",
-    "url": "https://saladworksmenu.us/coupons"
+    "url": "https://www.saladworksmenu.us/coupons"
   }
 
   const faqs = [

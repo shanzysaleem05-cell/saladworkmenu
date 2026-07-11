@@ -8,7 +8,7 @@ import { JsonLd } from "@/components/JsonLd"
 export const metadata: Metadata = {
   title: { absolute: `Saladworks Prices by State - Compare Every Item (${new Date().getFullYear()})` },
   description: "Compare Saladworks menu item prices across every state. See which states have the cheapest salads, bowls, wraps, and soups — real data from live location menus.",
-  alternates: { canonical: "https://saladworksmenu.us/menu/prices-by-state" },
+  alternates: { canonical: "https://www.saladworksmenu.us/menu/prices-by-state" },
 }
 
 export default function PricesByStateIndexPage() {
@@ -35,14 +35,14 @@ export default function PricesByStateIndexPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Saladworks Prices by State",
-    "url": "https://saladworksmenu.us/menu/prices-by-state",
+    "url": "https://www.saladworksmenu.us/menu/prices-by-state",
     "hasPart": {
       "@type": "ItemList",
       "itemListElement": items.map((item, index) => ({
         "@type": "ListItem",
         "position": index + 1,
         "name": item.name,
-        "url": `https://saladworksmenu.us/menu/prices-by-state/${item.slug}`
+        "url": `https://www.saladworksmenu.us/menu/prices-by-state/${item.slug}`
       }))
     }
   }

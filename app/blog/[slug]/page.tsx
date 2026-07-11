@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
   }
 
-  const url = `https://saladworksmenu.us/blog/${post.slug}`
-  const imageUrl = `https://saladworksmenu.us${post.image}`
+  const url = `https://www.saladworksmenu.us/blog/${post.slug}`
+  const imageUrl = `https://www.saladworksmenu.us${post.image}`
 
   return {
     title: post.title,
@@ -73,8 +73,8 @@ export default function BlogPostPage({ params }: Props) {
 
   if (!post) notFound()
 
-  const url = `https://saladworksmenu.us/blog/${post.slug}`
-  const imageUrl = `https://saladworksmenu.us${post.image}`
+  const url = `https://www.saladworksmenu.us/blog/${post.slug}`
+  const imageUrl = `https://www.saladworksmenu.us${post.image}`
 
   const schema = {
     "@context": "https://schema.org",
@@ -92,7 +92,7 @@ export default function BlogPostPage({ params }: Props) {
       "name": "SaladWorks",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://saladworksmenu.us/icon-192x192.png"
+        "url": "https://www.saladworksmenu.us/icon-192x192.png"
       }
     }
   }

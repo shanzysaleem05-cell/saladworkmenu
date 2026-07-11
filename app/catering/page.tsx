@@ -28,16 +28,16 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://saladworksmenu.us/catering",
+    canonical: "https://www.saladworksmenu.us/catering",
   },
   openGraph: {
     title: "SaladWorks Catering Menu & Prices 2026 - Packages from $89.99",
     description: "SaladWorks catering packages start at $89.99 for 10 people. Salad bars, group trays, boxed meals and beverages for any event size.",
-    url: "https://saladworksmenu.us/catering",
+    url: "https://www.saladworksmenu.us/catering",
     siteName: "SaladWorks Menu & Prices",
     images: [
       {
-        url: "https://saladworksmenu.us/catering/opengraph-image",
+        url: "https://www.saladworksmenu.us/catering/opengraph-image",
         width: 1200,
         height: 630,
         alt: "SaladWorks Catering Packages 2026 - Starting at $89.99",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SaladWorks Catering Menu & Prices 2026",
     description: "Catering packages from $89.99 for 10 people. Salad bars, trays, boxed meals for any event.",
-    images: ["https://saladworksmenu.us/catering/opengraph-image"],
+    images: ["https://www.saladworksmenu.us/catering/opengraph-image"],
   },
 };
 
@@ -63,13 +63,13 @@ export default function CateringPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://saladworksmenu.us"
+        "item": "https://www.saladworksmenu.us"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Catering",
-        "item": "https://saladworksmenu.us/catering"
+        "item": "https://www.saladworksmenu.us/catering"
       }
     ]
   };

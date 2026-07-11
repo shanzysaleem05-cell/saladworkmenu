@@ -51,11 +51,11 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
         `Is Saladworks ${item.name} healthy`,
         `how much is ${item.name} at Saladworks in ${state.name}`,
       ],
-      alternates: { canonical: `https://saladworksmenu.us/menu/${state.slug}/${item.slug}` },
+      alternates: { canonical: `https://www.saladworksmenu.us/menu/${state.slug}/${item.slug}` },
       openGraph: {
         title: `Saladworks ${item.name} - ${priceText} in ${state.name}`,
         description: `Real ${state.name} prices for the Saladworks ${item.name}. ${priceText} across ${state.locationCount} locations.`,
-        url: `https://saladworksmenu.us/menu/${state.slug}/${item.slug}`,
+        url: `https://www.saladworksmenu.us/menu/${state.slug}/${item.slug}`,
         type: "website",
       },
       twitter: {
@@ -90,12 +90,12 @@ export default function Slug2Page({ params }: Props) {
       "@context": "https://schema.org",
       "@type": "Product",
       "name": `${item.name} - Saladworks ${state.name}`,
-      "image": item.image ? `https://saladworksmenu.us${item.image}` : fallbackImg,
+      "image": item.image ? `https://www.saladworksmenu.us${item.image}` : fallbackImg,
       "description": item.description,
       "brand": { "@type": "Brand", "name": "SaladWorks" },
       "offers": {
         "@type": "AggregateOffer",
-        "url": `https://saladworksmenu.us/menu/${state.slug}/${item.slug}`,
+        "url": `https://www.saladworksmenu.us/menu/${state.slug}/${item.slug}`,
         "priceCurrency": "USD",
         "lowPrice": item.minPrice ?? item.price,
         "highPrice": item.maxPrice ?? item.price,

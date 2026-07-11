@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Terms & Conditions",
   description: "Read the Terms & Conditions of using SaladWorksMenu.us, an independent informational fan guide.",
   alternates: {
-    canonical: "https://saladworksmenu.us/terms-and-conditions",
+    canonical: "https://www.saladworksmenu.us/terms-and-conditions",
   },
 }
 

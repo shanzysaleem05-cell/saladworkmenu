@@ -4,7 +4,7 @@ import { slugify } from '@/lib/utils'
 import { getDataDate, getComparableItemSlugs, getStateSlugs, getStateItemSlugs } from '@/lib/stateData'
 
 export async function GET() {
-  const baseUrl = 'https://saladworksmenu.us'
+  const baseUrl = 'https://www.saladworksmenu.us'
   const dataDate = getDataDate()
 
   const staticUrls = [

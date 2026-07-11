@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   description: "Learn about SaladWorksMenu.us. The site is an independent blog providing accurate menu prices, nutrition facts, and dietary guides for SaladWorks fans.",
   keywords: ["About SaladWorksMenu", "independent menu guide", "restaurant prices blog", "SaladWorks nutrition facts", "food blog methodology"],
   alternates: {
-    canonical: "https://saladworksmenu.us/about",
+    canonical: "https://www.saladworksmenu.us/about",
   },
   openGraph: {
     title: "About Us | SaladWorksMenu.us",
     description: "Your trusted, independent source for accurate SaladWorks menu prices, nutrition, and deals.",
-    url: "https://saladworksmenu.us/about",
+    url: "https://www.saladworksmenu.us/about",
     type: "website",
   },
 }
@@ -26,8 +26,8 @@ export default function AboutPage() {
     "mainEntity": {
       "@type": "Organization",
       "name": "SaladWorksMenu.us",
-      "url": "https://saladworksmenu.us",
-      "logo": "https://saladworksmenu.us/logo.png",
+      "url": "https://www.saladworksmenu.us",
+      "logo": "https://www.saladworksmenu.us/logo.png",
       "description": "An independent informational blog providing restaurant menu prices, nutrition facts, and reviews.",
       "email": "contact@saladworksmenu.us"
     }

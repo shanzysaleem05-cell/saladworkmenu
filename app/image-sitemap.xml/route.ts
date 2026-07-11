@@ -1,7 +1,7 @@
 import { menuData } from '@/data/menuData'
 
 export async function GET() {
-  const baseUrl = 'https://saladworksmenu.us'
+  const baseUrl = 'https://www.saladworksmenu.us'
   const year = new Date().getFullYear()
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>

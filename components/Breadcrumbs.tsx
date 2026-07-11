@@ -14,7 +14,7 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.label,
-      "item": `https://saladworksmenu.us${item.href}`
+      "item": `https://www.saladworksmenu.us${item.href}`
     }))
   };
 

@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   description: "Get in touch with SaladWorksMenu.us. Reach out to the team for questions, feedback, catering inquiries, or to report incorrect menu prices.",
   keywords: ["Contact SaladWorksMenu.us", "SaladWorks customer service", "report price"],
   alternates: {
-    canonical: "https://saladworksmenu.us/contact",
+    canonical: "https://www.saladworksmenu.us/contact",
   },
   openGraph: {
     title: "Contact SaladWorksMenu.us",
     description: "Get in touch with SaladWorksMenu.us. Reach out to the team for questions, feedback, or catering inquiries.",
-    url: "https://saladworksmenu.us/contact",
+    url: "https://www.saladworksmenu.us/contact",
   },
 }
 
@@ -24,7 +24,7 @@ export default function ContactPage() {
     "@type": "ContactPage",
     "name": "Contact SaladWorksMenu.us",
     "description": "Contact information and form for SaladWorksMenu.us inquiries.",
-    "url": "https://saladworksmenu.us/contact"
+    "url": "https://www.saladworksmenu.us/contact"
   }
 
   const faqs = [

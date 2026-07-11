@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: { absolute: "SaladWorks Near Me - Hours & Locations (2026)" },
   description: "Find SaladWorks near you: exact operating hours for every location, searchable by city, state, or zip code, plus live open-now status.",
   alternates: {
-    canonical: "https://saladworksmenu.us/hours",
+    canonical: "https://www.saladworksmenu.us/hours",
   },
   openGraph: {
     title: "SaladWorks Near Me - Hours & Locations",
     description: "Find SaladWorks near you: exact operating hours for every location, searchable by city, state, or zip code.",
-    url: "https://saladworksmenu.us/hours",
+    url: "https://www.saladworksmenu.us/hours",
   },
 }
 

@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   description: "Browse the complete SaladWorks menu with prices, calories, and detailed descriptions. Explore SaladWorks fresh salads, warm melts, signature wraps, and catering options.",
   keywords: ["SaladWorks menu prices", "SaladWorks salads", "SaladWorks wraps", "healthy food prices"],
   alternates: {
-    canonical: "https://saladworksmenu.us/menu",
+    canonical: "https://www.saladworksmenu.us/menu",
   },
   openGraph: {
     title: "SaladWorks Menu & Prices | 2026 Update",
     description: "Browse the complete SaladWorks menu with prices, calories, and detailed descriptions.",
-    url: "https://saladworksmenu.us/menu",
+    url: "https://www.saladworksmenu.us/menu",
   },
 }
 

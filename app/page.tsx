@@ -34,12 +34,12 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://saladworksmenu.us",
+    canonical: "https://www.saladworksmenu.us",
   },
   openGraph: {
     title: "SaladWorks Menu Prices 2026: Salads, Wraps & Chicken",
     description: "Explore SaladWorks grilled chicken, salads, and wraps: full 2026 menu prices, calories, and nutrition facts. Salads from $9.99, wraps from $11.99.",
-    url: "https://saladworksmenu.us",
+    url: "https://www.saladworksmenu.us",
     siteName: "SaladWorks Menu & Prices",
     images: ["/opengraph-image"],
     locale: "en_US",
@@ -62,7 +62,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "SaladWorks Menu & Prices",
-    "url": "https://saladworksmenu.us",
+    "url": "https://www.saladworksmenu.us",
     "description": "Independent fan guide for SaladWorks menu prices, calories, and nutrition information for 2026.",
     "inLanguage": "en-US",
     "dateModified": getDataDate(),
@@ -70,7 +70,7 @@ export default function Page() {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://saladworksmenu.us/menu?q={search_term_string}"
+        "urlTemplate": "https://www.saladworksmenu.us/menu?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -80,10 +80,10 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "SaladWorks Menu Guide",
-    "url": "https://saladworksmenu.us",
+    "url": "https://www.saladworksmenu.us",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://saladworksmenu.us/logo.png",
+      "url": "https://www.saladworksmenu.us/logo.png",
       "width": 200,
       "height": 60
     },

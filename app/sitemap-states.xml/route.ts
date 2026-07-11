@@ -3,7 +3,7 @@ import { getStateSlugs, getDataDate } from '@/lib/stateData'
 // Sitemap index: one child sitemap per state so indexation can be tracked
 // per-state in Search Console.
 export async function GET() {
-  const baseUrl = 'https://saladworksmenu.us'
+  const baseUrl = 'https://www.saladworksmenu.us'
   const stateSlugs = getStateSlugs()
   const dataDate = getDataDate()
 

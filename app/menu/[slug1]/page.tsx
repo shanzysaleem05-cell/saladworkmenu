@@ -44,22 +44,24 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     const { state } = data
     const dataDate = getDataDate()
     const month = new Date(dataDate).toLocaleString('en-US', { month: 'long', year: 'numeric' })
+    const cityPreview = state.cities.slice(0, 5).join(', ') + (state.cities.length > 5 ? ' and more' : '')
 
     return {
       title: { absolute: `Saladworks Menu Prices in ${state.name} (${new Date().getFullYear()})` },
-      description: `Looking for Saladworks in ${state.name}? Explore the complete local menu with updated ${new Date().getFullYear()} prices, calories, and nutrition for salads, wraps, and soups at ${state.locationCount} locations.`,
+      description: `Looking for Saladworks in ${cityPreview}? Explore the complete ${state.name} menu with updated ${new Date().getFullYear()} prices, calories, and nutrition for salads, wraps, and soups at ${state.locationCount} locations.`,
       keywords: [
         `Saladworks menu ${state.name}`,
         `Saladworks prices ${state.name}`,
         `Saladworks ${state.name} menu ${new Date().getFullYear()}`,
         `Saladworks salad prices ${state.name}`,
         `Saladworks wraps ${state.name}`,
+        ...state.cities.slice(0, 8).map(city => `Saladworks ${city} menu`),
       ],
-      alternates: { canonical: `https://saladworksmenu.us/menu/${state.slug}` },
+      alternates: { canonical: `https://www.saladworksmenu.us/menu/${state.slug}` },
       openGraph: {
         title: `Saladworks Menu & Prices in ${state.name} (${month})`,
         description: `Complete Saladworks menu with ${new Date().getFullYear()} prices for ${state.name}. ${state.locationCount} location${state.locationCount > 1 ? 's' : ''} across ${state.cities.join(', ')}.`,
-        url: `https://saladworksmenu.us/menu/${state.slug}`,
+        url: `https://www.saladworksmenu.us/menu/${state.slug}`,
         type: "website",
       },
       twitter: {
@@ -80,7 +82,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 
   if (!foundItem) return { title: "Item Not Found" }
 
-  const canonicalUrl = `https://saladworksmenu.us/menu/${slug1}`
+  const canonicalUrl = `https://www.saladworksmenu.us/menu/${slug1}`
 
   return {
     title: { absolute: `${foundItem.name} - Price & Nutrition | SaladWorks` },
@@ -145,13 +147,13 @@ function ItemDetailPage({ itemSlug }: { itemSlug: string }) {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": foundItem.name,
-    "image": foundItem.image ? `https://saladworksmenu.us${foundItem.image}` : fallbackImg,
+    "image": foundItem.image ? `https://www.saladworksmenu.us${foundItem.image}` : fallbackImg,
     "description": foundItem.description,
     "brand": { "@type": "Brand", "name": "SaladWorks" },
     "offers": itemStates.length > 0
       ? {
           "@type": "AggregateOffer",
-          "url": `https://saladworksmenu.us/menu/${itemSlug}`,
+          "url": `https://www.saladworksmenu.us/menu/${itemSlug}`,
           "priceCurrency": "USD",
           "lowPrice": Math.min(...itemStates.map(s => s.minPrice)),
           "highPrice": Math.max(...itemStates.map(s => s.maxPrice)),
@@ -160,7 +162,7 @@ function ItemDetailPage({ itemSlug }: { itemSlug: string }) {
         }
       : {
           "@type": "Offer",
-          "url": `https://saladworksmenu.us/menu/${itemSlug}`,
+          "url": `https://www.saladworksmenu.us/menu/${itemSlug}`,
           "priceCurrency": "USD",
           "price": foundItem.price,
           "availability": "https://schema.org/InStock"
@@ -374,7 +376,7 @@ function StateMenuPage({ stateSlug }: { stateSlug: string }) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": `Saladworks Menu in ${state.name}`,
-    "url": `https://saladworksmenu.us/menu/${state.slug}`,
+    "url": `https://www.saladworksmenu.us/menu/${state.slug}`,
     "numberOfItems": totalItems,
     "itemListElement": categories.flatMap((cat, ci) =>
       cat.items.map((item, ii) => ({
