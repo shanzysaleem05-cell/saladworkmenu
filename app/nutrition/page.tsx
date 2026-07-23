@@ -7,7 +7,15 @@ import { Breadcrumbs } from "@/components/Breadcrumbs"
 export const metadata: Metadata = {
   title: "Nutrition Facts",
   description: "Explore the full nutritional information for the entire SaladWorks menu. Find calories, fat, carbs, and protein for all salads, wraps, and soups.",
-  keywords: ["SaladWorks nutrition", "SaladWorks calories", "healthy menu items", "SaladWorks macros"],
+  keywords: [
+    "SaladWorks nutrition",
+    "SaladWorks calories",
+    "healthy menu items",
+    "SaladWorks macros",
+    "SaladWorks nutrition facts",
+    "SaladWorks calorie calculator",
+    "is SaladWorks healthy"
+  ],
   alternates: {
     canonical: "https://www.saladworksmenu.us/nutrition",
   },

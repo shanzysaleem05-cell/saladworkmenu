@@ -8,7 +8,16 @@ import { menuData } from "@/data/menuData"
 export const metadata: Metadata = {
   title: "Full Menu with Prices",
   description: "Browse the complete SaladWorks menu with prices, calories, and detailed descriptions. Explore SaladWorks fresh salads, warm melts, signature wraps, and catering options.",
-  keywords: ["SaladWorks menu prices", "SaladWorks salads", "SaladWorks wraps", "healthy food prices"],
+  keywords: [
+    "SaladWorks menu prices",
+    "SaladWorks salads",
+    "SaladWorks wraps",
+    "healthy food prices",
+    "salad menu",
+    "create your own salad",
+    "chicken caesar salad",
+    "SaladWorks soups"
+  ],
   alternates: {
     canonical: "https://www.saladworksmenu.us/menu",
   },

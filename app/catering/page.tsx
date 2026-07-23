@@ -14,7 +14,12 @@ export const metadata: Metadata = {
     "SaladWorks group order",
     "SaladWorks party trays",
     "SaladWorks corporate catering",
-    "SaladWorks catering 2026"
+    "SaladWorks catering 2026",
+    "salad catering near me",
+    "salad bar catering",
+    "sandwich platter catering",
+    "wrap platters catering",
+    "boxed lunch catering near me"
   ],
   authors: [{ name: "SaladWorks Menu Guide Editorial Team" }],
   robots: {

@@ -18,7 +18,12 @@ export const metadata: Metadata = {
     "SaladWorks soups",
     "SaladWorks Pick 2",
     "SaladWorks catering",
-    "SaladWorks kids menu"
+    "SaladWorks kids menu",
+    "SaladWorks near me",
+    "salad near me",
+    "salad restaurants near me",
+    "salad places near me",
+    "best salads near me"
   ],
   authors: [{ name: "SaladWorks Menu Guide Editorial Team" }],
   creator: "SaladWorks Menu Guide",

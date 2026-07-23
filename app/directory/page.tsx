@@ -9,6 +9,14 @@ import { JsonLd } from "@/components/JsonLd"
 export const metadata: Metadata = {
   title: { absolute: "Saladworks Menu Directory - Browse Prices by State & City" },
   description: "Browse every Saladworks menu and price page by state. Find local menus with real prices, calories, and hours for every state with Saladworks locations.",
+  keywords: [
+    "SaladWorks near me",
+    "salad restaurants near me",
+    "salad places near me",
+    "salad bars near me",
+    "SaladWorks locations",
+    "SaladWorks locations by state"
+  ],
   alternates: { canonical: "https://www.saladworksmenu.us/directory" },
 }
 

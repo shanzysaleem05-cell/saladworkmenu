@@ -7,7 +7,14 @@ import { Breadcrumbs } from "@/components/Breadcrumbs"
 export const metadata: Metadata = {
   title: "Coupons & Deals",
   description: "Find the latest SaladWorks coupons, promo codes, and special deals. Save money on your favorite salads, wraps, and Pick 2 combos today.",
-  keywords: ["SaladWorks coupons", "SaladWorks promo code", "SaladWorks deals", "SaladWorks discounts"],
+  keywords: [
+    "SaladWorks coupons",
+    "SaladWorks promo code",
+    "SaladWorks deals",
+    "SaladWorks discounts",
+    "SaladWorks rewards card",
+    "SaladWorks loyalty card"
+  ],
   alternates: {
     canonical: "https://www.saladworksmenu.us/coupons",
   },

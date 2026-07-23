@@ -8,6 +8,13 @@ import { HoursClient } from "./HoursClient"
 export const metadata: Metadata = {
   title: { absolute: "SaladWorks Near Me - Hours & Locations (2026)" },
   description: "Find SaladWorks near you: exact operating hours for every location, searchable by city, state, or zip code, plus live open-now status.",
+  keywords: [
+    "SaladWorks near me",
+    "salad restaurants near me",
+    "salad places near me",
+    "SaladWorks hours",
+    "SaladWorks locations"
+  ],
   alternates: {
     canonical: "https://www.saladworksmenu.us/hours",
   },
