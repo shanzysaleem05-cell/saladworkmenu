@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -81,9 +82,16 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="msvalidate.01" content="A6EAEA509CA4179CD677F37188E42FD1" />
+        <meta name="google-adsense-account" content="ca-pub-6524570629100887" />
       </head>
       <body className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col bg-site-bg text-site-black`}>
         <JsonLd data={orgSchema} />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6524570629100887"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
 
         <Navbar />
         <main className="flex-1">
