@@ -1,7 +1,4 @@
 providers = ["node"]
 
-[phases.install]
-cacheDirectories = ["node_modules"]
-
-[phases.build]
-cacheDirectories = ["node_modules", ".next/cache"]
+[start]
+cmd = "npm run start"
