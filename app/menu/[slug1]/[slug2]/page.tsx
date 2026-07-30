@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     const { state, item, category } = data
     const year = new Date().getFullYear()
     const priceText = item.minPrice !== undefined && item.maxPrice !== undefined && item.minPrice !== item.maxPrice
-      ? `$${item.minPrice.toFixed(2)}–$${item.maxPrice.toFixed(2)}`
+      ? `$${item.minPrice.toFixed(2)}â€“$${item.maxPrice.toFixed(2)}`
       : `$${item.price.toFixed(2)}`
 
     return {
@@ -51,11 +51,11 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
         `Is Saladworks ${item.name} healthy`,
         `how much is ${item.name} at Saladworks in ${state.name}`,
       ],
-      alternates: { canonical: `https://www.saladworksmenu.us/menu/${state.slug}/${item.slug}` },
+      alternates: { canonical: `https://saladworksmenu.us/menu/${state.slug}/${item.slug}` },
       openGraph: {
         title: `Saladworks ${item.name} - ${priceText} in ${state.name}`,
         description: `Real ${state.name} prices for the Saladworks ${item.name}. ${priceText} across ${state.locationCount} locations.`,
-        url: `https://www.saladworksmenu.us/menu/${state.slug}/${item.slug}`,
+        url: `https://saladworksmenu.us/menu/${state.slug}/${item.slug}`,
         type: "website",
       },
       twitter: {
@@ -83,19 +83,19 @@ export default function Slug2Page({ params }: Props) {
     const fallbackImg = "/hot-honey-chicken-bowl.webp"
 
     const hasPriceRange = item.minPrice !== undefined && item.maxPrice !== undefined && item.minPrice !== item.maxPrice
-    const priceRangeText = hasPriceRange ? `$${item.minPrice!.toFixed(2)}–$${item.maxPrice!.toFixed(2)}` : `$${item.price.toFixed(2)}`
+    const priceRangeText = hasPriceRange ? `$${item.minPrice!.toFixed(2)}â€“$${item.maxPrice!.toFixed(2)}` : `$${item.price.toFixed(2)}`
     const calDisplay = item.calories ? `${item.calories} Cal` : item.calorieLabel || null
 
     const productSchema = {
       "@context": "https://schema.org",
       "@type": "Product",
       "name": `${item.name} - Saladworks ${state.name}`,
-      "image": item.image ? `https://www.saladworksmenu.us${item.image}` : fallbackImg,
+      "image": item.image ? `https://saladworksmenu.us${item.image}` : fallbackImg,
       "description": item.description,
       "brand": { "@type": "Brand", "name": "SaladWorks" },
       "offers": {
         "@type": "AggregateOffer",
-        "url": `https://www.saladworksmenu.us/menu/${state.slug}/${item.slug}`,
+        "url": `https://saladworksmenu.us/menu/${state.slug}/${item.slug}`,
         "priceCurrency": "USD",
         "lowPrice": item.minPrice ?? item.price,
         "highPrice": item.maxPrice ?? item.price,
@@ -239,7 +239,7 @@ export default function Slug2Page({ params }: Props) {
 
               <div className="border-l-4 border-brand-orange bg-brand-orange/5 p-4 rounded-r-lg mb-8">
                 <p className="text-site-black text-[14px] italic leading-relaxed">
-                  <span className="font-bold text-brand-orange">Pro tip:</span> Prices are averaged across every {state.name} location — your specific restaurant may charge slightly more or less. Always confirm with your local Saladworks.
+                  <span className="font-bold text-brand-orange">Pro tip:</span> Prices are averaged across every {state.name} location â€” your specific restaurant may charge slightly more or less. Always confirm with your local Saladworks.
                 </p>
               </div>
 
@@ -292,7 +292,7 @@ export default function Slug2Page({ params }: Props) {
               {/* Availability & Hours Context */}
               {hoursSummary && (
                 <p className="text-gray-600 text-[15px] leading-relaxed mb-8 bg-gray-50 border border-gray-200 rounded-xl p-4">
-                  🕐 The {item.name} is available during all operating hours — Saladworks locations in {state.name} typically open <strong>{hoursSummary.open}</strong> and close at <strong>{hoursSummary.close}</strong> on weekdays. See exact hours for every location on our <Link href="/hours" className="text-brand-orange font-bold hover:underline">hours page</Link>.
+                  ðŸ• The {item.name} is available during all operating hours â€” Saladworks locations in {state.name} typically open <strong>{hoursSummary.open}</strong> and close at <strong>{hoursSummary.close}</strong> on weekdays. See exact hours for every location on our <Link href="/hours" className="text-brand-orange font-bold hover:underline">hours page</Link>.
                 </p>
               )}
 
@@ -322,7 +322,7 @@ export default function Slug2Page({ params }: Props) {
                 )}
                 {item.calorieLabel && item.calorieLabel !== 'null' && (
                   <div className="bg-gray-50 rounded-lg p-3 text-[13px] text-gray-500 font-medium">
-                    📊 Nutrition Label: {item.calorieLabel}
+                    ðŸ“Š Nutrition Label: {item.calorieLabel}
                   </div>
                 )}
               </div>
@@ -371,7 +371,7 @@ export default function Slug2Page({ params }: Props) {
               <h2 className="text-[26px] font-black text-site-black mb-2">{item.name} Prices in Nearby & Cheapest States</h2>
               <p className="text-gray-500 text-[15px] mb-8">
                 {cheapestState ? `${cheapestState.name} has the cheapest average price for the ${item.name} at $${cheapestState.avgPrice.toFixed(2)}. ` : ''}
-                Compare real {item.name} prices across states — every figure is aggregated from live location menus.
+                Compare real {item.name} prices across states â€” every figure is aggregated from live location menus.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {comparisonStates.map((cs) => {
@@ -383,7 +383,7 @@ export default function Slug2Page({ params }: Props) {
                         <span className="font-black text-brand-orange text-[20px]">${cs.avgPrice.toFixed(2)}</span>
                         {Math.abs(diff) >= 0.01 && (
                           <span className={`text-[12px] font-bold ${diff < 0 ? 'text-green-600' : 'text-red-500'}`}>
-                            {diff < 0 ? '−' : '+'}${Math.abs(diff).toFixed(2)} vs {state.code}
+                            {diff < 0 ? 'âˆ’' : '+'}${Math.abs(diff).toFixed(2)} vs {state.code}
                           </span>
                         )}
                       </div>
@@ -410,7 +410,7 @@ export default function Slug2Page({ params }: Props) {
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
                 {relatedItems.map((ri) => {
                   const riRange = ri.minPrice !== undefined && ri.maxPrice !== undefined && ri.minPrice !== ri.maxPrice
-                    ? `$${ri.minPrice.toFixed(2)}–$${ri.maxPrice.toFixed(2)}`
+                    ? `$${ri.minPrice.toFixed(2)}â€“$${ri.maxPrice.toFixed(2)}`
                     : undefined
                   return (
                     <FoodCard

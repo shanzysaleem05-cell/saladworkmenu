@@ -1,4 +1,4 @@
-import { getAllStates, getStateItemSlugs, getDataDate } from "@/lib/stateData"
+﻿import { getAllStates, getStateItemSlugs, getDataDate } from "@/lib/stateData"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 import { Metadata } from "next"
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "SaladWorks locations",
     "SaladWorks locations by state"
   ],
-  alternates: { canonical: "https://www.saladworksmenu.us/directory" },
+  alternates: { canonical: "https://saladworksmenu.us/directory" },
 }
 
 export default function DirectoryPage() {
@@ -29,14 +29,14 @@ export default function DirectoryPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Saladworks Menu Directory",
-    "url": "https://www.saladworksmenu.us/directory",
+    "url": "https://saladworksmenu.us/directory",
     "hasPart": {
       "@type": "ItemList",
       "itemListElement": states.map((state, index) => ({
         "@type": "ListItem",
         "position": index + 1,
         "name": `Saladworks ${state.name} Menu`,
-        "url": `https://www.saladworksmenu.us/menu/${state.slug}`
+        "url": `https://saladworksmenu.us/menu/${state.slug}`
       }))
     }
   }
@@ -72,7 +72,7 @@ export default function DirectoryPage() {
                   Saladworks {state.name} Menu
                 </Link>
                 <p className="text-gray-500 text-[13px] mb-3">
-                  {state.locationCount} location{state.locationCount > 1 ? 's' : ''} · {state.cities.length} cit{state.cities.length > 1 ? 'ies' : 'y'} · {itemCount} menu items
+                  {state.locationCount} location{state.locationCount > 1 ? 's' : ''} Â· {state.cities.length} cit{state.cities.length > 1 ? 'ies' : 'y'} Â· {itemCount} menu items
                 </p>
                 <Link href={`/directory/${state.slug}`} className="inline-flex items-center gap-1 text-brand-orange font-bold text-[13px] hover:underline">
                   All {state.name} price pages <ChevronRight className="w-3.5 h-3.5" />

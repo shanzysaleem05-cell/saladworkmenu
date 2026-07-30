@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+﻿import { Metadata } from "next"
 import MenuClient from "./MenuClient"
 import { JsonLd } from "@/components/JsonLd"
 import { FaqSection } from "@/components/FaqSection"
@@ -19,12 +19,12 @@ export const metadata: Metadata = {
     "SaladWorks soups"
   ],
   alternates: {
-    canonical: "https://www.saladworksmenu.us/menu",
+    canonical: "https://saladworksmenu.us/menu",
   },
   openGraph: {
     title: "SaladWorks Menu & Prices | 2026 Update",
     description: "Browse the complete SaladWorks menu with prices, calories, and detailed descriptions.",
-    url: "https://www.saladworksmenu.us/menu",
+    url: "https://saladworksmenu.us/menu",
   },
 }
 

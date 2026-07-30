@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { JsonLd } from "./JsonLd";
 
 interface BreadcrumbItem {
@@ -14,7 +14,7 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.label,
-      "item": `https://www.saladworksmenu.us${item.href}`
+      "item": `https://saladworksmenu.us${item.href}`
     }))
   };
 

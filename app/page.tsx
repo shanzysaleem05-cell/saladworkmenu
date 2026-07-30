@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+﻿import { Metadata } from "next"
 import HomeClient from "./HomeClient"
 import { JsonLd } from "@/components/JsonLd"
 import { menuData } from "@/data/menuData"
@@ -39,12 +39,12 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.saladworksmenu.us",
+    canonical: "https://saladworksmenu.us",
   },
   openGraph: {
     title: "SaladWorks Menu Prices 2026: Salads, Wraps & Chicken",
     description: "Explore SaladWorks grilled chicken, salads, and wraps: full 2026 menu prices, calories, and nutrition facts. Salads from $9.99, wraps from $11.99.",
-    url: "https://www.saladworksmenu.us",
+    url: "https://saladworksmenu.us",
     siteName: "SaladWorks Menu & Prices",
     images: ["/opengraph-image"],
     locale: "en_US",
@@ -53,11 +53,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "SaladWorks Menu Prices 2026: Salads, Wraps & Chicken",
-    description: "SaladWorks grilled chicken, salads & wraps — 2026 prices, calories and nutrition facts.",
+    description: "SaladWorks grilled chicken, salads & wraps â€” 2026 prices, calories and nutrition facts.",
     images: ["/opengraph-image"],
     creator: "@saladworksmenu",
   },
-  // Verification tag lives once in app/layout.tsx (root layout) — a second,
+  // Verification tag lives once in app/layout.tsx (root layout) â€” a second,
   // page-level `verification` object here would replace the whole object
   // (including the real Bing msvalidate.01 code) instead of merging with it.
 };
@@ -67,7 +67,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "SaladWorks Menu & Prices",
-    "url": "https://www.saladworksmenu.us",
+    "url": "https://saladworksmenu.us",
     "description": "Independent fan guide for SaladWorks menu prices, calories, and nutrition information for 2026.",
     "inLanguage": "en-US",
     "dateModified": getDataDate(),
@@ -75,7 +75,7 @@ export default function Page() {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://www.saladworksmenu.us/menu?q={search_term_string}"
+        "urlTemplate": "https://saladworksmenu.us/menu?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -85,10 +85,10 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "SaladWorks Menu Guide",
-    "url": "https://www.saladworksmenu.us",
+    "url": "https://saladworksmenu.us",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.saladworksmenu.us/logo.png",
+      "url": "https://saladworksmenu.us/logo.png",
       "width": 200,
       "height": 60
     },

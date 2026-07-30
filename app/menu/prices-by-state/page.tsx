@@ -1,4 +1,4 @@
-import { getComparableItemSlugs, findItemAcrossStates, getItemStateComparison, getDataDate, getStateSlugs } from "@/lib/stateData"
+﻿import { getComparableItemSlugs, findItemAcrossStates, getItemStateComparison, getDataDate, getStateSlugs } from "@/lib/stateData"
 import Link from "next/link"
 import { Metadata } from "next"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
@@ -7,8 +7,8 @@ import { JsonLd } from "@/components/JsonLd"
 
 export const metadata: Metadata = {
   title: { absolute: `Saladworks Prices by State - Compare Every Item (${new Date().getFullYear()})` },
-  description: "Compare Saladworks menu item prices across every state. See which states have the cheapest salads, bowls, wraps, and soups — real data from live location menus.",
-  alternates: { canonical: "https://www.saladworksmenu.us/menu/prices-by-state" },
+  description: "Compare Saladworks menu item prices across every state. See which states have the cheapest salads, bowls, wraps, and soups â€” real data from live location menus.",
+  alternates: { canonical: "https://saladworksmenu.us/menu/prices-by-state" },
 }
 
 export default function PricesByStateIndexPage() {
@@ -35,14 +35,14 @@ export default function PricesByStateIndexPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Saladworks Prices by State",
-    "url": "https://www.saladworksmenu.us/menu/prices-by-state",
+    "url": "https://saladworksmenu.us/menu/prices-by-state",
     "hasPart": {
       "@type": "ItemList",
       "itemListElement": items.map((item, index) => ({
         "@type": "ListItem",
         "position": index + 1,
         "name": item.name,
-        "url": `https://www.saladworksmenu.us/menu/prices-by-state/${item.slug}`
+        "url": `https://saladworksmenu.us/menu/prices-by-state/${item.slug}`
       }))
     }
   }
@@ -62,7 +62,7 @@ export default function PricesByStateIndexPage() {
             Saladworks Prices by State
           </h1>
           <p className="text-gray-300 text-[16px] max-w-2xl mx-auto leading-relaxed">
-            Pick a menu item to see its average price in every state — which state is cheapest, which is most
+            Pick a menu item to see its average price in every state â€” which state is cheapest, which is most
             expensive, and how each compares to the national average. Data updated {prettyDate}.
           </p>
         </div>
@@ -96,7 +96,7 @@ export default function PricesByStateIndexPage() {
         },
         {
           question: "Where does this price data come from?",
-          answer: `Every price on this page comes from real, live Saladworks location menus across ${getStateSlugs().length} states — not national estimates or guesses.`
+          answer: `Every price on this page comes from real, live Saladworks location menus across ${getStateSlugs().length} states â€” not national estimates or guesses.`
         },
       ]} />
     </div>

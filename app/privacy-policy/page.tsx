@@ -1,11 +1,11 @@
-import { Metadata } from "next"
+﻿import { Metadata } from "next"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Read our privacy policy to understand how we collect, use, and protect your information on our independent SaladWorks fan guide.",
   alternates: {
-    canonical: "https://www.saladworksmenu.us/privacy-policy",
+    canonical: "https://saladworksmenu.us/privacy-policy",
   },
 }
 
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <p className="mb-8">
-              At SaladWorksMenu.us, accessible from https://www.saladworksmenu.us, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by SaladWorksMenu.us and how we use it.
+              At SaladWorksMenu.us, accessible from https://saladworksmenu.us, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by SaladWorksMenu.us and how we use it.
             </p>
 
             <h2 className="text-2xl font-black text-site-black mb-4">1. Information We Collect</h2>
@@ -61,7 +61,7 @@ export default function PrivacyPolicyPage() {
 
             <h2 className="text-2xl font-black text-site-black mb-4">4. Google DoubleClick DART Cookie</h2>
             <p className="mb-8">
-              Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL – <a href="https://policies.google.com/technologies/ads" className="text-brand-orange hover:underline">https://policies.google.com/technologies/ads</a>
+              Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL â€“ <a href="https://policies.google.com/technologies/ads" className="text-brand-orange hover:underline">https://policies.google.com/technologies/ads</a>
             </p>
 
             <h2 className="text-2xl font-black text-site-black mb-4">5. Advertising Partners</h2>
@@ -74,9 +74,9 @@ export default function PrivacyPolicyPage() {
             <p className="mb-8">
               We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:
               <br/><br/>
-              The right to access – You have the right to request copies of your personal data.<br/>
-              The right to rectification – You have the right to request that we correct any information you believe is inaccurate.<br/>
-              The right to erasure – You have the right to request that we erase your personal data, under certain conditions.<br/>
+              The right to access â€“ You have the right to request copies of your personal data.<br/>
+              The right to rectification â€“ You have the right to request that we correct any information you believe is inaccurate.<br/>
+              The right to erasure â€“ You have the right to request that we erase your personal data, under certain conditions.<br/>
             </p>
 
             <h2 className="text-2xl font-black text-site-black mb-4">7. Children's Information</h2>

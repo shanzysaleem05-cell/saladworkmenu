@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+﻿import { Metadata } from "next"
 import CouponsClient from "./CouponsClient"
 import { JsonLd } from "@/components/JsonLd"
 import { FaqSection } from "@/components/FaqSection"
@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     "SaladWorks loyalty card"
   ],
   alternates: {
-    canonical: "https://www.saladworksmenu.us/coupons",
+    canonical: "https://saladworksmenu.us/coupons",
   },
   openGraph: {
     title: "SaladWorks Coupons & Promo Codes",
     description: "Find the latest SaladWorks coupons, promo codes, and special deals to save on your next meal.",
-    url: "https://www.saladworksmenu.us/coupons",
+    url: "https://saladworksmenu.us/coupons",
   },
 }
 
@@ -31,7 +31,7 @@ export default function CouponsPage() {
     "@type": "WebPage",
     "name": "SaladWorks Coupons & Deals",
     "description": "A collection of current promo codes and offers for SaladWorks.",
-    "url": "https://www.saladworksmenu.us/coupons"
+    "url": "https://saladworksmenu.us/coupons"
   }
 
   const faqs = [

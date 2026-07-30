@@ -1,11 +1,11 @@
-import { Metadata } from "next"
+﻿import { Metadata } from "next"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description: "Read the Terms & Conditions of using SaladWorksMenu.us, an independent informational fan guide.",
   alternates: {
-    canonical: "https://www.saladworksmenu.us/terms-and-conditions",
+    canonical: "https://saladworksmenu.us/terms-and-conditions",
   },
 }
 

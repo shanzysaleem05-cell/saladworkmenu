@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+﻿import { Metadata } from "next"
 import NutritionClient from "./NutritionClient"
 import { JsonLd } from "@/components/JsonLd"
 import { FaqSection } from "@/components/FaqSection"
@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     "is SaladWorks healthy"
   ],
   alternates: {
-    canonical: "https://www.saladworksmenu.us/nutrition",
+    canonical: "https://saladworksmenu.us/nutrition",
   },
   openGraph: {
     title: "SaladWorks Nutrition Facts & Calories",
     description: "Explore the full nutritional information for the entire SaladWorks menu.",
-    url: "https://www.saladworksmenu.us/nutrition",
+    url: "https://saladworksmenu.us/nutrition",
   },
 }
 
@@ -32,7 +32,7 @@ export default function NutritionPage() {
     "@type": "WebPage",
     "name": "SaladWorks Nutrition Guide",
     "description": "Comprehensive nutritional information for all SaladWorks menu items.",
-    "url": "https://www.saladworksmenu.us/nutrition"
+    "url": "https://saladworksmenu.us/nutrition"
   }
 
   const faqs = [

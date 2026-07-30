@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: { absolute: `Saladworks ${state.name} - All Menu & Price Pages` },
     description: `Directory of every Saladworks ${state.name} price page covering ${cityPreview}: full local menu plus individual price and calorie pages for every item, sourced from ${state.locationCount} locations.`,
-    alternates: { canonical: `https://www.saladworksmenu.us/directory/${state.slug}` },
+    alternates: { canonical: `https://saladworksmenu.us/directory/${state.slug}` },
   }
 }
 
@@ -41,7 +41,7 @@ export default function StateDirectoryPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": `Saladworks ${state.name} - All Menu & Price Pages`,
-    "url": `https://www.saladworksmenu.us/directory/${state.slug}`,
+    "url": `https://saladworksmenu.us/directory/${state.slug}`,
     "hasPart": {
       "@type": "ItemList",
       "itemListElement": categories.flatMap((cat, ci) =>
@@ -49,7 +49,7 @@ export default function StateDirectoryPage({ params }: Props) {
           "@type": "ListItem",
           "position": ci * 100 + ii + 1,
           "name": `${item.name} Price in ${state.name}`,
-          "url": `https://www.saladworksmenu.us/menu/${state.slug}/${item.slug}`
+          "url": `https://saladworksmenu.us/menu/${state.slug}/${item.slug}`
         }))
       )
     }

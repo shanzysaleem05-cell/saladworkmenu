@@ -29,11 +29,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Saladworks ${item.name} Price by State (${year}) - Cheapest: ${cheapest.name} $${cheapest.avgPrice.toFixed(2)}`,
     description: `Compare Saladworks ${item.name} prices across ${states.length} states. National average: $${nationalAvg.toFixed(2)}. Cheapest in ${cheapest.name} ($${cheapest.avgPrice.toFixed(2)}), most expensive in ${priciest.name} ($${priciest.avgPrice.toFixed(2)}). Real location data.`,
-    alternates: { canonical: `https://www.saladworksmenu.us/menu/prices-by-state/${item.slug}` },
+    alternates: { canonical: `https://saladworksmenu.us/menu/prices-by-state/${item.slug}` },
     openGraph: {
       title: `Saladworks ${item.name} Price by State (${year})`,
       description: `Which state has the cheapest Saladworks ${item.name}? Compare real prices across ${states.length} states.`,
-      url: `https://www.saladworksmenu.us/menu/prices-by-state/${item.slug}`,
+      url: `https://saladworksmenu.us/menu/prices-by-state/${item.slug}`,
       type: "website",
     },
   }
@@ -59,12 +59,12 @@ export default function PricesByStatePage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": `Saladworks ${item.name}`,
-    ...(item.image ? { "image": `https://www.saladworksmenu.us${item.image}` } : {}),
+    ...(item.image ? { "image": `https://saladworksmenu.us${item.image}` } : {}),
     "description": item.description,
     "brand": { "@type": "Brand", "name": "SaladWorks" },
     "offers": {
       "@type": "AggregateOffer",
-      "url": `https://www.saladworksmenu.us/menu/prices-by-state/${item.slug}`,
+      "url": `https://saladworksmenu.us/menu/prices-by-state/${item.slug}`,
       "priceCurrency": "USD",
       "lowPrice": Math.min(...states.map(s => s.minPrice)),
       "highPrice": Math.max(...states.map(s => s.maxPrice)),
@@ -169,13 +169,13 @@ export default function PricesByStatePage({ params }: Props) {
                         </td>
                         <td className="py-3 px-5 text-gray-500 text-[14px] text-center hidden sm:table-cell">{s.locationCount}</td>
                         <td className="py-3 px-5 text-gray-500 text-[14px] text-center hidden sm:table-cell">
-                          {s.minPrice !== s.maxPrice ? `$${s.minPrice.toFixed(2)}–$${s.maxPrice.toFixed(2)}` : `$${s.minPrice.toFixed(2)}`}
+                          {s.minPrice !== s.maxPrice ? `$${s.minPrice.toFixed(2)}â€“$${s.maxPrice.toFixed(2)}` : `$${s.minPrice.toFixed(2)}`}
                         </td>
                         <td className="py-3 px-5 text-right">
                           <span className="text-brand-orange font-bold text-[15px]">${s.avgPrice.toFixed(2)}</span>
                           {Math.abs(diff) >= 0.01 && (
                             <span className={`block text-[11px] font-semibold ${diff < 0 ? 'text-green-600' : 'text-red-500'}`}>
-                              {diff < 0 ? '−' : '+'}${Math.abs(diff).toFixed(2)} vs national
+                              {diff < 0 ? 'âˆ’' : '+'}${Math.abs(diff).toFixed(2)} vs national
                             </span>
                           )}
                         </td>

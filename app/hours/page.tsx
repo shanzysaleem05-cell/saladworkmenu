@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+﻿import { Metadata } from "next"
 import { JsonLd } from "@/components/JsonLd"
 import { FaqSection } from "@/components/FaqSection"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     "SaladWorks locations"
   ],
   alternates: {
-    canonical: "https://www.saladworksmenu.us/hours",
+    canonical: "https://saladworksmenu.us/hours",
   },
   openGraph: {
     title: "SaladWorks Near Me - Hours & Locations",
     description: "Find SaladWorks near you: exact operating hours for every location, searchable by city, state, or zip code.",
-    url: "https://www.saladworksmenu.us/hours",
+    url: "https://saladworksmenu.us/hours",
   },
 }
 
@@ -113,7 +113,7 @@ export default function HoursPage() {
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <span className="inline-block bg-brand-orange text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 mb-6 rounded-full">
-              🕐 Find a Restaurant Near You
+              ðŸ• Find a Restaurant Near You
             </span>
             <h1 className="text-[32px] md:text-[48px] font-black text-site-black leading-tight tracking-tight mb-6">
               SaladWorks Near Me - Hours & Locations ({new Date().getFullYear()})

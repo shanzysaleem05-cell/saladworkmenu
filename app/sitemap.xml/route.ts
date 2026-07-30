@@ -1,10 +1,10 @@
-import { blogData } from '@/data/blogData'
+﻿import { blogData } from '@/data/blogData'
 import { menuData } from '@/data/menuData'
 import { slugify } from '@/lib/utils'
 import { getDataDate, getComparableItemSlugs, getStateSlugs, getStateItemSlugs } from '@/lib/stateData'
 
 export async function GET() {
-  const baseUrl = 'https://www.saladworksmenu.us'
+  const baseUrl = 'https://saladworksmenu.us'
   const dataDate = getDataDate()
 
   const staticUrls = [
@@ -29,13 +29,13 @@ export async function GET() {
   )
 
   // Legacy flat menu-item pages, generated with the same slugify() used to
-  // build the actual routes — no more hand-typed slug list that can drift
+  // build the actual routes â€” no more hand-typed slug list that can drift
   // out of sync with what generateStaticParams() actually builds.
   const menuUrls = menuData.flatMap(category =>
     category.items.map(item => `${baseUrl}/menu/${slugify(item.name)}`)
   )
 
-  // Per-state menu pages and per-state x per-item price pages — these carry
+  // Per-state menu pages and per-state x per-item price pages â€” these carry
   // the richest, cleanest unique content on the site and were previously
   // missing from the sitemap entirely.
   const stateSlugs = getStateSlugs()
@@ -45,7 +45,7 @@ export async function GET() {
   )
   const directoryStateUrls = stateSlugs.map(slug => `${baseUrl}/directory/${slug}`)
 
-  // Blog posts carry their own publish date — that is their honest lastmod,
+  // Blog posts carry their own publish date â€” that is their honest lastmod,
   // independent of when the menu data was refreshed.
   const normalizeDate = (d: string): string => {
     if (/^\d{4}-\d{2}-\d{2}/.test(d)) return d.slice(0, 10)
@@ -54,7 +54,7 @@ export async function GET() {
   }
 
   // Only real, rendered posts (data/blogData.ts) go in the sitemap.
-  // content/posts/*.mdx are not wired into any renderer yet — submitting
+  // content/posts/*.mdx are not wired into any renderer yet â€” submitting
   // those slugs produced soft-404s ("Post not found", HTTP 200) that Google
   // flagged as "Crawled - currently not indexed".
   const blogUrls = new Map<string, string>()

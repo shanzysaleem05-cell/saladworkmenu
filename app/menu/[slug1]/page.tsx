@@ -57,11 +57,11 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
         `Saladworks wraps ${state.name}`,
         ...state.cities.slice(0, 8).map(city => `Saladworks ${city} menu`),
       ],
-      alternates: { canonical: `https://www.saladworksmenu.us/menu/${state.slug}` },
+      alternates: { canonical: `https://saladworksmenu.us/menu/${state.slug}` },
       openGraph: {
         title: `Saladworks Menu & Prices in ${state.name} (${month})`,
         description: `Complete Saladworks menu with ${new Date().getFullYear()} prices for ${state.name}. ${state.locationCount} location${state.locationCount > 1 ? 's' : ''} across ${state.cities.join(', ')}.`,
-        url: `https://www.saladworksmenu.us/menu/${state.slug}`,
+        url: `https://saladworksmenu.us/menu/${state.slug}`,
         type: "website",
       },
       twitter: {
@@ -82,7 +82,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 
   if (!foundItem) return { title: "Item Not Found" }
 
-  const canonicalUrl = `https://www.saladworksmenu.us/menu/${slug1}`
+  const canonicalUrl = `https://saladworksmenu.us/menu/${slug1}`
 
   return {
     title: { absolute: `${foundItem.name} - Price & Nutrition | SaladWorks` },
@@ -135,7 +135,7 @@ function ItemDetailPage({ itemSlug }: { itemSlug: string }) {
 
   const fallbackImg = "/hot-honey-chicken-bowl.webp"
 
-  // Pull real data from live location menus when this item exists there —
+  // Pull real data from live location menus when this item exists there â€”
   // never fabricate calories or nutrition numbers.
   const liveItem = findItemAcrossStates(itemSlug)
   const { states: itemStates, nationalAvg } = getItemStateComparison(itemSlug)
@@ -147,13 +147,13 @@ function ItemDetailPage({ itemSlug }: { itemSlug: string }) {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": foundItem.name,
-    "image": foundItem.image ? `https://www.saladworksmenu.us${foundItem.image}` : fallbackImg,
+    "image": foundItem.image ? `https://saladworksmenu.us${foundItem.image}` : fallbackImg,
     "description": foundItem.description,
     "brand": { "@type": "Brand", "name": "SaladWorks" },
     "offers": itemStates.length > 0
       ? {
           "@type": "AggregateOffer",
-          "url": `https://www.saladworksmenu.us/menu/${itemSlug}`,
+          "url": `https://saladworksmenu.us/menu/${itemSlug}`,
           "priceCurrency": "USD",
           "lowPrice": Math.min(...itemStates.map(s => s.minPrice)),
           "highPrice": Math.max(...itemStates.map(s => s.maxPrice)),
@@ -162,7 +162,7 @@ function ItemDetailPage({ itemSlug }: { itemSlug: string }) {
         }
       : {
           "@type": "Offer",
-          "url": `https://www.saladworksmenu.us/menu/${itemSlug}`,
+          "url": `https://saladworksmenu.us/menu/${itemSlug}`,
           "priceCurrency": "USD",
           "price": foundItem.price,
           "availability": "https://schema.org/InStock"
@@ -248,7 +248,7 @@ function ItemDetailPage({ itemSlug }: { itemSlug: string }) {
             <div className="border border-gray-200 rounded-xl overflow-hidden shadow-sm mb-6">
               <div className="bg-site-black text-site-white p-4">
                 <h3 className="font-black text-[24px] tracking-tight leading-none mb-1">Nutrition Facts</h3>
-                <p className="text-[12px] text-gray-300">1 serving • {foundItem.name}</p>
+                <p className="text-[12px] text-gray-300">1 serving â€¢ {foundItem.name}</p>
               </div>
               <div className="p-4 bg-white">
                 <div className="flex justify-between items-end border-b-[6px] border-site-black pb-2 mb-4">
@@ -261,7 +261,7 @@ function ItemDetailPage({ itemSlug }: { itemSlug: string }) {
                     : `Calories for the ${foundItem.name} depend on your customizations and portion size. Check the full nutrition guide or ask your local Saladworks for exact figures.`}
                 </p>
                 <p className="text-[10px] text-gray-500 mt-4 leading-snug">
-                  * Full macro breakdowns (fat, sodium, carbs, protein) vary by customization — see our <Link href="/nutrition" className="underline">nutrition guide</Link>.
+                  * Full macro breakdowns (fat, sodium, carbs, protein) vary by customization â€” see our <Link href="/nutrition" className="underline">nutrition guide</Link>.
                 </p>
               </div>
             </div>
@@ -300,7 +300,7 @@ function ItemDetailPage({ itemSlug }: { itemSlug: string }) {
       <FaqSection faqs={[
         {
           question: `How much does the ${foundItem.name} cost?`,
-          answer: `The Saladworks ${foundItem.name} costs $${displayPrice.toFixed(2)}${nationalAvg > 0 ? ' on average nationally' : ''}. Prices may vary slightly by location — see our ${hasComparison ? `state-by-state price comparison below` : `nutrition guide`} for exact local pricing.`
+          answer: `The Saladworks ${foundItem.name} costs $${displayPrice.toFixed(2)}${nationalAvg > 0 ? ' on average nationally' : ''}. Prices may vary slightly by location â€” see our ${hasComparison ? `state-by-state price comparison below` : `nutrition guide`} for exact local pricing.`
         },
         {
           question: `How many calories are in the ${foundItem.name}?`,
@@ -314,7 +314,7 @@ function ItemDetailPage({ itemSlug }: { itemSlug: string }) {
         },
         {
           question: `Is the ${foundItem.name} vegetarian?`,
-          answer: `Whether the ${foundItem.name} is vegetarian depends on its specific ingredients — see the description above for what's included. Saladworks allows substitutions, so you can typically customize most ${foundCategory.title.toLowerCase()} to fit vegetarian or vegan preferences.`
+          answer: `Whether the ${foundItem.name} is vegetarian depends on its specific ingredients â€” see the description above for what's included. Saladworks allows substitutions, so you can typically customize most ${foundCategory.title.toLowerCase()} to fit vegetarian or vegan preferences.`
         },
       ]} />
     </div>
@@ -376,7 +376,7 @@ function StateMenuPage({ stateSlug }: { stateSlug: string }) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": `Saladworks Menu in ${state.name}`,
-    "url": `https://www.saladworksmenu.us/menu/${state.slug}`,
+    "url": `https://saladworksmenu.us/menu/${state.slug}`,
     "numberOfItems": totalItems,
     "itemListElement": categories.flatMap((cat, ci) =>
       cat.items.map((item, ii) => ({
@@ -396,12 +396,12 @@ function StateMenuPage({ stateSlug }: { stateSlug: string }) {
     { question: `Does Saladworks offer discounts or coupons in ${state.name}?`, answer: `Saladworks occasionally offers discounts through their loyalty program and local promotions. Check our coupons page for the latest deals available in ${state.name}.` },
   ]
 
-  // Group consecutive days sharing identical hours: "Mon–Fri: 10:30 AM – 9:00 PM"
+  // Group consecutive days sharing identical hours: "Monâ€“Fri: 10:30 AM â€“ 9:00 PM"
   const hourGroups = (loc: (typeof locations)[number]): string[] => {
     const groups: { start: string; end: string; text: string }[] = []
     for (const day of DAY_ORDER) {
       const h = loc.hours?.[day]
-      const text = h && 'open' in h ? `${formatTime12(h.open)} – ${formatTime12(h.close)}` : 'Closed'
+      const text = h && 'open' in h ? `${formatTime12(h.open)} â€“ ${formatTime12(h.close)}` : 'Closed'
       const label = DAY_LABEL[day].slice(0, 3)
       const last = groups[groups.length - 1]
       if (last && last.text === text) {
@@ -410,7 +410,7 @@ function StateMenuPage({ stateSlug }: { stateSlug: string }) {
         groups.push({ start: label, end: label, text })
       }
     }
-    return groups.map(g => `${g.start === g.end ? g.start : `${g.start}–${g.end}`}: ${g.text}`)
+    return groups.map(g => `${g.start === g.end ? g.start : `${g.start}â€“${g.end}`}: ${g.text}`)
   }
 
   return (
@@ -438,13 +438,13 @@ function StateMenuPage({ stateSlug }: { stateSlug: string }) {
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-[13px] font-bold border border-white/20">
-              📍 {state.locationCount} {state.name} Location{state.locationCount > 1 ? 's' : ''}
+              ðŸ“ {state.locationCount} {state.name} Location{state.locationCount > 1 ? 's' : ''}
             </span>
             <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-[13px] font-bold border border-white/20">
-              💰 From ${minMenuPrice}
+              ðŸ’° From ${minMenuPrice}
             </span>
             <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-[13px] font-bold border border-white/20">
-              🔥 Up to ${maxMenuPrice}
+              ðŸ”¥ Up to ${maxMenuPrice}
             </span>
           </div>
         </div>
@@ -453,11 +453,11 @@ function StateMenuPage({ stateSlug }: { stateSlug: string }) {
       {/* Date Bar */}
       <div className="bg-brand-orange text-white text-center py-2.5 text-[13px] font-bold flex items-center justify-center gap-4 flex-wrap">
         <span className="flex items-center gap-1.5">
-          📅 Price Guide Updated: <span className="bg-white text-brand-orange px-2.5 py-0.5 rounded-md font-black text-[12px]">{prettyDate}</span>
+          ðŸ“… Price Guide Updated: <span className="bg-white text-brand-orange px-2.5 py-0.5 rounded-md font-black text-[12px]">{prettyDate}</span>
         </span>
         <span className="hidden sm:inline">|</span>
         <span className="flex items-center gap-1.5">
-          ✅ Real {state.name} prices from {state.locationCount} location{state.locationCount > 1 ? 's' : ''}
+          âœ… Real {state.name} prices from {state.locationCount} location{state.locationCount > 1 ? 's' : ''}
         </span>
       </div>
 
@@ -469,12 +469,12 @@ function StateMenuPage({ stateSlug }: { stateSlug: string }) {
           <section key={category.slug} id={category.slug} className="py-12 border-t border-gray-200/60" data-updated={dataDate}>
             <div className="container mx-auto px-4 max-w-6xl">
               <h2 className="text-[28px] md:text-[32px] font-black text-site-black mb-2 tracking-tight">Saladworks {category.name} Prices in {state.name}</h2>
-              <p className="text-gray-500 text-[15px] mb-8">{category.items.length} items • ${catMin}–${catMax} • Updated {prettyDate}</p>
+              <p className="text-gray-500 text-[15px] mb-8">{category.items.length} items â€¢ ${catMin}â€“${catMax} â€¢ Updated {prettyDate}</p>
 
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-10">
                 {category.items.slice(0, 8).map((item) => {
                   const hasRange = item.minPrice !== undefined && item.maxPrice !== undefined && item.minPrice !== item.maxPrice
-                  const rangeText = hasRange ? `$${item.minPrice!.toFixed(2)}–$${item.maxPrice!.toFixed(2)}` : undefined
+                  const rangeText = hasRange ? `$${item.minPrice!.toFixed(2)}â€“$${item.maxPrice!.toFixed(2)}` : undefined
                   return (
                     <FoodCard
                       key={item.chainProductId}
@@ -503,7 +503,7 @@ function StateMenuPage({ stateSlug }: { stateSlug: string }) {
                   <tbody className="bg-white divide-y divide-gray-100">
                     {category.items.map((item) => {
                       const hasRange = item.minPrice !== undefined && item.maxPrice !== undefined && item.minPrice !== item.maxPrice
-                      const rangeText = hasRange ? `$${item.minPrice!.toFixed(2)}–$${item.maxPrice!.toFixed(2)}` : `$${item.price.toFixed(2)}`
+                      const rangeText = hasRange ? `$${item.minPrice!.toFixed(2)}â€“$${item.maxPrice!.toFixed(2)}` : `$${item.price.toFixed(2)}`
                       return (
                         <tr key={item.chainProductId} className="hover:bg-gray-50 transition-colors">
                           <td className="py-4 px-6 border-0"><Link href={`/menu/${state.slug}/${item.slug}`} className="font-semibold text-site-black hover:text-brand-green transition-colors text-[14px]">{item.name}</Link></td>
@@ -529,7 +529,7 @@ function StateMenuPage({ stateSlug }: { stateSlug: string }) {
             <p>Saladworks prices vary by state. A Hand-Cut Salad in {state.name} costs more or less than the same salad in another state. Local rent, labor costs, and market conditions all play a role. This page shows real price data for {state.name} specifically - not national averages.</p>
             <p>In {state.name}, menu items range from <strong>${minMenuPrice}</strong> to <strong>${maxMenuPrice}</strong>. The average item price across {state.locationCount} {state.name} location{state.locationCount > 1 ? 's' : ''} is approximately <strong>${avgMenuPrice}</strong>.</p>
             <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-[13px] text-amber-800">
-              ⚠️ Prices are averaged across {state.locationCount} {state.name} location{state.locationCount > 1 ? 's' : ''}. Your specific restaurant may charge slightly more or less. Always confirm with your local Saladworks.
+              âš ï¸ Prices are averaged across {state.locationCount} {state.name} location{state.locationCount > 1 ? 's' : ''}. Your specific restaurant may charge slightly more or less. Always confirm with your local Saladworks.
             </div>
           </div>
         </div>
