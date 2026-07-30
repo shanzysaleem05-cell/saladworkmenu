@@ -12,6 +12,92 @@ export interface BlogPost {
 
 export const blogData: BlogPost[] = [
   {
+    slug: "is-saladworks-expensive",
+    title: "Is SaladWorks Expensive? Full 2026 Price Breakdown",
+    excerpt: "Is SaladWorks really expensive, or does it just feel that way at checkout? We break down every menu category's real 2026 prices, compare it to other fast-casual chains, and show you how to eat there for less.",
+    date: "2026-07-30",
+    readTime: "7 min read",
+    category: "Menu & Prices",
+    image: "/SaladWorks-price-breakdown-menu.webp",
+    content: `# Is SaladWorks Expensive? Full 2026 Price Breakdown
+
+Short answer: SaladWorks sits in the middle of the fast-casual pack - pricier than a fast-food value menu, but generally on par with or slightly cheaper than premium salad chains like Sweetgreen or Chopt. Whether it "feels" expensive usually comes down to how many extra toppings and add-ons end up in your bowl. Here's the full 2026 price breakdown by category, so you know exactly what to expect before you order.
+
+## Why SaladWorks Feels More Expensive Than It Is
+
+A base salad on the [SaladWorks menu](/menu) usually starts under $10, but the final receipt often creeps toward $15-$18. That's rarely the base price's fault - it's extra proteins, premium toppings, a side, and a drink stacking on top of a reasonable starting point. If you compare like-for-like base prices against competitors, SaladWorks is actually one of the more affordable customizable-salad options out there.
+
+## SaladWorks Prices by Category (2026)
+
+- **Salads:** Signature salads generally run **$9.99 to $13.99**; a fully Build Your Own Salad starts around **$9.49** before add-ons.
+- **Wraps:** Most wraps fall between **$10.49 and $12.99**.
+- **Melts:** Warm melts range from about **$10.99 to $12.99**.
+- **Soups:** Cup-and-bowl pricing typically spans **$4.49 to $8.99** depending on size and recipe.
+- **Pick 2 Combos:** The best value on the menu - combos like any salad plus soup land around **$14.99-$15.99**, cheaper than ordering both items separately.
+- **Kids Menu:** Kids' items stay affordable at roughly **$5.99 to $7.49**.
+- **Sides & Desserts:** Small extras run **$2.99 to $6.99**.
+
+See the [full 2026 menu and price guide](/blog/saladworks-menu-and-price-2026) for a complete item-by-item list.
+
+## What Actually Drives the Price Up
+
+- **Premium proteins:** Grilled steak, shrimp, and salmon add the biggest upcharge of any topping category.
+- **Extra toppings past the free allotment:** Most bowls include a set number of free toppings; anything beyond that adds up fast.
+- **Combo add-ons:** Turning a single item into a Pick 2, or adding a drink and side, can add $4-$6 to the base price without you noticing at checkout.
+- **Delivery fees:** Ordering through a third-party app adds delivery, service, and small-order fees on top of menu prices - see the [SaladWorks delivery guide](/blog/saladworks-delivery-guide) for exact fee ranges.
+
+## SaladWorks vs Other Salad Chains
+
+Compared to [Sweetgreen](/blog/saladworks-vs-sweetgreen-prices), SaladWorks base salads are typically a dollar or two cheaper, and its Pick 2 combos and wider menu (wraps, melts, soups) give it more ways to eat well without paying premium-bowl prices. Chopt and Just Salad land in a similar range to SaladWorks for a basic bowl, but tend to charge more once you start adding premium proteins - the same pattern that drives up a SaladWorks receipt.
+
+## Is SaladWorks Worth the Price?
+
+For the ingredient quality, portion size, and customization on offer, most regulars consider SaladWorks solid value - especially compared to sit-down restaurant prices for a comparable fresh meal. It's not the cheapest fast-casual option on the block, but it's rarely the most expensive either, and the Pick 2 combo remains one of the better deals in the category.
+
+## How to Eat at SaladWorks for Less
+
+- **Stick to the free topping allotment** instead of loading up on premium extras.
+- **Order a Pick 2 combo** instead of a full-size item plus a separate soup or side.
+- **Check the [SaladWorks coupons and deals](/coupons) page** before ordering - active promo codes can meaningfully cut your total.
+- **Choose pickup over delivery** when possible to skip delivery and service fees entirely.
+- **Use the [nutrition and calorie guide](/nutrition)** to build a bowl that hits your goals without over-ordering toppings you don't need.
+
+## Find SaladWorks Prices Near You
+
+Menu prices can vary slightly by state and location. Browse current prices for these states:
+
+- [New York](/menu/new-york)
+- [New Jersey](/menu/new-jersey)
+- [Pennsylvania](/menu/pennsylvania)
+- [California](/menu/california)
+- [Florida](/menu/florida)
+- [Texas](/menu/texas)
+
+See the full [SaladWorks store directory](/directory) to find pricing for every state with locations, or check [SaladWorks hours](/hours) before you head out.`,
+    faqs: [
+      {
+        question: "Is SaladWorks expensive compared to fast food?",
+        answer: "Yes, SaladWorks costs more than typical fast-food value items, but that reflects fresh, made-to-order ingredients rather than a pre-made menu. Compared to other fast-casual salad chains, SaladWorks is generally average to slightly cheaper."
+      },
+      {
+        question: "What is the cheapest way to eat at SaladWorks?",
+        answer: "Order a Pick 2 combo instead of a full item plus separate sides, stick to the free topping allotment, choose pickup over delivery, and check the SaladWorks coupons page for active promo codes before ordering."
+      },
+      {
+        question: "Is SaladWorks cheaper than Sweetgreen?",
+        answer: "SaladWorks base salads are typically a dollar or two cheaper than Sweetgreen's signature bowls, and its Pick 2 combos add extra value that Sweetgreen doesn't directly match."
+      },
+      {
+        question: "Why did my SaladWorks order cost more than I expected?",
+        answer: "The most common causes are premium proteins like steak or shrimp, extra toppings beyond the free allotment, and combo or delivery add-ons - the base menu prices themselves are moderate, but these extras add up quickly."
+      },
+      {
+        question: "Does SaladWorks have any budget-friendly menu items?",
+        answer: "Yes. The Build Your Own Salad starting around $9.49, cup-sized soups from about $4.49, and the Kids Menu items under $7.50 are among the most affordable options on the SaladWorks menu."
+      }
+    ]
+  },
+  {
     slug: "saladworks-delivery-guide",
     title: "SaladWorks Delivery Guide 2026: Order Salads Online",
     excerpt: "Craving a fresh salad without leaving home? See every SaladWorks delivery app, fees, best menu picks, and how to find delivery near you in 2026.",
