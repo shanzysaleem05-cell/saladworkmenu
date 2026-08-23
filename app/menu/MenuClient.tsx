@@ -94,7 +94,7 @@ export default function MenuPage() {
       </div>
 
       {/* Menu Sections */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-5 md:px-10 lg:px-16 py-12">
         {/* Create Your Own Section */}
         <section id="create-your-own" className="scroll-mt-32 mb-16">
           <div className="mb-8 text-center max-w-3xl mx-auto">

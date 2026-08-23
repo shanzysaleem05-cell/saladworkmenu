@@ -56,7 +56,7 @@ export function Navbar() {
 
       {/* Bottom Section: Navigation Bar */}
       <div className="bg-brand-orange">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16">
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center justify-center space-x-8 py-4">
             {links.map((link) => (

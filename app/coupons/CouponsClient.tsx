@@ -88,7 +88,7 @@ export default function CouponsPage() {
 
       {/* Main Content */}
       <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-4xl">
           
           <div className="mb-16">
             <div className="flex items-center gap-3 mb-8">

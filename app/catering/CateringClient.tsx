@@ -83,7 +83,7 @@ export default function CateringClient() {
 
       {/* Catering Menu Navigation */}
       <section className="bg-white pt-16 pb-4 scroll-mt-24" id="catering-menu">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-6xl">
           <h2 className="text-4xl md:text-[42px] font-extrabold text-brand-orange text-center mb-8 lowercase tracking-tight">
             catering menu
           </h2>
@@ -106,7 +106,7 @@ export default function CateringClient() {
 
       {/* Salad Bar Section */}
       <section id="salad-bar" className="py-12 bg-white scroll-mt-24">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-6xl">
           <h3 className="text-[28px] font-extrabold text-[#8dc63f] mb-6 lowercase tracking-tight">salad bar</h3>
           <p className="text-gray-600 mb-10 text-[15px] leading-relaxed max-w-5xl">
             Offer your guests a fresh, healthy experience with a SaladWorks salad bar, complete with customizable toppings, gluten free selections, and a variety of fresh, flavorful ingredients for any occasion.
@@ -178,7 +178,7 @@ export default function CateringClient() {
 
       {/* Sandwich Trays Section */}
       <section id="sandwich-trays" className="py-24 bg-site-bg border-t border-gray-200 scroll-mt-24">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-6xl">
           <SectionHeading title="Sandwich Trays (Wrap & Melt Trays)" centered subtitle="Assorted sandwich trays are loaded with fresh and delicious flavors. These are perfect for corporate catering lunches, family gatherings and any occasion." />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -233,7 +233,7 @@ export default function CateringClient() {
 
       {/* Group Salads */}
       <section id="group-salads" className="py-24 bg-white border-t border-gray-200 scroll-mt-24">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-6xl">
           <SectionHeading title="Group Salads" centered subtitle="Deliciously fresh and made to share, SaladWorks group salads bring flavor and variety to any gathering. Perfect for every event, big or small." />
           
           <h3 className="text-2xl font-bold text-site-black text-center mt-12 mb-8">Popular Signature Salads</h3>
@@ -302,7 +302,7 @@ export default function CateringClient() {
 
       {/* Grazer Boards */}
       <section id="grazer-boards" className="py-24 bg-site-bg border-t border-gray-200 scroll-mt-24">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-6xl">
           <SectionHeading title="Grazer Boards" centered subtitle="SaladWorks charcuterie boards are a beautifully arranged selection of premium ingredients perfect for any occasion. These snack platters are ready to serve and elegantly presented." />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -339,7 +339,7 @@ export default function CateringClient() {
 
       {/* Boxed Lunches */}
       <section id="boxed-lunches" className="py-24 bg-white border-t border-gray-200 scroll-mt-24">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-6xl">
           <SectionHeading title="Boxed Lunches" centered subtitle="Individually packaged boxed lunches are the perfect option for grab and go meetings or lunch and learns. With a variety of crave-worthy options they will be a hit at any corporate meeting or event." />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -376,7 +376,7 @@ export default function CateringClient() {
 
       {/* Catering Bundles */}
       <section id="packages" className="py-24 bg-site-bg border-t border-gray-200 scroll-mt-24">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-6xl">
           <SectionHeading 
             title="Catering Bundles – Effortless Group Ordering" 
             subtitle="Effortless catering bundles! These freshly prepared bundles come with your main entree, chips and drinks. Perfect for feeding a crowd!"
@@ -401,7 +401,7 @@ export default function CateringClient() {
 
       {/* Sides, Desserts & Beverages */}
       <section className="py-16 bg-white border-y border-gray-200">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="text-center bg-site-bg rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col hover:border-brand-orange/30 hover:shadow-md transition-all">
               <div className="relative h-64 w-full bg-white">
@@ -433,7 +433,7 @@ export default function CateringClient() {
 
       {/* FAQ Section */}
       <section className="py-24 bg-white border-t border-gray-200">
-        <div className="container mx-auto px-4 max-w-3xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-3xl">
           <SectionHeading title="Catering FAQs" centered />
           
           <div className="mt-12 space-y-4">

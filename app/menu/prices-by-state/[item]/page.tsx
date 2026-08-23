@@ -92,7 +92,7 @@ export default function PricesByStatePage({ params }: Props) {
 
       {/* Hero */}
       <section className="bg-gradient-to-r from-brand-deep via-[#2d1a0a] to-brand-deep py-10 md:py-14">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-5xl text-center">
           <h1 className="text-[30px] md:text-[44px] font-black text-white leading-tight tracking-tight mb-3">
             Saladworks {item.name} Price by State ({year})
           </h1>
@@ -109,7 +109,7 @@ export default function PricesByStatePage({ params }: Props) {
       </section>
 
       {/* Comparison Table */}
-      <section className="container mx-auto px-4 py-12 md:py-16 max-w-5xl">
+      <section className="container mx-auto px-5 md:px-10 lg:px-16 py-12 md:py-16 max-w-5xl">
         <div className="flex flex-col md:flex-row gap-8 items-start">
           {item.image && (
             <div className="w-full md:w-4/12 shrink-0 md:sticky md:top-24">
@@ -199,7 +199,7 @@ export default function PricesByStatePage({ params }: Props) {
       </section>
 
       {/* FAQ */}
-      <section className="container mx-auto px-4 pb-16 max-w-4xl">
+      <section className="container mx-auto px-5 md:px-10 lg:px-16 pb-16 max-w-4xl">
         <FaqSection faqs={faqs} />
       </section>
     </div>

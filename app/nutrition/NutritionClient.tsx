@@ -37,7 +37,7 @@ export default function NutritionPage() {
       </div>
 
       {/* Nutrition Tables */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-5 md:px-10 lg:px-16 py-12">
         <NutritionCalculator />
         
         <div className="bg-white border border-gray-200 rounded-xl p-6 mb-10 shadow-sm text-center">

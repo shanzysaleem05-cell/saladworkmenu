@@ -186,7 +186,7 @@ function ItemDetailPage({ itemSlug }: { itemSlug: string }) {
         { label: foundItem.name, href: "#" }
       ]} />
 
-      <section className="container mx-auto px-4 py-12 md:py-16">
+      <section className="container mx-auto px-5 md:px-10 lg:px-16 py-12 md:py-16">
         <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-start">
           <div className="w-full md:w-1/2 shrink-0">
             <div className="relative aspect-square md:aspect-[4/3] rounded-[24px] overflow-hidden shadow-sm border border-gray-100 bg-gray-100">
@@ -239,7 +239,7 @@ function ItemDetailPage({ itemSlug }: { itemSlug: string }) {
         </div>
       </section>
       
-      <section className="container mx-auto px-4 py-12 border-t border-gray-100">
+      <section className="container mx-auto px-5 md:px-10 lg:px-16 py-12 border-t border-gray-100">
         <div className="flex flex-col lg:flex-row gap-16">
           <div className="w-full lg:w-1/3">
             <h2 className="text-[20px] font-extrabold text-site-black mb-6 flex items-center gap-2">
@@ -280,7 +280,7 @@ function ItemDetailPage({ itemSlug }: { itemSlug: string }) {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-5 md:px-10 lg:px-16 py-16">
         <div className="flex justify-between items-end mb-8">
           <h2 className="text-[24px] font-extrabold text-site-black">More {foundCategory.title}</h2>
           <Link href={`/menu#${foundCategory.id}`} className="text-[13px] font-bold text-[#6b7280] hover:text-brand-orange transition-colors flex items-center">
@@ -467,7 +467,7 @@ function StateMenuPage({ stateSlug }: { stateSlug: string }) {
         const catMax = Math.max(...catPrices).toFixed(2)
         return (
           <section key={category.slug} id={category.slug} className="py-12 border-t border-gray-200/60" data-updated={dataDate}>
-            <div className="container mx-auto px-4 max-w-6xl">
+            <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-6xl">
               <h2 className="text-[28px] md:text-[32px] font-black text-site-black mb-2 tracking-tight">Saladworks {category.name} Prices in {state.name}</h2>
               <p className="text-gray-500 text-[15px] mb-8">{category.items.length} items â€¢ ${catMin}â€“${catMax} â€¢ Updated {prettyDate}</p>
 
@@ -522,7 +522,7 @@ function StateMenuPage({ stateSlug }: { stateSlug: string }) {
 
       {/* SEO Content Block */}
       <section className="py-12 border-t border-gray-200/60 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-4xl">
           <h2 className="text-[26px] font-black text-site-black mb-4">Saladworks Menu Prices in {state.name} ({year})</h2>
           <div className="text-gray-600 text-[16px] leading-[1.8] space-y-4">
             <p>The prices on this page come directly from the Saladworks ordering system, sourced from <strong>{state.locationCount} restaurants</strong> across {state.name}. Unlike most sites that show guessed or outdated prices, every number here was pulled from live menu data.</p>
@@ -538,7 +538,7 @@ function StateMenuPage({ stateSlug }: { stateSlug: string }) {
       {/* Locations & Hours */}
       {locations.length > 0 && (
         <section className="py-14 border-t border-gray-200/60 bg-gray-50">
-          <div className="container mx-auto px-4 max-w-6xl">
+          <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-6xl">
             <h2 className="text-[26px] font-black text-site-black mb-2">Saladworks Locations & Hours in {state.name}</h2>
             <p className="text-gray-500 text-[15px] mb-8">
               All {locations.length} Saladworks location{locations.length > 1 ? 's' : ''} in {state.name} with verified opening hours. Every price on this page comes from these restaurants.
@@ -563,7 +563,7 @@ function StateMenuPage({ stateSlug }: { stateSlug: string }) {
 
       {/* State Links */}
       <section className="py-16 border-t border-gray-200/60 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-5xl">
           <h2 className="text-[24px] font-black text-site-black mb-6 text-center">Saladworks Menu Prices by State</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
             {allStates.filter(s => s.slug !== state.slug).map(s => (
@@ -574,7 +574,7 @@ function StateMenuPage({ stateSlug }: { stateSlug: string }) {
       </section>
 
       {/* FAQ */}
-      <section className="container mx-auto px-4 py-16 max-w-4xl">
+      <section className="container mx-auto px-5 md:px-10 lg:px-16 py-16 max-w-4xl">
         <h2 className="text-[28px] font-black text-site-black mb-2">Saladworks {state.name} - Frequently Asked Questions</h2>
         <p className="text-gray-500 text-[15px] mb-8">Based on real data from {state.locationCount} {state.name} locations, updated {prettyDate}.</p>
         <FaqSection faqs={faqs} />

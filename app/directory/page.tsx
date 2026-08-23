@@ -50,7 +50,7 @@ export default function DirectoryPage() {
       ]} />
 
       <section className="bg-gradient-to-r from-brand-deep via-[#2d1a0a] to-brand-deep py-10 md:py-14">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-5xl text-center">
           <h1 className="text-[30px] md:text-[44px] font-black text-white leading-tight tracking-tight mb-3">
             Saladworks Menu Directory
           </h1>
@@ -61,7 +61,7 @@ export default function DirectoryPage() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-12 max-w-5xl">
+      <section className="container mx-auto px-5 md:px-10 lg:px-16 py-12 max-w-5xl">
         <h2 className="text-[24px] font-black text-site-black mb-6">Menus by State</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12">
           {states.map(state => {

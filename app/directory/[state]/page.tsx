@@ -65,7 +65,7 @@ export default function StateDirectoryPage({ params }: Props) {
       ]} />
 
       <section className="bg-gradient-to-r from-brand-deep via-[#2d1a0a] to-brand-deep py-10">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-5xl text-center">
           <h1 className="text-[28px] md:text-[40px] font-black text-white leading-tight tracking-tight mb-3">
             Saladworks {state.name} - All Price Pages
           </h1>
@@ -78,7 +78,7 @@ export default function StateDirectoryPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-12 max-w-5xl">
+      <section className="container mx-auto px-5 md:px-10 lg:px-16 py-12 max-w-5xl">
         <p className="text-gray-600 text-[15px] leading-relaxed mb-10 max-w-3xl">
           Every Saladworks {state.name} menu item below links to its own price and calorie page, built from real
           order data at {state.locationCount} location{state.locationCount > 1 ? 's' : ''} across {state.cities.join(', ')}.

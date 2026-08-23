@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
       ]} />
       
       <div className="py-24 bg-site-bg">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-4xl">
           <div className="text-center mb-16">
             <h1 className="text-[36px] md:text-[44px] font-black text-site-black leading-tight tracking-tight mb-4">
               Privacy Policy

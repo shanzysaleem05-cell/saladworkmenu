@@ -110,7 +110,7 @@ export default function HoursPage() {
       ]} />
       
       <div className="py-12 md:py-20 bg-site-bg">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-5xl">
           <div className="text-center mb-12">
             <span className="inline-block bg-brand-orange text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 mb-6 rounded-full">
               ðŸ• Find a Restaurant Near You

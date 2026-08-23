@@ -114,37 +114,7 @@ export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataP
         </motion.div>
       </section>
 
-      {/* Section 2: What Makes Us Special */}
-      <section className="py-20 bg-site-bg border-b border-gray-200">
-        <div className="container mx-auto px-4 max-w-[1100px]">
-          <div className="text-center mb-10 w-full flex flex-col items-center">
-            <h2 className="text-[28px] md:text-[36px] lg:text-[40px] font-extrabold text-site-black tracking-tight leading-tight max-w-3xl mx-auto">
-              The Complete SaladWorks Salad, Wrap & Grilled Chicken Menu Guide for 2026
-            </h2>
-          </div>
-          
-          <div className="space-y-6 text-[#4b5563] text-lg leading-relaxed font-medium text-center max-w-[1000px] mx-auto">
-            <p>
-              SaladWorks is known for generous portions and fresh daily 
-              preparation. Guests love pairing items from the <Link href="/menu" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">full menu</Link> with SaladWorks' famous <Link href="/menu#salads" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">signature salads and dressings</Link>. SaladWorks prepares dressings fresh every morning and provides complete <Link href="/nutrition" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">nutrition details</Link> for full transparency.
-            </p>
-            <p>
-              SaladWorks offers great value through their <Link href="/menu" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">lunch specials</Link> and popular <Link href="/menu#pick-2" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">Pick 2 Combo</Link> deals. Enjoy rotating <Link href="/blog" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">seasonal specials</Link> for limited-time recipes, or order SaladWorks <Link href="/catering" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">catering packages</Link> for your next office gathering or family celebration.
-            </p>
-            <p>
-              SaladWorks caters to all dietary needs with their <Link href="/menu" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">gluten-free menu</Link> and <Link href="/menu" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">vegetarian menu</Link>. Enjoy your favorites at home with convenient delivery & to-go options, or customize your meal entirely with the <Link href="/menu" className="font-semibold text-brand-orange underline underline-offset-4 decoration-[1.5px] hover:text-[#c44e30] hover:decoration-[#c44e30] transition-colors">build your own salad</Link> feature.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      {/* Menu Sections Banner */}
-      <div className="bg-[#fefce8] border-b border-t border-[#fde047] py-3 px-4 flex items-center justify-center gap-2">
-        <AlertTriangle className="w-4 h-4 text-amber-500" />
-        <span className="text-sm font-medium text-amber-800 text-center">
-          Prices and calories are estimates for 2026. They may vary by location and customization. Always verify at your local SaladWorks.
-        </span>
-      </div>
 
       {/* Menu Categories */}
       {menuData.map((category, index) => {
@@ -152,7 +122,7 @@ export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataP
 
         return (
           <section key={category.id} className={`py-24 ${bgColor}`} id={category.id}>
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-5 md:px-10 lg:px-16">
               <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
                 <div>
                   <h2 className="text-[32px] md:text-[40px] font-extrabold text-site-black tracking-tight leading-tight mb-2">
@@ -244,7 +214,7 @@ export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataP
 
       {/* Section: Coupons & Deals */}
       <section className="py-24 bg-white" id="deals">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-6xl">
           <div className="text-center mb-14">
             <span className="inline-block bg-brand-orange text-white text-xs font-black px-4 py-1.5 uppercase tracking-widest mb-5">
               🏷️ Limited Time Offers
@@ -348,7 +318,7 @@ export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataP
 
       {/* Section: Hours of Operation */}
       <section className="py-24 bg-site-bg">
-        <div className="container mx-auto px-4 max-w-3xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-3xl">
           <div className="text-center mb-12">
             <span className="inline-block bg-brand-orange text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 mb-6">
               🕐 Store Hours
@@ -395,7 +365,7 @@ export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataP
 
       {/* Section: Catering Overview */}
       <section className="py-24 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-6xl">
           <div className="text-center mb-14">
             <span className="inline-block bg-brand-orange text-white text-xs font-black px-4 py-1.5 uppercase tracking-widest mb-5">
               SaladWorks Catering
@@ -440,7 +410,7 @@ export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataP
 
       {/* Section: FAQ */}
       <section className="py-24 bg-site-bg">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16">
           <div className="text-center mb-16">
             <span className="bg-brand-orange/10 text-brand-orange px-3 py-1.5 rounded-full text-[12px] font-extrabold uppercase tracking-widest mb-4 inline-block">Got Questions?</span>
             <h2 className="text-[36px] md:text-[44px] font-black text-site-black tracking-tight leading-tight">

@@ -57,7 +57,7 @@ export default function PricesByStateIndexPage() {
       ]} />
 
       <section className="bg-gradient-to-r from-brand-deep via-[#2d1a0a] to-brand-deep py-10 md:py-14">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-5xl text-center">
           <h1 className="text-[30px] md:text-[44px] font-black text-white leading-tight tracking-tight mb-3">
             Saladworks Prices by State
           </h1>
@@ -68,7 +68,7 @@ export default function PricesByStateIndexPage() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-12 max-w-5xl">
+      <section className="container mx-auto px-5 md:px-10 lg:px-16 py-12 max-w-5xl">
         {Array.from(byCategory.entries()).map(([category, catItems]) => (
           <div key={category} className="mb-10">
             <h2 className="text-[22px] font-black text-site-black mb-4">{category}</h2>

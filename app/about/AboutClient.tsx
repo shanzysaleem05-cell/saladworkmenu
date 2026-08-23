@@ -19,7 +19,7 @@ export default function AboutClient() {
 
       {/* Main Content Area */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-4xl">
           
           {/* Important Transparency Notice */}
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-12 shadow-sm flex gap-4 items-start">

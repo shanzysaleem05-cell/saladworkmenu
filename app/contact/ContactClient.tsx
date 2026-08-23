@@ -24,7 +24,7 @@ export default function ContactPage() {
 
       {/* Main Content */}
       <section className="py-24 bg-site-bg">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-6xl">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
             
             {/* Info Side (Left - 40%) */}

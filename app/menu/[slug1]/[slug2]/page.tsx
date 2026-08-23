@@ -159,7 +159,7 @@ export default function Slug2Page({ params }: Props) {
         ]} />
 
         {/* Main Content */}
-        <section className="container mx-auto px-4 py-12 md:py-16">
+        <section className="container mx-auto px-5 md:px-10 lg:px-16 py-12 md:py-16">
           <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-start">
 
             {/* Left Column - Image + Quick Facts */}
@@ -367,7 +367,7 @@ export default function Slug2Page({ params }: Props) {
         {/* Cross-State Price Comparison (deterministic: neighbors + cheapest + most expensive) */}
         {comparisonStates.length > 0 && (
           <section className="bg-white border-t border-gray-200 py-14">
-            <div className="container mx-auto px-4 max-w-6xl">
+            <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-6xl">
               <h2 className="text-[26px] font-black text-site-black mb-2">{item.name} Prices in Nearby & Cheapest States</h2>
               <p className="text-gray-500 text-[15px] mb-8">
                 {cheapestState ? `${cheapestState.name} has the cheapest average price for the ${item.name} at $${cheapestState.avgPrice.toFixed(2)}. ` : ''}
@@ -404,7 +404,7 @@ export default function Slug2Page({ params }: Props) {
         {/* Related Items */}
         {relatedItems.length > 0 && (
           <section className="bg-gray-50 border-t border-gray-200 py-16">
-            <div className="container mx-auto px-4 max-w-6xl">
+            <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-6xl">
               <h2 className="text-[26px] font-black text-site-black mb-2">More {category} at Saladworks in {state.name}</h2>
               <p className="text-gray-500 text-[15px] mb-8">Compare prices for other {category.toLowerCase()} items available in {state.name}.</p>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
@@ -432,7 +432,7 @@ export default function Slug2Page({ params }: Props) {
         )}
 
         {/* FAQ Section */}
-        <section className="container mx-auto px-4 py-16 max-w-4xl">
+        <section className="container mx-auto px-5 md:px-10 lg:px-16 py-16 max-w-4xl">
           <h2 className="text-[28px] font-black text-site-black mb-2">Saladworks {item.name} {state.name} - Frequently Asked Questions</h2>
           <p className="text-gray-500 text-[15px] mb-8">Based on real data from {state.locationCount} {state.name} locations, updated {prettyDate}.</p>
           <FaqSection faqs={faqs} />

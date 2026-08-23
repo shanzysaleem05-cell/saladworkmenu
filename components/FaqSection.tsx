@@ -24,7 +24,7 @@ export function FaqSection({ faqs }: { faqs: FaqItem[] }) {
   return (
     <section className="py-16 bg-white border-t border-gray-100">
       <JsonLd data={schema} />
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-4xl">
         <h2 className="text-3xl font-black text-site-black mb-8 text-center tracking-tight">Frequently Asked Questions</h2>
         <div className="flex flex-col gap-4">
           {faqs.map((faq, index) => (
