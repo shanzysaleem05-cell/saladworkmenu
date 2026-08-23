@@ -1,4 +1,10 @@
 providers = ["node"]
 
+[phases.install]
+cacheDirectories = []
+
+[phases.build]
+cacheDirectories = []
+
 [start]
 cmd = "npm run start"
