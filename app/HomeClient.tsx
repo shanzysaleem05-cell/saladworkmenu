@@ -57,29 +57,24 @@ export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataP
       )}
 
       {/* Section 1: Hero */}
-      <section className="w-full pt-8 pb-12 md:pt-16 md:pb-24 bg-site-bg flex flex-col items-center justify-center text-center px-4">
+      <section className="w-full pt-5 pb-8 md:pt-16 md:pb-24 bg-site-bg flex flex-col items-center justify-center text-center px-4">
         
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-[26px] md:text-[44px] font-extrabold text-site-black mb-4 md:mb-6 tracking-tight leading-tight max-w-3xl mx-auto"
+          className="text-[24px] md:text-[44px] font-extrabold text-site-black mb-3 md:mb-6 tracking-tight leading-tight max-w-3xl mx-auto px-1"
         >
-          SaladWorks Menu Prices 2026 <br />
-          Salads, Wraps & Grilled Chicken
+          SaladWorks Menu Prices 2026 <br className="hidden md:block" /> Salads, Wraps & Grilled Chicken
         </motion.h1>
         
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-base md:text-xl text-gray-600 mb-6 md:mb-10 max-w-[800px] leading-relaxed"
+          className="text-[15px] md:text-xl text-gray-600 mb-5 md:mb-10 max-w-[700px] leading-snug md:leading-relaxed px-2"
         >
-          Discover the latest SaladWorks <Link href="/menu" className="font-semibold text-brand-orange hover:underline">menu prices</Link>, verified calorie 
-          counts, and complete nutritional facts for 2026. From custom 
-          lunch combos starting at $10.49 and classic wraps to unlimited 
-          soup and salad deals, this independent guide helps visitors 
-          plan a delicious, value-packed SaladWorks dining experience.
+          Discover the latest SaladWorks <Link href="/menu" className="font-semibold text-brand-orange hover:underline">menu prices</Link>, verified calorie counts, and nutritional facts for 2026. From custom lunch combos starting at $10.49 to classic wraps and fresh salads, plan a delicious and value-packed dining experience.
         </motion.p>
         
         <motion.div 
