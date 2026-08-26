@@ -57,13 +57,13 @@ export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataP
       )}
 
       {/* Section 1: Hero */}
-      <section className="w-full pt-16 pb-24 bg-site-bg flex flex-col items-center justify-center text-center px-4">
+      <section className="w-full pt-8 pb-12 md:pt-16 md:pb-24 bg-site-bg flex flex-col items-center justify-center text-center px-4">
         
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-[32px] md:text-[44px] font-extrabold text-site-black mb-6 tracking-tight leading-tight max-w-3xl mx-auto"
+          className="text-[26px] md:text-[44px] font-extrabold text-site-black mb-4 md:mb-6 tracking-tight leading-tight max-w-3xl mx-auto"
         >
           SaladWorks Menu Prices 2026 <br />
           Salads, Wraps & Grilled Chicken
@@ -73,7 +73,7 @@ export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataP
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-lg md:text-xl text-gray-600 mb-10 max-w-[800px] leading-relaxed"
+          className="text-base md:text-xl text-gray-600 mb-6 md:mb-10 max-w-[800px] leading-relaxed"
         >
           Discover the latest SaladWorks <Link href="/menu" className="font-semibold text-brand-orange hover:underline">menu prices</Link>, verified calorie 
           counts, and complete nutritional facts for 2026. From custom 
@@ -86,18 +86,18 @@ export default function HomeClient({ menuData, dataDate }: { menuData: MenuDataP
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="flex flex-wrap items-center justify-center gap-3 mb-12"
+          className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-6 md:mb-12"
         >
-          <span className="px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-600 bg-site-white shadow-sm">19 Categories</span>
-          <span className="px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-600 bg-site-white shadow-sm">304+ Menu Items</span>
-          <span className="px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-600 bg-site-white shadow-sm">Prices Verified</span>
+          <span className="px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-gray-200 text-xs md:text-sm font-semibold text-gray-600 bg-site-white shadow-sm">19 Categories</span>
+          <span className="px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-gray-200 text-xs md:text-sm font-semibold text-gray-600 bg-site-white shadow-sm">304+ Menu Items</span>
+          <span className="px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-gray-200 text-xs md:text-sm font-semibold text-gray-600 bg-site-white shadow-sm">Prices Verified</span>
         </motion.div>
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto items-center justify-center"
+          className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full sm:w-auto items-center justify-center"
         >
           <Button size="lg" className="rounded-none px-8 h-14 text-base font-bold shadow-md flex items-center gap-2" asChild>
             <Link href="/menu">
